@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8D1F4A8A-D393-4AA5-A90A-1003D7FE2747}</ProjectGuid>
+    <ProjectGuid>{8C275596-E26A-4FC5-BA37-31685A59ADA3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLL</RootNamespace>
@@ -41,15 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{0a578235-4718-47a4-83b1-0651495ba5dd}</Project>
+      <Project>{c115edcb-5bbc-4771-92a2-cd1c6283028d}</Project>
       <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{cf89a90a-9d60-4605-a87c-71f15ebaa80c}</Project>
+      <Project>{11da43a0-080c-4742-94fe-6a06fc69bdb0}</Project>
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>

@@ -33,8 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,11 +88,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{8d1f4a8a-d393-4aa5-a90a-1003d7fe2747}</Project>
+      <Project>{8c275596-e26a-4fc5-ba37-31685a59ada3}</Project>
       <Name>BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
-      <Project>{cf89a90a-9d60-4605-a87c-71f15ebaa80c}</Project>
+      <Project>{11da43a0-080c-4742-94fe-6a06fc69bdb0}</Project>
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
