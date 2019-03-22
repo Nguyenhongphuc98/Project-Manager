@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -62,8 +63,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListSpace.Designer.cs">
+      <DependentUpon>ListSpace.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkSpace.Designer.cs">
+      <DependentUpon>WorkSpace.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ListSpace.resx">
+      <DependentUpon>ListSpace.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -73,6 +89,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WorkSpace.resx">
+      <DependentUpon>WorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,6 +114,18 @@
       <Project>{11da43a0-080c-4742-94fe-6a06fc69bdb0}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\bg.png" />
+    <Content Include="src\board.png" />
+    <Content Include="src\Bunifu_UI_v1.52.dll" />
+    <Content Include="src\home.png" />
+    <Content Include="src\infor.png" />
+    <Content Include="src\notify.png" />
+    <Content Include="src\plus.png" />
+    <Content Include="src\search.png" />
+    <Content Include="src\star.png" />
+    <Content Include="src\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

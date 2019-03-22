@@ -18,3 +18,6 @@ D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\GUI\bin\Debug\DAL.dll
 D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\GUI\bin\Debug\MySql.Data.dll
 D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\GUI\bin\Debug\DAL.pdb
 D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\GUI\bin\Debug\MySql.Data.xml
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\GUI\bin\Debug\Bunifu_UI_v1.52.dll
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.WorkSpace.resources
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.ListSpace.resources
