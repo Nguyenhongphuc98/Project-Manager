@@ -117,23 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="57b4687d8b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\57b4687d8b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="alarm_alert_clock_event_history_schedule_time_watch-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\alarm_alert_clock_event_history_schedule_time_watch-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="61-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\61-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Circle-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Circle-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="preview_list-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\preview_list-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="097-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\097-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

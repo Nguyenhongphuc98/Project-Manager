@@ -56,14 +56,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Card.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Card.Designer.cs">
+      <DependentUpon>Card.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Card.resx">
+      <DependentUpon>Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="List.resx">
+      <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -95,6 +114,21 @@
       <Project>{11da43a0-080c-4742-94fe-6a06fc69bdb0}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="alarm_alert_clock_event_history_schedule_time_watch-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="57b4687d8b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="preview_list-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Circle-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="097-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,3 +3,9 @@ D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DTO\bin\Debug\DTO.pdb
 D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DTO\obj\Debug\DTO.dll
 D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DTO\obj\Debug\DTO.pdb
+E:\Github Project\Project-Manager\ProjectManager\DTO\bin\Debug\DTO.dll
+E:\Github Project\Project-Manager\ProjectManager\DTO\bin\Debug\DTO.pdb
+E:\Github Project\Project-Manager\ProjectManager\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+E:\Github Project\Project-Manager\ProjectManager\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+E:\Github Project\Project-Manager\ProjectManager\DTO\obj\Debug\DTO.dll
+E:\Github Project\Project-Manager\ProjectManager\DTO\obj\Debug\DTO.pdb
