@@ -79,6 +79,9 @@
     <EmbeddedResource Include="Card.resx">
       <DependentUpon>Card.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>

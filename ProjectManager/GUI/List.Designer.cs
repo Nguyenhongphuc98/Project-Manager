@@ -31,19 +31,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AddJob = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel1.Location = new System.Drawing.Point(12, 40);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 10);
+            this.panel1.Size = new System.Drawing.Size(428, 10);
             this.panel1.TabIndex = 21;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(287, 11);
+            this.button1.Location = new System.Drawing.Point(404, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(36, 23);
             this.button1.TabIndex = 20;
@@ -54,28 +55,29 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(268, 22);
+            this.textBox1.Size = new System.Drawing.Size(386, 22);
             this.textBox1.TabIndex = 19;
             // 
-            // button2
+            // AddJob
             // 
-            this.button2.Location = new System.Drawing.Point(12, 55);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(311, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "+ Thêm thẻ";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.AddJob.Location = new System.Drawing.Point(12, 55);
+            this.AddJob.Name = "AddJob";
+            this.AddJob.Size = new System.Drawing.Size(428, 23);
+            this.AddJob.TabIndex = 18;
+            this.AddJob.Text = "+ Thêm thẻ";
+            this.AddJob.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AddJob.UseVisualStyleBackColor = true;
+            this.AddJob.Click += new System.EventHandler(this.AddJob_Click);
             // 
             // List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 87);
+            this.ClientSize = new System.Drawing.Size(452, 87);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.AddJob);
             this.Name = "List";
             this.Text = "List";
             this.ResumeLayout(false);
@@ -88,6 +90,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AddJob;
     }
 }

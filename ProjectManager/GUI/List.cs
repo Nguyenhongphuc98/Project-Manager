@@ -16,5 +16,14 @@ namespace GUI
         {
             InitializeComponent();
         }
+        
+        private void AddJob_Click(object sender, EventArgs e)
+        {
+            Card card = new Card();
+            panel1.Controls.Add(card);
+            panel1.Height += 83;
+            this.Height += 83;
+            AddJob.Location = new Point(AddJob.Location.X, AddJob.Location.Y + 83);
+        }
     }
 }
