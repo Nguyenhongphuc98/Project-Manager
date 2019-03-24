@@ -59,7 +59,7 @@
             this.pictureBox1.Image = global::GUI.Properties.Resources._61_512;
             this.pictureBox1.Location = new System.Drawing.Point(8, 37);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 29);
+            this.pictureBox1.Size = new System.Drawing.Size(30, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -69,7 +69,7 @@
             this.pictureBox2.Image = global::GUI.Properties.Resources.alarm_alert_clock_event_history_schedule_time_watch_512;
             this.pictureBox2.Location = new System.Drawing.Point(62, 37);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 29);
+            this.pictureBox2.Size = new System.Drawing.Size(30, 26);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
@@ -79,7 +79,7 @@
             this.pictureBox3.Image = global::GUI.Properties.Resources.preview_list_512;
             this.pictureBox3.Location = new System.Drawing.Point(189, 37);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(27, 28);
+            this.pictureBox3.Size = new System.Drawing.Size(27, 25);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
@@ -89,7 +89,7 @@
             this.pictureBox4.Image = global::GUI.Properties.Resources._57b4687d8b;
             this.pictureBox4.Location = new System.Drawing.Point(237, 37);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(29, 29);
+            this.pictureBox4.Size = new System.Drawing.Size(29, 26);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
@@ -99,7 +99,7 @@
             this.pictureBox5.Image = global::GUI.Properties.Resources._097_512;
             this.pictureBox5.Location = new System.Drawing.Point(371, 3);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox5.Size = new System.Drawing.Size(28, 25);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
@@ -110,7 +110,7 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(355, 37);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(44, 43);
+            this.panel1.Size = new System.Drawing.Size(44, 40);
             this.panel1.TabIndex = 6;
             // 
             // label2
@@ -146,6 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -157,7 +158,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "Card";
-            this.Size = new System.Drawing.Size(411, 83);
+            this.Size = new System.Drawing.Size(411, 80);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

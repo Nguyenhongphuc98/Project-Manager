@@ -17,6 +17,7 @@ namespace GUI
         public Form1()
         {
             InitializeComponent();
+            this.Location = new Point(500, 100);
         }
 
         private void button1_Click(object sender, EventArgs e)

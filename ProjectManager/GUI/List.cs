@@ -15,15 +15,16 @@ namespace GUI
         public List()
         {
             InitializeComponent();
+            this.Location = new Point(1000, 500);
         }
-        
-        private void AddJob_Click(object sender, EventArgs e)
+
+        private void AddCard_Click(object sender, EventArgs e)
         {
             Card card = new Card();
-            panel1.Controls.Add(card);
-            panel1.Height += card.Height;
+            flowLayoutPanel1.Controls.Add(card);
+            flowLayoutPanel1.Height += card.Height;
             this.Height += card.Height;
-            AddJob.Location = new Point(AddJob.Location.X, AddJob.Location.Y + card.Height);
+            AddCard.Location = new Point(AddCard.Location.X, AddCard.Location.Y + card.Height);
         }
     }
 }
