@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using DTO;
 
 namespace DAL
 {
@@ -18,7 +19,7 @@ namespace DAL
         public string UserName { get => userName; set => userName = value; }
         public string PassWord { get => passWord; set => passWord = value; }
 
-        private MySqlConnection mySQLConnection = null;
+        protected MySqlConnection mySQLConnection = null;
 
         public DatabaseAccess()
         {
