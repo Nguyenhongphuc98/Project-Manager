@@ -55,7 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoardDAL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
