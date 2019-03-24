@@ -21,9 +21,9 @@ namespace GUI
         {
             Card card = new Card();
             panel1.Controls.Add(card);
-            panel1.Height += 83;
-            this.Height += 83;
-            AddJob.Location = new Point(AddJob.Location.X, AddJob.Location.Y + 83);
+            panel1.Height += card.Height;
+            this.Height += card.Height;
+            AddJob.Location = new Point(AddJob.Location.X, AddJob.Location.Y + card.Height);
         }
     }
 }
