@@ -15,7 +15,7 @@ namespace GUI
         public List()
         {
             InitializeComponent();
-            this.Location = new Point(1000, 500);
+            this.Location = new Point(4000, 500);
         }
 
         private void AddCard_Click(object sender, EventArgs e)
