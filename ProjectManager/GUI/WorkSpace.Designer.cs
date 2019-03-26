@@ -39,7 +39,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pnWorkSpace = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
+            this.pnWorkSpace.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBoard
@@ -51,7 +54,7 @@
             this.btnBoard.ButtonText = "Boards";
             this.btnBoard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBoard.DisabledColor = System.Drawing.Color.Gray;
-            this.btnBoard.Font = new System.Drawing.Font("Minion Pro Cond Capt", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBoard.Iconcolor = System.Drawing.Color.Transparent;
             this.btnBoard.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnBoard.Iconimage")));
             this.btnBoard.Iconimage_right = null;
@@ -64,13 +67,14 @@
             this.btnBoard.IconVisible = true;
             this.btnBoard.IconZoom = 60D;
             this.btnBoard.IsTab = false;
-            this.btnBoard.Location = new System.Drawing.Point(55, 4);
+            this.btnBoard.Location = new System.Drawing.Point(82, 6);
+            this.btnBoard.Margin = new System.Windows.Forms.Padding(8);
             this.btnBoard.Name = "btnBoard";
             this.btnBoard.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(151)))), ((int)(((byte)(194)))));
             this.btnBoard.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnBoard.OnHoverTextColor = System.Drawing.Color.White;
             this.btnBoard.selected = false;
-            this.btnBoard.Size = new System.Drawing.Size(123, 37);
+            this.btnBoard.Size = new System.Drawing.Size(184, 57);
             this.btnBoard.TabIndex = 1;
             this.btnBoard.Text = "Boards";
             this.btnBoard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -98,13 +102,14 @@
             this.btnHome.IconVisible = true;
             this.btnHome.IconZoom = 60D;
             this.btnHome.IsTab = false;
-            this.btnHome.Location = new System.Drawing.Point(7, 4);
+            this.btnHome.Location = new System.Drawing.Point(10, 6);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnHome.Name = "btnHome";
             this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(151)))), ((int)(((byte)(194)))));
             this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnHome.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHome.selected = false;
-            this.btnHome.Size = new System.Drawing.Size(37, 37);
+            this.btnHome.Size = new System.Drawing.Size(56, 57);
             this.btnHome.TabIndex = 1;
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Textcolor = System.Drawing.Color.White;
@@ -131,13 +136,14 @@
             this.btnSearch.IconVisible = true;
             this.btnSearch.IconZoom = 60D;
             this.btnSearch.IsTab = false;
-            this.btnSearch.Location = new System.Drawing.Point(444, 4);
+            this.btnSearch.Location = new System.Drawing.Point(666, 6);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(185)))), ((int)(((byte)(70)))));
             this.btnSearch.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSearch.selected = false;
-            this.btnSearch.Size = new System.Drawing.Size(37, 37);
+            this.btnSearch.Size = new System.Drawing.Size(56, 57);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.Textcolor = System.Drawing.Color.White;
@@ -164,13 +170,14 @@
             this.btnPlus.IconVisible = true;
             this.btnPlus.IconZoom = 60D;
             this.btnPlus.IsTab = false;
-            this.btnPlus.Location = new System.Drawing.Point(919, 4);
+            this.btnPlus.Location = new System.Drawing.Point(1378, 6);
+            this.btnPlus.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(151)))), ((int)(((byte)(194)))));
             this.btnPlus.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnPlus.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPlus.selected = false;
-            this.btnPlus.Size = new System.Drawing.Size(37, 37);
+            this.btnPlus.Size = new System.Drawing.Size(56, 57);
             this.btnPlus.TabIndex = 1;
             this.btnPlus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPlus.Textcolor = System.Drawing.Color.White;
@@ -197,13 +204,14 @@
             this.btnInfor.IconVisible = true;
             this.btnInfor.IconZoom = 60D;
             this.btnInfor.IsTab = false;
-            this.btnInfor.Location = new System.Drawing.Point(965, 4);
+            this.btnInfor.Location = new System.Drawing.Point(1448, 6);
+            this.btnInfor.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnInfor.Name = "btnInfor";
             this.btnInfor.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(151)))), ((int)(((byte)(194)))));
             this.btnInfor.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnInfor.OnHoverTextColor = System.Drawing.Color.White;
             this.btnInfor.selected = false;
-            this.btnInfor.Size = new System.Drawing.Size(37, 37);
+            this.btnInfor.Size = new System.Drawing.Size(56, 57);
             this.btnInfor.TabIndex = 1;
             this.btnInfor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfor.Textcolor = System.Drawing.Color.White;
@@ -230,13 +238,14 @@
             this.btnNotify.IconVisible = true;
             this.btnNotify.IconZoom = 60D;
             this.btnNotify.IsTab = false;
-            this.btnNotify.Location = new System.Drawing.Point(1011, 4);
+            this.btnNotify.Location = new System.Drawing.Point(1516, 6);
+            this.btnNotify.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnNotify.Name = "btnNotify";
             this.btnNotify.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(224)))));
             this.btnNotify.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnNotify.OnHoverTextColor = System.Drawing.Color.White;
             this.btnNotify.selected = false;
-            this.btnNotify.Size = new System.Drawing.Size(37, 37);
+            this.btnNotify.Size = new System.Drawing.Size(56, 57);
             this.btnNotify.TabIndex = 1;
             this.btnNotify.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNotify.Textcolor = System.Drawing.Color.White;
@@ -263,13 +272,14 @@
             this.btnUser.IconVisible = true;
             this.btnUser.IconZoom = 60D;
             this.btnUser.IsTab = false;
-            this.btnUser.Location = new System.Drawing.Point(1057, 4);
+            this.btnUser.Location = new System.Drawing.Point(1586, 6);
+            this.btnUser.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.btnUser.Name = "btnUser";
             this.btnUser.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(85)))), ((int)(((byte)(23)))));
             this.btnUser.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnUser.OnHoverTextColor = System.Drawing.Color.White;
             this.btnUser.selected = false;
-            this.btnUser.Size = new System.Drawing.Size(37, 37);
+            this.btnUser.Size = new System.Drawing.Size(56, 57);
             this.btnUser.TabIndex = 1;
             this.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUser.Textcolor = System.Drawing.Color.White;
@@ -288,8 +298,9 @@
             this.panel1.Controls.Add(this.btnBoard);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1102, 44);
+            this.panel1.Size = new System.Drawing.Size(1284, 68);
             this.panel1.TabIndex = 0;
             // 
             // tbSearch
@@ -305,34 +316,59 @@
             this.tbSearch.LineIdleColor = System.Drawing.Color.White;
             this.tbSearch.LineMouseHoverColor = System.Drawing.Color.DodgerBlue;
             this.tbSearch.LineThickness = 3;
-            this.tbSearch.Location = new System.Drawing.Point(185, 2);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbSearch.Location = new System.Drawing.Point(278, 3);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(252, 37);
+            this.tbSearch.Size = new System.Drawing.Size(378, 57);
             this.tbSearch.TabIndex = 1;
             this.tbSearch.Text = "Searching";
             this.tbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // pnWorkSpace
             // 
+            this.pnWorkSpace.Controls.Add(this.flowLayoutPanel2);
+            this.pnWorkSpace.Controls.Add(this.flowLayoutPanel1);
             this.pnWorkSpace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnWorkSpace.Location = new System.Drawing.Point(0, 44);
+            this.pnWorkSpace.Location = new System.Drawing.Point(0, 68);
+            this.pnWorkSpace.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnWorkSpace.Name = "pnWorkSpace";
-            this.pnWorkSpace.Size = new System.Drawing.Size(1102, 509);
+            this.pnWorkSpace.Size = new System.Drawing.Size(1284, 634);
             this.pnWorkSpace.TabIndex = 1;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AllowDrop = true;
+            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(650, 10);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(621, 610);
+            this.flowLayoutPanel2.TabIndex = 4;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AllowDrop = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 10);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(621, 610);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // WorkSpace
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1102, 553);
+            this.ClientSize = new System.Drawing.Size(1284, 702);
             this.Controls.Add(this.pnWorkSpace);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "WorkSpace";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Manager";
             this.panel1.ResumeLayout(false);
+            this.pnWorkSpace.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -349,5 +385,7 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tbSearch;
         private System.Windows.Forms.Panel pnWorkSpace;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
