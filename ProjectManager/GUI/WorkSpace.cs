@@ -22,11 +22,8 @@ namespace GUI
         {
             InitializeComponent();
             LoadListSpace();
-<<<<<<< HEAD
             LoadBoard();
-=======
             LoadListActivity();
->>>>>>> master
         }
 
         public void LoadListSpace()
@@ -37,7 +34,7 @@ namespace GUI
             this.pnWorkSpace.Controls.Add(listSpace);
             listSpace.Show();
         }
-<<<<<<< HEAD
+
         public void LoadBoard()
         {
             this.flowLayoutPanel1.DragEnter += new DragEventHandler(flowLayoutPanel1_DragEnter);
@@ -104,7 +101,7 @@ namespace GUI
         private void flowLayoutPanel1_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Move;
-=======
+        }
 
         public void LoadListActivity()
         {
@@ -126,7 +123,7 @@ namespace GUI
 
             this.listSpace.Controls.Add(listActivity);
             //listActivity.Show();
->>>>>>> master
+
         }
     }
 }
