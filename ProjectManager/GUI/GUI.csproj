@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomComponent\ListActivity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomComponent\ListActivity.Designer.cs">
+      <DependentUpon>ListActivity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,7 @@
     <Content Include="src\Bunifu_UI_v1.52.dll" />
     <Content Include="src\home.png" />
     <Content Include="src\infor.png" />
+    <Content Include="src\message.png" />
     <Content Include="src\notify.png" />
     <Content Include="src\plus.png" />
     <Content Include="src\search.png" />

@@ -156,15 +156,14 @@
   </data>
   <data name="btnStar.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAAbsAAAG7ATrs4+IAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAABWUlEQVRIS72UMUoDURiEU6RWEiSCtukVBD2AFklhoZdQq7SCN7CLEQtFb+AVPIMxgvbiAUTRRl2/
-        2Z1I1rDZF/Lwg4F9/z8zycLyKtOQJMkqWvExPpRfoHMf40LxHHpDr3r2OB6UHqAh+x7Hg9J+1p3S9zgO
-        FG5kvTnWvZ4dyq6yzhyXXs8GRTX0nlbm0axmWzGYWmgPHaJjpE/xGt2gW/SMitBOHnmVUVYd6lJnSz/Q
-        RI8oNg+oOXyLOtK/iIW66mn5EAZVdKbtjKij6tpxWHbQl5xTokzHNZPB2EYvSgUib9vxMAiMXg1lTH91
-        EOpl2SBOHAuH0CDLBnHnWBgEGug7jYYh74Lj5WDeTWN5PtCRpee/7DheDubTLPOLroElr7Vf9myUntfl
-        YL7PMskT2vZ4DO3sEQOPJ4NxEX2iLpr3uBB57FWm4XExmNbQpo/BkNlS1sf/olL5ASw0vaYvs8/RAAAA
-        AElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
+        uwAAAbsBOuzj4gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFZSURBVEhLvZQx
+        SgNRGIRTpFYSJIK26RUEPYAWSWGhl1CrtII3sIsRC0Vv4BU8gzGC9uIBRNFGXb/ZnUjWsNkX8vCDgX3/
+        PzPJwvIq05AkySpa8TE+lF+gcx/jQvEcekOvevY4HpQeoCH7HseD0n7WndL3OA4UbmS9Oda9nh3KrrLO
+        HJdezwZFNfSeVubRrGZbMZhaaA8domOkT/Ea3aBb9IyK0E4eeZVRVh3qUmdLP9BEjyg2D6g5fIs60r+I
+        hbrqafkQBlV0pu2MqKPq2nFYdtCXnFOiTMc1k8HYRi9KBSJv2/EwCIxeDWVMf3UQ6mXZIE4cC4fQIMsG
+        cedYGAQa6DuNhiHvguPlYN5NY3k+0JGl57/sOF4O5tMs84uugSWvtV/2bJSe1+Vgvs8yyRPa9ngM7ewR
+        A48ng3ERfaIumve4EHnsVabhcTGY1tCmj8GQ2VLWx/+iUvkBLDS9pi+zz9EAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
