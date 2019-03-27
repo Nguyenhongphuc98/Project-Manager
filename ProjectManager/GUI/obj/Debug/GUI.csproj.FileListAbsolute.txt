@@ -42,3 +42,8 @@ E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.exe
 E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.pdb
 E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.Form1.resources
 E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.CardEdit.resources
+E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.LabelEdit.resources
+E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.EditMember.resources
+E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.EditDate.resources
+E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.CopyCard.resources
+E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.MoveCard.resources

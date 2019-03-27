@@ -79,6 +79,7 @@
             this.Controls.Add(this.AddCard);
             this.Name = "List";
             this.Text = "List";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.List_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

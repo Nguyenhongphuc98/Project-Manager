@@ -36,14 +36,14 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.ChangeLabel = new System.Windows.Forms.Button();
+            this.ChangeMember = new System.Windows.Forms.Button();
+            this.MoveTo = new System.Windows.Forms.Button();
+            this.CopyTo = new System.Windows.Forms.Button();
+            this.ChangeDeadline = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -134,68 +134,65 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // ChangeLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "label1";
+            this.ChangeLabel.Location = new System.Drawing.Point(428, 12);
+            this.ChangeLabel.Name = "ChangeLabel";
+            this.ChangeLabel.Size = new System.Drawing.Size(120, 30);
+            this.ChangeLabel.TabIndex = 20;
+            this.ChangeLabel.Text = "Chỉnh sửa nhãn";
+            this.ChangeLabel.UseVisualStyleBackColor = true;
+            this.ChangeLabel.Click += new System.EventHandler(this.ChangeLabel_Click);
             // 
-            // button1
+            // ChangeMember
             // 
-            this.button1.Location = new System.Drawing.Point(428, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 30);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Chỉnh sửa nhãn";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ChangeMember.Location = new System.Drawing.Point(428, 48);
+            this.ChangeMember.Name = "ChangeMember";
+            this.ChangeMember.Size = new System.Drawing.Size(120, 23);
+            this.ChangeMember.TabIndex = 21;
+            this.ChangeMember.Text = "Thay thành viên";
+            this.ChangeMember.UseVisualStyleBackColor = true;
+            this.ChangeMember.Click += new System.EventHandler(this.ChangeMember_Click);
             // 
-            // button2
+            // MoveTo
             // 
-            this.button2.Location = new System.Drawing.Point(428, 48);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 23);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Thay thành viên";
-            this.button2.UseVisualStyleBackColor = true;
+            this.MoveTo.Location = new System.Drawing.Point(428, 77);
+            this.MoveTo.Name = "MoveTo";
+            this.MoveTo.Size = new System.Drawing.Size(120, 23);
+            this.MoveTo.TabIndex = 22;
+            this.MoveTo.Text = "->Di chuyển";
+            this.MoveTo.UseVisualStyleBackColor = true;
+            this.MoveTo.Click += new System.EventHandler(this.MoveTo_Click);
             // 
-            // button3
+            // CopyTo
             // 
-            this.button3.Location = new System.Drawing.Point(428, 77);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 23);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "->Di chuyển";
-            this.button3.UseVisualStyleBackColor = true;
+            this.CopyTo.Location = new System.Drawing.Point(428, 106);
+            this.CopyTo.Name = "CopyTo";
+            this.CopyTo.Size = new System.Drawing.Size(120, 23);
+            this.CopyTo.TabIndex = 23;
+            this.CopyTo.Text = "Sao chép";
+            this.CopyTo.UseVisualStyleBackColor = true;
+            this.CopyTo.Click += new System.EventHandler(this.CopyTo_Click);
             // 
-            // button4
+            // ChangeDeadline
             // 
-            this.button4.Location = new System.Drawing.Point(428, 106);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 23);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Sao chép";
-            this.button4.UseVisualStyleBackColor = true;
+            this.ChangeDeadline.Location = new System.Drawing.Point(428, 135);
+            this.ChangeDeadline.Name = "ChangeDeadline";
+            this.ChangeDeadline.Size = new System.Drawing.Size(120, 49);
+            this.ChangeDeadline.TabIndex = 24;
+            this.ChangeDeadline.Text = "Thay đổi ngày hết hạn";
+            this.ChangeDeadline.UseVisualStyleBackColor = true;
+            this.ChangeDeadline.Click += new System.EventHandler(this.ChangeDeadline_Click);
             // 
-            // button5
+            // Save
             // 
-            this.button5.Location = new System.Drawing.Point(428, 135);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 49);
-            this.button5.TabIndex = 24;
-            this.button5.Text = "Thay đổi ngày hết hạn";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(428, 190);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 23);
-            this.button6.TabIndex = 25;
-            this.button6.Text = "Lưu trữ";
-            this.button6.UseVisualStyleBackColor = true;
+            this.Save.Location = new System.Drawing.Point(428, 190);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(120, 23);
+            this.Save.TabIndex = 25;
+            this.Save.Text = "Lưu trữ";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // SaveButton
             // 
@@ -207,19 +204,27 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(16, 37);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(391, 22);
+            this.textBox1.TabIndex = 27;
+            // 
             // CardEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 225);
             this.ControlBox = false;
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Save);
+            this.Controls.Add(this.ChangeDeadline);
+            this.Controls.Add(this.CopyTo);
+            this.Controls.Add(this.MoveTo);
+            this.Controls.Add(this.ChangeMember);
+            this.Controls.Add(this.ChangeLabel);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -228,7 +233,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
             this.Name = "CardEdit";
             this.Text = "CardEdit";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -250,13 +254,13 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button ChangeLabel;
+        private System.Windows.Forms.Button ChangeMember;
+        private System.Windows.Forms.Button MoveTo;
+        private System.Windows.Forms.Button CopyTo;
+        private System.Windows.Forms.Button ChangeDeadline;
+        private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

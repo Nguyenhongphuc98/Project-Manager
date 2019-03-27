@@ -15,16 +15,21 @@ namespace GUI
         public List()
         {
             InitializeComponent();
-            this.Location = new Point(4000, 500);
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void AddCard_Click(object sender, EventArgs e)
         {
-            Card card = new Card();
+            Card card = new Card(this.Location.X + this.Width, this.Location.Y);
             flowLayoutPanel1.Controls.Add(card);
             flowLayoutPanel1.Height += card.Height;
             this.Height += card.Height;
             AddCard.Location = new Point(AddCard.Location.X, AddCard.Location.Y + card.Height);
+        }
+
+        private void List_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
