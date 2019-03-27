@@ -62,6 +62,12 @@
     <Compile Include="Card.Designer.cs">
       <DependentUpon>Card.cs</DependentUpon>
     </Compile>
+    <Compile Include="CardDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardDetail.Designer.cs">
+      <DependentUpon>CardDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="CardEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Card.resx">
       <DependentUpon>Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardDetail.resx">
+      <DependentUpon>CardDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CardEdit.resx">
       <DependentUpon>CardEdit.cs</DependentUpon>

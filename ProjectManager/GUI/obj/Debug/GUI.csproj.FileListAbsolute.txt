@@ -47,3 +47,4 @@ E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.EditMember.re
 E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.EditDate.resources
 E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.CopyCard.resources
 E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.MoveCard.resources
+E:\Github Project\Project-Manager\ProjectManager\GUI\obj\Debug\GUI.CardDetail.resources
