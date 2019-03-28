@@ -24,8 +24,8 @@ namespace DAL
         public DatabaseAccess()
         {
             this.databaseName = "ProjectManager";
-            this.userName = "thinhnnd";
-            this.passWord = "admin123";
+            this.userName = "projectmanager";
+            this.passWord = "projectmanager";
         }
 
         public bool ConnectToDatabase()
