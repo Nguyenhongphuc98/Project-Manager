@@ -17,10 +17,12 @@ namespace GUI.CustomComponent
         {
             InitializeComponent();
             DrawMode = DrawMode.OwnerDrawFixed;
-            ItemHeight = 60;
+
+            ItemHeight = 60;          
 
             this.Width = 300;
             this.Height = 600;
+
             this.Top = 37;
             this.Left = 800;
         }
@@ -50,11 +52,11 @@ namespace GUI.CustomComponent
                 string itemText = DesignMode ? "ListActivity" : Items[e.Index].ToString();
 
                 Font font = new Font("Times New Roman", 12.0f,FontStyle.Italic);
-               
-                TextRenderer.DrawText(e.Graphics, itemText,font, textRect, e.ForeColor, flags);
+              
+                TextRenderer.DrawText(e.Graphics, itemText,font, textRect, e.ForeColor, TextFormatFlags.WordBreak);
 
                 var textTime = new Rectangle(textRect.X, textRect.Y+30, e.Bounds.Width-60, 20);
-                Activity activity = Items[e.Index] as Activity;
+                ActivityDTO activity = Items[e.Index] as ActivityDTO;
                 string timeText = (activity.TimeCreate).ToString();
                 TextRenderer.DrawText(e.Graphics, timeText, e.Font, textTime, e.ForeColor, flags);
                 e.DrawFocusRectangle();
