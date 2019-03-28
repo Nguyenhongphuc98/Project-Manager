@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class EditDate
+    partial class DateEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -97,7 +97,7 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // EditDate
+            // DateEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -110,8 +110,7 @@
             this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
-            this.Enabled = false;
-            this.Name = "EditDate";
+            this.Name = "DateEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "EditDate";
             this.ResumeLayout(false);

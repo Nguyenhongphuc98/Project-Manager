@@ -72,5 +72,12 @@ namespace GUI
         {
             editButton.BackColor = Color.White;
         }
+
+        private void Card_MouseClick(object sender, MouseEventArgs e)
+        {
+            CardDetail cardDetail = new CardDetail();
+            cardDetail.Show();
+
+        }
     }
 }

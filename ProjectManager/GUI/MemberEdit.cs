@@ -10,18 +10,13 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class EditDate : Form
+    public partial class MemberEdit : Form
     {
-        public EditDate(int X, int Y)
+        public MemberEdit(int X, int Y)
         {
             InitializeComponent();
             this.Location = new Point(X, Y);
             this.StartPosition = FormStartPosition.Manual;
-        }
-
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

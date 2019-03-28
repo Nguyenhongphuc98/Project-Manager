@@ -15,7 +15,7 @@ namespace GUI
         public LabelEdit(int X, int Y)
         {
             InitializeComponent();
-            this.Location = new Point(X, Y - this.Height);
+            this.Location = new Point(X, Y);
             this.StartPosition = FormStartPosition.Manual;
         }
 

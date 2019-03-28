@@ -26,31 +26,19 @@ namespace GUI
 
         private void ChangeLabel_Click(object sender, EventArgs e)
         {
-            LabelEdit labelEdit = new LabelEdit(this.Location.X, this.Location.Y);
+            LabelEdit labelEdit = new LabelEdit(this.Location.X + this.Width - 140, this.Location.Y - 130);
             labelEdit.Show(); 
         }
 
         private void ChangeMember_Click(object sender, EventArgs e)
         {
-            EditMember editMember = new EditMember(this.Location.X + this.Width, this.Location.Y);
+            MemberEdit editMember = new MemberEdit(this.Location.X + this.Width, this.Location.Y);
             editMember.Show();
-        }
-
-        private void MoveTo_Click(object sender, EventArgs e)
-        {
-            MoveCard moveCard = new MoveCard(this.Location.X + this.Width, this.Location.Y);
-            moveCard.Show();
-        }
-
-        private void CopyTo_Click(object sender, EventArgs e)
-        {
-            CopyCard copyCard = new CopyCard(this.Location.X + this.Width, this.Location.Y);
-            copyCard.Show();
         }
 
         private void ChangeDeadline_Click(object sender, EventArgs e)
         {
-            EditDate editDate = new EditDate(this.Location.X + this.Width, this.Location.Y);
+            DateEdit editDate = new DateEdit(this.Location.X + this.Width, this.Location.Y);
             editDate.Show();
         }
 

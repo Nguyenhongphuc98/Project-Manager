@@ -35,10 +35,10 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.editButton = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.memberName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.memberName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -125,6 +125,16 @@
             this.panel1.Size = new System.Drawing.Size(44, 40);
             this.panel1.TabIndex = 6;
             // 
+            // memberName
+            // 
+            this.memberName.AutoSize = true;
+            this.memberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memberName.Location = new System.Drawing.Point(10, 8);
+            this.memberName.Name = "memberName";
+            this.memberName.Size = new System.Drawing.Size(23, 25);
+            this.memberName.TabIndex = 0;
+            this.memberName.Text = "L";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -155,16 +165,6 @@
             this.checkBox1.Text = "0/0";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // memberName
-            // 
-            this.memberName.AutoSize = true;
-            this.memberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memberName.Location = new System.Drawing.Point(10, 8);
-            this.memberName.Name = "memberName";
-            this.memberName.Size = new System.Drawing.Size(23, 25);
-            this.memberName.TabIndex = 0;
-            this.memberName.Text = "L";
-            // 
             // Card
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -181,6 +181,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Card";
             this.Size = new System.Drawing.Size(411, 98);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Card_MouseClick);
             this.MouseEnter += new System.EventHandler(this.Card_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Card_MouseLeave);
             this.MouseHover += new System.EventHandler(this.Card_MouseHover);

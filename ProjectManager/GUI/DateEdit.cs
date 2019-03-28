@@ -10,13 +10,23 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class MoveCard : Form
+    public partial class DateEdit : Form
     {
-        public MoveCard(int X, int Y)
+        public DateEdit(int X, int Y)
         {
             InitializeComponent();
             this.Location = new Point(X, Y);
             this.StartPosition = FormStartPosition.Manual;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
