@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Activity
+    public class ActivityDTO
     {
         int activityId;
         int boardId;
@@ -16,7 +16,7 @@ namespace DTO
         string content;
         DateTime timeCreate;
 
-        public Activity(int activityId, int boardId, int cardId, int listId, int userId, string content, DateTime timeCreate)
+        public ActivityDTO(int activityId, int boardId, int cardId, int listId, int userId, string content, DateTime timeCreate)
         {
             this.activityId = activityId;
             this.boardId = boardId;
@@ -37,7 +37,7 @@ namespace DTO
 
         public override string ToString()
         {
-            return "User "+userId+ " Đã "+ content;
+            return content+"\n";
         }
     }
 }

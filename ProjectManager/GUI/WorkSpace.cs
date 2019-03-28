@@ -1,13 +1,9 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using GUI.CustomComponent;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -16,7 +12,9 @@ namespace GUI
     {
         private List<Harr.HarrProgressBar> _items = new List<Harr.HarrProgressBar>();
         ListSpace listSpace;
+
         ListActivity listActivity;
+        List<ActivityDTO> srcActivity;
 
         public WorkSpace()
         {
@@ -41,6 +39,7 @@ namespace GUI
             this.flowLayoutPanel1.DragDrop += new DragEventHandler(flowLayoutPanel1_DragDrop);
             this.flowLayoutPanel2.DragEnter += new DragEventHandler(flowLayoutPanel1_DragEnter);
             this.flowLayoutPanel2.DragDrop += new DragEventHandler(flowLayoutPanel1_DragDrop);
+
 
             Size s = new Size(flowLayoutPanel1.Width, 50);
             Harr.HarrProgressBar pgb;
@@ -106,24 +105,29 @@ namespace GUI
         public void LoadListActivity()
         {
             listActivity = new ListActivity();
-            List<Activity> srcActivity = new List<Activity>();
-            srcActivity.Add(new Activity(1, 1, 1, 1, 1, "thêm 1 card vào todo", DateTime.Now));
-            srcActivity.Add(new Activity(1, 1, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            srcActivity.Add(new Activity(2, 2, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            srcActivity.Add(new Activity(3, 3, 1, 1, 1, "thêm Quốc Tuyến vào card custom listbox", DateTime.Now));
-            srcActivity.Add(new Activity(4, 4, 1, 1, 1, "xóa card nothing", DateTime.Now));
-            srcActivity.Add(new Activity(5, 5, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            srcActivity.Add(new Activity(5, 6, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            srcActivity.Add(new Activity(5, 7, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            srcActivity.Add(new Activity(5, 99, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            srcActivity.Add(new Activity(5, 78, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            srcActivity.Add(new Activity(5, 15, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
+            listActivity.Size = new Size(0,200);
+
+            srcActivity = new List<ActivityDTO>();
+            //srcActivity.Add(new DTO.ActivityDTO(1, 1, 1, 1, 1, "thêm 1 card vào todo", DateTime.Now));
+            //srcActivity.Add(new DTO.ActivityDTO(1, 1, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
+            //srcActivity.Add(new DTO.ActivityDTO(2, 2, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
+            //srcActivity.Add(new DTO.ActivityDTO(3, 3, 1, 1, 1, "thêm Quốc Tuyến vào card custom listbox", DateTime.Now));
+            //srcActivity.Add(new DTO.ActivityDTO(4, 4, 1, 1, 1, "xóa card nothing", DateTime.Now));
+            ActivityBLL abll = new ActivityBLL();
+            srcActivity = abll.GetAllActivity();
+            
 
             listActivity.DataSource = srcActivity;
 
             this.listSpace.Controls.Add(listActivity);
-            //listActivity.Show();
+        }
 
+        private void btnNotify_Click(object sender, EventArgs e)
+        {
+            if(this.listActivity.Size.Width==0)
+                this.listActivity.Size = new Size(300, 600);
+            else
+                this.listActivity.Size = new Size(0, 600);
         }
     }
 }
