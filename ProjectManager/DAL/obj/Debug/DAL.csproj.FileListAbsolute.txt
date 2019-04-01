@@ -1,0 +1,13 @@
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\bin\Debug\DAL.dll
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\bin\Debug\DAL.pdb
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\bin\Debug\DTO.dll
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\bin\Debug\Google.Protobuf.dll
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\bin\Debug\MySql.Data.dll
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\bin\Debug\DTO.pdb
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\bin\Debug\Google.Protobuf.xml
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\bin\Debug\MySql.Data.xml
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\obj\Debug\DAL.dll
+D:\IT\2019\Bảo trì\Project-Manager\ProjectManager\DAL\obj\Debug\DAL.pdb
