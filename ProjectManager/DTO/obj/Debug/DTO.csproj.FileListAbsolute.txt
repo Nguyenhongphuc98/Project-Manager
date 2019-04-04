@@ -1,0 +1,6 @@
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DTO\bin\Debug\DTO.dll
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DTO\bin\Debug\DTO.pdb
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DTO\obj\Debug\DTO.dll
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DTO\obj\Debug\DTO.pdb
