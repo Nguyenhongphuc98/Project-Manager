@@ -1,0 +1,13 @@
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\bin\Debug\DAL.dll
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\bin\Debug\DAL.pdb
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\bin\Debug\DTO.dll
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\bin\Debug\MySql.Data.dll
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\bin\Debug\DTO.pdb
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\bin\Debug\MySql.Data.xml
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\obj\Debug\DAL.dll
+C:\Users\Corazon\Downloads\Compressed\Project-Manager-Corazon-dev\ProjectManager\DAL\obj\Debug\DAL.pdb
