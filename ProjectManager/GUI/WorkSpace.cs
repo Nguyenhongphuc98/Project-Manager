@@ -22,6 +22,7 @@ namespace GUI
             LoadListSpace();
             LoadBoard();
             LoadListActivity();
+            LoadCard();
         }
 
         public void LoadListSpace()
@@ -61,6 +62,13 @@ namespace GUI
             pgb.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             this._items.Add(pgb);
             this.flowLayoutPanel2.Controls.Add(pgb);
+        }
+
+        public void LoadCard()
+        {
+            Card c = new Card(600, 100);
+            this.listSpace.Controls.Add(c);
+            c.Show();
         }
 
         private void flowLayoutPanel1_DragDrop(object sender, DragEventArgs e)

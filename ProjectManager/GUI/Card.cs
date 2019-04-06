@@ -13,8 +13,12 @@ namespace GUI
 {
     public partial class Card : UserControl
     {
+        //====================================================
         int oX;
         int oY;
+
+        //====================================================
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -37,7 +41,12 @@ namespace GUI
             oX = X;
             oY = Y;
             this.Region = GetRoundedRegion(this.Width, this.Height);
+
+            this.Location = new Point(oX, oY);
+            
         }
+
+        //============================================================
 
         private void Card_MouseEnter(object sender, EventArgs e)
         {
@@ -77,7 +86,12 @@ namespace GUI
         {
             CardDetail cardDetail = new CardDetail();
             cardDetail.Show();
+        }
 
+        private void Card_MouseClick(object sender, EventArgs e)
+        {
+            CardDetail cardDetail = new CardDetail();
+            cardDetail.Show();
         }
     }
 }
