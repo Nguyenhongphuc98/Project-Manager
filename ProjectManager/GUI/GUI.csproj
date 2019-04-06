@@ -57,11 +57,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Card.Designer.cs">
+      <DependentUpon>Card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardDetail.Designer.cs">
+      <DependentUpon>CardDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardEdit.Designer.cs">
+      <DependentUpon>CardEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomComponent\ListActivity.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CustomComponent\ListActivity.Designer.cs">
       <DependentUpon>ListActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DateEdit.Designer.cs">
+      <DependentUpon>DateEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -72,11 +96,23 @@
     <Compile Include="HarrProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="LabelEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabelEdit.Designer.cs">
+      <DependentUpon>LabelEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListSpace.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListSpace.Designer.cs">
       <DependentUpon>ListSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberEdit.Designer.cs">
+      <DependentUpon>MemberEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,8 +122,26 @@
     <Compile Include="WorkSpace.Designer.cs">
       <DependentUpon>WorkSpace.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Card.resx">
+      <DependentUpon>Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardDetail.resx">
+      <DependentUpon>CardDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardEdit.resx">
+      <DependentUpon>CardEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateEdit.resx">
+      <DependentUpon>DateEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabelEdit.resx">
+      <DependentUpon>LabelEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListSpace.resx">
       <DependentUpon>ListSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberEdit.resx">
+      <DependentUpon>MemberEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -125,14 +179,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="src\097-512.png" />
+    <Content Include="src\57b4687d8b.png" />
+    <Content Include="src\61-512.png" />
+    <Content Include="src\alarm_alert_clock_event_history_schedule_time_watch-512.png" />
     <Content Include="src\bg.png" />
     <Content Include="src\board.png" />
     <Content Include="src\Bunifu_UI_v1.52.dll" />
+    <Content Include="src\Circle-icon.png" />
     <Content Include="src\home.png" />
     <Content Include="src\infor.png" />
     <Content Include="src\message.png" />
     <Content Include="src\notify.png" />
     <Content Include="src\plus.png" />
+    <Content Include="src\preview_list-512.png" />
     <Content Include="src\search.png" />
     <Content Include="src\star.png" />
     <Content Include="src\user.png" />
