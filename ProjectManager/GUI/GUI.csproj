@@ -75,6 +75,12 @@
     <Compile Include="CardEdit.Designer.cs">
       <DependentUpon>CardEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomComponent\Create.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomComponent\Create.Designer.cs">
+      <DependentUpon>Create.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomComponent\ListActivity.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CardEdit.resx">
       <DependentUpon>CardEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomComponent\Create.resx">
+      <DependentUpon>Create.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DateEdit.resx">
       <DependentUpon>DateEdit.cs</DependentUpon>

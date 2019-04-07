@@ -12,6 +12,7 @@ namespace GUI
     {
         private List<Harr.HarrProgressBar> _items = new List<Harr.HarrProgressBar>();
         ListSpace listSpace;
+        CustomComponent.Create create;
 
         ListActivity listActivity;
         List<ActivityDTO> srcActivity;
@@ -19,10 +20,14 @@ namespace GUI
         public WorkSpace()
         {
             InitializeComponent();
+            listSpace = new ListSpace();
+            listSpace.TopLevel = false;
+
             LoadListSpace();
             LoadBoard();
             LoadListActivity();
             LoadCard();
+            LoadCreate();
 
             //TestInsertFunction();
         }
@@ -39,9 +44,6 @@ namespace GUI
 
         public void LoadListSpace()
         {
-            listSpace = new ListSpace();
-            listSpace.TopLevel = false;
-
             this.pnWorkSpace.Controls.Add(listSpace);
             listSpace.Show();
         }
@@ -78,9 +80,16 @@ namespace GUI
 
         public void LoadCard()
         {
-            Card c = new Card(600, 100);
+            Card c = new Card(500, 100);
             this.listSpace.Controls.Add(c);
             c.Show();
+        }
+
+        public void LoadCreate()
+        {
+            create = new Create(this.listSpace.Width);
+            this.listSpace.Controls.Add(create);
+            this.create.Hide();
         }
 
         private void flowLayoutPanel1_DragDrop(object sender, DragEventArgs e)
@@ -150,16 +159,33 @@ namespace GUI
                 this.listActivity.Size = new Size(0, 600);
         }
 
+        bool clickInfor = false;
         private void btnInfor_Click(object sender, EventArgs e)
         {
-            this.pnWorkSpace.Controls.Clear();
-            string path = Application.StartupPath;
-            int index = path.IndexOf("bin");
-            path = path.Substring(0, index);
-            path +="src\\infor_team.png";
+            clickInfor = !clickInfor;
+            if (clickInfor)
+            {
+                this.pnWorkSpace.Controls.Clear();
+                string path = Application.StartupPath;
+                int index = path.IndexOf("bin");
+                path = path.Substring(0, index);
+                path += "src\\infor_team.png";
 
-            this.pnWorkSpace.BackgroundImage = Image.FromFile(path);
-            this.pnWorkSpace.BackgroundImageLayout = ImageLayout.Stretch;
+                this.pnWorkSpace.BackgroundImage = Image.FromFile(path);
+                this.pnWorkSpace.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            else
+                LoadListSpace();
+        }
+
+        bool clickPlus = false;
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            clickPlus = !clickPlus;
+            if (clickPlus)
+                create.Show();
+            else
+                create.Hide();
         }
     }
 }
