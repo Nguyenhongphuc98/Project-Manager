@@ -44,6 +44,7 @@
             this.PinkButton.Size = new System.Drawing.Size(41, 23);
             this.PinkButton.TabIndex = 11;
             this.PinkButton.UseVisualStyleBackColor = false;
+            this.PinkButton.Click += new System.EventHandler(this.PinkButton_Click);
             // 
             // BlueButton
             // 
@@ -53,6 +54,7 @@
             this.BlueButton.Size = new System.Drawing.Size(41, 23);
             this.BlueButton.TabIndex = 10;
             this.BlueButton.UseVisualStyleBackColor = false;
+            this.BlueButton.Click += new System.EventHandler(this.BlueButton_Click);
             // 
             // OrangeButton
             // 
@@ -62,6 +64,7 @@
             this.OrangeButton.Size = new System.Drawing.Size(41, 23);
             this.OrangeButton.TabIndex = 9;
             this.OrangeButton.UseVisualStyleBackColor = false;
+            this.OrangeButton.Click += new System.EventHandler(this.OrangeButton_Click);
             // 
             // GreenButton
             // 
@@ -71,6 +74,7 @@
             this.GreenButton.Size = new System.Drawing.Size(41, 23);
             this.GreenButton.TabIndex = 8;
             this.GreenButton.UseVisualStyleBackColor = false;
+            this.GreenButton.Click += new System.EventHandler(this.GreenButton_Click);
             // 
             // YellowButton
             // 
@@ -80,6 +84,7 @@
             this.YellowButton.Size = new System.Drawing.Size(41, 23);
             this.YellowButton.TabIndex = 7;
             this.YellowButton.UseVisualStyleBackColor = false;
+            this.YellowButton.Click += new System.EventHandler(this.YellowButton_Click);
             // 
             // RedButton
             // 
@@ -89,6 +94,7 @@
             this.RedButton.Size = new System.Drawing.Size(41, 23);
             this.RedButton.TabIndex = 6;
             this.RedButton.UseVisualStyleBackColor = false;
+            this.RedButton.Click += new System.EventHandler(this.RedButton_Click);
             // 
             // LabelEdit
             // 

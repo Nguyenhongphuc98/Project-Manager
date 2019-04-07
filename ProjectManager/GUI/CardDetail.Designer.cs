@@ -94,6 +94,7 @@
             this.DueDate.TabIndex = 51;
             this.DueDate.Text = "Ngày hết hạn";
             this.DueDate.UseVisualStyleBackColor = true;
+            this.DueDate.Click += new System.EventHandler(this.DueDate_Click);
             // 
             // button4
             // 
@@ -112,6 +113,7 @@
             this.EditLabel.TabIndex = 49;
             this.EditLabel.Text = "Nhãn";
             this.EditLabel.UseVisualStyleBackColor = true;
+            this.EditLabel.Click += new System.EventHandler(this.EditLabel_Click);
             // 
             // AddMem
             // 
@@ -121,6 +123,7 @@
             this.AddMem.TabIndex = 48;
             this.AddMem.Text = "Thành viên";
             this.AddMem.UseVisualStyleBackColor = true;
+            this.AddMem.Click += new System.EventHandler(this.AddMem_Click);
             // 
             // SaveButton
             // 
@@ -130,6 +133,7 @@
             this.SaveButton.TabIndex = 47;
             this.SaveButton.Text = "Lưu";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // textBox3
             // 

@@ -66,6 +66,7 @@
             this.SaveButton.TabIndex = 40;
             this.SaveButton.Text = "Lưu";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // Save
             // 
@@ -75,6 +76,7 @@
             this.Save.TabIndex = 39;
             this.Save.Text = "Lưu trữ";
             this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // ChangeDeadline
             // 
@@ -84,6 +86,7 @@
             this.ChangeDeadline.TabIndex = 38;
             this.ChangeDeadline.Text = "Thay đổi ngày hết hạn";
             this.ChangeDeadline.UseVisualStyleBackColor = true;
+            this.ChangeDeadline.Click += new System.EventHandler(this.ChangeDeadline_Click);
             // 
             // ChangeMember
             // 
@@ -93,6 +96,7 @@
             this.ChangeMember.TabIndex = 37;
             this.ChangeMember.Text = "Thay thành viên";
             this.ChangeMember.UseVisualStyleBackColor = true;
+            this.ChangeMember.Click += new System.EventHandler(this.ChangeMember_Click);
             // 
             // ChangeLabel
             // 
@@ -102,6 +106,7 @@
             this.ChangeLabel.TabIndex = 36;
             this.ChangeLabel.Text = "Chỉnh sửa nhãn";
             this.ChangeLabel.UseVisualStyleBackColor = true;
+            this.ChangeLabel.Click += new System.EventHandler(this.ChangeLabel_Click);
             // 
             // checkBox1
             // 

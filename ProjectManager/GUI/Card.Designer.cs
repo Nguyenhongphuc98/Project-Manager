@@ -55,10 +55,10 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.memberName);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(268, 45);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(357, 55);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(33, 32);
+            this.panel1.Size = new System.Drawing.Size(44, 39);
             this.panel1.TabIndex = 17;
             // 
             // memberName
@@ -66,20 +66,19 @@
             this.memberName.AutoSize = true;
             this.memberName.BackColor = System.Drawing.SystemColors.Control;
             this.memberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memberName.Location = new System.Drawing.Point(8, 6);
-            this.memberName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.memberName.Location = new System.Drawing.Point(11, 7);
             this.memberName.Name = "memberName";
-            this.memberName.Size = new System.Drawing.Size(18, 20);
+            this.memberName.Size = new System.Drawing.Size(23, 25);
             this.memberName.TabIndex = 0;
             this.memberName.Text = "L";
             // 
             // editButton
             // 
             this.editButton.Image = ((System.Drawing.Image)(resources.GetObject("editButton.Image")));
-            this.editButton.Location = new System.Drawing.Point(280, 3);
-            this.editButton.Margin = new System.Windows.Forms.Padding(2);
+            this.editButton.Location = new System.Drawing.Point(373, 4);
+            this.editButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(21, 20);
+            this.editButton.Size = new System.Drawing.Size(28, 25);
             this.editButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.editButton.TabIndex = 16;
             this.editButton.TabStop = false;
@@ -92,10 +91,10 @@
             // 
             this.pictureBox4.Enabled = false;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(167, 45);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Location = new System.Drawing.Point(223, 55);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(22, 21);
+            this.pictureBox4.Size = new System.Drawing.Size(29, 26);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
@@ -104,10 +103,10 @@
             // 
             this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(134, 45);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(179, 55);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox3.Size = new System.Drawing.Size(27, 25);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
@@ -116,10 +115,10 @@
             // 
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(44, 45);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(59, 55);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(22, 21);
+            this.pictureBox2.Size = new System.Drawing.Size(29, 26);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
@@ -128,38 +127,38 @@
             // 
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(8, 45);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 55);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 21);
+            this.pictureBox1.Size = new System.Drawing.Size(29, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
             // CardName
             // 
-            this.CardName.Location = new System.Drawing.Point(8, 15);
-            this.CardName.Margin = new System.Windows.Forms.Padding(2);
+            this.CardName.Location = new System.Drawing.Point(11, 18);
+            this.CardName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CardName.Name = "CardName";
-            this.CardName.Size = new System.Drawing.Size(244, 20);
+            this.CardName.Size = new System.Drawing.Size(324, 22);
             this.CardName.TabIndex = 22;
             // 
             // CardLabel
             // 
-            this.CardLabel.Location = new System.Drawing.Point(8, 3);
-            this.CardLabel.Margin = new System.Windows.Forms.Padding(2);
+            this.CardLabel.Location = new System.Drawing.Point(11, 4);
+            this.CardLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CardLabel.Name = "CardLabel";
-            this.CardLabel.Size = new System.Drawing.Size(116, 8);
+            this.CardLabel.Size = new System.Drawing.Size(155, 10);
             this.CardLabel.TabIndex = 21;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(213, 48);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox1.Location = new System.Drawing.Point(284, 59);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(43, 17);
+            this.checkBox1.Size = new System.Drawing.Size(50, 21);
             this.checkBox1.TabIndex = 20;
             this.checkBox1.Text = "0/0";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -167,10 +166,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(190, 50);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(253, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
+            this.label3.Size = new System.Drawing.Size(16, 17);
             this.label3.TabIndex = 19;
             this.label3.Text = "0";
             // 
@@ -178,16 +176,15 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(68, 47);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(91, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 17);
+            this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 18;
             this.label2.Text = "datetime";
             // 
             // Card
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.editButton);
@@ -200,10 +197,10 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Card";
-            this.Size = new System.Drawing.Size(308, 80);
-            this.Click += new System.EventHandler(this.Card_MouseClick);
+            this.Size = new System.Drawing.Size(411, 98);
+            this.Load += new System.EventHandler(this.Card_Load);
             this.MouseEnter += new System.EventHandler(this.Card_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Card_MouseLeave);
             this.MouseHover += new System.EventHandler(this.Card_MouseHover);

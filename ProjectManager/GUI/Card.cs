@@ -60,12 +60,6 @@ namespace GUI
             //editButton.Visible = false;
         }
 
-        private void Card_MouseHover(object sender, EventArgs e)
-        {
-            //this.BackColor = System.Drawing.Color.DarkGray;
-            //editButton.Visible = true;
-        }
-
         private void editButton_Click(object sender, EventArgs e)
         {
             CardEdit cardEdit = new CardEdit(this.oX, this.oY + this.Location.Y);
@@ -82,13 +76,19 @@ namespace GUI
             editButton.BackColor = Color.White;
         }
 
-        private void Card_MouseClick(object sender, MouseEventArgs e)
-        {
-            CardDetail cardDetail = new CardDetail();
-            cardDetail.Show();
-        }
+        //private void Card_MouseClick(object sender, MouseEventArgs e)
+        //{
+        //    CardDetail cardDetail = new CardDetail();
+        //    cardDetail.Show();
+        //}
 
-        private void Card_MouseClick(object sender, EventArgs e)
+        //private void Card_MouseClick(object sender, EventArgs e)
+        //{
+        //    CardDetail cardDetail = new CardDetail();
+        //    cardDetail.Show();
+        //}
+
+        private void Card_Load(object sender, EventArgs e)
         {
             CardDetail cardDetail = new CardDetail();
             cardDetail.Show();
