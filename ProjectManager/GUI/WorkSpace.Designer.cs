@@ -216,6 +216,7 @@
             this.btnInfor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfor.Textcolor = System.Drawing.Color.White;
             this.btnInfor.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfor.Click += new System.EventHandler(this.btnInfor_Click);
             // 
             // btnNotify
             // 

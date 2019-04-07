@@ -24,12 +24,12 @@ namespace GUI
             LoadListActivity();
             LoadCard();
 
-            TestInsertFunction();
+            //TestInsertFunction();
         }
 
         public void TestInsertFunction()
         {
-            BoardBLL boardBLL = new BoardBLL();
+           BoardBLL boardBLL = new BoardBLL();
            if(boardBLL.InsertBoard(2, "Project Test from client", 1, false, "NULL")==true)
                 MessageBox.Show("Success insert");
            else
@@ -148,6 +148,18 @@ namespace GUI
                 this.listActivity.Size = new Size(300, 600);
             else
                 this.listActivity.Size = new Size(0, 600);
+        }
+
+        private void btnInfor_Click(object sender, EventArgs e)
+        {
+            this.pnWorkSpace.Controls.Clear();
+            string path = Application.StartupPath;
+            int index = path.IndexOf("bin");
+            path = path.Substring(0, index);
+            path +="src\\infor_team.png";
+
+            this.pnWorkSpace.BackgroundImage = Image.FromFile(path);
+            this.pnWorkSpace.BackgroundImageLayout = ImageLayout.Stretch;
         }
     }
 }
