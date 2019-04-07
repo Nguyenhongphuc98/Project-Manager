@@ -76,10 +76,9 @@ namespace GUI
             editButton.BackColor = Color.White;
         }
 
-        //private void Card_MouseClick(object sender, MouseEventArgs e)
+        //private void Card_MouseHover(object sender, MouseEventArgs e)
         //{
-        //    CardDetail cardDetail = new CardDetail();
-        //    cardDetail.Show();
+
         //}
 
         //private void Card_MouseClick(object sender, EventArgs e)
@@ -88,7 +87,7 @@ namespace GUI
         //    cardDetail.Show();
         //}
 
-        private void Card_Load(object sender, EventArgs e)
+        private void Card_MouseClick(object sender, MouseEventArgs e)
         {
             CardDetail cardDetail = new CardDetail();
             cardDetail.Show();

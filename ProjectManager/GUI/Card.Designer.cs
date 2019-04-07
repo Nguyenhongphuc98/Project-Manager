@@ -200,10 +200,9 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Card";
             this.Size = new System.Drawing.Size(411, 98);
-            this.Load += new System.EventHandler(this.Card_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Card_MouseClick);
             this.MouseEnter += new System.EventHandler(this.Card_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Card_MouseLeave);
-            this.MouseHover += new System.EventHandler(this.Card_MouseHover);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editButton)).EndInit();
