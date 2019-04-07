@@ -75,6 +75,7 @@
     <Compile Include="CardEdit.Designer.cs">
       <DependentUpon>CardEdit.cs</DependentUpon>
     </Compile>
+
     <Compile Include="CustomComponent\BoardCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="CustomComponent\Create.Designer.cs">
       <DependentUpon>Create.cs</DependentUpon>
+
+    <Compile Include="CustomBoardUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomBoardUI.Designer.cs">
+      <DependentUpon>CustomBoardUI.cs</DependentUpon>
+
     </Compile>
     <Compile Include="CustomComponent\ListActivity.cs">
       <SubType>Component</SubType>
@@ -146,6 +154,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamUI.Designer.cs">
+      <DependentUpon>TeamUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkSpace.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +175,7 @@
     <EmbeddedResource Include="CardEdit.resx">
       <DependentUpon>CardEdit.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="CustomComponent\BoardCreate.resx">
       <DependentUpon>BoardCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +193,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomComponent\ListUI.resx">
       <DependentUpon>ListUI.cs</DependentUpon>
+
+    <EmbeddedResource Include="CustomBoardUI.resx">
+      <DependentUpon>CustomBoardUI.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="DateEdit.resx">
       <DependentUpon>DateEdit.cs</DependentUpon>
@@ -200,6 +219,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TeamUI.resx">
+      <DependentUpon>TeamUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WorkSpace.resx">
       <DependentUpon>WorkSpace.cs</DependentUpon>
     </EmbeddedResource>
