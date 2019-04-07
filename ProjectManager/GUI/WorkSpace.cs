@@ -23,6 +23,18 @@ namespace GUI
             LoadBoard();
             LoadListActivity();
             LoadCard();
+
+            TestInsertFunction();
+        }
+
+        public void TestInsertFunction()
+        {
+            BoardBLL boardBLL = new BoardBLL();
+           if(boardBLL.InsertBoard(2, "Project Test from client", 1, false, "NULL")==true)
+                MessageBox.Show("Success insert");
+           else
+                MessageBox.Show("Can't insert");
+
         }
 
         public void LoadListSpace()
