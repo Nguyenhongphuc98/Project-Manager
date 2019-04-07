@@ -189,6 +189,7 @@
     <Content Include="src\Circle-icon.png" />
     <Content Include="src\home.png" />
     <Content Include="src\infor.png" />
+    <Content Include="src\infor_team.png" />
     <Content Include="src\message.png" />
     <Content Include="src\notify.png" />
     <Content Include="src\plus.png" />
