@@ -8,7 +8,7 @@ using DTO;
 
 namespace DAL
 {
-    class BoardDAL :DatabaseAccess
+    public class BoardDAL :DatabaseAccess
     {
 
 
@@ -68,12 +68,12 @@ namespace DAL
             return null;
         }
 
-        public bool InsertBoard(int boardId, int groupId, int index, string title ,
-                int mode, bool star , String background )
+        public bool InsertBoard(int groupId, int index, string title ,
+                int mode, int star , String background )
         {
             this.ConnectToDatabase();
 
-            string Query = "insert into BOARD values('" + boardId + "','" + groupId + "','" + index + "','" + title + "','" + mode+ "','" + star + "','" + background +"');";
+            string Query = "insert into BOARD(GROUP_ID,INDEX_BOARD,TITLE,MODE,STAR,BACKGROUND) values('" + groupId + "','" + index + "','" + title + "','" + mode+ "','" + star + "','" + background +"');";
             
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
@@ -81,6 +81,23 @@ namespace DAL
             command.ExecuteNonQuery();
             
             
+            this.Close();
+            return true;
+        }
+
+        public bool InsertBoard(int index, string title,
+                int mode, int star, String background)
+        {
+            this.ConnectToDatabase();
+
+            string Query = "insert into BOARD(INDEX_BOARD,TITLE,MODE,STAR,BACKGROUND) values('"  + index + "','" + title + "','" + mode + "','" + star + "','" + background + "');";
+
+            //This is command class which will handle the query and connection object.  
+            MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
+
+            command.ExecuteNonQuery();
+
+
             this.Close();
             return true;
         }
