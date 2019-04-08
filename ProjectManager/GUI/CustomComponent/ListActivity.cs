@@ -13,6 +13,8 @@ namespace GUI.CustomComponent
 {
     public partial class ListActivity : ListBox
     {
+        int maxWidth = 300;
+
         public ListActivity()
         {
             InitializeComponent();
@@ -32,6 +34,19 @@ namespace GUI.CustomComponent
             container.Add(this);
 
             InitializeComponent();
+
+        }
+
+        //==========================================================
+        public void MakeShow()
+        {
+            timerShow.Start();
+            //this.Width = 300;
+        }
+
+        public void MakeHide()
+        {
+            this.Width = 0;
         }
 
         protected override void OnDrawItem(DrawItemEventArgs e)
@@ -55,12 +70,27 @@ namespace GUI.CustomComponent
               
                 TextRenderer.DrawText(e.Graphics, itemText,font, textRect, e.ForeColor, TextFormatFlags.WordBreak);
 
-                var textTime = new Rectangle(textRect.X, textRect.Y+30, e.Bounds.Width-60, 20);
+                var textTime = new Rectangle(textRect.X+110, textRect.Y+35, e.Bounds.Width-60, 20);
                 ActivityDTO activity = Items[e.Index] as ActivityDTO;
                 string timeText = (activity.TimeCreate).ToString();
-                TextRenderer.DrawText(e.Graphics, timeText, e.Font, textTime, e.ForeColor, flags);
+                TextRenderer.DrawText(e.Graphics, timeText, e.Font, textTime, Color.Green, flags);
                 e.DrawFocusRectangle();
             }
+        }
+
+        private void timerShow_Tick(object sender, EventArgs e)
+        {
+            if (this.Width < maxWidth)
+            {
+                this.Width += 10;
+                this.Refresh();
+            }
+            else
+            {
+                this.timerShow.Stop();
+
+            }
+
         }
     }
 }
