@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GroupDTO.cs" />
+    <Compile Include="CommentDTO.cs" />
+    <Compile Include="GroupUserDTO.cs" />
+    <Compile Include="UserDTO.cs" />
+    <Compile Include="ListDTO.cs" />
     <Compile Include="ActivityDTO.cs" />
     <Compile Include="Board.cs" />
     <Compile Include="CardDTO.cs" />
