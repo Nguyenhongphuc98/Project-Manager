@@ -12,6 +12,8 @@ namespace GUI.CustomComponent
 {
     public partial class Create : UserControl
     {
+        int maxWidth;
+
         public Create()
         {
             InitializeComponent();
@@ -22,14 +24,31 @@ namespace GUI.CustomComponent
         public Create(int width)
         {
             InitializeComponent();
+
             this.Top = 40;
-            this.Left = width - this.Width-30;
+            maxWidth = 265;
+            this.Left = width - maxWidth - 25;
+            this.Width = 0;
         }
 
         private void pnCreateBoard_MouseHover(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(41, 143, 202);
         }
+
+        //====================================================================
+        public void MakeShow()
+        {
+
+            timeShow.Start();
+        }
+
+        //====================================================================
+        public void MakeHide()
+        {
+            this.Width = 0;
+        }
+        
 
         //====================================================================
 
@@ -153,6 +172,18 @@ namespace GUI.CustomComponent
         private void lbDesAddMem_MouseLeave(object sender, EventArgs e)
         {
             MouseLeaveAddMem();
+        }
+
+        //====================================================================
+
+        private void timeShow_Tick(object sender, EventArgs e)
+        {
+                if (this.Width < maxWidth)
+                    this.Width+=8;
+                else
+                {
+                    timeShow.Stop();           
+                }
         }
     }
 }

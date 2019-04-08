@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbTitle = new System.Windows.Forms.Label();
             this.lb_ = new System.Windows.Forms.Label();
             this.pnCreateBoard = new System.Windows.Forms.Panel();
-            this.lbCreateBoard = new System.Windows.Forms.Label();
             this.lbDesCreateBoard = new System.Windows.Forms.Label();
+            this.lbCreateBoard = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbDesCreateTeam = new System.Windows.Forms.Label();
             this.lbCreateTeam = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbDesAddMem = new System.Windows.Forms.Label();
             this.lbAddMem = new System.Windows.Forms.Label();
+            this.timeShow = new System.Windows.Forms.Timer(this.components);
             this.pnCreateBoard.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -72,22 +74,9 @@
             this.pnCreateBoard.Controls.Add(this.lbCreateBoard);
             this.pnCreateBoard.Location = new System.Drawing.Point(4, 40);
             this.pnCreateBoard.Name = "pnCreateBoard";
-            this.pnCreateBoard.Size = new System.Drawing.Size(258, 77);
+            this.pnCreateBoard.Size = new System.Drawing.Size(262, 77);
             this.pnCreateBoard.TabIndex = 2;
             this.pnCreateBoard.MouseHover += new System.EventHandler(this.pnCreateBoard_MouseHover);
-            // 
-            // lbCreateBoard
-            // 
-            this.lbCreateBoard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbCreateBoard.Font = new System.Drawing.Font("Minion Web", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCreateBoard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(57)))), ((int)(((byte)(77)))));
-            this.lbCreateBoard.Location = new System.Drawing.Point(0, 0);
-            this.lbCreateBoard.Name = "lbCreateBoard";
-            this.lbCreateBoard.Size = new System.Drawing.Size(258, 23);
-            this.lbCreateBoard.TabIndex = 0;
-            this.lbCreateBoard.Text = "Create Board";
-            this.lbCreateBoard.MouseLeave += new System.EventHandler(this.lbCreateBoard_MouseLeave);
-            this.lbCreateBoard.MouseHover += new System.EventHandler(this.lbCreateBoard_MouseHover);
             // 
             // lbDesCreateBoard
             // 
@@ -96,12 +85,25 @@
             this.lbDesCreateBoard.ForeColor = System.Drawing.Color.Gray;
             this.lbDesCreateBoard.Location = new System.Drawing.Point(0, 23);
             this.lbDesCreateBoard.Name = "lbDesCreateBoard";
-            this.lbDesCreateBoard.Size = new System.Drawing.Size(258, 54);
+            this.lbDesCreateBoard.Size = new System.Drawing.Size(262, 54);
             this.lbDesCreateBoard.TabIndex = 1;
             this.lbDesCreateBoard.Text = "A board is made up of cards ordered on lists. Use it to manage projects, track in" +
     "formation, or organize anything.";
             this.lbDesCreateBoard.MouseLeave += new System.EventHandler(this.lbDesCreateBoard_MouseLeave);
             this.lbDesCreateBoard.MouseHover += new System.EventHandler(this.lbDesCreateBoard_MouseHover);
+            // 
+            // lbCreateBoard
+            // 
+            this.lbCreateBoard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbCreateBoard.Font = new System.Drawing.Font("Minion Web", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCreateBoard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(57)))), ((int)(((byte)(77)))));
+            this.lbCreateBoard.Location = new System.Drawing.Point(0, 0);
+            this.lbCreateBoard.Name = "lbCreateBoard";
+            this.lbCreateBoard.Size = new System.Drawing.Size(262, 23);
+            this.lbCreateBoard.TabIndex = 0;
+            this.lbCreateBoard.Text = "Create Board";
+            this.lbCreateBoard.MouseLeave += new System.EventHandler(this.lbCreateBoard_MouseLeave);
+            this.lbCreateBoard.MouseHover += new System.EventHandler(this.lbCreateBoard_MouseHover);
             // 
             // panel2
             // 
@@ -109,7 +111,7 @@
             this.panel2.Controls.Add(this.lbCreateTeam);
             this.panel2.Location = new System.Drawing.Point(3, 123);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(258, 69);
+            this.panel2.Size = new System.Drawing.Size(263, 69);
             this.panel2.TabIndex = 2;
             // 
             // lbDesCreateTeam
@@ -119,7 +121,7 @@
             this.lbDesCreateTeam.ForeColor = System.Drawing.Color.Gray;
             this.lbDesCreateTeam.Location = new System.Drawing.Point(0, 23);
             this.lbDesCreateTeam.Name = "lbDesCreateTeam";
-            this.lbDesCreateTeam.Size = new System.Drawing.Size(258, 46);
+            this.lbDesCreateTeam.Size = new System.Drawing.Size(263, 46);
             this.lbDesCreateTeam.TabIndex = 1;
             this.lbDesCreateTeam.Text = "A team is a group of boards and people. Use it to organize your company, side hus" +
     "tle, family, or friends.";
@@ -133,7 +135,7 @@
             this.lbCreateTeam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(57)))), ((int)(((byte)(77)))));
             this.lbCreateTeam.Location = new System.Drawing.Point(0, 0);
             this.lbCreateTeam.Name = "lbCreateTeam";
-            this.lbCreateTeam.Size = new System.Drawing.Size(258, 23);
+            this.lbCreateTeam.Size = new System.Drawing.Size(263, 23);
             this.lbCreateTeam.TabIndex = 0;
             this.lbCreateTeam.Text = "Create Team";
             this.lbCreateTeam.MouseLeave += new System.EventHandler(this.lbCreateTeam_MouseLeave);
@@ -145,7 +147,7 @@
             this.panel3.Controls.Add(this.lbAddMem);
             this.panel3.Location = new System.Drawing.Point(0, 198);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(258, 59);
+            this.panel3.Size = new System.Drawing.Size(266, 59);
             this.panel3.TabIndex = 2;
             // 
             // lbDesAddMem
@@ -155,7 +157,7 @@
             this.lbDesAddMem.ForeColor = System.Drawing.Color.Gray;
             this.lbDesAddMem.Location = new System.Drawing.Point(0, 23);
             this.lbDesAddMem.Name = "lbDesAddMem";
-            this.lbDesAddMem.Size = new System.Drawing.Size(258, 36);
+            this.lbDesAddMem.Size = new System.Drawing.Size(266, 36);
             this.lbDesAddMem.TabIndex = 1;
             this.lbDesAddMem.Text = "Add members to work together better";
             this.lbDesAddMem.MouseLeave += new System.EventHandler(this.lbDesAddMem_MouseLeave);
@@ -168,11 +170,16 @@
             this.lbAddMem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(57)))), ((int)(((byte)(77)))));
             this.lbAddMem.Location = new System.Drawing.Point(0, 0);
             this.lbAddMem.Name = "lbAddMem";
-            this.lbAddMem.Size = new System.Drawing.Size(258, 23);
+            this.lbAddMem.Size = new System.Drawing.Size(266, 23);
             this.lbAddMem.TabIndex = 0;
             this.lbAddMem.Text = "Add member";
             this.lbAddMem.MouseLeave += new System.EventHandler(this.lbAddMem_MouseLeave);
             this.lbAddMem.MouseHover += new System.EventHandler(this.lbAddMem_MouseHover);
+            // 
+            // timeShow
+            // 
+            this.timeShow.Interval = 1;
+            this.timeShow.Tick += new System.EventHandler(this.timeShow_Tick);
             // 
             // Create
             // 
@@ -207,5 +214,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbDesAddMem;
         private System.Windows.Forms.Label lbAddMem;
+        private System.Windows.Forms.Timer timeShow;
     }
 }

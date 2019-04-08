@@ -23,6 +23,8 @@ namespace GUI
             listSpace = new ListSpace();
             listSpace.TopLevel = false;
 
+            listActivity = new ListActivity();
+
             LoadListSpace();
             LoadBoard();
             LoadListActivity();
@@ -89,7 +91,7 @@ namespace GUI
         {
             create = new Create(this.listSpace.Width);
             this.listSpace.Controls.Add(create);
-            this.create.Hide();
+           // this.create.Hide();
         }
 
         private void flowLayoutPanel1_DragDrop(object sender, DragEventArgs e)
@@ -133,8 +135,8 @@ namespace GUI
 
         public void LoadListActivity()
         {
-            listActivity = new ListActivity();
-            listActivity.Size = new Size(0,200);
+            
+            listActivity.Size = new Size(0,600);
 
             srcActivity = new List<ActivityDTO>();
             //srcActivity.Add(new DTO.ActivityDTO(1, 1, 1, 1, 1, "thêm 1 card vào todo", DateTime.Now));
@@ -153,10 +155,10 @@ namespace GUI
 
         private void btnNotify_Click(object sender, EventArgs e)
         {
-            if(this.listActivity.Size.Width==0)
-                this.listActivity.Size = new Size(300, 600);
+            if (this.listActivity.Size.Width == 0)
+                this.listActivity.MakeShow();
             else
-                this.listActivity.Size = new Size(0, 600);
+                this.listActivity.MakeHide();
         }
 
         bool clickInfor = false;
@@ -178,14 +180,13 @@ namespace GUI
                 LoadListSpace();
         }
 
-        bool clickPlus = false;
+        
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            clickPlus = !clickPlus;
-            if (clickPlus)
-                create.Show();
+            if (create.Width==0)
+                create.MakeShow();
             else
-                create.Hide();
+                create.MakeHide();
         }
     }
 }

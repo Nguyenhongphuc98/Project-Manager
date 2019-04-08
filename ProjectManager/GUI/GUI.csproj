@@ -140,6 +140,9 @@
     <EmbeddedResource Include="CustomComponent\Create.resx">
       <DependentUpon>Create.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomComponent\ListActivity.resx">
+      <DependentUpon>ListActivity.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DateEdit.resx">
       <DependentUpon>DateEdit.cs</DependentUpon>
     </EmbeddedResource>

@@ -28,9 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
+            this.timerShow = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // timerShow
+            // 
+            this.timerShow.Interval = 1;
+            this.timerShow.Tick += new System.EventHandler(this.timerShow_Tick);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timerShow;
     }
 }
