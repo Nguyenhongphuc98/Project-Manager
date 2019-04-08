@@ -25,7 +25,15 @@ namespace DAL
             while (reader.Read())
             {
                 int boardId = reader.GetInt32(0);
-                int groupId=reader.GetInt32(1);
+                int groupId;
+                try
+                {
+                    groupId = reader.GetInt32(1);
+                }
+                catch
+                {
+                    groupId = 0;
+                }
                 int index=reader.GetInt32(2);
                 string title= reader.GetString(3);
                 int mode=reader.GetInt32(4);

@@ -14,9 +14,10 @@ namespace GUI
         ListSpace listSpace;
         CustomComponent.Create create;
 
-        ListActivity listActivity;
+        ListActivity listActivityUI;
         List<ActivityDTO> srcActivity;
 
+        List<Board> boards;
         List<BoardUI> boardUIs;
 
         public WorkSpace()
@@ -25,12 +26,13 @@ namespace GUI
             listSpace = new ListSpace();
             listSpace.TopLevel = false;
 
-            listActivity = new ListActivity();
+            listActivityUI = new ListActivity();
+            boardUIs = new List<BoardUI>();
 
-            LoadListSpace();
-            LoadBoard();
-            LoadListActivity();
-            LoadCard();
+           // LoadListSpace();
+           // LoadBoard();
+           // LoadListActivity();
+           // LoadCard();
             LoadCreate();
 
             //TestInsertFunction();
@@ -40,10 +42,21 @@ namespace GUI
 
         public void LoadBoardUIs()
         {
-            BoardUI b = new BoardUI(0);
+            BoardBLL boardBLL = new BoardBLL();
+            boards = boardBLL.GetAllBoard();
             this.pnWorkSpace.Controls.Clear();
-            this.pnWorkSpace.Controls.Add(b);
-            b.Show();
+
+            foreach (Board bo in boards)
+            {
+                BoardUI b = new BoardUI(bo.Index,bo.Title,bo.Mode,bo.Star,bo.Background);
+                boardUIs.Add(b);
+               
+                this.pnWorkSpace.Controls.Add(b);
+            }
+
+            BoardNoInfor boardNoInfor = new BoardNoInfor(boards.Count);
+            this.pnWorkSpace.Controls.Add(boardNoInfor);
+           
         }
 
         public void TestInsertFunction()
@@ -148,7 +161,7 @@ namespace GUI
         public void LoadListActivity()
         {
             
-            listActivity.Size = new Size(0,600);
+            listActivityUI.Size = new Size(0,600);
 
             srcActivity = new List<ActivityDTO>();
             //srcActivity.Add(new DTO.ActivityDTO(1, 1, 1, 1, 1, "thêm 1 card vào todo", DateTime.Now));
@@ -160,17 +173,17 @@ namespace GUI
             srcActivity = abll.GetAllActivity();
             
 
-            listActivity.DataSource = srcActivity;
+            listActivityUI.DataSource = srcActivity;
 
-            this.listSpace.Controls.Add(listActivity);
+            this.listSpace.Controls.Add(listActivityUI);
         }
 
         private void btnNotify_Click(object sender, EventArgs e)
         {
-            if (this.listActivity.Size.Width == 0)
-                this.listActivity.MakeShow();
+            if (this.listActivityUI.Size.Width == 0)
+                this.listActivityUI.MakeShow();
             else
-                this.listActivity.MakeHide();
+                this.listActivityUI.MakeHide();
         }
 
         bool clickInfor = false;
