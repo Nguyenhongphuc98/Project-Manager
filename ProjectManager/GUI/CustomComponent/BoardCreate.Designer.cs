@@ -83,6 +83,7 @@
             this.btnYellow.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnYellow.Textcolor = System.Drawing.Color.White;
             this.btnYellow.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnYellow.Click += new System.EventHandler(this.btnYellow_Click);
             // 
             // btnGray
             // 
@@ -116,6 +117,7 @@
             this.btnGray.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGray.Textcolor = System.Drawing.Color.White;
             this.btnGray.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGray.Click += new System.EventHandler(this.btnGray_Click);
             // 
             // btnYellow_Green
             // 
@@ -149,6 +151,7 @@
             this.btnYellow_Green.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnYellow_Green.Textcolor = System.Drawing.Color.White;
             this.btnYellow_Green.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnYellow_Green.Click += new System.EventHandler(this.btnYellow_Green_Click);
             // 
             // btnGreen
             // 
@@ -182,6 +185,7 @@
             this.btnGreen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGreen.Textcolor = System.Drawing.Color.White;
             this.btnGreen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGreen.Click += new System.EventHandler(this.btnGreen_Click);
             // 
             // btnBlue_Green
             // 
@@ -215,6 +219,7 @@
             this.btnBlue_Green.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBlue_Green.Textcolor = System.Drawing.Color.White;
             this.btnBlue_Green.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlue_Green.Click += new System.EventHandler(this.btnBlue_Green_Click);
             // 
             // btnSave
             // 
@@ -249,6 +254,7 @@
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Textcolor = System.Drawing.Color.White;
             this.btnSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cbMode
             // 

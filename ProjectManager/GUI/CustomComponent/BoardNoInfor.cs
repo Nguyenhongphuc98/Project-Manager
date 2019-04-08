@@ -12,16 +12,22 @@ namespace GUI.CustomComponent
 {
     public partial class BoardNoInfor : UserControl
     {
+        WorkSpace parent;
+
         int margin = 15;
+        int index;
 
         public BoardNoInfor()
         {
             InitializeComponent();
         }
 
-        public BoardNoInfor(int index)
+        public BoardNoInfor(WorkSpace p ,int index)
         {
             InitializeComponent();
+
+            this.index = index;
+            this.parent = p;
 
             this.Top = 50 + (this.Height + margin) * (index / 4);
             this.Left = 50 + (this.Width + margin) * (index % 4);
@@ -43,10 +49,17 @@ namespace GUI.CustomComponent
         //==================================================
         private void lbCreateBoard_Click(object sender, EventArgs e)
         {
-            BoardCreate boardCreate = new BoardCreate();
+            BoardCreate boardCreate = new BoardCreate(index);
             this.Parent.BackColor = Color.Gray;
-            boardCreate.ShowDialog();
+            DialogResult r= boardCreate.ShowDialog();
             this.Parent.BackColor = Color.White;
+
+            if(r==DialogResult.OK)
+            {
+                //-----inserted-----------------------
+                this.parent.pnWorkSpace.Controls.Clear();
+                this.parent.LoadBoardUIs();
+            }
         }
     }
 }

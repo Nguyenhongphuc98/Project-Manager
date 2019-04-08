@@ -20,18 +20,21 @@ namespace GUI
         List<Board> boards;
         List<BoardUI> boardUIs;
 
+        //=======================================================
+
         public WorkSpace()
         {
             InitializeComponent();
-            listSpace = new ListSpace();
-            listSpace.TopLevel = false;
+            this.listSpace = new ListSpace();
+            this.listSpace.TopLevel = false;
 
-            listActivityUI = new ListActivity();
-            boardUIs = new List<BoardUI>();
+            this.listActivityUI = new ListActivity();
+            this.boardUIs = new List<BoardUI>();
+            this.boards = new List<Board>();
 
            // LoadListSpace();
            // LoadBoard();
-           // LoadListActivity();
+            LoadListActivity();
            // LoadCard();
             LoadCreate();
 
@@ -40,11 +43,16 @@ namespace GUI
             LoadBoardUIs();
         }
 
+
+        //===================================================
         public void LoadBoardUIs()
         {
             BoardBLL boardBLL = new BoardBLL();
-            boards = boardBLL.GetAllBoard();
+
+            boards.Clear();
             this.pnWorkSpace.Controls.Clear();
+
+            boards = boardBLL.GetAllBoard();
 
             foreach (Board bo in boards)
             {
@@ -54,7 +62,7 @@ namespace GUI
                 this.pnWorkSpace.Controls.Add(b);
             }
 
-            BoardNoInfor boardNoInfor = new BoardNoInfor(boards.Count);
+            BoardNoInfor boardNoInfor = new BoardNoInfor(this,boards.Count);
             this.pnWorkSpace.Controls.Add(boardNoInfor);
            
         }
@@ -119,6 +127,27 @@ namespace GUI
            // this.create.Hide();
         }
 
+        public void LoadListActivity()
+        {
+
+            listActivityUI.Size = new Size(0, 600);
+
+            srcActivity = new List<ActivityDTO>();
+            //srcActivity.Add(new DTO.ActivityDTO(1, 1, 1, 1, 1, "thêm 1 card vào todo", DateTime.Now));
+            //srcActivity.Add(new DTO.ActivityDTO(1, 1, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
+            //srcActivity.Add(new DTO.ActivityDTO(2, 2, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
+            //srcActivity.Add(new DTO.ActivityDTO(3, 3, 1, 1, 1, "thêm Quốc Tuyến vào card custom listbox", DateTime.Now));
+            //srcActivity.Add(new DTO.ActivityDTO(4, 4, 1, 1, 1, "xóa card nothing", DateTime.Now));
+            ActivityBLL abll = new ActivityBLL();
+            srcActivity = abll.GetAllActivity();
+
+
+            listActivityUI.DataSource = srcActivity;
+
+            this.listSpace.Controls.Add(listActivityUI);
+        }
+
+        //=======================================================
         private void flowLayoutPanel1_DragDrop(object sender, DragEventArgs e)
         {
             Harr.HarrProgressBar data = (Harr.HarrProgressBar)e.Data.GetData(typeof(Harr.HarrProgressBar));
@@ -158,32 +187,19 @@ namespace GUI
             e.Effect = DragDropEffects.Move;
         }
 
-        public void LoadListActivity()
-        {
-            
-            listActivityUI.Size = new Size(0,600);
 
-            srcActivity = new List<ActivityDTO>();
-            //srcActivity.Add(new DTO.ActivityDTO(1, 1, 1, 1, 1, "thêm 1 card vào todo", DateTime.Now));
-            //srcActivity.Add(new DTO.ActivityDTO(1, 1, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            //srcActivity.Add(new DTO.ActivityDTO(2, 2, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            //srcActivity.Add(new DTO.ActivityDTO(3, 3, 1, 1, 1, "thêm Quốc Tuyến vào card custom listbox", DateTime.Now));
-            //srcActivity.Add(new DTO.ActivityDTO(4, 4, 1, 1, 1, "xóa card nothing", DateTime.Now));
-            ActivityBLL abll = new ActivityBLL();
-            srcActivity = abll.GetAllActivity();
-            
-
-            listActivityUI.DataSource = srcActivity;
-
-            this.listSpace.Controls.Add(listActivityUI);
-        }
-
+        //=======================================================
         private void btnNotify_Click(object sender, EventArgs e)
         {
+            this.pnWorkSpace.Controls.Add(listActivityUI);
             if (this.listActivityUI.Size.Width == 0)
                 this.listActivityUI.MakeShow();
             else
+            {
                 this.listActivityUI.MakeHide();
+                this.pnWorkSpace.Controls.Remove(listActivityUI);
+            }
+               
         }
 
         bool clickInfor = false;
@@ -208,10 +224,21 @@ namespace GUI
         
         private void btnPlus_Click(object sender, EventArgs e)
         {
+            this.pnWorkSpace.Controls.Add(create);
             if (create.Width==0)
                 create.MakeShow();
             else
+            {
                 create.MakeHide();
+                this.pnWorkSpace.Controls.Remove(create);
+            }
+               
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.pnWorkSpace.BackgroundImage = null;
+            LoadBoardUIs();
         }
     }
 }
