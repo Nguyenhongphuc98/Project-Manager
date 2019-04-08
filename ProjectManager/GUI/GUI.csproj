@@ -75,6 +75,12 @@
     <Compile Include="CardEdit.Designer.cs">
       <DependentUpon>CardEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomComponent\BoardUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomComponent\BoardUI.Designer.cs">
+      <DependentUpon>BoardUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomComponent\Create.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     <EmbeddedResource Include="CardEdit.resx">
       <DependentUpon>CardEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomComponent\BoardUI.resx">
+      <DependentUpon>BoardUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomComponent\Create.resx">
       <DependentUpon>Create.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,10 +204,12 @@
     <Content Include="src\57b4687d8b.png" />
     <Content Include="src\61-512.png" />
     <Content Include="src\alarm_alert_clock_event_history_schedule_time_watch-512.png" />
+    <Content Include="src\background_board.jpg" />
     <Content Include="src\bg.png" />
     <Content Include="src\board.png" />
     <Content Include="src\Bunifu_UI_v1.52.dll" />
     <Content Include="src\Circle-icon.png" />
+    <Content Include="src\favorites.png" />
     <Content Include="src\home.png" />
     <Content Include="src\infor.png" />
     <Content Include="src\infor_team.png" />

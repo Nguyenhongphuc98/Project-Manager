@@ -17,6 +17,8 @@ namespace GUI
         ListActivity listActivity;
         List<ActivityDTO> srcActivity;
 
+        List<BoardUI> boardUIs;
+
         public WorkSpace()
         {
             InitializeComponent();
@@ -32,6 +34,16 @@ namespace GUI
             LoadCreate();
 
             //TestInsertFunction();
+
+            LoadBoardUIs();
+        }
+
+        public void LoadBoardUIs()
+        {
+            BoardUI b = new BoardUI(0);
+            this.pnWorkSpace.Controls.Clear();
+            this.pnWorkSpace.Controls.Add(b);
+            b.Show();
         }
 
         public void TestInsertFunction()
