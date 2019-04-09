@@ -176,6 +176,7 @@
       <DependentUpon>CardEdit.cs</DependentUpon>
     </EmbeddedResource>
 
+
     <EmbeddedResource Include="CustomComponent\BoardCreate.resx">
       <DependentUpon>BoardCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +194,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomComponent\ListUI.resx">
       <DependentUpon>ListUI.cs</DependentUpon>
+
+    <EmbeddedResource Include="CustomBoardUI.resx">
+      <DependentUpon>CustomBoardUI.cs</DependentUpon>
+
 
     <EmbeddedResource Include="CustomBoardUI.resx">
       <DependentUpon>CustomBoardUI.cs</DependentUpon>
