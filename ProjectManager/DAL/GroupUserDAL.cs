@@ -10,9 +10,9 @@ namespace DAL
 {
     public class GroupUserDAL:DatabaseAccess
     {
-        public List<GroupUserDTO> GetAllActivity()
+        public List<GroupUserDTO> GetAllGroupUser()
         {
-            List<GroupUserDTO> listActivity = new List<GroupUserDTO>();
+            List<GroupUserDTO> listGroupUser = new List<GroupUserDTO>();
 
             this.ConnectToDatabase();
 
@@ -26,16 +26,16 @@ namespace DAL
                 int userId = reader.GetInt32(1);
 
                 GroupUserDTO activity = new GroupUserDTO(groupId,userId);
-                listActivity.Add(activity);
+                listGroupUser.Add(activity);
             }
 
             this.Close();
-            return listActivity;
+            return listGroupUser;
         }
 
-        public GroupUserDTO GetActivity(int id)
+        public GroupUserDTO GetGroupUser(int id)
         {
-            GroupUserDTO activity;
+            GroupUserDTO groupUser;
 
             this.ConnectToDatabase();
 
@@ -48,15 +48,15 @@ namespace DAL
                 int groupId = reader.GetInt32(0);
                 int userId = reader.GetInt32(1);
 
-                activity = new GroupUserDTO(groupId,userId);
-                return activity;
+                groupUser = new GroupUserDTO(groupId,userId);
+                return groupUser;
             }
 
             this.Close();
             return null;
         }
 
-        public bool InsertActivity(GroupUserDTO activity)
+        public bool InsertGroupUser(GroupUserDTO activity)
         {
             this.ConnectToDatabase();
 
@@ -72,7 +72,7 @@ namespace DAL
             return true;
         }
 
-        public bool UpdateActivity(GroupUserDTO activity)
+        public bool UpdateGroupUser(GroupUserDTO activity)
         {
             this.ConnectToDatabase();
 

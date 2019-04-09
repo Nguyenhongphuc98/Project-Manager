@@ -10,9 +10,9 @@ namespace DAL
 {
     public class ListDAL:DatabaseAccess
     {
-        public List<ListDTO> GetAllActivity()
+        public List<ListDTO> GetAllList()
         {
-            List<ListDTO> listActivity = new List<ListDTO>();
+            List<ListDTO> listList = new List<ListDTO>();
 
             this.ConnectToDatabase();
 
@@ -29,16 +29,16 @@ namespace DAL
                 int color = reader.GetInt32(4);
 
                 ListDTO activity = new ListDTO(listId,boardId,indexList,title,color);
-                listActivity.Add(activity);
+                listList.Add(activity);
             }
 
             this.Close();
-            return listActivity;
+            return listList;
         }
 
-        public ListDTO GetActivity(int id)
+        public ListDTO GetList(int id)
         {
-            ListDTO activity;
+            ListDTO listobj;
 
             this.ConnectToDatabase();
 
@@ -54,8 +54,8 @@ namespace DAL
                 string title = reader.GetString(3);
                 int color = reader.GetInt32(4);
 
-                activity = new ListDTO(listId,boardId,indexList,title,color);
-                return activity;
+                listobj = new ListDTO(listId,boardId,indexList,title,color);
+                return listobj;
             }
 
             this.Close();

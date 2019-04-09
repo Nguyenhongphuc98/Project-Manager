@@ -10,9 +10,9 @@ namespace DAL
 {
     public class UserDAL:DatabaseAccess
     {
-        public List<UserDTO> GetAllActivity()
+        public List<UserDTO> GetAllUsers()
         {
-            List<UserDTO> listActivity = new List<UserDTO>();
+            List<UserDTO> listUser = new List<UserDTO>();
 
             this.ConnectToDatabase();
 
@@ -28,16 +28,16 @@ namespace DAL
                 string name = reader.GetString(3);
 
                 UserDTO activity = new UserDTO(userId,username,password,name);
-                listActivity.Add(activity);
+                listUser.Add(activity);
             }
 
             this.Close();
-            return listActivity;
+            return listUser;
         }
 
-        public UserDTO GetActivity(int id)
+        public UserDTO GetUser(int id)
         {
-            UserDTO activity;
+            UserDTO user;
 
             this.ConnectToDatabase();
 
@@ -52,15 +52,15 @@ namespace DAL
                 string password = reader.GetString(2);
                 string name = reader.GetString(3);
 
-                activity = new UserDTO(userId, username, password, name);
-                return activity;
+                user = new UserDTO(userId, username, password, name);
+                return user;
             }
 
             this.Close();
             return null;
         }
 
-        public bool InsertActivity(UserDTO activity)
+        public bool InsertUser(UserDTO activity)
         {
             this.ConnectToDatabase();
 
@@ -76,7 +76,7 @@ namespace DAL
             return true;
         }
 
-        public bool UpdateActivity(UserDTO activity)
+        public bool UpdateUser(UserDTO activity)
         {
             this.ConnectToDatabase();
 
