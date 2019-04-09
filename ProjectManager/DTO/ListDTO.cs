@@ -14,6 +14,14 @@ namespace DTO
         string title;
         int color;
 
+        public ListDTO( int boardId, int indexList, string title, int color)
+        {
+            this.boardId = boardId;
+            this.indexList = indexList;
+            this.title = title;
+            this.color = color;
+        }
+
         public ListDTO(int listId, int boardId, int indexList, string title, int color)
         {
             this.listId = listId;

@@ -75,7 +75,6 @@
     <Compile Include="CardEdit.Designer.cs">
       <DependentUpon>CardEdit.cs</DependentUpon>
     </Compile>
-
     <Compile Include="CustomComponent\BoardCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,13 +98,12 @@
     </Compile>
     <Compile Include="CustomComponent\Create.Designer.cs">
       <DependentUpon>Create.cs</DependentUpon>
-
+    </Compile>
     <Compile Include="CustomBoardUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomBoardUI.Designer.cs">
       <DependentUpon>CustomBoardUI.cs</DependentUpon>
-
     </Compile>
     <Compile Include="CustomComponent\ListActivity.cs">
       <SubType>Component</SubType>
@@ -118,6 +116,12 @@
     </Compile>
     <Compile Include="CustomComponent\ListUI.Designer.cs">
       <DependentUpon>ListUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomComponent\ListUIButtonCreate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomComponent\ListUIButtonCreate.Designer.cs">
+      <DependentUpon>ListUIButtonCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="DateEdit.cs">
       <SubType>Form</SubType>
@@ -175,8 +179,6 @@
     <EmbeddedResource Include="CardEdit.resx">
       <DependentUpon>CardEdit.cs</DependentUpon>
     </EmbeddedResource>
-
-
     <EmbeddedResource Include="CustomComponent\BoardCreate.resx">
       <DependentUpon>BoardCreate.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,14 +196,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomComponent\ListUI.resx">
       <DependentUpon>ListUI.cs</DependentUpon>
-
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomBoardUI.resx">
       <DependentUpon>CustomBoardUI.cs</DependentUpon>
-
-
-    <EmbeddedResource Include="CustomBoardUI.resx">
-      <DependentUpon>CustomBoardUI.cs</DependentUpon>
-
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomComponent\ListUIButtonCreate.resx">
+      <DependentUpon>ListUIButtonCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DateEdit.resx">
       <DependentUpon>DateEdit.cs</DependentUpon>

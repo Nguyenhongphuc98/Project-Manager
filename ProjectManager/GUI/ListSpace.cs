@@ -1,11 +1,9 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using GUI.CustomComponent;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -17,6 +15,9 @@ namespace GUI
         int idGroup;
         string title;
         string background;
+
+        List<ListUI> listUIs;
+        List<ListDTO> listDTOs;
         
         //==================================================
         public int Mode
@@ -65,7 +66,11 @@ namespace GUI
             this.title = title;
             this.background = bg;
 
+            this.listUIs = new List<ListUI>();
+            this.listDTOs = new List<ListDTO>();
+
             LoadBaseInfor();
+            LoadListOfThisBoard();
         }
         //======================================================
 
@@ -98,5 +103,27 @@ namespace GUI
             }
            
         }
+
+        public void LoadListOfThisBoard()
+        {
+            this.Controls.Clear();
+            listDTOs.Clear();
+            listUIs.Clear();
+
+            ListBLL listBLL = new ListBLL();
+            listDTOs = listBLL.GetAllList(this.idBoard);
+
+            foreach(ListDTO l in listDTOs)
+            {
+                ListUI lsUI = new ListUI(l.ListId, l.IndexList, l.Title, l.Color);
+                listUIs.Add(lsUI);
+                this.Controls.Add(lsUI);
+            }
+
+            ListUIButtonCreate btnNewList = new ListUIButtonCreate(listDTOs.Count,this.idBoard);
+            this.Controls.Add(btnNewList);
+        }
+
+
     }
 }

@@ -10,14 +10,14 @@ namespace DAL
 {
     public class ListDAL:DatabaseAccess
     {
-        public List<ListDTO> GetAllList()
+        public List<ListDTO> GetAllList(int id_board)
         {
             List<ListDTO> listList = new List<ListDTO>();
 
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM LIST ";
+            command.CommandText = "SELECT * FROM LIST where BOARD_ID = "+ id_board;
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -62,11 +62,11 @@ namespace DAL
             return null;
         }
 
-        public bool InsertActivity(ListDTO list)
+        public bool InsertList(ListDTO list)
         {
             this.ConnectToDatabase();
 
-            string Query = "insert into LIST values('" + list.ListId + "','" + list.BoardId + "','" + list.IndexList + "','" + list.Title + "','" + list.Color +"');";
+            string Query = "insert into LIST(BOARD_ID,INDEX_LIST,TITLE,COLOR) values('" + list.BoardId + "','" + list.IndexList + "','" + list.Title + "','" + list.Color +"');";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
@@ -78,12 +78,13 @@ namespace DAL
             return true;
         }
 
-        public bool UpdateActivity(ListDTO list)
+        public bool UpdateList(ListDTO list)
         {
             this.ConnectToDatabase();
 
-            string Query = "update LIST set LIST_ID='" + list.ListId + "',BOARD_ID = '" + list.BoardId
-                            + "',INDEX_LIST ='" + list.IndexList + "',TITLE = '" + list.Title + "',COLOR = '" + list.Color;
+            string Query = "update LIST set " + "',BOARD_ID = '" + list.BoardId
+                            + "',INDEX_LIST ='" + list.IndexList + "',TITLE = '" + list.Title + "',COLOR = '" + list.Color
+                            + " where LIST_ID='" + list.ListId;
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
