@@ -13,13 +13,21 @@ namespace BLL
         public List<CardDTO> GetAllCard()
         {
             CardDAL adal = new CardDAL();
-            return adal.GetAllActivity();
+            return adal.GetAllCard();
         }
 
         public CardDTO GetCard(int id)
         {
             CardDAL adal = new CardDAL();
-            return adal.GetActivity(id);
+            return adal.GetCard(id);
+        }
+
+        public String GetCardName(int id)
+        {
+
+            CardDAL cardDAL = new CardDAL();
+            String title = cardDAL.GetCardName(id);
+            return title;
         }
 
         public bool InsertCard(CardDTO card)
@@ -32,6 +40,11 @@ namespace BLL
         {
             CardDAL adal = new CardDAL();
             return adal.UpdateCard(card);
+        }
+
+        public bool UpdateCardName(int _cardId)
+        {
+            return true;
         }
     }
 }

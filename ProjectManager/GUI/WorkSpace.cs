@@ -38,7 +38,11 @@ namespace GUI
 
             //TestInsertFunction();
 
+
+           // TestInsertFunction();
+
             LoadBoardUIs();
+
         }
 
 
@@ -124,7 +128,8 @@ namespace GUI
 
         public void LoadCard()
         {
-            Card c = new Card(500, 100);
+            Card c = new Card(600, 100, 1);
+
             this.listSpace.Controls.Add(c);
             c.Show();
         }
