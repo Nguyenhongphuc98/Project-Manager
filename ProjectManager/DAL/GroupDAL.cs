@@ -10,9 +10,9 @@ namespace DAL
 {
     public class GroupDAL:DatabaseAccess
     {
-        public List<GroupDTO> GetAllActivity()
+        public List<GroupDTO> GetAllGroup()
         {
-            List<GroupDTO> listActivity = new List<GroupDTO>();
+            List<GroupDTO> listGroup = new List<GroupDTO>();
 
             this.ConnectToDatabase();
 
@@ -27,16 +27,16 @@ namespace DAL
                 string desription = reader.GetString(2);
 
                 GroupDTO activity = new GroupDTO(groupId,name,desription);
-                listActivity.Add(activity);
+                listGroup.Add(activity);
             }
 
             this.Close();
-            return listActivity;
+            return listGroup;
         }
 
-        public GroupDTO GetActivity(int id)
+        public GroupDTO GetGroup(int id)
         {
-            GroupDTO activity;
+            GroupDTO group;
 
             this.ConnectToDatabase();
 
@@ -50,15 +50,15 @@ namespace DAL
                 string name = reader.GetString(1);
                 string desription = reader.GetString(2);
 
-                activity = new GroupDTO(groupId, name, desription);
-                return activity;
+                group = new GroupDTO(groupId, name, desription);
+                return group;
             }
 
             this.Close();
             return null;
         }
 
-        public bool InsertActivity(GroupDTO activity)
+        public bool InsertGroup(GroupDTO activity)
         {
             this.ConnectToDatabase();
 
@@ -74,7 +74,7 @@ namespace DAL
             return true;
         }
 
-        public bool UpdateActivity(GroupDTO activity)
+        public bool UpdateGroup(GroupDTO activity)
         {
             this.ConnectToDatabase();
 

@@ -10,9 +10,9 @@ namespace DAL
 {
     public class CommentDAL:DatabaseAccess
     {
-        public List<CommentDTO> GetAllActivity()
+        public List<CommentDTO> GetAllComments()
         {
-            List<CommentDTO> listActivity = new List<CommentDTO>();
+            List<CommentDTO> listComment = new List<CommentDTO>();
 
             this.ConnectToDatabase();
 
@@ -29,16 +29,16 @@ namespace DAL
                 int cmtIndex = reader.GetInt32(4);
 
                 CommentDTO activity = new CommentDTO(cardId,userId,content,time,cmtIndex);
-                listActivity.Add(activity);
+                listComment.Add(activity);
             }
 
             this.Close();
-            return listActivity;
+            return listComment;
         }
 
-        public CommentDTO GetActivity(int id)
+        public CommentDTO GetComment(int id)
         {
-            CommentDTO activity;
+            CommentDTO comment;
 
             this.ConnectToDatabase();
 
@@ -54,15 +54,15 @@ namespace DAL
                 DateTime time = reader.GetDateTime(3);
                 int cmtIndex = reader.GetInt32(4);
 
-                activity = new CommentDTO(cardId, userId, content, time, cmtIndex);
-                return activity;
+                comment = new CommentDTO(cardId, userId, content, time, cmtIndex);
+                return comment;
             }
 
             this.Close();
             return null;
         }
 
-        public bool InsertActivity(CommentDTO activity)
+        public bool InsertComment(CommentDTO activity)
         {
             this.ConnectToDatabase();
 
@@ -78,7 +78,7 @@ namespace DAL
             return true;
         }
 
-        public bool UpdateActivity(CommentDTO activity)
+        public bool UpdateComment(CommentDTO activity)
         {
             this.ConnectToDatabase();
 
