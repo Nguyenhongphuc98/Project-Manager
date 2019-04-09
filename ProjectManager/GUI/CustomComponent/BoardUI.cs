@@ -12,8 +12,13 @@ namespace GUI.CustomComponent
 {
     public partial class BoardUI : UserControl
     {
+        int id;
         int mode;
         int index;
+        int group;
+        string title;
+        string background;
+
         int margin = 15;
 
         //=========================================================
@@ -36,12 +41,16 @@ namespace GUI.CustomComponent
             this.pbStar.Visible = false;
         }
 
-        public BoardUI(int index,string title,int mode,bool star,string background)
+        public BoardUI(int id,int index,int group,string title,int mode,bool star,string background)
         {
             InitializeComponent();
 
+            this.id = id;
             this.index = index;
             this.mode = mode;
+            this.group = group;
+            this.title = title;
+            this.background = background;
 
             this.Top = 50 + (this.Height + margin) * (index / 3) ;
             this.Left = 50 + (this.Width + margin )* (index % 3) ;
@@ -87,6 +96,15 @@ namespace GUI.CustomComponent
         {
             this.pbStar.Visible = false;
             this.lbNameBoard.ForeColor = Color.Silver;
+        }
+
+        private void BoardUI_Click(object sender, EventArgs e)
+        {
+            ListSpace listSpace = new ListSpace(this.mode, this.id, this.group, this.title, this.background);
+            
+            //ws->pnws->ls->lists->card;
+            ((WorkSpace)this.Parent.Parent).AddListSpace(new ListSpace(this.mode, this.id, this.group, this.title, this.background));
+            ((WorkSpace)this.Parent.Parent).LoadListSpace();
         }
     }
 }
