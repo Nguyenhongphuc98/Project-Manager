@@ -26,5 +26,17 @@ namespace GUI.CustomComponent
             this.Left = 10 + (this.Width + margin) * this.position;
             ;
         }
+
+        public ListUI(int index)
+        {
+            InitializeComponent();
+
+            position = index;
+            margin = 5;
+
+            this.Top = 40;
+            this.Left = 10 + (this.Width + margin) * this.position;
+            ;
+        }
     }
 }
