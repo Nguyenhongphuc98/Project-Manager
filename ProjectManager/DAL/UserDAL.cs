@@ -17,7 +17,7 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM ACTIVITY ";
+            command.CommandText = "SELECT * FROM USER ";
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -27,8 +27,8 @@ namespace DAL
                 string password = reader.GetString(2);
                 string name = reader.GetString(3);
 
-                UserDTO activity = new UserDTO(userId,username,password,name);
-                listUser.Add(activity);
+                UserDTO user = new UserDTO(userId,username,password,name);
+                listUser.Add(user);
             }
 
             this.Close();
@@ -42,7 +42,7 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM ACTIVITY WHERE ACTIVITY_ID = "+id;
+            command.CommandText = "SELECT * FROM USER WHERE USER_ID = "+id;
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -60,11 +60,11 @@ namespace DAL
             return null;
         }
 
-        public bool InsertUser(UserDTO activity)
+        public bool InsertUser(UserDTO user)
         {
             this.ConnectToDatabase();
 
-            string Query = "insert into ACTIVITY values('" + activity.UserId + "','" + activity.UserName + "','" + activity.Password + "','" + activity.Name + "');";
+            string Query = "insert into USER values('" + user.UserId + "','" + user.UserName + "','" + user.Password + "','" + user.Name + "');";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
@@ -76,12 +76,12 @@ namespace DAL
             return true;
         }
 
-        public bool UpdateUser(UserDTO activity)
+        public bool UpdateUser(UserDTO user)
         {
             this.ConnectToDatabase();
 
-            string Query = "update ACTIVITY set USER_ID='" + activity.UserId + "',USERNAME = '" + activity.UserName
-                            + "',PASSWORD ='" + activity.Password + "',NAME = '" + activity.Name ;
+            string Query = "update USER set USER_ID='" + user.UserId + "',USERNAME = '" + user.UserName
+                            + "',PASSWORD ='" + user.Password + "',NAME = '" + user.Name ;
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);

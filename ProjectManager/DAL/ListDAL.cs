@@ -17,7 +17,7 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM ACTIVITY ";
+            command.CommandText = "SELECT * FROM LIST ";
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -28,8 +28,8 @@ namespace DAL
                 string title = reader.GetString(3);
                 int color = reader.GetInt32(4);
 
-                ListDTO activity = new ListDTO(listId,boardId,indexList,title,color);
-                listList.Add(activity);
+                ListDTO list = new ListDTO(listId,boardId,indexList,title,color);
+                listList.Add(list);
             }
 
             this.Close();
@@ -43,7 +43,7 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM ACTIVITY WHERE ACTIVITY_ID = "+id;
+            command.CommandText = "SELECT * FROM LIST WHERE LIST_ID = "+id;
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -62,11 +62,11 @@ namespace DAL
             return null;
         }
 
-        public bool InsertActivity(ListDTO activity)
+        public bool InsertActivity(ListDTO list)
         {
             this.ConnectToDatabase();
 
-            string Query = "insert into ACTIVITY values('" + activity.ListId + "','" + activity.BoardId + "','" + activity.IndexList + "','" + activity.Title + "','" + activity.Color +"');";
+            string Query = "insert into LIST values('" + list.ListId + "','" + list.BoardId + "','" + list.IndexList + "','" + list.Title + "','" + list.Color +"');";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
@@ -78,12 +78,12 @@ namespace DAL
             return true;
         }
 
-        public bool UpdateActivity(ListDTO activity)
+        public bool UpdateActivity(ListDTO list)
         {
             this.ConnectToDatabase();
 
-            string Query = "update ACTIVITY set LIST_ID='" + activity.ListId + "',BOARD_ID = '" + activity.BoardId
-                            + "',INDEX_LIST ='" + activity.IndexList + "',TITLE = '" + activity.Title + "',COLOR = '" + activity.Color;
+            string Query = "update LIST set LIST_ID='" + list.ListId + "',BOARD_ID = '" + list.BoardId
+                            + "',INDEX_LIST ='" + list.IndexList + "',TITLE = '" + list.Title + "',COLOR = '" + list.Color;
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);

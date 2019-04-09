@@ -17,7 +17,7 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM ACTIVITY ";
+            command.CommandText = "SELECT * FROM COMMENT ";
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -28,8 +28,8 @@ namespace DAL
                 DateTime time = reader.GetDateTime(3);
                 int cmtIndex = reader.GetInt32(4);
 
-                CommentDTO activity = new CommentDTO(cardId,userId,content,time,cmtIndex);
-                listComment.Add(activity);
+                CommentDTO comment = new CommentDTO(cardId,userId,content,time,cmtIndex);
+                listComment.Add(comment);
             }
 
             this.Close();
@@ -43,7 +43,7 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM ACTIVITY WHERE ACTIVITY_ID = "+id;
+            command.CommandText = "SELECT * FROM COMMENT WHERE COMMENT_ID = "+id;
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -62,11 +62,11 @@ namespace DAL
             return null;
         }
 
-        public bool InsertComment(CommentDTO activity)
+        public bool InsertComment(CommentDTO comment)
         {
             this.ConnectToDatabase();
 
-            string Query = "insert into ACTIVITY values('" + activity.CardId + "','" + activity.UserId + "','" + activity.Content + "','" + activity.Time + "','" + activity.CmtIndex +"');";
+            string Query = "insert into ACTIVITY values('" + comment.CardId + "','" + comment.UserId + "','" + comment.Content + "','" + comment.Time + "','" + comment.CmtIndex +"');";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
@@ -78,12 +78,12 @@ namespace DAL
             return true;
         }
 
-        public bool UpdateComment(CommentDTO activity)
+        public bool UpdateComment(CommentDTO comment)
         {
             this.ConnectToDatabase();
 
-            string Query = "update ACTIVITY set CARD_ID='" + activity.CardId + "',USER_ID = '" + activity.UserId
-                            + "',CONTENT ='" + activity.Content + "',TIME = '" + activity.Time + "',INDEX_CMT = '" + activity.CmtIndex;
+            string Query = "update ACTIVITY set CARD_ID='" + comment.CardId + "',USER_ID = '" + comment.UserId
+                            + "',CONTENT ='" + comment.Content + "',TIME = '" + comment.Time + "',INDEX_CMT = '" + comment.CmtIndex;
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
