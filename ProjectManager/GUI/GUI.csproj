@@ -105,6 +105,12 @@
     <Compile Include="CustomComponent\ListActivity.Designer.cs">
       <DependentUpon>ListActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomComponent\ListUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomComponent\ListUI.Designer.cs">
+      <DependentUpon>ListUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="DateEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomComponent\ListActivity.resx">
       <DependentUpon>ListActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomComponent\ListUI.resx">
+      <DependentUpon>ListUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DateEdit.resx">
       <DependentUpon>DateEdit.cs</DependentUpon>

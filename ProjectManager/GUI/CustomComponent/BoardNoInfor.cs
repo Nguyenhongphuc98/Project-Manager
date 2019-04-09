@@ -29,8 +29,8 @@ namespace GUI.CustomComponent
             this.index = index;
             this.parent = p;
 
-            this.Top = 50 + (this.Height + margin) * (index / 4);
-            this.Left = 50 + (this.Width + margin) * (index % 4);
+            this.Top = 50 + (this.Height + margin) * (index / 3);
+            this.Left = 50 + (this.Width + margin) * (index % 3);
         }
 
 

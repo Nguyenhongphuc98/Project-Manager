@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbdash1 = new System.Windows.Forms.Label();
             this.btnInvite = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnPublic = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnMode = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPersonal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnStar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lbNameProject = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.pnMenu.Controls.Add(this.label1);
             this.pnMenu.Controls.Add(this.lbdash1);
             this.pnMenu.Controls.Add(this.btnInvite);
-            this.pnMenu.Controls.Add(this.btnPublic);
+            this.pnMenu.Controls.Add(this.btnMode);
             this.pnMenu.Controls.Add(this.btnPersonal);
             this.pnMenu.Controls.Add(this.btnStar);
             this.pnMenu.Controls.Add(this.lbNameProject);
@@ -110,7 +110,7 @@
             this.btnInvite.Name = "btnInvite";
             this.btnInvite.Normalcolor = System.Drawing.Color.Transparent;
             this.btnInvite.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
-            this.btnInvite.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnInvite.OnHoverTextColor = System.Drawing.Color.OrangeRed;
             this.btnInvite.selected = false;
             this.btnInvite.Size = new System.Drawing.Size(61, 33);
             this.btnInvite.TabIndex = 1;
@@ -119,39 +119,39 @@
             this.btnInvite.Textcolor = System.Drawing.Color.White;
             this.btnInvite.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btnPublic
+            // btnMode
             // 
-            this.btnPublic.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnPublic.BackColor = System.Drawing.Color.Transparent;
-            this.btnPublic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPublic.BorderRadius = 7;
-            this.btnPublic.ButtonText = "Public";
-            this.btnPublic.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPublic.DisabledColor = System.Drawing.Color.Gray;
-            this.btnPublic.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnPublic.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnPublic.Iconimage")));
-            this.btnPublic.Iconimage_right = null;
-            this.btnPublic.Iconimage_right_Selected = null;
-            this.btnPublic.Iconimage_Selected = null;
-            this.btnPublic.IconMarginLeft = 0;
-            this.btnPublic.IconMarginRight = 0;
-            this.btnPublic.IconRightVisible = true;
-            this.btnPublic.IconRightZoom = 0D;
-            this.btnPublic.IconVisible = false;
-            this.btnPublic.IconZoom = 60D;
-            this.btnPublic.IsTab = false;
-            this.btnPublic.Location = new System.Drawing.Point(345, 4);
-            this.btnPublic.Name = "btnPublic";
-            this.btnPublic.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnPublic.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
-            this.btnPublic.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnPublic.selected = false;
-            this.btnPublic.Size = new System.Drawing.Size(58, 33);
-            this.btnPublic.TabIndex = 1;
-            this.btnPublic.Text = "Public";
-            this.btnPublic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnPublic.Textcolor = System.Drawing.Color.White;
-            this.btnPublic.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMode.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnMode.BackColor = System.Drawing.Color.Transparent;
+            this.btnMode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMode.BorderRadius = 7;
+            this.btnMode.ButtonText = "Public";
+            this.btnMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMode.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMode.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMode.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMode.Iconimage")));
+            this.btnMode.Iconimage_right = null;
+            this.btnMode.Iconimage_right_Selected = null;
+            this.btnMode.Iconimage_Selected = null;
+            this.btnMode.IconMarginLeft = 0;
+            this.btnMode.IconMarginRight = 0;
+            this.btnMode.IconRightVisible = true;
+            this.btnMode.IconRightZoom = 0D;
+            this.btnMode.IconVisible = false;
+            this.btnMode.IconZoom = 60D;
+            this.btnMode.IsTab = false;
+            this.btnMode.Location = new System.Drawing.Point(345, 4);
+            this.btnMode.Name = "btnMode";
+            this.btnMode.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnMode.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
+            this.btnMode.OnHoverTextColor = System.Drawing.Color.OrangeRed;
+            this.btnMode.selected = false;
+            this.btnMode.Size = new System.Drawing.Size(58, 33);
+            this.btnMode.TabIndex = 1;
+            this.btnMode.Text = "Public";
+            this.btnMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMode.Textcolor = System.Drawing.Color.White;
+            this.btnMode.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnPersonal
             // 
@@ -178,7 +178,7 @@
             this.btnPersonal.Name = "btnPersonal";
             this.btnPersonal.Normalcolor = System.Drawing.Color.Transparent;
             this.btnPersonal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
-            this.btnPersonal.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnPersonal.OnHoverTextColor = System.Drawing.Color.OrangeRed;
             this.btnPersonal.selected = false;
             this.btnPersonal.Size = new System.Drawing.Size(72, 33);
             this.btnPersonal.TabIndex = 1;
@@ -222,20 +222,21 @@
             // 
             // lbNameProject
             // 
-            this.lbNameProject.AutoSize = true;
-            this.lbNameProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNameProject.Location = new System.Drawing.Point(16, 7);
+            this.lbNameProject.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbNameProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNameProject.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbNameProject.Location = new System.Drawing.Point(0, 0);
             this.lbNameProject.Name = "lbNameProject";
-            this.lbNameProject.Size = new System.Drawing.Size(185, 25);
+            this.lbNameProject.Size = new System.Drawing.Size(201, 40);
             this.lbNameProject.TabIndex = 0;
-            this.lbNameProject.Text = "Dự án đường sắt";
+            this.lbNameProject.Text = "Project name";
+            this.lbNameProject.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ListSpace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1122, 520);
             this.Controls.Add(this.pnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -256,7 +257,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbdash1;
         private Bunifu.Framework.UI.BunifuFlatButton btnInvite;
-        private Bunifu.Framework.UI.BunifuFlatButton btnPublic;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMode;
         private Bunifu.Framework.UI.BunifuFlatButton btnPersonal;
     }
 }

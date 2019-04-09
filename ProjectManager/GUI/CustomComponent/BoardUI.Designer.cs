@@ -68,6 +68,7 @@
             this.Controls.Add(this.lbNameBoard);
             this.Name = "BoardUI";
             this.Size = new System.Drawing.Size(237, 125);
+            this.Click += new System.EventHandler(this.BoardUI_Click);
             this.MouseLeave += new System.EventHandler(this.BoardUI_MouseLeave);
             this.MouseHover += new System.EventHandler(this.BoardUI_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.pbStar)).EndInit();

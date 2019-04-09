@@ -25,8 +25,6 @@ namespace GUI
         public WorkSpace()
         {
             InitializeComponent();
-            this.listSpace = new ListSpace();
-            this.listSpace.TopLevel = false;
 
             this.listActivityUI = new ListActivity();
             this.boardUIs = new List<BoardUI>();
@@ -52,11 +50,14 @@ namespace GUI
             boards.Clear();
             this.pnWorkSpace.Controls.Clear();
 
+            this.pnWorkSpace.Controls.Add(listActivityUI);
+            this.pnWorkSpace.BackgroundImage = null;
+
             boards = boardBLL.GetAllBoard();
 
             foreach (Board bo in boards)
             {
-                BoardUI b = new BoardUI(bo.Index,bo.Title,bo.Mode,bo.Star,bo.Background);
+                BoardUI b = new BoardUI(bo.BoardId,bo.Index,bo.GroupId,bo.Title,bo.Mode,bo.Star,bo.Background);
                 boardUIs.Add(b);
                
                 this.pnWorkSpace.Controls.Add(b);
@@ -77,9 +78,26 @@ namespace GUI
 
         }
 
+        public void AddListSpace(ListSpace lspace)
+        {
+            this.listSpace = lspace;
+            this.listSpace.TopLevel = false;
+        }
+
         public void LoadListSpace()
         {
+            this.pnWorkSpace.Controls.Clear();
             this.pnWorkSpace.Controls.Add(listSpace);
+
+            
+            ListUI l = new ListUI(0);
+            this.listSpace.Controls.Add(l);
+            ListUI l2 = new ListUI(1);
+            this.listSpace.Controls.Add(l2);
+            ListUI l3 = new ListUI(2);
+            this.listSpace.Controls.Add(l3);
+
+
             listSpace.Show();
         }
 
@@ -122,8 +140,19 @@ namespace GUI
 
         public void LoadCreate()
         {
-            create = new Create(this.listSpace.Width);
-            this.listSpace.Controls.Add(create);
+            create = new Create(this.pnWorkSpace.Width);
+  
+            try
+            {
+                //----------in list page-------------------
+                this.listSpace.Controls.Add(create);
+            }
+            catch
+            {
+                //----------in home page-------------------
+                this.pnWorkSpace.Controls.Add(create);
+            }
+           
            // this.create.Hide();
         }
 
@@ -144,7 +173,17 @@ namespace GUI
 
             listActivityUI.DataSource = srcActivity;
 
-            this.listSpace.Controls.Add(listActivityUI);
+            try
+            {
+                //----------in list page-------------------
+                this.listSpace.Controls.Add(listActivityUI);
+            }
+            catch
+            {
+                //----------in home page-------------------
+                this.pnWorkSpace.Controls.Add(listActivityUI);
+            }
+            
         }
 
         //=======================================================
@@ -191,7 +230,20 @@ namespace GUI
         //=======================================================
         private void btnNotify_Click(object sender, EventArgs e)
         {
-            this.pnWorkSpace.Controls.Add(listActivityUI);
+            try
+            {
+                //-----------list page------------------
+                if(this.listSpace.Visible==true)
+                this.listSpace.Controls.Add(listActivityUI);
+                else
+                this.pnWorkSpace.Controls.Add(listActivityUI);
+            }
+            catch
+            {
+                //-----------home page------------------
+                this.pnWorkSpace.Controls.Add(listActivityUI);
+            }
+            
             if (this.listActivityUI.Size.Width == 0)
                 this.listActivityUI.MakeShow();
             else
@@ -218,13 +270,20 @@ namespace GUI
                 this.pnWorkSpace.BackgroundImageLayout = ImageLayout.Stretch;
             }
             else
-                LoadListSpace();
+                LoadBoardUIs();
         }
 
         
         private void btnPlus_Click(object sender, EventArgs e)
         {
             this.pnWorkSpace.Controls.Add(create);
+            try
+            {
+                if(this.listSpace.Visible==true)
+                this.listSpace.Controls.Add(create);
+            }
+            catch { }
+
             if (create.Width==0)
                 create.MakeShow();
             else
@@ -237,7 +296,7 @@ namespace GUI
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            this.pnWorkSpace.BackgroundImage = null;
+            //this.pnWorkSpace.BackgroundImage = null;
             LoadBoardUIs();
         }
     }
