@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,39 +14,50 @@ namespace GUI
 {
     public partial class CardEdit : Form
     {
-        public CardEdit(int X, int Y)
+        int _cardId;
+
+        CardBLL cardBLL = new CardBLL();
+        CardDTO cardDTO;
+        public CardEdit(int X, int Y, int cardId)
         {
             InitializeComponent();
+            _cardId = cardId;
+            cardDTO = cardBLL.GetCard(_cardId);
             this.Location = new Point(X, Y);
-            this.StartPosition = FormStartPosition.Manual;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(cardName.Text))
+            {
+                cardDTO.Title = cardName.Text;
+                cardBLL.UpdateCard(cardDTO);
+            }
             this.Close();
         }
 
         private void ChangeLabel_Click(object sender, EventArgs e)
         {
-            LabelEdit labelEdit = new LabelEdit(this.Location.X + this.Width - 140, this.Location.Y - 130);
+            LabelEdit labelEdit = new LabelEdit(this.Location.X + this.Width - 140, this.Location.Y - 130, _cardId);
             labelEdit.Show();
         }
 
         private void ChangeMember_Click(object sender, EventArgs e)
         {
-            MemberEdit editMember = new MemberEdit(this.Location.X + this.Width, this.Location.Y);
+            MemberEdit editMember = new MemberEdit(this.Location.X + this.Width, this.Location.Y, _cardId);
             editMember.Show();
         }
 
         private void ChangeDeadline_Click(object sender, EventArgs e)
         {
-            DateEdit editDate = new DateEdit(this.Location.X + this.Width, this.Location.Y);
+            DateEdit editDate = new DateEdit(this.Location.X + this.Width, this.Location.Y, _cardId);
             editDate.Show();
         }
 
         private void Save_Click(object sender, EventArgs e)
         {
-
+            cardBLL.DeleteCard(cardDTO);
         }
     }
 }

@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberEdit));
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpMember = new System.Windows.Forms.FlowLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SaveButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.CancelButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flpMember
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 40);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(192, 35);
-            this.flowLayoutPanel1.TabIndex = 7;
+            this.flpMember.Location = new System.Drawing.Point(13, 40);
+            this.flpMember.Name = "flpMember";
+            this.flpMember.Size = new System.Drawing.Size(192, 170);
+            this.flpMember.TabIndex = 7;
             // 
             // textBox1
             // 
@@ -67,12 +67,13 @@
             this.SaveButton.IdleFillColor = System.Drawing.Color.White;
             this.SaveButton.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.SaveButton.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.SaveButton.Location = new System.Drawing.Point(73, 83);
+            this.SaveButton.Location = new System.Drawing.Point(73, 218);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(69, 36);
             this.SaveButton.TabIndex = 8;
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // CancelButton
             // 
@@ -92,7 +93,7 @@
             this.CancelButton.IdleFillColor = System.Drawing.Color.White;
             this.CancelButton.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.CancelButton.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.CancelButton.Location = new System.Drawing.Point(73, 117);
+            this.CancelButton.Location = new System.Drawing.Point(73, 252);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(69, 36);
@@ -104,11 +105,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(219, 162);
+            this.ClientSize = new System.Drawing.Size(219, 293);
             this.ControlBox = false;
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flpMember);
             this.Controls.Add(this.textBox1);
             this.Name = "MemberEdit";
             this.Text = "MemberEdit";
@@ -119,7 +120,7 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpMember;
         private System.Windows.Forms.TextBox textBox1;
         private Bunifu.Framework.UI.BunifuThinButton2 SaveButton;
         private Bunifu.Framework.UI.BunifuThinButton2 CancelButton;

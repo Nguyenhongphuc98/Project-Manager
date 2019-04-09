@@ -57,7 +57,7 @@ namespace GUI.CustomComponent
             {
                 e.DrawBackground();
                 e.Graphics.DrawRectangle(System.Drawing.Pens.Red, 2, e.Bounds.Y + 2, 50, 50); // Simulate an icon.
-                Image icon = Image.FromFile("D:\\IT\\2019\\Bảo trì\\Project-Manager\\ProjectManager\\GUI\\src\\message.png");
+                Image icon = Image.FromFile("E:\\GithubProjects\\masterPM\\Project-Manager\\ProjectManager\\GUI\\src\\message.png");
                 e.Graphics.DrawImage(icon, new Rectangle(2, e.Bounds.Y, 50, 50));
 
                 var textRect = e.Bounds;

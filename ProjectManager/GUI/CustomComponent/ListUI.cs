@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -21,6 +23,9 @@ namespace GUI.CustomComponent
         int heightsmall=298;
         int heightbig=338;
 
+        List<CardDTO> cardDTOs;
+        List<Card> cards;
+
         //=======================================================
         public ListUI()
         {
@@ -31,7 +36,6 @@ namespace GUI.CustomComponent
 
             this.Top = 40;
             this.Left = 10 + (this.Width + margin) * this.position;
-            ;
         }
 
         public ListUI(int index)
@@ -63,6 +67,7 @@ namespace GUI.CustomComponent
 
             ZomOut();
             LoadBaseInfor();
+            LoadCards();
         }
 
         //=======================================================
@@ -99,6 +104,33 @@ namespace GUI.CustomComponent
         private void btnClose_Click(object sender, EventArgs e)
         {
             ZomOut();
+        }
+        public void LoadCards()
+        {
+            this.pnLists.Controls.Clear();
+            CardBLL cardBLL = new CardBLL();
+            cardDTOs = cardBLL.GetAllCard(this.id);
+            foreach (CardDTO card in cardDTOs)
+            {
+                Card cards = new Card(0, card.CardId, card.IndexCard);
+                this.pnLists.Controls.Add(cards);
+            }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tbTitleNewCard.Text))
+            {
+                MessageBox.Show("Please enter title before add card", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                CardBLL cardBLL = new CardBLL();
+                CardDTO cardDTO = new CardDTO(cardBLL.GetAllCard().Count()+1, this.id, cardDTOs.Count()+1, tbTitleNewCard.Text, "", 1, 0);
+                cardBLL.InsertCard(cardDTO);
+            }
+            LoadCards();
         }
     }
 }

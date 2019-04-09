@@ -40,8 +40,8 @@
             this.descriptionText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cardLabel = new System.Windows.Forms.Panel();
+            this.checkDueDate = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,6 +66,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Panel();
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -187,24 +188,24 @@
             this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
+            // cardLabel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Location = new System.Drawing.Point(228, 112);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(39, 21);
-            this.panel1.TabIndex = 37;
+            this.cardLabel.BackColor = System.Drawing.Color.Red;
+            this.cardLabel.Location = new System.Drawing.Point(228, 112);
+            this.cardLabel.Name = "cardLabel";
+            this.cardLabel.Size = new System.Drawing.Size(39, 21);
+            this.cardLabel.TabIndex = 37;
             // 
-            // checkBox1
+            // checkDueDate
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(375, 112);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(100, 21);
-            this.checkBox1.TabIndex = 36;
-            this.checkBox1.Text = "hết hạn lúc";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkDueDate.AutoSize = true;
+            this.checkDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDueDate.Location = new System.Drawing.Point(375, 112);
+            this.checkDueDate.Name = "checkDueDate";
+            this.checkDueDate.Size = new System.Drawing.Size(100, 21);
+            this.checkDueDate.TabIndex = 36;
+            this.checkDueDate.Text = "hết hạn lúc";
+            this.checkDueDate.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -540,8 +541,8 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.pictureBox2);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.checkBox1);
-            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Controls.Add(this.checkDueDate);
+            this.panel4.Controls.Add(this.cardLabel);
             this.panel4.Controls.Add(this.CardName);
             this.panel4.Location = new System.Drawing.Point(8, 12);
             this.panel4.Name = "panel4";
@@ -558,12 +559,38 @@
             this.CloseButton.TabIndex = 73;
             this.CloseButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseClick);
             // 
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
+            this.bunifuThinButton21.ButtonText = "Di chuyển";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 20;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.Location = new System.Drawing.Point(616, 202);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.Size = new System.Drawing.Size(136, 38);
+            this.bunifuThinButton21.TabIndex = 74;
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CardDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(770, 727);
+            this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
@@ -580,7 +607,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CardDetail";
-            this.Text = "CardDetail";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -613,8 +640,8 @@
         private System.Windows.Forms.TextBox descriptionText;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Panel cardLabel;
+        private System.Windows.Forms.CheckBox checkDueDate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -639,5 +666,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel CloseButton;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
     }
 }
