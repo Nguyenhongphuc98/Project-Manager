@@ -17,6 +17,7 @@ namespace GUI
             InitializeComponent();
             this.Location = new Point(X, Y);
             this.StartPosition = FormStartPosition.Manual;
+          
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -24,9 +25,5 @@ namespace GUI
             this.Close();
         }
 
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

@@ -44,7 +44,10 @@
     <Compile Include="ActivityDTO.cs" />
     <Compile Include="Board.cs" />
     <Compile Include="CardDTO.cs" />
+    <Compile Include="CardUserDTO.cs" />
+    <Compile Include="ChecklistDTO.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="GroupMemberDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

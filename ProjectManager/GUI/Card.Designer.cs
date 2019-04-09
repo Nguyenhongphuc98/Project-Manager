@@ -32,21 +32,28 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.memberName = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.cmtPicture = new System.Windows.Forms.PictureBox();
+            this.desPicture = new System.Windows.Forms.PictureBox();
+            this.datePicture = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CardName = new System.Windows.Forms.TextBox();
             this.CardLabel = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dateCard = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmtPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,7 +62,7 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.memberName);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(357, 55);
+            this.panel1.Location = new System.Drawing.Point(309, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(44, 39);
@@ -64,7 +71,7 @@
             // memberName
             // 
             this.memberName.AutoSize = true;
-            this.memberName.BackColor = System.Drawing.SystemColors.Control;
+            this.memberName.BackColor = System.Drawing.Color.Transparent;
             this.memberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memberName.Location = new System.Drawing.Point(11, 7);
             this.memberName.Name = "memberName";
@@ -75,7 +82,7 @@
             // editButton
             // 
             this.editButton.Image = ((System.Drawing.Image)(resources.GetObject("editButton.Image")));
-            this.editButton.Location = new System.Drawing.Point(373, 4);
+            this.editButton.Location = new System.Drawing.Point(407, 2);
             this.editButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(28, 25);
@@ -87,47 +94,47 @@
             this.editButton.MouseEnter += new System.EventHandler(this.editButton_MouseEnter);
             this.editButton.MouseLeave += new System.EventHandler(this.editButton_MouseLeave);
             // 
-            // pictureBox4
+            // cmtPicture
             // 
-            this.pictureBox4.Enabled = false;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(223, 55);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(29, 26);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 15;
-            this.pictureBox4.TabStop = false;
+            this.cmtPicture.Enabled = false;
+            this.cmtPicture.Image = ((System.Drawing.Image)(resources.GetObject("cmtPicture.Image")));
+            this.cmtPicture.Location = new System.Drawing.Point(3, 2);
+            this.cmtPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmtPicture.Name = "cmtPicture";
+            this.cmtPicture.Size = new System.Drawing.Size(29, 26);
+            this.cmtPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cmtPicture.TabIndex = 15;
+            this.cmtPicture.TabStop = false;
             // 
-            // pictureBox3
+            // desPicture
             // 
-            this.pictureBox3.Enabled = false;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(179, 55);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
+            this.desPicture.Enabled = false;
+            this.desPicture.Image = ((System.Drawing.Image)(resources.GetObject("desPicture.Image")));
+            this.desPicture.Location = new System.Drawing.Point(158, 2);
+            this.desPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.desPicture.Name = "desPicture";
+            this.desPicture.Size = new System.Drawing.Size(27, 25);
+            this.desPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.desPicture.TabIndex = 14;
+            this.desPicture.TabStop = false;
             // 
-            // pictureBox2
+            // datePicture
             // 
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(59, 55);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 26);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.datePicture.Enabled = false;
+            this.datePicture.Image = ((System.Drawing.Image)(resources.GetObject("datePicture.Image")));
+            this.datePicture.Location = new System.Drawing.Point(3, 2);
+            this.datePicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.datePicture.Name = "datePicture";
+            this.datePicture.Size = new System.Drawing.Size(29, 26);
+            this.datePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.datePicture.TabIndex = 13;
+            this.datePicture.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 55);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 26);
@@ -140,7 +147,7 @@
             this.CardName.Location = new System.Drawing.Point(11, 18);
             this.CardName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CardName.Name = "CardName";
-            this.CardName.Size = new System.Drawing.Size(324, 22);
+            this.CardName.Size = new System.Drawing.Size(381, 22);
             this.CardName.TabIndex = 22;
             // 
             // CardLabel
@@ -155,7 +162,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(284, 59);
+            this.checkBox1.Location = new System.Drawing.Point(253, 2);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(50, 21);
@@ -166,50 +173,98 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(253, 62);
+            this.label3.Location = new System.Drawing.Point(35, 8);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(16, 17);
             this.label3.TabIndex = 19;
             this.label3.Text = "0";
             // 
-            // label2
+            // dateCard
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(91, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "datetime";
+            this.dateCard.AutoSize = true;
+            this.dateCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateCard.Location = new System.Drawing.Point(38, 0);
+            this.dateCard.Name = "dateCard";
+            this.dateCard.Size = new System.Drawing.Size(73, 20);
+            this.dateCard.TabIndex = 18;
+            this.dateCard.Text = "datetime";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(183, 135);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.desPicture);
+            this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Controls.Add(this.checkBox1);
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 45);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(381, 47);
+            this.flowLayoutPanel1.TabIndex = 24;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.Controls.Add(this.datePicture);
+            this.flowLayoutPanel2.Controls.Add(this.dateCard);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(38, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(114, 30);
+            this.flowLayoutPanel2.TabIndex = 25;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.cmtPicture);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(191, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(56, 29);
+            this.panel2.TabIndex = 25;
             // 
             // Card
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.AutoSize = true;
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.editButton);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CardName);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CardLabel);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Card";
-            this.Size = new System.Drawing.Size(411, 98);
+            this.Size = new System.Drawing.Size(438, 182);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Card_MouseClick);
             this.MouseEnter += new System.EventHandler(this.Card_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Card_MouseLeave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmtPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,14 +275,18 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label memberName;
         private System.Windows.Forms.PictureBox editButton;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox cmtPicture;
+        private System.Windows.Forms.PictureBox desPicture;
+        private System.Windows.Forms.PictureBox datePicture;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox CardName;
         private System.Windows.Forms.Panel CardLabel;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label dateCard;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Panel panel2;
     }
 }

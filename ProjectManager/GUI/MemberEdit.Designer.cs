@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberEdit));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.CancelButton = new System.Windows.Forms.Button();
-            this.SaveButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SaveButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.CancelButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -41,25 +42,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(192, 35);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
-            // CancelButton
-            // 
-            this.CancelButton.Location = new System.Drawing.Point(70, 110);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 6;
-            this.CancelButton.Text = "Hủy";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Location = new System.Drawing.Point(70, 81);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
-            this.SaveButton.TabIndex = 5;
-            this.SaveButton.Text = "Lưu";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 11);
@@ -67,15 +49,66 @@
             this.textBox1.Size = new System.Drawing.Size(193, 22);
             this.textBox1.TabIndex = 4;
             // 
+            // SaveButton
+            // 
+            this.SaveButton.ActiveBorderThickness = 1;
+            this.SaveButton.ActiveCornerRadius = 20;
+            this.SaveButton.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.SaveButton.ActiveForecolor = System.Drawing.Color.White;
+            this.SaveButton.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.SaveButton.BackColor = System.Drawing.SystemColors.Control;
+            this.SaveButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveButton.BackgroundImage")));
+            this.SaveButton.ButtonText = "Lưu";
+            this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SaveButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.SaveButton.IdleBorderThickness = 1;
+            this.SaveButton.IdleCornerRadius = 20;
+            this.SaveButton.IdleFillColor = System.Drawing.Color.White;
+            this.SaveButton.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.SaveButton.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.SaveButton.Location = new System.Drawing.Point(73, 83);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(69, 36);
+            this.SaveButton.TabIndex = 8;
+            this.SaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CancelButton
+            // 
+            this.CancelButton.ActiveBorderThickness = 1;
+            this.CancelButton.ActiveCornerRadius = 20;
+            this.CancelButton.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.CancelButton.ActiveForecolor = System.Drawing.Color.White;
+            this.CancelButton.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.CancelButton.BackColor = System.Drawing.SystemColors.Control;
+            this.CancelButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CancelButton.BackgroundImage")));
+            this.CancelButton.ButtonText = "Hủy";
+            this.CancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CancelButton.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.CancelButton.IdleBorderThickness = 1;
+            this.CancelButton.IdleCornerRadius = 20;
+            this.CancelButton.IdleFillColor = System.Drawing.Color.White;
+            this.CancelButton.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.CancelButton.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.CancelButton.Location = new System.Drawing.Point(73, 117);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(69, 36);
+            this.CancelButton.TabIndex = 9;
+            this.CancelButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
             // MemberEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(217, 145);
+            this.ClientSize = new System.Drawing.Size(219, 162);
             this.ControlBox = false;
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.textBox1);
             this.Name = "MemberEdit";
             this.Text = "MemberEdit";
@@ -87,8 +120,8 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.TextBox textBox1;
+        private Bunifu.Framework.UI.BunifuThinButton2 SaveButton;
+        private Bunifu.Framework.UI.BunifuThinButton2 CancelButton;
     }
 }

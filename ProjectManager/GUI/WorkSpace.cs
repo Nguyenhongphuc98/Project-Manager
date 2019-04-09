@@ -24,7 +24,7 @@ namespace GUI
             LoadListActivity();
             LoadCard();
 
-            TestInsertFunction();
+           // TestInsertFunction();
         }
 
         public void TestInsertFunction()
@@ -78,7 +78,7 @@ namespace GUI
 
         public void LoadCard()
         {
-            Card c = new Card(600, 100);
+            Card c = new Card(600, 100, 1);
             this.listSpace.Controls.Add(c);
             c.Show();
         }

@@ -58,6 +58,8 @@
     <Compile Include="ActivityDAL.cs" />
     <Compile Include="BoardDAL.cs" />
     <Compile Include="CardDAL.cs" />
+    <Compile Include="CardUserDAL.cs" />
+    <Compile Include="ChecklistDAL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,7 +10,7 @@ namespace DAL
 {
     public class CardDAL : DatabaseAccess
     {
-        public List<CardDTO> GetAllActivity()
+        public List<CardDTO> GetAllCard()
         {
             List<CardDTO> listCard = new List<CardDTO>();
 
@@ -39,14 +39,14 @@ namespace DAL
             return listCard;
         }
 
-        public CardDTO GetActivity(int id)
+        public CardDTO GetCard(int id)
         {
             CardDTO card;
 
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM CARD WHERE CARD _ID = " + id;
+            command.CommandText = "SELECT * FROM CARD WHERE CARD_ID = " + id;
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -58,7 +58,7 @@ namespace DAL
                 string description = reader.GetString(4);
                 int label = reader.GetInt32(5);
                 DateTime dueDate = reader.GetDateTime(6);
-                float status = reader.GetInt64(5);
+                float status = reader.GetInt64(7);
 
                 card = new CardDTO(cardId, listId, indexCard, title, description, label, dueDate, status);
                 return card;
@@ -68,11 +68,33 @@ namespace DAL
             return null;
         }
 
+        public String GetCardName(int id)
+        {
+            CardDTO card;
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT * FROM CARD WHERE CARD_ID = " + id;
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                string title = reader.GetString(3);
+                return title;
+            }
+
+            this.Close();
+            return null;
+        }
+
+        
+
         public bool InsertCard(CardDTO card)
         {
             this.ConnectToDatabase();
 
-            string Query = "insert into CARD values('" + card.CardId + "','" + card.ListId + "','" + card.IndexCard + "','" + card.Title + "','" + card.Description + "','" + card.Label + "', '" + card.DueDate + "','" + card.Status + "')";
+            string Query = "insert into CARD values('" + card.CardId + "','" + card.ListId + "','" + card.IndexCard + "','" + card.Title + "','" + card.Description + "','" + card.Label + "','" + card.DueDate + "','" + card.Status + "')";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);

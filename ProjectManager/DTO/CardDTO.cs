@@ -17,7 +17,7 @@ namespace DTO
         DateTime dueDate;
         float status;
 
-        public CardDTO(int cardId, int listId, int indexCard, string title, string description, int label, DateTime timeCreate, float status)
+        public CardDTO(int cardId, int listId, int indexCard, string title, string description, int label, DateTime duedate, float status)
         {
             this.cardId = cardId;
             this.listId = listId;

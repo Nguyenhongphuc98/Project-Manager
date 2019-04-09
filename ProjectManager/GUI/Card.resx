@@ -816,7 +816,7 @@
         QmCC
 </value>
   </data>
-  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="cmtPicture.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAHYCAYAAAA7/VAlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         iQAAC4kBN8nLrQAAGxdJREFUeF7t3Xm0dfl85/GqolClzCQUaYqSIBQhZsocISWmJtU6Yoh5CqnW1Vm6
@@ -938,7 +938,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="desPicture.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAYrxJREFUeF7t
         vX+srW1a3zXAAXpQ3tJSLO8we/3c55x3ZmCG4R1gINPM2PaPErFttE0QfzS2/v5RJWraErQ1janQWIyW
@@ -1365,7 +1365,7 @@
         aj1C39ve9v8Dzbcxw1aTZu8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="datePicture.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAM0hJREFUeF7t
         3Qn4rtW8/3HazfOkQaKkeS6ZSmlQiKQ4UolKcYSDgw465CianSgqDSIaqJRUaEJRKs2KUJpL8zz//5+P
