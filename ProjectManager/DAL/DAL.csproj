@@ -55,6 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UserDAL.cs" />
+    <Compile Include="ListDAL.cs" />
+    <Compile Include="GroupUserDAL.cs" />
+    <Compile Include="GroupDAL.cs" />
+    <Compile Include="CommentDAL.cs" />
     <Compile Include="ActivityDAL.cs" />
     <Compile Include="BoardDAL.cs" />
     <Compile Include="CardDAL.cs" />

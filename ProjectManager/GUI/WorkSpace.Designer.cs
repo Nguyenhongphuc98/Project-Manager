@@ -114,6 +114,7 @@
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Textcolor = System.Drawing.Color.White;
             this.btnHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnSearch
             // 
@@ -182,6 +183,7 @@
             this.btnPlus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPlus.Textcolor = System.Drawing.Color.White;
             this.btnPlus.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // btnInfor
             // 
@@ -216,6 +218,7 @@
             this.btnInfor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfor.Textcolor = System.Drawing.Color.White;
             this.btnInfor.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfor.Click += new System.EventHandler(this.btnInfor_Click);
             // 
             // btnNotify
             // 
@@ -381,8 +384,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnUser;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tbSearch;
-        private System.Windows.Forms.Panel pnWorkSpace;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.Panel pnWorkSpace;
     }
 }

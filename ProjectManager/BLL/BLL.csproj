@@ -47,6 +47,7 @@
     <Compile Include="CardUserBLL.cs" />
     <Compile Include="ChecklistBLL.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="ListBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
