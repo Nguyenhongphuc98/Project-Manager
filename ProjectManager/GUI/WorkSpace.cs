@@ -88,6 +88,11 @@ namespace GUI
         {
             this.pnWorkSpace.Controls.Clear();
             this.pnWorkSpace.Controls.Add(listSpace);
+
+            ListUI l = new ListUI();
+            this.listSpace.Controls.Add(l);
+
+
             listSpace.Show();
         }
 
