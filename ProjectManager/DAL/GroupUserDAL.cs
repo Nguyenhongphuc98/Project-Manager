@@ -17,7 +17,7 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM ACTIVITY ";
+            command.CommandText = "SELECT * FROM GROUPUSER ";
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -25,8 +25,8 @@ namespace DAL
                 int groupId = reader.GetInt32(0);
                 int userId = reader.GetInt32(1);
 
-                GroupUserDTO activity = new GroupUserDTO(groupId,userId);
-                listGroupUser.Add(activity);
+                GroupUserDTO groupuser = new GroupUserDTO(groupId,userId);
+                listGroupUser.Add(groupuser);
             }
 
             this.Close();
@@ -40,7 +40,7 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM ACTIVITY WHERE ACTIVITY_ID = "+id;
+            command.CommandText = "SELECT * FROM GROUPUSER WHERE GROUPUSER_ID = "+id;
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -56,11 +56,11 @@ namespace DAL
             return null;
         }
 
-        public bool InsertGroupUser(GroupUserDTO activity)
+        public bool InsertGroupUser(GroupUserDTO groupuser)
         {
             this.ConnectToDatabase();
 
-            string Query = "insert into ACTIVITY values('" + activity.GroupId + "','" + activity.UserId + "');";
+            string Query = "insert into GROUPUSER values('" + groupuser.GroupId + "','" + groupuser.UserId + "');";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
@@ -72,11 +72,11 @@ namespace DAL
             return true;
         }
 
-        public bool UpdateGroupUser(GroupUserDTO activity)
+        public bool UpdateGroupUser(GroupUserDTO groupuser)
         {
             this.ConnectToDatabase();
 
-            string Query = "update ACTIVITY set GROUP_ID='" + activity.GroupId + "',USER_ID = '" + activity.UserId;
+            string Query = "update GROUPUSER set GROUP_ID='" + groupuser.GroupId + "',USER_ID = '" + groupuser.UserId;
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
