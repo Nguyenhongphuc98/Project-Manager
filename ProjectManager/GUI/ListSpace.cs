@@ -72,6 +72,17 @@ namespace GUI
         void LoadBaseInfor()
         {
             this.lbNameProject.Text = this.title;
+            if(this.background!="NULL")
+            {
+                //---------background is color---------------
+                string[] value = background.Split(',');
+                int r = Int32.Parse(value[0]);
+                int g = Int32.Parse(value[1]);
+                int b = Int32.Parse(value[2]);
+
+                this.BackgroundImage = null;
+                this.BackColor = Color.FromArgb(r, g, b);
+            }
 
             switch(this.mode)
             {
