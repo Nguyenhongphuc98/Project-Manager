@@ -40,21 +40,23 @@
             // pnLists
             // 
             this.pnLists.AutoScroll = true;
-            this.pnLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(247)))));
-            this.pnLists.Location = new System.Drawing.Point(4, 42);
+            this.pnLists.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.pnLists.Location = new System.Drawing.Point(5, 52);
+            this.pnLists.Margin = new System.Windows.Forms.Padding(4);
             this.pnLists.Name = "pnLists";
-            this.pnLists.Size = new System.Drawing.Size(259, 219);
+            this.pnLists.Size = new System.Drawing.Size(345, 270);
             this.pnLists.TabIndex = 0;
             // 
             // lbListName
             // 
             this.lbListName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.lbListName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbListName.Font = new System.Drawing.Font("Minion Pro SmBd Cond Capt", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbListName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbListName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(57)))), ((int)(((byte)(77)))));
             this.lbListName.Location = new System.Drawing.Point(0, 0);
+            this.lbListName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbListName.Name = "lbListName";
-            this.lbListName.Size = new System.Drawing.Size(266, 39);
+            this.lbListName.Size = new System.Drawing.Size(355, 48);
             this.lbListName.TabIndex = 1;
             this.lbListName.Text = "List name";
             this.lbListName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -81,13 +83,14 @@
             this.btnNewCard.IconVisible = true;
             this.btnNewCard.IconZoom = 50D;
             this.btnNewCard.IsTab = false;
-            this.btnNewCard.Location = new System.Drawing.Point(0, 299);
+            this.btnNewCard.Location = new System.Drawing.Point(0, 368);
+            this.btnNewCard.Margin = new System.Windows.Forms.Padding(5);
             this.btnNewCard.Name = "btnNewCard";
             this.btnNewCard.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.btnNewCard.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(85)))), ((int)(((byte)(23)))));
             this.btnNewCard.OnHoverTextColor = System.Drawing.Color.White;
             this.btnNewCard.selected = false;
-            this.btnNewCard.Size = new System.Drawing.Size(266, 39);
+            this.btnNewCard.Size = new System.Drawing.Size(355, 48);
             this.btnNewCard.TabIndex = 2;
             this.btnNewCard.Text = "Add another card";
             this.btnNewCard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,10 +110,10 @@
             this.tbTitleNewCard.LineIdleColor = System.Drawing.Color.Gray;
             this.tbTitleNewCard.LineMouseHoverColor = System.Drawing.Color.Blue;
             this.tbTitleNewCard.LineThickness = 3;
-            this.tbTitleNewCard.Location = new System.Drawing.Point(0, 258);
-            this.tbTitleNewCard.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTitleNewCard.Location = new System.Drawing.Point(0, 318);
+            this.tbTitleNewCard.Margin = new System.Windows.Forms.Padding(5);
             this.tbTitleNewCard.Name = "tbTitleNewCard";
-            this.tbTitleNewCard.Size = new System.Drawing.Size(266, 40);
+            this.tbTitleNewCard.Size = new System.Drawing.Size(355, 49);
             this.tbTitleNewCard.TabIndex = 3;
             this.tbTitleNewCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -135,13 +138,14 @@
             this.btnClose.IconVisible = true;
             this.btnClose.IconZoom = 60D;
             this.btnClose.IsTab = false;
-            this.btnClose.Location = new System.Drawing.Point(102, 303);
+            this.btnClose.Location = new System.Drawing.Point(136, 373);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(85)))), ((int)(((byte)(23)))));
             this.btnClose.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnClose.OnHoverTextColor = System.Drawing.Color.White;
             this.btnClose.selected = false;
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.Size = new System.Drawing.Size(40, 37);
             this.btnClose.TabIndex = 5;
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Textcolor = System.Drawing.Color.White;
@@ -157,7 +161,7 @@
             this.btnSave.ButtonText = "Add Card";
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSave.Font = new System.Drawing.Font("Minion Pro Capt", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Iconcolor = System.Drawing.Color.Transparent;
             this.btnSave.Iconimage = null;
             this.btnSave.Iconimage_right = null;
@@ -170,23 +174,24 @@
             this.btnSave.IconVisible = true;
             this.btnSave.IconZoom = 30D;
             this.btnSave.IsTab = false;
-            this.btnSave.Location = new System.Drawing.Point(5, 303);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Location = new System.Drawing.Point(7, 373);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSave.Name = "btnSave";
             this.btnSave.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(189)))), ((int)(((byte)(79)))));
             this.btnSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(172)))), ((int)(((byte)(68)))));
             this.btnSave.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSave.selected = false;
-            this.btnSave.Size = new System.Drawing.Size(89, 30);
+            this.btnSave.Size = new System.Drawing.Size(119, 37);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Add Card";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Textcolor = System.Drawing.Color.White;
             this.btnSave.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // ListUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.Controls.Add(this.btnClose);
@@ -195,8 +200,9 @@
             this.Controls.Add(this.btnNewCard);
             this.Controls.Add(this.lbListName);
             this.Controls.Add(this.pnLists);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListUI";
-            this.Size = new System.Drawing.Size(266, 338);
+            this.Size = new System.Drawing.Size(355, 416);
             this.ResumeLayout(false);
 
         }

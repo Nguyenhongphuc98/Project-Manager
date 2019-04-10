@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardEdit));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cardName = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.Save = new System.Windows.Forms.Button();
             this.ChangeDeadline = new System.Windows.Forms.Button();
@@ -51,16 +51,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // cardName
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(391, 22);
-            this.textBox1.TabIndex = 41;
+            this.cardName.Location = new System.Drawing.Point(16, 39);
+            this.cardName.Name = "cardName";
+            this.cardName.Size = new System.Drawing.Size(391, 22);
+            this.cardName.TabIndex = 41;
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(12, 125);
+            this.SaveButton.Location = new System.Drawing.Point(12, 148);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 40;
@@ -70,7 +70,7 @@
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(428, 134);
+            this.Save.Location = new System.Drawing.Point(428, 148);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(120, 23);
             this.Save.TabIndex = 39;
@@ -80,7 +80,7 @@
             // 
             // ChangeDeadline
             // 
-            this.ChangeDeadline.Location = new System.Drawing.Point(428, 79);
+            this.ChangeDeadline.Location = new System.Drawing.Point(428, 93);
             this.ChangeDeadline.Name = "ChangeDeadline";
             this.ChangeDeadline.Size = new System.Drawing.Size(120, 49);
             this.ChangeDeadline.TabIndex = 38;
@@ -92,7 +92,7 @@
             // 
             this.ChangeMember.Location = new System.Drawing.Point(428, 50);
             this.ChangeMember.Name = "ChangeMember";
-            this.ChangeMember.Size = new System.Drawing.Size(120, 23);
+            this.ChangeMember.Size = new System.Drawing.Size(120, 37);
             this.ChangeMember.TabIndex = 37;
             this.ChangeMember.Text = "Thay thành viên";
             this.ChangeMember.UseVisualStyleBackColor = true;
@@ -209,10 +209,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 171);
+            this.ClientSize = new System.Drawing.Size(560, 185);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cardName);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.ChangeDeadline);
@@ -239,7 +239,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox cardName;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button ChangeDeadline;

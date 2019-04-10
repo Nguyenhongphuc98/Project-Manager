@@ -12,7 +12,7 @@ namespace GUI
 {
     public partial class DateEdit : Form
     {
-        public DateEdit(int X, int Y)
+        public DateEdit(int X, int Y, int cardId)
         {
             InitializeComponent();
             this.Location = new Point(X, Y);
@@ -25,5 +25,9 @@ namespace GUI
             this.Close();
         }
 
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

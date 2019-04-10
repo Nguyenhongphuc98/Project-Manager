@@ -14,6 +14,7 @@ namespace GUI
 {
     public partial class CardDetail : Form
     {
+        int _cardId;
         int _boardId;
         int _listId;
         string title;
@@ -24,11 +25,46 @@ namespace GUI
         public CardDetail(int id)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            _cardId = id;
+            cardDTO = cardBLL.GetCard(_cardId);
+            switch (cardDTO.Label)
+            {
+                case 1:
+                    this.cardLabel.BackColor = Color.Red;
+                    break;
+                case 2:
+                    this.cardLabel.BackColor = Color.Yellow;
+                    break;
+                case 3:
+                    this.cardLabel.BackColor = Color.Green;
+                    break;
+                case 4:
+                    this.cardLabel.BackColor = Color.Orange;
+                    break;
+                case 5:
+                    this.cardLabel.BackColor = Color.Blue;
+                    break;
+                case 6:
+                    this.cardLabel.BackColor = Color.Fuchsia;
+                    break;
+                default:
+                    this.cardLabel.BackColor = Color.Transparent;
+                    break;
+            }
+            this.CardName.Text = cardDTO.Title;
+            this.descriptionText.Text = cardDTO.Description;
+            this.checkDueDate.Text = cardDTO.DueDate.ToString();
+
             this.descriptionText.LostFocus += DescriptionText_LostFocus;
             this.commentText.LostFocus += CommentText_LostFocus;
-            this.StartPosition = FormStartPosition.CenterScreen;
-            cardDTO = cardBLL.GetCard(id);
-            this.CardName.Text = cardDTO.Title;
+            this.CardName.LostFocus += CardName_LostFocus;
+        }
+
+        private void CardName_LostFocus(object sender, EventArgs e)
+        {
+            cardDTO.Title = this.CardName.Text;
+            cardBLL.UpdateCard(cardDTO);
         }
 
         private void CommentText_LostFocus(object sender, EventArgs e)
@@ -36,6 +72,10 @@ namespace GUI
             if (commentText.Text == "")
             {
                 commentText.Text = "Thêm bình luận...";
+            }
+            else
+            {
+
             }
         }
 
@@ -45,29 +85,34 @@ namespace GUI
             {
                 descriptionText.Text = "Thêm mô tả...";
             }
+            else
+            {
+                cardDTO.Description = descriptionText.Text;
+                cardBLL.UpdateCard(cardDTO);
+            }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            this.Close();
 
+            this.Close();
         }
 
         private void AddMem_Click(object sender, EventArgs e)
         {
-            MemberEdit editMember = new MemberEdit(this.Location.X + this.Width, this.Location.Y);
+            MemberEdit editMember = new MemberEdit(this.Location.X + this.Width, this.Location.Y, _cardId);
             editMember.Show();
         }
 
         private void EditLabel_Click(object sender, EventArgs e)
         {
-            LabelEdit labelEdit = new LabelEdit(this.Location.X + this.Width, this.Location.Y + EditLabel.Location.Y);
+            LabelEdit labelEdit = new LabelEdit(this.Location.X + this.Width, this.Location.Y + EditLabel.Location.Y, _cardId);
             labelEdit.Show();
         }
 
         private void DueDate_Click(object sender, EventArgs e)
         {
-            DateEdit dateEdit = new DateEdit(this.Location.X + this.Width, this.Location.Y + DueDate.Location.Y);
+            DateEdit dateEdit = new DateEdit(this.Location.X + this.Width, this.Location.Y + DueDate.Location.Y, _cardId);
             dateEdit.Show();
         }
 
