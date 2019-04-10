@@ -40,11 +40,20 @@ namespace BLL
             CardDAL adal = new CardDAL();
             return adal.InsertCard(card);
         }
-
+        public bool InsertDate(CardDTO card)
+        {
+            CardDAL adal = new CardDAL();
+            return adal.InsertDate(card);
+        }
         public bool UpdateCard(CardDTO card)
         {
             CardDAL adal = new CardDAL();
             return adal.UpdateCard(card);
+        }
+        public bool UpdateDate(CardDTO card)
+        {
+            CardDAL adal = new CardDAL();
+            return adal.UpdateDate(card);
         }
 
         public bool UpdateCardName(int _cardId)

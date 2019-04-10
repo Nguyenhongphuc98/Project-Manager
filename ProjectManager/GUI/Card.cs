@@ -21,6 +21,8 @@ namespace GUI
         int _cardId;
         CardBLL cardBLL;
         CardDTO cardDTO;
+        ChecklistBLL checklistBLL = new ChecklistBLL();
+        List<ChecklistDTO> checklistDTOs;
 
         //====================================================
 
@@ -51,6 +53,7 @@ namespace GUI
             CardName.Text = cardBLL.GetCardName(cardId);
             cardDTO = cardBLL.GetCard(cardId);
             CardName.LostFocus += CardName_LostFocus;
+            checklistDTOs = checklistBLL.GetAllChecklist(cardId);
 
             if (cardDTO.Description.Equals(""))
             {
@@ -84,7 +87,11 @@ namespace GUI
                     this.CardLabel.BackColor = Color.Transparent;
                     break;
             }
-
+            if (checklistDTOs.Count() != 0)
+            {
+                checkBox1.Visible = true;
+            }
+            else checkBox1.Visible = false;
             this.Location = new Point(oX, oY);
         }
 

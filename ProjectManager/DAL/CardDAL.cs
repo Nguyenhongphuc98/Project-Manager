@@ -115,14 +115,12 @@ namespace DAL
             this.Close();
             return null;
         }
-
         
-
         public bool InsertCard(CardDTO card)
         {
             this.ConnectToDatabase();
 
-            string Query = "insert into CARD(CARD_ID,LIST_ID,INDEX_CARD,TITLE,DESCRIPTION,LABEL,STATUS) values('" + card.CardId + "','" + card.ListId + "','" + card.IndexCard + "','" + card.Title + "','" + card.Description + "','" + card.Label + "','" + card.Status + "')";
+            string Query = "insert into CARD(LIST_ID,INDEX_CARD,TITLE,DESCRIPTION,LABEL,STATUS) values('"+ card.ListId + "','" + card.IndexCard + "','" + card.Title + "','" + card.Description + "','" + card.Label + "','" + card.Status + "')";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
@@ -138,8 +136,7 @@ namespace DAL
         {
             this.ConnectToDatabase();
 
-            string Query = "update CARD set LIST_ID = '" + card.ListId
-                            + "',INDEX_CARD ='" + card.IndexCard + "',TITLE = '" + card.Title + "',DESCRIPTION = '" + card.Description
+            string Query = "update CARD set LIST_ID = '" + card.ListId + "',INDEX_CARD ='" + card.IndexCard + "',TITLE = '" + card.Title + "',DESCRIPTION = '" + card.Description
                             + "',LABEL = '" + card.Label + "',STATUS='" + card.Status + "' WHERE CARD_ID ='" + card.CardId + "'";
 
             //This is command class which will handle the query and connection object.  
@@ -151,6 +148,38 @@ namespace DAL
             this.Close();
             return true;
         }
+
+        public bool InsertDate(CardDTO card)
+        {
+            this.ConnectToDatabase();
+            string Query = "insert into CARD(DUEDATE) values('" + card.DueDate + "')";
+
+            //This is command class which will handle the query and connection object.  
+            MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
+
+            command.ExecuteNonQuery();
+
+            this.Close();
+            return true;
+        }
+
+        public bool UpdateDate(CardDTO card)
+        {
+            this.ConnectToDatabase();
+
+            string Query = "update CARD set DUEDATE = @dueDate WHERE CARD_ID ='" + card.CardId + "'";
+
+            //This is command class which will handle the query and connection object.  
+            MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
+            command.Parameters.Add("@dueDate", MySqlDbType.DateTime).Value = card.DueDate;
+
+            command.ExecuteNonQuery();
+
+
+            this.Close();
+            return true;
+        }
+
         public bool DeleteCard(CardDTO card)
         {
             this.ConnectToDatabase();
@@ -165,5 +194,6 @@ namespace DAL
             this.Close();
             return true;
         }
+        
     }
 }

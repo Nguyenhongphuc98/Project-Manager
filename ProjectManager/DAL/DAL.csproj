@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardUserDAL.cs" />
+    <Compile Include="LamViecDAL.cs" />
     <Compile Include="UserDAL.cs" />
     <Compile Include="ListDAL.cs" />
     <Compile Include="GroupUserDAL.cs" />

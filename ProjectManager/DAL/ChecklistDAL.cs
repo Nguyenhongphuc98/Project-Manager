@@ -34,6 +34,30 @@ namespace DAL
             this.Close();
             return listChecklist;
         }
+        public List<ChecklistDTO> GetAllChecklist(int _cardId)
+        {
+            List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT * FROM CHECKLIST WHERE CARD_ID = '" + _cardId + "'";
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int checklistId = reader.GetInt32(0);
+                int cardId = reader.GetInt32(1);
+                int checklistIndex = reader.GetInt32(2);
+                string title = reader.GetString(3);
+                byte status = reader.GetByte(4);
+                ChecklistDTO checklist = new ChecklistDTO(checklistId, cardId, checklistIndex, title, status);
+                listChecklist.Add(checklist);
+            }
+
+            this.Close();
+            return listChecklist;
+        }
 
         public ChecklistDTO GetChecklist(int id)
         {
@@ -42,7 +66,31 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM USERS WHERE CHECKLIST_ID = " + id;
+            command.CommandText = "SELECT * FROM CHECKLIST WHERE CHECKLIST_ID = " + id;
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int checklistId = reader.GetInt32(0);
+                int cardId = reader.GetInt32(1);
+                int checklistIndex = reader.GetInt32(2);
+                string title = reader.GetString(3);
+                byte status = reader.GetByte(4);
+                checklist = new ChecklistDTO(checklistId, cardId, checklistIndex, title, status);
+                return checklist;
+            }
+
+            this.Close();
+            return null;
+        }
+        public ChecklistDTO GetChecklist(string _title)
+        {
+            ChecklistDTO checklist;
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT * FROM CHECKLIST WHERE TITLE = '" + _title + "'";
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -60,11 +108,41 @@ namespace DAL
             return null;
         }
 
-        public bool InsertChecklist(ChecklistDTO checklist)
+        public bool InsertChecklist(int cardId, int checklistIndex, string title, byte status)
         {
             this.ConnectToDatabase();
 
-            string Query = "insert into CHECKLIST values('" + checklist.ChecklistId + "','" + checklist.CardId + "','" + checklist.ChecklistIndex + "','" + checklist.Title + "','" + checklist.Status + "')";
+            string Query = "insert into CHECKLIST(CARD_ID,INDEX_CHECKLIST,TITLE,STATUS) values('" + cardId + "','" + checklistIndex + "','" + title + "','" + status + "')";
+
+            //This is command class which will handle the query and connection object.  
+            MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
+
+            command.ExecuteNonQuery();
+
+
+            this.Close();
+            return true;
+        }
+        public bool UpdateChecklist(ChecklistDTO checklist)
+        {
+            this.ConnectToDatabase();
+
+            string Query = "update CHECKLIST set INDEX_CHECKLIST = '" + checklist.ChecklistIndex + "',TITLE = '" + checklist.Title + "',STATUS = '" + checklist.Status + "' WHERE CARD_ID =" + checklist.CardId;
+
+            //This is command class which will handle the query and connection object.  
+            MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
+
+            command.ExecuteNonQuery();
+
+
+            this.Close();
+            return true;
+        }
+        public bool UpdateChecklist(int cardId, int checklistIndex, string title, byte status)
+        {
+            this.ConnectToDatabase();
+
+            string Query = "update CHECKLIST set INDEX_CHECKLIST = '" + checklistIndex + "',TITLE = '" + title + "',STATUS = '" + status + "' WHERE CARD_ID =" + cardId;
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
@@ -76,17 +154,16 @@ namespace DAL
             return true;
         }
 
-        public bool UpdateChecklist(ChecklistDTO checklist)
+        public bool DeleteChecklist(int cardId)
         {
             this.ConnectToDatabase();
 
-            string Query = "update CHECKLIST set CHECKLIST_ID='" + checklist.ChecklistId + "',CARD_ID = '" + checklist.CardId + "',INDEX_CHECKLIST = '" + checklist.ChecklistIndex + "',TITLE = '" + checklist.Title + "',STATUS = '" + checklist.Status + "'";
+            string Query = "delete from CHECKLIST where CARD_ID = '" + cardId + "'";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
 
             command.ExecuteNonQuery();
-
 
             this.Close();
             return true;

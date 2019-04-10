@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardDetail));
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.followCheck = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.commentText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panelTasks = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.descriptionText = new System.Windows.Forms.TextBox();
@@ -53,41 +52,55 @@
             this.label10 = new System.Windows.Forms.Label();
             this.AddMem = new Bunifu.Framework.UI.BunifuThinButton2();
             this.EditLabel = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.ChecklistBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.DueDate = new Bunifu.Framework.UI.BunifuThinButton2();
             this.addTask = new Bunifu.Framework.UI.BunifuThinButton2();
             this.SaveButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.followPic = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.DesPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.checklistPn = new System.Windows.Forms.Panel();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.taskFlpanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Panel();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.moveBtn = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.followPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.DesPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.checklistPn.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // checkBox3
+            // followCheck
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(616, 369);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(86, 21);
-            this.checkBox3.TabIndex = 54;
-            this.checkBox3.Text = "Theo dõi";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.followCheck.AutoSize = true;
+            this.followCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.followCheck.Location = new System.Drawing.Point(616, 369);
+            this.followCheck.Name = "followCheck";
+            this.followCheck.Size = new System.Drawing.Size(86, 21);
+            this.followCheck.TabIndex = 54;
+            this.followCheck.Text = "Theo dõi";
+            this.followCheck.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -129,16 +142,10 @@
             this.label6.TabIndex = 45;
             this.label6.Text = "Thêm bình luận";
             // 
-            // panelTasks
-            // 
-            this.panelTasks.Location = new System.Drawing.Point(32, 47);
-            this.panelTasks.Name = "panelTasks";
-            this.panelTasks.Size = new System.Drawing.Size(535, 23);
-            this.panelTasks.TabIndex = 44;
-            // 
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(32, 31);
+            this.progressBar1.Maximum = 10;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(535, 10);
             this.progressBar1.TabIndex = 42;
@@ -181,7 +188,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 101);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(47, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -191,7 +198,7 @@
             // cardLabel
             // 
             this.cardLabel.BackColor = System.Drawing.Color.Red;
-            this.cardLabel.Location = new System.Drawing.Point(228, 112);
+            this.cardLabel.Location = new System.Drawing.Point(7, 42);
             this.cardLabel.Name = "cardLabel";
             this.cardLabel.Size = new System.Drawing.Size(39, 21);
             this.cardLabel.TabIndex = 37;
@@ -200,7 +207,7 @@
             // 
             this.checkDueDate.AutoSize = true;
             this.checkDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDueDate.Location = new System.Drawing.Point(375, 112);
+            this.checkDueDate.Location = new System.Drawing.Point(7, 49);
             this.checkDueDate.Name = "checkDueDate";
             this.checkDueDate.Size = new System.Drawing.Size(100, 21);
             this.checkDueDate.TabIndex = 36;
@@ -211,7 +218,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(371, 76);
+            this.label4.Location = new System.Drawing.Point(3, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 20);
             this.label4.TabIndex = 35;
@@ -221,7 +228,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(224, 76);
+            this.label3.Location = new System.Drawing.Point(3, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 34;
@@ -231,7 +238,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 76);
+            this.label2.Location = new System.Drawing.Point(3, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 33;
@@ -241,7 +248,7 @@
             // 
             this.List.AutoSize = true;
             this.List.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.List.Location = new System.Drawing.Point(174, 45);
+            this.List.Location = new System.Drawing.Point(3, 0);
             this.List.Name = "List";
             this.List.Size = new System.Drawing.Size(37, 20);
             this.List.TabIndex = 32;
@@ -251,7 +258,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 44);
+            this.label1.Location = new System.Drawing.Point(29, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 31;
@@ -277,7 +284,7 @@
             this.MemberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MemberName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.MemberName.Image = ((System.Drawing.Image)(resources.GetObject("MemberName.Image")));
-            this.MemberName.Location = new System.Drawing.Point(46, 112);
+            this.MemberName.Location = new System.Drawing.Point(20, 42);
             this.MemberName.Name = "MemberName";
             this.MemberName.Size = new System.Drawing.Size(23, 25);
             this.MemberName.TabIndex = 55;
@@ -352,30 +359,31 @@
             this.EditLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.EditLabel.Click += new System.EventHandler(this.EditLabel_Click);
             // 
-            // bunifuThinButton22
+            // ChecklistBtn
             // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "Việc cần làm";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.Location = new System.Drawing.Point(616, 136);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(136, 38);
-            this.bunifuThinButton22.TabIndex = 60;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ChecklistBtn.ActiveBorderThickness = 1;
+            this.ChecklistBtn.ActiveCornerRadius = 20;
+            this.ChecklistBtn.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.ChecklistBtn.ActiveForecolor = System.Drawing.Color.White;
+            this.ChecklistBtn.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.ChecklistBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.ChecklistBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ChecklistBtn.BackgroundImage")));
+            this.ChecklistBtn.ButtonText = "Việc cần làm";
+            this.ChecklistBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ChecklistBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChecklistBtn.ForeColor = System.Drawing.Color.SeaGreen;
+            this.ChecklistBtn.IdleBorderThickness = 1;
+            this.ChecklistBtn.IdleCornerRadius = 20;
+            this.ChecklistBtn.IdleFillColor = System.Drawing.Color.White;
+            this.ChecklistBtn.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.ChecklistBtn.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.ChecklistBtn.Location = new System.Drawing.Point(616, 136);
+            this.ChecklistBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ChecklistBtn.Name = "ChecklistBtn";
+            this.ChecklistBtn.Size = new System.Drawing.Size(136, 38);
+            this.ChecklistBtn.TabIndex = 60;
+            this.ChecklistBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ChecklistBtn.Click += new System.EventHandler(this.ChecklistBtn_Click);
             // 
             // DueDate
             // 
@@ -421,12 +429,13 @@
             this.addTask.IdleFillColor = System.Drawing.Color.White;
             this.addTask.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.addTask.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.addTask.Location = new System.Drawing.Point(32, 71);
+            this.addTask.Location = new System.Drawing.Point(32, 197);
             this.addTask.Margin = new System.Windows.Forms.Padding(32, 41, 32, 41);
             this.addTask.Name = "addTask";
             this.addTask.Size = new System.Drawing.Size(94, 43);
             this.addTask.TabIndex = 62;
             this.addTask.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.addTask.Click += new System.EventHandler(this.addTask_Click);
             // 
             // SaveButton
             // 
@@ -454,17 +463,17 @@
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // pictureBox2
+            // followPic
             // 
-            this.pictureBox2.Enabled = false;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(217, 45);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 19);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 64;
-            this.pictureBox2.TabStop = false;
+            this.followPic.Enabled = false;
+            this.followPic.Image = ((System.Drawing.Image)(resources.GetObject("followPic.Image")));
+            this.followPic.Location = new System.Drawing.Point(46, 2);
+            this.followPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.followPic.Name = "followPic";
+            this.followPic.Size = new System.Drawing.Size(21, 19);
+            this.followPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.followPic.TabIndex = 64;
+            this.followPic.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -495,21 +504,40 @@
             this.DesPanel.Controls.Add(this.label5);
             this.DesPanel.Controls.Add(this.descriptionText);
             this.DesPanel.Controls.Add(this.pictureBox3);
-            this.DesPanel.Location = new System.Drawing.Point(8, 181);
+            this.DesPanel.Location = new System.Drawing.Point(3, 165);
             this.DesPanel.Name = "DesPanel";
             this.DesPanel.Size = new System.Drawing.Size(577, 111);
             this.DesPanel.TabIndex = 67;
             // 
-            // panel2
+            // checklistPn
             // 
-            this.panel2.Controls.Add(this.checkBox2);
-            this.panel2.Controls.Add(this.progressBar1);
-            this.panel2.Controls.Add(this.panelTasks);
-            this.panel2.Controls.Add(this.addTask);
-            this.panel2.Location = new System.Drawing.Point(8, 311);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(577, 115);
-            this.panel2.TabIndex = 68;
+            this.checklistPn.Controls.Add(this.deleteBtn);
+            this.checklistPn.Controls.Add(this.taskFlpanel);
+            this.checklistPn.Controls.Add(this.checkBox2);
+            this.checklistPn.Controls.Add(this.progressBar1);
+            this.checklistPn.Controls.Add(this.addTask);
+            this.checklistPn.Location = new System.Drawing.Point(3, 282);
+            this.checklistPn.Name = "checklistPn";
+            this.checklistPn.Size = new System.Drawing.Size(577, 241);
+            this.checklistPn.TabIndex = 68;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(492, 4);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteBtn.TabIndex = 64;
+            this.deleteBtn.Text = "Xóa";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // taskFlpanel
+            // 
+            this.taskFlpanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.taskFlpanel.Location = new System.Drawing.Point(32, 47);
+            this.taskFlpanel.Name = "taskFlpanel";
+            this.taskFlpanel.Size = new System.Drawing.Size(535, 150);
+            this.taskFlpanel.TabIndex = 63;
             // 
             // panel3
             // 
@@ -517,7 +545,7 @@
             this.panel3.Controls.Add(this.commentText);
             this.panel3.Controls.Add(this.SaveButton);
             this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Location = new System.Drawing.Point(8, 451);
+            this.panel3.Location = new System.Drawing.Point(3, 529);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(577, 144);
             this.panel3.TabIndex = 69;
@@ -526,28 +554,68 @@
             // 
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.flowLayoutPanel1);
-            this.panel5.Location = new System.Drawing.Point(8, 615);
+            this.panel5.Location = new System.Drawing.Point(3, 679);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(577, 100);
             this.panel5.TabIndex = 71;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.MemberName);
-            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Controls.Add(this.flowLayoutPanel4);
+            this.panel4.Controls.Add(this.flowLayoutPanel3);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.List);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.checkDueDate);
-            this.panel4.Controls.Add(this.cardLabel);
             this.panel4.Controls.Add(this.CardName);
-            this.panel4.Location = new System.Drawing.Point(8, 12);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(577, 151);
+            this.panel4.Size = new System.Drawing.Size(577, 156);
             this.panel4.TabIndex = 72;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.List);
+            this.flowLayoutPanel4.Controls.Add(this.followPic);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(178, 45);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(172, 20);
+            this.flowLayoutPanel4.TabIndex = 66;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.panel1);
+            this.flowLayoutPanel3.Controls.Add(this.panel2);
+            this.flowLayoutPanel3.Controls.Add(this.panel6);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(34, 68);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(505, 85);
+            this.flowLayoutPanel3.TabIndex = 65;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.MemberName);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(104, 84);
+            this.panel1.TabIndex = 66;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.cardLabel);
+            this.panel2.Location = new System.Drawing.Point(113, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(78, 78);
+            this.panel2.TabIndex = 67;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.checkDueDate);
+            this.panel6.Location = new System.Drawing.Point(197, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 78);
+            this.panel6.TabIndex = 68;
             // 
             // CloseButton
             // 
@@ -559,49 +627,58 @@
             this.CloseButton.TabIndex = 73;
             this.CloseButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseClick);
             // 
-            // bunifuThinButton21
+            // moveBtn
             // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Di chuyển";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(616, 202);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(136, 38);
-            this.bunifuThinButton21.TabIndex = 74;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.moveBtn.ActiveBorderThickness = 1;
+            this.moveBtn.ActiveCornerRadius = 20;
+            this.moveBtn.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.moveBtn.ActiveForecolor = System.Drawing.Color.White;
+            this.moveBtn.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.moveBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.moveBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("moveBtn.BackgroundImage")));
+            this.moveBtn.ButtonText = "Di chuyển";
+            this.moveBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.moveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moveBtn.ForeColor = System.Drawing.Color.SeaGreen;
+            this.moveBtn.IdleBorderThickness = 1;
+            this.moveBtn.IdleCornerRadius = 20;
+            this.moveBtn.IdleFillColor = System.Drawing.Color.White;
+            this.moveBtn.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.moveBtn.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.moveBtn.Location = new System.Drawing.Point(616, 202);
+            this.moveBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.moveBtn.Name = "moveBtn";
+            this.moveBtn.Size = new System.Drawing.Size(136, 38);
+            this.moveBtn.TabIndex = 74;
+            this.moveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.moveBtn.Click += new System.EventHandler(this.moveBtn_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.panel4);
+            this.flowLayoutPanel2.Controls.Add(this.DesPanel);
+            this.flowLayoutPanel2.Controls.Add(this.checklistPn);
+            this.flowLayoutPanel2.Controls.Add(this.panel3);
+            this.flowLayoutPanel2.Controls.Add(this.panel5);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 7);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(599, 788);
+            this.flowLayoutPanel2.TabIndex = 75;
             // 
             // CardDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(770, 727);
-            this.Controls.Add(this.bunifuThinButton21);
+            this.ClientSize = new System.Drawing.Size(770, 807);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.moveBtn);
             this.Controls.Add(this.CloseButton);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.DesPanel);
             this.Controls.Add(this.EditLabel);
             this.Controls.Add(this.DueDate);
-            this.Controls.Add(this.bunifuThinButton22);
+            this.Controls.Add(this.ChecklistBtn);
             this.Controls.Add(this.AddMem);
-            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.followCheck);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -609,19 +686,29 @@
             this.Name = "CardDetail";
             this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.followPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.DesPanel.ResumeLayout(false);
             this.DesPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.checklistPn.ResumeLayout(false);
+            this.checklistPn.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -629,12 +716,11 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox followCheck;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox commentText;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panelTasks;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox descriptionText;
@@ -653,19 +739,27 @@
         private System.Windows.Forms.Label label10;
         private Bunifu.Framework.UI.BunifuThinButton2 AddMem;
         private Bunifu.Framework.UI.BunifuThinButton2 EditLabel;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
+        private Bunifu.Framework.UI.BunifuThinButton2 ChecklistBtn;
         private Bunifu.Framework.UI.BunifuThinButton2 DueDate;
         private Bunifu.Framework.UI.BunifuThinButton2 addTask;
         private Bunifu.Framework.UI.BunifuThinButton2 SaveButton;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox followPic;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel DesPanel;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel checklistPn;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel CloseButton;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuThinButton2 moveBtn;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel taskFlpanel;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
     }
 }
