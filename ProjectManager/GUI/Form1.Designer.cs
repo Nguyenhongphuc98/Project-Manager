@@ -47,12 +47,12 @@
             this.tbuserName.HintForeColor = System.Drawing.Color.Empty;
             this.tbuserName.HintText = "User name";
             this.tbuserName.isPassword = false;
-            this.tbuserName.LineFocusedColor = System.Drawing.Color.Blue;
+            this.tbuserName.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(59)))), ((int)(((byte)(0)))));
             this.tbuserName.LineIdleColor = System.Drawing.Color.Gray;
-            this.tbuserName.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.tbuserName.LineThickness = 3;
+            this.tbuserName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(59)))), ((int)(((byte)(0)))));
+            this.tbuserName.LineThickness = 2;
             this.tbuserName.Location = new System.Drawing.Point(342, 75);
-            this.tbuserName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbuserName.Margin = new System.Windows.Forms.Padding(2);
             this.tbuserName.Name = "tbuserName";
             this.tbuserName.Size = new System.Drawing.Size(278, 44);
             this.tbuserName.TabIndex = 0;
@@ -88,7 +88,7 @@
             this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
             this.btnLogin.selected = false;
             this.btnLogin.Size = new System.Drawing.Size(145, 43);
-            this.btnLogin.TabIndex = 1;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogin.Textcolor = System.Drawing.Color.White;
@@ -114,12 +114,12 @@
             this.tbPassWord.HintForeColor = System.Drawing.Color.Empty;
             this.tbPassWord.HintText = "PassWord";
             this.tbPassWord.isPassword = true;
-            this.tbPassWord.LineFocusedColor = System.Drawing.Color.Blue;
+            this.tbPassWord.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(59)))), ((int)(((byte)(0)))));
             this.tbPassWord.LineIdleColor = System.Drawing.Color.Gray;
-            this.tbPassWord.LineMouseHoverColor = System.Drawing.Color.Blue;
-            this.tbPassWord.LineThickness = 3;
+            this.tbPassWord.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(59)))), ((int)(((byte)(0)))));
+            this.tbPassWord.LineThickness = 2;
             this.tbPassWord.Location = new System.Drawing.Point(342, 127);
-            this.tbPassWord.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPassWord.Margin = new System.Windows.Forms.Padding(2);
             this.tbPassWord.Name = "tbPassWord";
             this.tbPassWord.Size = new System.Drawing.Size(278, 44);
             this.tbPassWord.TabIndex = 1;
@@ -143,7 +143,7 @@
             this.lbRegister.Location = new System.Drawing.Point(572, 346);
             this.lbRegister.Name = "lbRegister";
             this.lbRegister.Size = new System.Drawing.Size(59, 16);
-            this.lbRegister.TabIndex = 4;
+            this.lbRegister.TabIndex = 3;
             this.lbRegister.Text = "Register";
             // 
             // btnClose

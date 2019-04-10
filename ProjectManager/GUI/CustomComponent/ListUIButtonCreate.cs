@@ -86,6 +86,10 @@ namespace GUI.CustomComponent
                 
             ListDTO l = new ListDTO(this.idBoard,this.index,tbNameList.Text,1);
             bool r=listBLL.InsertList(l);
+
+            ActivityBLL activityBLL = new ActivityBLL();
+            activityBLL.InsertActivity(Global.user.UserId, this.idBoard, Global.user.Name + " Has create new list: " + this.tbNameList.Text, DateTime.Now);
+
             ((ListSpace)this.Parent).LoadListOfThisBoard();
         }
     }

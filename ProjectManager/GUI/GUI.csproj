@@ -262,6 +262,7 @@
     <Content Include="src\61-512.png" />
     <Content Include="src\alarm_alert_clock_event_history_schedule_time_watch-512.png" />
     <Content Include="src\background_board.jpg" />
+    <Content Include="src\bell.png" />
     <Content Include="src\bg.png" />
     <Content Include="src\bg_login.jpg" />
     <Content Include="src\board.png" />

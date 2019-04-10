@@ -22,6 +22,7 @@ namespace GUI
         {
             InitializeComponent();
             this.lbResult.Text = "";
+            this.tbPassWord.isPassword = true;
         }
 
         //=====================================================
@@ -60,31 +61,32 @@ namespace GUI
                 lbResult.Text = "User name is can't empty";
                 return;
             }
-               
+
             if (string.IsNullOrEmpty(tbPassWord.Text))
             {
                 lbResult.Text = "Password is can't empty";
                 return;
             }
-               
+
 
             UserBLL userBLL = new UserBLL();
             UserDTO user = userBLL.GetUser(tbuserName.Text);
-            if(user==null)
+            if (user == null)
             {
                 lbResult.Text = "The user not found, try another acount";
                 return;
             }
 
-            if(user.Password!=tbPassWord.Text)
+            if (user.Password != tbPassWord.Text)
             {
                 lbResult.Text = "The password is not correct, try again";
             }
 
             WorkSpace wp = new WorkSpace(user);
+            Global.user = user;
             this.Hide();
             wp.Show();
-            //this.Show();
+            ////this.Show();
         }
     }
 }

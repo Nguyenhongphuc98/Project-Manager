@@ -32,8 +32,9 @@ namespace GUI
             this.boardUIs = new List<BoardUI>();
             this.boards = new List<Board>();
 
-           // LoadListSpace();
-           // LoadBoard();
+
+            // LoadListSpace();
+            // LoadBoard();
             LoadListActivity();
            // LoadCard();
             LoadCreate();
@@ -54,9 +55,11 @@ namespace GUI
             this.boardUIs = new List<BoardUI>();
             this.boards = new List<Board>();
 
+            this.listActivityUI.MakeHide();
+
             // LoadListSpace();
             // LoadBoard();
-            LoadListActivity();
+            //LoadListActivity();
             // LoadCard();
             LoadCreate();
 
@@ -177,17 +180,13 @@ namespace GUI
         public void LoadListActivity()
         {
 
-            listActivityUI.Size = new Size(0, 600);
+            //listActivityUI.Size = new Size(300, 0);
 
-            srcActivity = new List<ActivityDTO>();
-            //srcActivity.Add(new DTO.ActivityDTO(1, 1, 1, 1, 1, "thêm 1 card vào todo", DateTime.Now));
-            //srcActivity.Add(new DTO.ActivityDTO(1, 1, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            //srcActivity.Add(new DTO.ActivityDTO(2, 2, 1, 1, 1, "di chuyển card sang list done", DateTime.Now));
-            //srcActivity.Add(new DTO.ActivityDTO(3, 3, 1, 1, 1, "thêm Quốc Tuyến vào card custom listbox", DateTime.Now));
-            //srcActivity.Add(new DTO.ActivityDTO(4, 4, 1, 1, 1, "xóa card nothing", DateTime.Now));
+            srcActivity = new List<ActivityDTO>();          
             ActivityBLL abll = new ActivityBLL();
-            srcActivity = abll.GetAllActivity();
 
+            srcActivity = abll.GetAllActivity(Global.id_Board);
+            srcActivity.Reverse();
 
             listActivityUI.DataSource = srcActivity;
 
@@ -248,28 +247,34 @@ namespace GUI
         //=======================================================
         private void btnNotify_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //-----------list page------------------
-                if(this.listSpace.Visible==true)
-                this.listSpace.Controls.Add(listActivityUI);
+            //dont have list space mean it in home page
+            if (this.pnWorkSpace.GetChildAtPoint(new Point(1000,50))==null)
+                return;
+
+            //--------------------------------------------------------------
+            LoadListActivity();
+                try
+                {
+                    //-----------list page------------------
+                    if (this.listSpace.Visible == true)
+                        this.listSpace.Controls.Add(listActivityUI);
+                    else
+                        this.pnWorkSpace.Controls.Add(listActivityUI);
+                }
+                catch
+                {
+                    //-----------home page------------------
+                    this.pnWorkSpace.Controls.Add(listActivityUI);
+                }
+
+                if (this.listActivityUI.Size.Width ==0)
+                    this.listActivityUI.MakeShow();
                 else
-                this.pnWorkSpace.Controls.Add(listActivityUI);
-            }
-            catch
-            {
-                //-----------home page------------------
-                this.pnWorkSpace.Controls.Add(listActivityUI);
-            }
-            
-            if (this.listActivityUI.Size.Width == 0)
-                this.listActivityUI.MakeShow();
-            else
-            {
-                this.listActivityUI.MakeHide();
-                this.pnWorkSpace.Controls.Remove(listActivityUI);
-            }
-               
+                {
+                    this.listActivityUI.MakeHide();
+                    this.pnWorkSpace.Controls.Remove(listActivityUI);
+                }
+
         }
 
         bool clickInfor = false;
@@ -316,6 +321,9 @@ namespace GUI
         {
             //this.pnWorkSpace.BackgroundImage = null;
             LoadBoardUIs();
+
+            //reset board id
+            Global.id_Board = -1;
         }
 
         private void WorkSpace_FormClosed(object sender, FormClosedEventArgs e)

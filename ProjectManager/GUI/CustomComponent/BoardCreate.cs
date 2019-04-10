@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using BLL;
+using DTO;
 
 namespace GUI.CustomComponent
 {
@@ -40,20 +41,31 @@ namespace GUI.CustomComponent
         private void btnSave_Click(object sender, EventArgs e)
         {
             BoardBLL boardBLL = new BoardBLL();
+            ActivityBLL activityBLL = new ActivityBLL();
 
             String title = tbTitle.Text;
             int mode = cbMode.SelectedIndex;
             bool star = false;
 
+            if(string.IsNullOrEmpty(tbTitle.Text))
+            {
+                MessageBox.Show("Tiêu đề không được để trống!", "Lỗi!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (this.background == "NULL")
             {
-                DialogResult r = MessageBox.Show("Bạn có muốn lưu ảnh nền mặc định", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                DialogResult r = MessageBox.Show("Bạn có muốn lưu ảnh nền mặc định?", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if(r==DialogResult.OK)
                 {
                     if (cbTeam.SelectedIndex == 0)
                     {
                         //----no team---------
                         boardBLL.InsertBoard(this.index, title, mode, star, this.background);
+                        //add board for this user in user_board
+                        int boardID = boardBLL.GetMaxID();
+                        boardBLL.AddUser(Global.user.UserId, boardID);
+                        activityBLL.InsertActivity(Global.user.UserId, boardID, Global.user.Name + " Has create new board: " + title, DateTime.Now);
                     }
 
                     this.DialogResult = DialogResult.OK;
@@ -67,6 +79,10 @@ namespace GUI.CustomComponent
                 {
                     //----no team---------
                     boardBLL.InsertBoard(this.index, title, mode, star, this.background);
+                    //add board for this user in user_board
+                    int boardID = boardBLL.GetMaxID();
+                    boardBLL.AddUser(Global.user.UserId, boardID);
+                    activityBLL.InsertActivity(Global.user.UserId,boardID ,Global.user.Name + " Has create new board: " + title, DateTime.Now);
                 }
 
                 this.DialogResult = DialogResult.OK;
