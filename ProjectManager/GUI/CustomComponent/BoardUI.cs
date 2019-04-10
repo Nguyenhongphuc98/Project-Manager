@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace GUI.CustomComponent
 {
@@ -101,8 +102,10 @@ namespace GUI.CustomComponent
         private void BoardUI_Click(object sender, EventArgs e)
         {
             ListSpace listSpace = new ListSpace(this.mode, this.id, this.group, this.title, this.background);
-            
-            //ws->pnws->ls->lists->card;
+            //----add boadId---------------------
+            Global.id_Board = this.id;
+
+            //ws->pnws->ls->lists->card;       
             ((WorkSpace)this.Parent.Parent).AddListSpace(new ListSpace(this.mode, this.id, this.group, this.title, this.background));
             ((WorkSpace)this.Parent.Parent).LoadListSpace();
         }

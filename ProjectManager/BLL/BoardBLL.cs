@@ -16,10 +16,18 @@ namespace BLL
             return board.GetAllBoard();
         }
 
+       
+
         public Board GetBoard(int id)
         {
             BoardDAL board = new BoardDAL();
             return board.GetBoard(id);
+        }
+
+        public int GetMaxID()
+        {
+            BoardDAL board = new BoardDAL();
+            return board.GetMaxID();
         }
 
         public bool InsertBoard( int groupId, int index, string title,
@@ -49,6 +57,20 @@ namespace BLL
         {
             BoardDAL board = new BoardDAL();
             return board.DeleteBoard(id);
+        }
+
+
+        //============================================================
+        public bool AddUser(int idUser, int idBoard)
+        {
+            BoardDAL board = new BoardDAL();
+            return board.AddUser(idUser,idBoard);
+        }
+
+        public List<Board> GetAllBoard(int idUser)
+        {
+            BoardDAL board = new BoardDAL();
+            return board.GetAllBoard(idUser);
         }
     }
 }

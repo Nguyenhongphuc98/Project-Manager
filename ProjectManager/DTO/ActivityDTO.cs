@@ -16,6 +16,17 @@ namespace DTO
         string content;
         DateTime timeCreate;
 
+        public ActivityDTO( int boardId, int cardId, int listId, int userId, string content, DateTime timeCreate)
+        {
+            this.activityId = 0;
+            this.boardId = boardId;
+            this.cardId = cardId;
+            this.listId = listId;
+            this.userId = userId;
+            this.content = content;
+            this.timeCreate = timeCreate;
+        }
+
         public ActivityDTO(int activityId, int boardId, int cardId, int listId, int userId, string content, DateTime timeCreate)
         {
             this.activityId = activityId;

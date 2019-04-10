@@ -56,9 +56,18 @@ namespace GUI.CustomComponent
             if (e.Index >= 0)
             {
                 e.DrawBackground();
-                e.Graphics.DrawRectangle(System.Drawing.Pens.Red, 2, e.Bounds.Y + 2, 50, 50); // Simulate an icon.
-                Image icon = Image.FromFile("E:\\GithubProjects\\masterPM\\Project-Manager\\ProjectManager\\GUI\\src\\message.png");
-                e.Graphics.DrawImage(icon, new Rectangle(2, e.Bounds.Y, 50, 50));
+
+               // e.Graphics.DrawRectangle(System.Drawing.Pens.Red, 2, e.Bounds.Y + 2, 50, 50); // Simulate an icon.
+
+                string path = Application.StartupPath;
+                int i = path.IndexOf("bin");
+
+                path = path.Substring(0, i);
+                path += "src\\bell.png";
+                Image icon = Image.FromFile(path);
+                
+                e.Graphics.DrawImage(icon, new Rectangle(2, e.Bounds.Y, 40, 40));
+
 
                 var textRect = e.Bounds;
                 textRect.X += 60;
