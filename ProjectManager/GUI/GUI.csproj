@@ -206,6 +206,9 @@
     <EmbeddedResource Include="DateEdit.resx">
       <DependentUpon>DateEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LabelEdit.resx">
       <DependentUpon>LabelEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +263,7 @@
     <Content Include="src\alarm_alert_clock_event_history_schedule_time_watch-512.png" />
     <Content Include="src\background_board.jpg" />
     <Content Include="src\bg.png" />
+    <Content Include="src\bg_login.jpg" />
     <Content Include="src\board.png" />
     <Content Include="src\Bunifu_UI_v1.52.dll" />
     <Content Include="src\Circle-icon.png" />

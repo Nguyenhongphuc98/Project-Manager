@@ -48,6 +48,45 @@ namespace DAL
             return listBoard;
         }
 
+        public List<Board> GetAllBoard(int idUser)
+        {
+            List<Board> listBoard = new List<DTO.Board>();
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT BOARD.*"
+                                  +" from BOARD, BOARD_USER "
+                                  +" where BOARD.BOARD_ID = BOARD_USER.BOARD_ID "
+                                  +" and BOARD_USER.USER_ID ="+idUser;
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int boardId = reader.GetInt32(0);
+                int groupId;
+                try
+                {
+                    groupId = reader.GetInt32(1);
+                }
+                catch
+                {
+                    groupId = 0;
+                }
+                int index = reader.GetInt32(2);
+                string title = reader.GetString(3);
+                int mode = reader.GetInt32(4);
+                bool star = reader.GetBoolean(5);
+                String background = reader.GetString(6);
+
+                Board b = new Board(boardId, groupId, index, title, mode, star, background);
+                listBoard.Add(b);
+            }
+
+            this.Close();
+            return listBoard;
+        }
+
         public Board GetBoard(int id)
         {
             Board b;

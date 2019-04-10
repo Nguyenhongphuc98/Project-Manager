@@ -16,11 +16,19 @@ namespace BLL
             return board.GetAllBoard();
         }
 
+        public List<Board> GetAllBoard(int idUser)
+        {
+            BoardDAL board = new BoardDAL();
+            return board.GetAllBoard(idUser);
+        }
+
         public Board GetBoard(int id)
         {
             BoardDAL board = new BoardDAL();
             return board.GetBoard(id);
         }
+
+
 
         public bool InsertBoard( int groupId, int index, string title,
                 int mode, bool star, String background)

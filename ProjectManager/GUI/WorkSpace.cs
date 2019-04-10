@@ -20,6 +20,8 @@ namespace GUI
         List<Board> boards;
         List<BoardUI> boardUIs;
 
+        UserDTO user;
+
         //=======================================================
 
         public WorkSpace()
@@ -36,10 +38,29 @@ namespace GUI
            // LoadCard();
             LoadCreate();
 
-            //TestInsertFunction();
-
-
            // TestInsertFunction();
+
+            LoadBoardUIs();
+
+        }
+
+        public WorkSpace(UserDTO user)
+        {
+            InitializeComponent();
+
+            this.user = user;
+
+            this.listActivityUI = new ListActivity();
+            this.boardUIs = new List<BoardUI>();
+            this.boards = new List<Board>();
+
+            // LoadListSpace();
+            // LoadBoard();
+            LoadListActivity();
+            // LoadCard();
+            LoadCreate();
+
+            // TestInsertFunction();
 
             LoadBoardUIs();
 
@@ -57,7 +78,8 @@ namespace GUI
             this.pnWorkSpace.Controls.Add(listActivityUI);
             this.pnWorkSpace.BackgroundImage = null;
 
-            boards = boardBLL.GetAllBoard();
+            // boards = boardBLL.GetAllBoard();
+            boards = boardBLL.GetAllBoard(user.UserId);
 
             foreach (Board bo in boards)
             {
@@ -294,6 +316,11 @@ namespace GUI
         {
             //this.pnWorkSpace.BackgroundImage = null;
             LoadBoardUIs();
+        }
+
+        private void WorkSpace_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Parent.Show();
         }
     }
 }
