@@ -16,11 +16,9 @@ namespace GUI
     {
         int _cardId;
         CardUserBLL cardUserBLL = new CardUserBLL();
-        CardBLL cardBLL = new CardBLL();
         BoardUserBLL boardUserBLL = new BoardUserBLL();
         List<int> userIds = new List<int>();
         List<CardUserDTO> cardUsers = new List<CardUserDTO>();
-        CardDTO cardDTO;
         public MemberEdit(int X, int Y, int cardId, int boardId)
         {
             InitializeComponent();
@@ -34,7 +32,7 @@ namespace GUI
             }
             foreach(CardUserDTO user in cardUsers)
             {
-                MemComponent memComponent = new MemComponent(user, _cardId);
+                MemComponent memComponent = new MemComponent(user.UserId, user.Name, _cardId);
                 this.flpMember.Controls.Add(memComponent);
             }
         }

@@ -10,6 +10,11 @@ namespace BLL
 {
     public class LamViecBLL
     {
+        public List<int> ListUserId(int cardId)
+        {
+            LamViecDAL lvdal = new LamViecDAL();
+            return lvdal.SearchId(cardId);
+        }
         public bool UpdateUser(int userId, int cardId)
         {
             LamViecDAL lvdal = new LamViecDAL();

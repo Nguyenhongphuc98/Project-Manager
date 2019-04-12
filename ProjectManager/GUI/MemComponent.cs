@@ -15,15 +15,21 @@ namespace GUI
     public partial class MemComponent : UserControl
     {
         int _cardId;
-        CardUserDTO _user;
+        int _userId;
+        string _userName;
         LamViecBLL lamViec;
-        public MemComponent(CardUserDTO userDTO, int cardId)
+        List<int> listUserId;
+        public MemComponent(int userId, string userName, int cardId)
         {
             InitializeComponent();
             this.BackColor = Color.Silver;
-            this.memTxt.Text = userDTO.Name;
+            this.memTxt.Text = userName;
+
+            _cardId = cardId;
+            _userId = userId;
+            _userName = userName;
             lamViec = new LamViecBLL();
-            _user = userDTO;
+            listUserId = lamViec.ListUserId(_cardId);
             _cardId = cardId;
         }
 
@@ -39,7 +45,16 @@ namespace GUI
 
         private void MemComponent_MouseClick(object sender, MouseEventArgs e)
         {
-            lamViec.InsertUser(_user.UserId, _cardId);
+            if (listUserId.Contains(_userId))
+            {
+                MessageBox.Show("This member already in this task", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                lamViec.InsertUser(_userId, _cardId);
+                listUserId = lamViec.ListUserId(_cardId);
+            }
         }
     }
 }

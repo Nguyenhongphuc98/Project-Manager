@@ -10,6 +10,26 @@ namespace DAL
 {
     public class LamViecDAL:DatabaseAccess
     {
+        public List<int> SearchId(int cardId)
+        {
+            List<int> listUserId = new List<int>();
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT * FROM LAMVIEC WHERE CARD_ID = " + cardId;
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int userId = reader.GetInt32(1);
+
+                listUserId.Add(userId);
+            }
+
+            this.Close();
+            return listUserId;
+        }
         public bool UpdateUser(int userId, int cardId)
         {
             this.ConnectToDatabase();

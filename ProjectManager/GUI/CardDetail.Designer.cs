@@ -38,7 +38,6 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.descriptionText = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cardLabel = new System.Windows.Forms.Panel();
             this.checkDueDate = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@
             this.List = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CardName = new System.Windows.Forms.TextBox();
-            this.MemberName = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.AddMem = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -67,14 +65,12 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.memberFlp = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Panel();
             this.moveBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.followPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -84,10 +80,7 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.memberFlp.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,21 +177,10 @@
             this.label5.TabIndex = 39;
             this.label5.Text = "Mô tả:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
-            // 
             // cardLabel
             // 
             this.cardLabel.BackColor = System.Drawing.Color.Red;
-            this.cardLabel.Location = new System.Drawing.Point(7, 42);
+            this.cardLabel.Location = new System.Drawing.Point(284, 110);
             this.cardLabel.Name = "cardLabel";
             this.cardLabel.Size = new System.Drawing.Size(39, 21);
             this.cardLabel.TabIndex = 37;
@@ -207,7 +189,7 @@
             // 
             this.checkDueDate.AutoSize = true;
             this.checkDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDueDate.Location = new System.Drawing.Point(7, 49);
+            this.checkDueDate.Location = new System.Drawing.Point(43, 192);
             this.checkDueDate.Name = "checkDueDate";
             this.checkDueDate.Size = new System.Drawing.Size(100, 21);
             this.checkDueDate.TabIndex = 36;
@@ -218,7 +200,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 13);
+            this.label4.Location = new System.Drawing.Point(36, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 20);
             this.label4.TabIndex = 35;
@@ -228,7 +210,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 6);
+            this.label3.Location = new System.Drawing.Point(280, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 34;
@@ -238,7 +220,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 6);
+            this.label2.Location = new System.Drawing.Point(36, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 33;
@@ -271,24 +253,11 @@
             this.CardName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CardName.Location = new System.Drawing.Point(7, 3);
             this.CardName.Name = "CardName";
-            this.CardName.Size = new System.Drawing.Size(560, 23);
+            this.CardName.Size = new System.Drawing.Size(426, 23);
             this.CardName.TabIndex = 30;
             this.CardName.Text = "Card name";
             this.CardName.MouseEnter += new System.EventHandler(this.CardName_MouseEnter);
             this.CardName.MouseLeave += new System.EventHandler(this.CardName_MouseLeave);
-            // 
-            // MemberName
-            // 
-            this.MemberName.AutoSize = true;
-            this.MemberName.BackColor = System.Drawing.SystemColors.Control;
-            this.MemberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MemberName.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.MemberName.Image = ((System.Drawing.Image)(resources.GetObject("MemberName.Image")));
-            this.MemberName.Location = new System.Drawing.Point(20, 42);
-            this.MemberName.Name = "MemberName";
-            this.MemberName.Size = new System.Drawing.Size(23, 25);
-            this.MemberName.TabIndex = 55;
-            this.MemberName.Text = "L";
             // 
             // flowLayoutPanel1
             // 
@@ -504,7 +473,7 @@
             this.DesPanel.Controls.Add(this.label5);
             this.DesPanel.Controls.Add(this.descriptionText);
             this.DesPanel.Controls.Add(this.pictureBox3);
-            this.DesPanel.Location = new System.Drawing.Point(3, 165);
+            this.DesPanel.Location = new System.Drawing.Point(3, 239);
             this.DesPanel.Name = "DesPanel";
             this.DesPanel.Size = new System.Drawing.Size(577, 111);
             this.DesPanel.TabIndex = 67;
@@ -516,7 +485,7 @@
             this.checklistPn.Controls.Add(this.checkBox2);
             this.checklistPn.Controls.Add(this.progressBar1);
             this.checklistPn.Controls.Add(this.addTask);
-            this.checklistPn.Location = new System.Drawing.Point(3, 282);
+            this.checklistPn.Location = new System.Drawing.Point(3, 356);
             this.checklistPn.Name = "checklistPn";
             this.checklistPn.Size = new System.Drawing.Size(577, 241);
             this.checklistPn.TabIndex = 68;
@@ -545,7 +514,7 @@
             this.panel3.Controls.Add(this.commentText);
             this.panel3.Controls.Add(this.SaveButton);
             this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Location = new System.Drawing.Point(3, 529);
+            this.panel3.Location = new System.Drawing.Point(3, 603);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(577, 144);
             this.panel3.TabIndex = 69;
@@ -554,20 +523,25 @@
             // 
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.flowLayoutPanel1);
-            this.panel5.Location = new System.Drawing.Point(3, 679);
+            this.panel5.Location = new System.Drawing.Point(3, 753);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(577, 100);
             this.panel5.TabIndex = 71;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.checkDueDate);
+            this.panel4.Controls.Add(this.cardLabel);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.flowLayoutPanel4);
-            this.panel4.Controls.Add(this.flowLayoutPanel3);
+            this.panel4.Controls.Add(this.memberFlp);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.CardName);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(577, 156);
+            this.panel4.Size = new System.Drawing.Size(577, 230);
             this.panel4.TabIndex = 72;
             // 
             // flowLayoutPanel4
@@ -579,42 +553,21 @@
             this.flowLayoutPanel4.Size = new System.Drawing.Size(172, 20);
             this.flowLayoutPanel4.TabIndex = 66;
             // 
-            // flowLayoutPanel3
+            // memberFlp
             // 
-            this.flowLayoutPanel3.Controls.Add(this.panel1);
-            this.flowLayoutPanel3.Controls.Add(this.panel2);
-            this.flowLayoutPanel3.Controls.Add(this.panel6);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(34, 68);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(505, 85);
-            this.flowLayoutPanel3.TabIndex = 65;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.MemberName);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(104, 84);
-            this.panel1.TabIndex = 66;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.cardLabel);
-            this.panel2.Location = new System.Drawing.Point(113, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(78, 78);
-            this.panel2.TabIndex = 67;
+            this.memberFlp.Controls.Add(this.flowLayoutPanel5);
+            this.memberFlp.Controls.Add(this.panel6);
+            this.memberFlp.Location = new System.Drawing.Point(41, 93);
+            this.memberFlp.Name = "memberFlp";
+            this.memberFlp.Size = new System.Drawing.Size(204, 62);
+            this.memberFlp.TabIndex = 65;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.checkDueDate);
-            this.panel6.Location = new System.Drawing.Point(197, 3);
+            this.panel6.AutoSize = true;
+            this.panel6.Location = new System.Drawing.Point(9, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 78);
+            this.panel6.Size = new System.Drawing.Size(0, 0);
             this.panel6.TabIndex = 68;
             // 
             // CloseButton
@@ -662,15 +615,24 @@
             this.flowLayoutPanel2.Controls.Add(this.panel5);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 7);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(599, 788);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(599, 854);
             this.flowLayoutPanel2.TabIndex = 75;
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.AutoSize = true;
+            this.flowLayoutPanel5.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel5.TabIndex = 69;
             // 
             // CardDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(770, 807);
+            this.ClientSize = new System.Drawing.Size(770, 873);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.moveBtn);
             this.Controls.Add(this.CloseButton);
@@ -685,7 +647,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CardDetail";
             this.Text = " ";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.followPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -701,13 +662,8 @@
             this.panel4.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.memberFlp.ResumeLayout(false);
+            this.memberFlp.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -725,7 +681,6 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox descriptionText;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel cardLabel;
         private System.Windows.Forms.CheckBox checkDueDate;
         private System.Windows.Forms.Label label4;
@@ -734,7 +689,6 @@
         private System.Windows.Forms.Label List;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CardName;
-        private System.Windows.Forms.Label MemberName;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label10;
         private Bunifu.Framework.UI.BunifuThinButton2 AddMem;
@@ -756,10 +710,9 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel taskFlpanel;
         private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel memberFlp;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
     }
 }

@@ -20,6 +20,11 @@ namespace BLL
             ChecklistDAL cldal = new ChecklistDAL();
             return cldal.GetAllChecklist(cardId);
         }
+        public List<ChecklistDTO> GetAllCheckedlist(int cardId)
+        {
+            ChecklistDAL cldal = new ChecklistDAL();
+            return cldal.GetAllCheckedlist(cardId);
+        }
 
         public ChecklistDTO GetChecklist(int id)
         {

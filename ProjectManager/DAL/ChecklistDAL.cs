@@ -58,6 +58,30 @@ namespace DAL
             this.Close();
             return listChecklist;
         }
+        public List<ChecklistDTO> GetAllCheckedlist(int _cardId)
+        {
+            List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT * FROM CHECKLIST WHERE CARD_ID = '" + _cardId + "' AND STATUS = '" + 1 +"'";
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int checklistId = reader.GetInt32(0);
+                int cardId = reader.GetInt32(1);
+                int checklistIndex = reader.GetInt32(2);
+                string title = reader.GetString(3);
+                byte status = reader.GetByte(4);
+                ChecklistDTO checklist = new ChecklistDTO(checklistId, cardId, checklistIndex, title, status);
+                listChecklist.Add(checklist);
+            }
+
+            this.Close();
+            return listChecklist;
+        }
 
         public ChecklistDTO GetChecklist(int id)
         {

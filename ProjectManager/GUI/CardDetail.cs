@@ -15,18 +15,22 @@ namespace GUI
     public partial class CardDetail : Form
     {
         int _cardId;
-        int _boardId=1;
-        //int _listId;
-        //string title;
-        //string des;
-        CardBLL cardBLL = new CardBLL();
+        int _boardId;
+
         CardDTO cardDTO;
-        ListBLL listBLL = new ListBLL();
         ListDTO listDTO;
-        ChecklistBLL checklistBLL = new ChecklistBLL();
         ChecklistDTO checklistDTO;
+
+        CardBLL cardBLL = new CardBLL();
+        ListBLL listBLL = new ListBLL();
+        ChecklistBLL checklistBLL = new ChecklistBLL();
+        LamViecBLL lamViecBLL = new LamViecBLL();
+        CardUserBLL userBLL = new CardUserBLL();
+
         List<ChecklistDTO> checklistDTOs;
         List<CheckBox> tasks = new List<CheckBox>();
+        List<CardUserDTO> userDTOs = new List<CardUserDTO>();
+        List<int> listUsers = new List<int>();
 
         public CardDetail(int id)
         {
@@ -34,6 +38,7 @@ namespace GUI
             this.StartPosition = FormStartPosition.CenterScreen;
             _cardId = id;
             cardDTO = cardBLL.GetCard(_cardId);
+
             switch (cardDTO.Label)
             {
                 case 1:
@@ -61,6 +66,9 @@ namespace GUI
             this.CardName.Text = cardDTO.Title;
             this.descriptionText.Text = cardDTO.Description;
             this.checkDueDate.Text = cardDTO.DueDate.ToString();
+
+            AddMember();
+
             checklistDTOs = checklistBLL.GetAllChecklist(id);
             if (checklistDTOs.Count() != 0)
             {
@@ -88,16 +96,26 @@ namespace GUI
 
             this.descriptionText.LostFocus += DescriptionText_LostFocus;
             this.commentText.LostFocus += CommentText_LostFocus;
-            this.CardName.LostFocus += CardName_LostFocus;
 
             listDTO = listBLL.GetList(cardDTO.ListId);
             this.List.Text = listDTO.Title;
+            _boardId = listDTO.BoardId;
         }
 
-        private void CardName_LostFocus(object sender, EventArgs e)
+        private void AddMember()
         {
-            cardDTO.Title = this.CardName.Text;
-            cardBLL.UpdateCard(cardDTO);
+            this.memberFlp.Controls.Clear();
+            listUsers = lamViecBLL.ListUserId(_cardId);
+            foreach (int userId in listUsers)
+            {
+                CardUserDTO userDTO = userBLL.GetUser(userId);
+                userDTOs.Add(userDTO);
+            }
+            foreach (CardUserDTO userDTO in userDTOs)
+            {
+                MemIcon member = new MemIcon(userDTO.Name.Substring(0, 1));
+                this.memberFlp.Controls.Add(member);
+            }
         }
 
         private void CommentText_LostFocus(object sender, EventArgs e)
@@ -209,12 +227,14 @@ namespace GUI
         {
             checklistBLL.DeleteChecklist(_cardId);
             taskFlpanel.Visible = false;
+            tasks.Clear();
         }
         
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            cardDTO = cardBLL.GetCard(_cardId);
             cardDTO.Description = descriptionText.Text;
+
+            AddMember();
 
             progressBar1.Value = 0;
             progressBar1.Maximum = checklistDTOs.Count();
@@ -235,7 +255,7 @@ namespace GUI
                 }
             }
 
-            this.CardName.Text = cardDTO.Title;
+            cardDTO.Title = this.CardName.Text;
             switch (cardDTO.Label)
             {
                 case 1:
@@ -274,9 +294,8 @@ namespace GUI
             }
             else checklistPn.Visible = false;
 
-            cardBLL.UpdateCard(cardDTO);
             List.Text = listDTO.Title;
+            cardBLL.UpdateCard(cardDTO);
         }
-
     }
 }

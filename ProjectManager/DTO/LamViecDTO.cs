@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class LamViecDTO
+    public class LamViecDTO
     {
         int cardId;
         int userId;
