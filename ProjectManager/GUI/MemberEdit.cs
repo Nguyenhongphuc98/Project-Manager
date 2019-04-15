@@ -16,32 +16,25 @@ namespace GUI
     {
         int _cardId;
         CardUserBLL cardUserBLL = new CardUserBLL();
-        List<CardUserDTO> cardUsers;
-        CardBLL cardBLL;
-        CardDTO cardDTO;
-        public MemberEdit(int X, int Y, int cardId)
+        BoardUserBLL boardUserBLL = new BoardUserBLL();
+        List<int> userIds = new List<int>();
+        List<CardUserDTO> cardUsers = new List<CardUserDTO>();
+        public MemberEdit(int X, int Y, int cardId, int boardId)
         {
             InitializeComponent();
             this.Location = new Point(X, Y);
             this.StartPosition = FormStartPosition.Manual;
-            cardUsers = cardUserBLL.GetAllUser();
-            foreach (CardUserDTO cardUser in cardUsers)
+            userIds = boardUserBLL.GetAllUserId(boardId);
+            _cardId = cardId;
+            foreach (int userId in userIds)
             {
-                CheckBox member = new CheckBox();
-                member.Text = cardUser.Name;
-                this.flpMember.Controls.Add(member);
+                cardUsers.Add(cardUserBLL.GetUser(userId));
             }
-        }
-
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-            cardBLL = new CardBLL();
-            cardDTO = cardBLL.GetCard(_cardId);
+            foreach(CardUserDTO user in cardUsers)
+            {
+                MemComponent memComponent = new MemComponent(user.UserId, user.Name, _cardId);
+                this.flpMember.Controls.Add(memComponent);
+            }
         }
     }
 }

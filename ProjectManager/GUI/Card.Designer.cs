@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Card));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.memberName = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.PictureBox();
             this.cmtPicture = new System.Windows.Forms.PictureBox();
             this.desPicture = new System.Windows.Forms.PictureBox();
             this.datePicture = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.CardName = new System.Windows.Forms.TextBox();
             this.CardLabel = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +42,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1.SuspendLayout();
+            this.CardName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.editButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmtPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.desPicture)).BeginInit();
@@ -54,31 +51,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.memberName);
-            this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(261, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(35, 30);
-            this.panel1.TabIndex = 17;
-            // 
-            // memberName
-            // 
-            this.memberName.AutoSize = true;
-            this.memberName.BackColor = System.Drawing.Color.Transparent;
-            this.memberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memberName.Location = new System.Drawing.Point(7, 3);
-            this.memberName.Name = "memberName";
-            this.memberName.Size = new System.Drawing.Size(23, 25);
-            this.memberName.TabIndex = 0;
-            this.memberName.Text = "L";
             // 
             // editButton
             // 
@@ -143,16 +116,6 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // CardName
-            // 
-            this.CardName.BackColor = System.Drawing.SystemColors.Control;
-            this.CardName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.CardName.Location = new System.Drawing.Point(11, 18);
-            this.CardName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.CardName.Name = "CardName";
-            this.CardName.Size = new System.Drawing.Size(238, 15);
-            this.CardName.TabIndex = 22;
-            // 
             // CardLabel
             // 
             this.CardLabel.Location = new System.Drawing.Point(11, 4);
@@ -164,6 +127,8 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Enabled = false;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(218, 2);
@@ -233,31 +198,39 @@
             // 
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel3.Controls.Add(this.panel1);
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(11, 71);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(11, 66);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(299, 33);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(299, 34);
             this.flowLayoutPanel3.TabIndex = 25;
+            // 
+            // CardName
+            // 
+            this.CardName.AutoSize = true;
+            this.CardName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CardName.Location = new System.Drawing.Point(10, 14);
+            this.CardName.Name = "CardName";
+            this.CardName.Size = new System.Drawing.Size(53, 20);
+            this.CardName.TabIndex = 26;
+            this.CardName.Text = "label1";
             // 
             // Card
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.CardName);
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.editButton);
-            this.Controls.Add(this.CardName);
             this.Controls.Add(this.CardLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Card";
-            this.Size = new System.Drawing.Size(317, 107);
+            this.Size = new System.Drawing.Size(317, 103);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Card_MouseClick);
             this.MouseEnter += new System.EventHandler(this.Card_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Card_MouseLeave);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.editButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmtPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.desPicture)).EndInit();
@@ -269,22 +242,17 @@
             this.flowLayoutPanel2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label memberName;
         private System.Windows.Forms.PictureBox editButton;
         private System.Windows.Forms.PictureBox cmtPicture;
         private System.Windows.Forms.PictureBox desPicture;
         private System.Windows.Forms.PictureBox datePicture;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox CardName;
         private System.Windows.Forms.Panel CardLabel;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label3;
@@ -293,5 +261,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label CardName;
     }
 }

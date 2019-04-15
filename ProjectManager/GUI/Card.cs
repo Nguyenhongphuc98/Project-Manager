@@ -19,26 +19,33 @@ namespace GUI
         int oX;
         int oY;
         int _cardId;
-        CardBLL cardBLL;
+
         CardDTO cardDTO;
+        CardBLL cardBLL;
+        LamViecBLL lamViecBLL;
+        ChecklistBLL checklistBLL;
+        CardUserBLL userBLL;
+
+        List<CardUserDTO> userDTOs = new List<CardUserDTO>();
+        List<int> listUserId = new List<int>();
 
         //====================================================
 
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect, // x-coordinate of upper-left corner
-            int nTopRect, // y-coordinate of upper-left corner
-            int nRightRect, // x-coordinate of lower-right corner
-            int nBottomRect, // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
-        );
+        //[DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        //private static extern IntPtr CreateRoundRectRgn
+        //(
+        //    int nLeftRect, // x-coordinate of upper-left corner
+        //    int nTopRect, // y-coordinate of upper-left corner
+        //    int nRightRect, // x-coordinate of lower-right corner
+        //    int nBottomRect, // y-coordinate of lower-right corner
+        //    int nWidthEllipse, // height of ellipse
+        //    int nHeightEllipse // width of ellipse
+        //);
 
-        public static System.Drawing.Region GetRoundedRegion(int controlWidth, int controlHeight)
-        {
-            return System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, controlWidth - 2, controlHeight - 2, 10, 10));
-        }
+        //public static System.Drawing.Region GetRoundedRegion(int controlWidth, int controlHeight)
+        //{
+        //    return System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, controlWidth - 2, controlHeight - 2, 10, 10));
+        //}
 
         public Card(int X, int cardId, int index)
         {
@@ -46,11 +53,38 @@ namespace GUI
             _cardId = cardId;
             oX = X;
             oY = 3 + (index + 3) * this.Height;
-            this.Region = GetRoundedRegion(this.Width, this.Height);
+            //this.Region = GetRoundedRegion(this.Width, this.Height);
+
             cardBLL = new CardBLL();
+            lamViecBLL = new LamViecBLL();
+            checklistBLL = new ChecklistBLL();
+            userBLL = new CardUserBLL();
+
+            listUserId = lamViecBLL.ListUserId(_cardId);
+
             CardName.Text = cardBLL.GetCardName(cardId);
             cardDTO = cardBLL.GetCard(cardId);
             CardName.LostFocus += CardName_LostFocus;
+            dateCard.Text = cardDTO.DueDate.Day.ToString() + "/" + cardDTO.DueDate.Day.ToString() + "/" + cardDTO.DueDate.Day.ToString();
+            checkBox1.Text = checklistBLL.GetAllCheckedlist(cardId).Count() + "/" + checklistBLL.GetAllChecklist(cardId).Count();
+
+            if (cardDTO.Description == null || cardDTO.Description == "")
+            {
+                this.desPicture.Visible = false;
+            }
+            else this.desPicture.Visible = true;
+
+            foreach (int userId in listUserId)
+            {
+                CardUserDTO userDTO = userBLL.GetUser(userId);
+                userDTOs.Add(userDTO);
+            }
+            foreach (CardUserDTO userDTO in userDTOs)
+            {
+                MemIcon member = new MemIcon(userDTO.Name.Substring(0, 1));
+                member.Size = new Size(30, 26);
+                this.flowLayoutPanel3.Controls.Add(member);
+            }
 
             if (cardDTO.Description.Equals(""))
             {
@@ -84,8 +118,11 @@ namespace GUI
                     this.CardLabel.BackColor = Color.Transparent;
                     break;
             }
-
-            this.Location = new Point(oX, oY);
+            if (checklistBLL.GetAllChecklist(cardId).Count() != 0)
+            {
+                checkBox1.Visible = true;
+            }
+            else checkBox1.Visible = false;
         }
 
         //============================================================

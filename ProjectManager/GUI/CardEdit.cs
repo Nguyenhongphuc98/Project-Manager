@@ -45,8 +45,8 @@ namespace GUI
 
         private void ChangeMember_Click(object sender, EventArgs e)
         {
-            MemberEdit editMember = new MemberEdit(this.Location.X + this.Width, this.Location.Y, _cardId);
-            editMember.Show();
+            //MemberEdit editMember = new MemberEdit(this.Location.X + this.Width, this.Location.Y, _cardId);
+            //editMember.Show();
         }
 
         private void ChangeDeadline_Click(object sender, EventArgs e)

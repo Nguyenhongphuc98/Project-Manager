@@ -57,6 +57,7 @@ namespace GUI.CustomComponent
             {
                 e.DrawBackground();
 
+
                // e.Graphics.DrawRectangle(System.Drawing.Pens.Red, 2, e.Bounds.Y + 2, 50, 50); // Simulate an icon.
 
                 string path = Application.StartupPath;
@@ -67,6 +68,7 @@ namespace GUI.CustomComponent
                 Image icon = Image.FromFile(path);
                 
                 e.Graphics.DrawImage(icon, new Rectangle(2, e.Bounds.Y, 40, 40));
+
 
 
                 var textRect = e.Bounds;

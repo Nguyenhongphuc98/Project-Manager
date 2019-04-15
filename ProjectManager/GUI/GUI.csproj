@@ -75,6 +75,12 @@
     <Compile Include="CardEdit.Designer.cs">
       <DependentUpon>CardEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChecklistEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChecklistEdit.Designer.cs">
+      <DependentUpon>ChecklistEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomComponent\BoardCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,12 @@
     <Compile Include="LabelEdit.Designer.cs">
       <DependentUpon>LabelEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListComponent.Designer.cs">
+      <DependentUpon>ListComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListSpace.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +167,30 @@
     </Compile>
     <Compile Include="MemberEdit.Designer.cs">
       <DependentUpon>MemberEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MemComponent.Designer.cs">
+      <DependentUpon>MemComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemIcon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MemIcon.Designer.cs">
+      <DependentUpon>MemIcon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoveForm.Designer.cs">
+      <DependentUpon>MoveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="posComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="posComponent.Designer.cs">
+      <DependentUpon>posComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -178,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CardEdit.resx">
       <DependentUpon>CardEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChecklistEdit.resx">
+      <DependentUpon>ChecklistEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomComponent\BoardCreate.resx">
       <DependentUpon>BoardCreate.cs</DependentUpon>
@@ -212,11 +251,26 @@
     <EmbeddedResource Include="LabelEdit.resx">
       <DependentUpon>LabelEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListComponent.resx">
+      <DependentUpon>ListComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListSpace.resx">
       <DependentUpon>ListSpace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberEdit.resx">
       <DependentUpon>MemberEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemComponent.resx">
+      <DependentUpon>MemComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemIcon.resx">
+      <DependentUpon>MemIcon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoveForm.resx">
+      <DependentUpon>MoveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="posComponent.resx">
+      <DependentUpon>posComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
