@@ -47,6 +47,7 @@ namespace DAL
             this.Close();
             return listBoard;
         }
+      
 
         public Board GetBoard(int id)
         {
@@ -74,6 +75,26 @@ namespace DAL
 
             this.Close();
             return null;
+        }
+
+        public int GetMaxID()
+        {          
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT MAX(BOARD_ID) FROM BOARD";
+
+            MySqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                int maxID = reader.GetInt32(0);
+               
+                this.Close();
+                return maxID;
+            }
+
+            this.Close();
+            return -1;
         }
 
         public bool InsertBoard(int groupId, int index, string title ,
@@ -142,5 +163,63 @@ namespace DAL
             this.Close();
             return true;
         }
+
+        //------------------------------------------------
+        public bool AddUser(int idUser,int idBoard)
+        {
+            this.ConnectToDatabase();
+
+            string Query = "insert into BOARD_USER values('" + idBoard + "','" + idUser +  "');";
+
+            //This is command class which will handle the query and connection object.  
+            MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
+
+            command.ExecuteNonQuery();
+
+
+            this.Close();
+            return true;
+        }
+
+        public List<Board> GetAllBoard(int idUser)
+        {
+            List<Board> listBoard = new List<DTO.Board>();
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT BOARD.*"
+                                  + " from BOARD, BOARD_USER "
+                                  + " where BOARD.BOARD_ID = BOARD_USER.BOARD_ID "
+                                  + " and BOARD_USER.USER_ID =" + idUser;
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int boardId = reader.GetInt32(0);
+                int groupId;
+                try
+                {
+                    groupId = reader.GetInt32(1);
+                }
+                catch
+                {
+                    groupId = 0;
+                }
+                int index = reader.GetInt32(2);
+                string title = reader.GetString(3);
+                int mode = reader.GetInt32(4);
+                bool star = reader.GetBoolean(5);
+                String background = reader.GetString(6);
+
+                Board b = new Board(boardId, groupId, index, title, mode, star, background);
+                listBoard.Add(b);
+            }
+
+            this.Close();
+            return listBoard;
+        }
+
+        
     }
 }

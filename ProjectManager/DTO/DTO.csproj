@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="BoardUserDTO.cs" />
+
+    <Compile Include="Global.cs" />
+
     <Compile Include="GroupDTO.cs" />
     <Compile Include="CommentDTO.cs" />
     <Compile Include="GroupUserDTO.cs" />

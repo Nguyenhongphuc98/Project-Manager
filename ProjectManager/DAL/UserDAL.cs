@@ -17,7 +17,7 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM USER ";
+            command.CommandText = "SELECT * FROM USERS ";
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -42,7 +42,32 @@ namespace DAL
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
-            command.CommandText = "SELECT * FROM USER WHERE USER_ID = "+id;
+            command.CommandText = "SELECT * FROM USERS WHERE USER_ID = "+id;
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int userId = reader.GetInt32(0);
+                string username = reader.GetString(1);
+                string password = reader.GetString(2);
+                string name = reader.GetString(3);
+
+                user = new UserDTO(userId, username, password, name);
+                return user;
+            }
+
+            this.Close();
+            return null;
+        }
+
+        public UserDTO GetUser(string userName)
+        {
+            UserDTO user;
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT * FROM USERS WHERE USERNAME = '" + userName+"'";
 
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())

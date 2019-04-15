@@ -16,6 +16,11 @@ namespace BLL
             return adal.GetAllActivity();
         }
 
+        public List<ActivityDTO> GetAllActivity(int board_Id)
+        {
+            ActivityDAL adal = new ActivityDAL();
+            return adal.GetAllActivity(board_Id);
+        }
         public ActivityDTO GetActivity(int id)
         {
             ActivityDAL adal = new ActivityDAL();
@@ -26,6 +31,12 @@ namespace BLL
         {
             ActivityDAL adal = new ActivityDAL();
             return adal.InsertActivity(activity);
+        }
+
+        public bool InsertActivity(int idUser,int boardId ,string content, DateTime timeCreate)
+        {
+            ActivityDAL adal = new ActivityDAL();
+            return adal.InsertActivity(idUser,boardId,content,timeCreate);
         }
 
         public bool UpdateActivity(ActivityDTO activity)

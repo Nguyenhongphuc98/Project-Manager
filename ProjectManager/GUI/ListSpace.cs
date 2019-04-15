@@ -18,7 +18,8 @@ namespace GUI
 
         List<ListUI> listUIs;
         List<ListDTO> listDTOs;
-        
+        List<UserDTO> userDTOs;
+
         //==================================================
         public int Mode
         {
@@ -76,6 +77,8 @@ namespace GUI
 
         void LoadBaseInfor()
         {
+            this.cbListUser.Visible = false;
+
             this.lbNameProject.Text = this.title;
             if(this.background!="NULL")
             {
@@ -105,11 +108,20 @@ namespace GUI
         }
 
         public void LoadListOfThisBoard()
-        {
+        {         
             this.Controls.Clear();
             listDTOs.Clear();
             listUIs.Clear();
 
+            //-------load menu bar---------------------
+            //this.Controls.Add(lbNameProject);
+            //this.Controls.Add(btnInvite);
+            //this.Controls.Add(btnMode);
+            //this.Controls.Add(btnPersonal);
+            //this.Controls.Add(btnStar);
+            this.Controls.Add(pnMenu);
+
+            //-------load lits---------------------
             ListBLL listBLL = new ListBLL();
             listDTOs = listBLL.GetAllList(this.idBoard);
 
@@ -124,6 +136,43 @@ namespace GUI
             this.Controls.Add(btnNewList);
         }
 
+        //======================================================
+        private void btnInvite_Click(object sender, EventArgs e)
+        {
+            UserBLL userBLL = new UserBLL();
+            userDTOs = userBLL.GetAllUsers();
+            List<string> lsNameUser = new List<string>() { "No user"};
 
+            foreach(UserDTO user in userDTOs)
+            {
+                lsNameUser.Add(user.Name);
+            }
+
+            cbListUser.DataSource = lsNameUser;
+
+            this.cbListUser.Visible = true;
+        }
+
+        private void cbListUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbListUser.SelectedIndex != 0)
+            {
+                BoardBLL boardBLL = new BoardBLL();
+                ActivityBLL activityBLL = new ActivityBLL();
+                try
+                {
+                    boardBLL.AddUser(userDTOs[cbListUser.SelectedIndex - 1].UserId, this.idBoard);
+                    activityBLL.InsertActivity(Global.user.UserId, this.idBoard, Global.user.Name + " Add " + userDTOs[cbListUser.SelectedIndex - 1].Name + " to " + this.title,DateTime.Now);
+                    MessageBox.Show("Add succedd"+ userDTOs[cbListUser.SelectedIndex - 1].Name + " to " + this.title, "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch { MessageBox.Show(cbListUser.SelectedText + "already exist in this board!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+            }
+            else
+            {
+                this.cbListUser.Visible = false;
+            }
+        }
     }
 }

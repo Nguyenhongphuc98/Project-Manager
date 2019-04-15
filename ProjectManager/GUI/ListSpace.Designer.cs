@@ -38,12 +38,14 @@
             this.btnPersonal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnStar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lbNameProject = new System.Windows.Forms.Label();
+            this.cbListUser = new System.Windows.Forms.ComboBox();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnMenu
             // 
             this.pnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.pnMenu.Controls.Add(this.cbListUser);
             this.pnMenu.Controls.Add(this.label2);
             this.pnMenu.Controls.Add(this.label1);
             this.pnMenu.Controls.Add(this.lbdash1);
@@ -118,6 +120,7 @@
             this.btnInvite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnInvite.Textcolor = System.Drawing.Color.White;
             this.btnInvite.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInvite.Click += new System.EventHandler(this.btnInvite_Click);
             // 
             // btnMode
             // 
@@ -232,6 +235,15 @@
             this.lbNameProject.Text = "Project name";
             this.lbNameProject.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cbListUser
+            // 
+            this.cbListUser.FormattingEnabled = true;
+            this.cbListUser.Location = new System.Drawing.Point(493, 11);
+            this.cbListUser.Name = "cbListUser";
+            this.cbListUser.Size = new System.Drawing.Size(154, 21);
+            this.cbListUser.TabIndex = 2;
+            this.cbListUser.SelectedIndexChanged += new System.EventHandler(this.cbListUser_SelectedIndexChanged);
+            // 
             // ListSpace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,5 +271,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnInvite;
         private Bunifu.Framework.UI.BunifuFlatButton btnMode;
         private Bunifu.Framework.UI.BunifuFlatButton btnPersonal;
+        private System.Windows.Forms.ComboBox cbListUser;
     }
 }

@@ -367,6 +367,7 @@
             this.Name = "WorkSpace";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Manager";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WorkSpace_FormClosed);
             this.panel1.ResumeLayout(false);
             this.pnWorkSpace.ResumeLayout(false);
             this.ResumeLayout(false);
