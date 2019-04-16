@@ -39,5 +39,12 @@ namespace BLL
             UserDAL userDAL = new UserDAL();
             return userDAL.UpdateUser(user);
         }
+
+        //phuc nguyen___________________________________
+        public List<String> GetListNameUserWorkingFor(int cardId)
+        {
+            UserDAL userDAL = new UserDAL();
+            return userDAL.GetListNameUserWorkingFor(cardId);
+        }
     }
 }

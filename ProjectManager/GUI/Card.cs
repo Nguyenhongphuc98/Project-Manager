@@ -47,6 +47,131 @@ namespace GUI
         //    return System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, controlWidth - 2, controlHeight - 2, 10, 10));
         //}
 
+        public Card(int X, CardDTO card, int index)
+        {
+            InitializeComponent();
+            _cardId = card.CardId;
+            oX = X;
+            oY = 3 + (index + 3) * this.Height;
+            this.cardDTO = card;
+
+            CardName.Text = card.Title;
+            CardName.LostFocus += CardName_LostFocus;
+            dateCard.Text = card.DueDate.ToShortDateString();
+
+            checklistBLL = new ChecklistBLL();
+            StatusCheckList status = checklistBLL.Getstatus(card.CardId);
+            checkBox1.Text = status.finished + "/" + status.sum;
+
+            if (card.Description == null || card.Description.Equals(""))
+            {
+                this.desPicture.Visible = false;
+            }
+                else this.desPicture.Visible = true;
+
+            UserBLL userBLL = new UserBLL();
+            List<String> listNameUser = userBLL.GetListNameUserWorkingFor(card.CardId);
+
+            foreach (string name in listNameUser)
+            {
+                MemIcon member = new MemIcon(name, 25, 25);
+                this.flowLayoutPanel3.Controls.Add(member);
+            }
+
+
+
+            switch (card.Label)
+            {
+                case 1:
+                    this.CardLabel.BackColor = Color.Red;
+                    break;
+                case 2:
+                    this.CardLabel.BackColor = Color.Yellow;
+                    break;
+                case 3:
+                    this.CardLabel.BackColor = Color.Green;
+                    break;
+                case 4:
+                    this.CardLabel.BackColor = Color.Orange;
+                    break;
+                case 5:
+                    this.CardLabel.BackColor = Color.Blue;
+                    break;
+                case 6:
+                    this.CardLabel.BackColor = Color.Fuchsia;
+                    break;
+                default:
+                    this.CardLabel.BackColor = Color.Transparent;
+                    break;
+            }
+
+            if (status.sum != 0)
+            {
+                checkBox1.Visible = true;
+            }
+                else checkBox1.Visible = false;
+        }
+
+        public Card(int X,CardBase card)
+        {
+            InitializeComponent();
+            _cardId = card.cardID;
+            oX = X;
+            oY = 3 + (card.index + 3) * this.Height;
+
+
+            CardName.Text = card.cardName;
+            CardName.LostFocus += CardName_LostFocus;
+            dateCard.Text = card.dueDate.ToShortDateString();
+            checkBox1.Text = card.checkedList + "/" + card.checkedList;
+
+            if (card.des == null || card.des.Equals(""))
+            {
+                this.desPicture.Visible = false;
+            }
+            else
+                this.desPicture.Visible = true;
+
+           
+            foreach (String nameUser in card.listNameUser)
+            {
+                MemIcon member = new MemIcon(nameUser, 25, 25);
+                this.flowLayoutPanel3.Controls.Add(member);
+            }
+      
+
+            switch (card.label)
+            {
+                case 1:
+                    this.CardLabel.BackColor = Color.Red;
+                    break;
+                case 2:
+                    this.CardLabel.BackColor = Color.Yellow;
+                    break;
+                case 3:
+                    this.CardLabel.BackColor = Color.Green;
+                    break;
+                case 4:
+                    this.CardLabel.BackColor = Color.Orange;
+                    break;
+                case 5:
+                    this.CardLabel.BackColor = Color.Blue;
+                    break;
+                case 6:
+                    this.CardLabel.BackColor = Color.Fuchsia;
+                    break;
+                default:
+                    this.CardLabel.BackColor = Color.Transparent;
+                    break;
+            }
+
+            if (card.checkedList != 0)
+            {
+                checkBox1.Visible = true;
+            }
+            else checkBox1.Visible = false;
+        }
+
         public Card(int X, int cardId, int index)
         {
             InitializeComponent();  
@@ -93,6 +218,7 @@ namespace GUI
             {
                 this.desPicture.Visible = true;
             }
+
             switch (cardDTO.Label)
             {
                 case 1:
@@ -117,6 +243,7 @@ namespace GUI
                     this.CardLabel.BackColor = Color.Transparent;
                     break;
             }
+
             if (checklistBLL.GetAllChecklist(cardId).Count() != 0)
             {
                 checkBox1.Visible = true;
@@ -135,7 +262,7 @@ namespace GUI
         {
             this.BackColor = System.Drawing.Color.DarkGray;
             this.CardName.BackColor = System.Drawing.Color.DarkGray;
-            cardDTO.Label = cardBLL.GetCard(_cardId).Label;
+           
             switch (cardDTO.Label)
             {
                 case 1:

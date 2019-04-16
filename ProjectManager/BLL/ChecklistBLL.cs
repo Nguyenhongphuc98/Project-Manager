@@ -58,5 +58,12 @@ namespace BLL
             ChecklistDAL cldal = new ChecklistDAL();
             return cldal.DeleteChecklist(id);
         }
+
+        //phuc nguyen---------------------------------
+        public StatusCheckList Getstatus(int cardId)
+        {
+            ChecklistDAL cldal = new ChecklistDAL();
+            return cldal.Getstatus(cardId);
+        }
     }
 }

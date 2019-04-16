@@ -117,5 +117,29 @@ namespace DAL
             this.Close();
             return true;
         }
+
+        //phuc nguyen-------------------------------------------
+        public List<String> GetListNameUserWorkingFor(int cardId)
+        {
+            List<String> listNameUser = new List<String>();
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT u.NAME "
+                                  + " FROM USERS u, LAMVIEC l "
+                                  + " WHERE u.USER_ID = l.USER_ID and CARD_ID = "+cardId;
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                string name = reader.GetString(0);
+             
+                listNameUser.Add(name);
+            }
+
+            this.Close();
+            return listNameUser;
+        }
     }
 }

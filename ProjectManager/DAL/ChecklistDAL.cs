@@ -34,6 +34,7 @@ namespace DAL
             this.Close();
             return listChecklist;
         }
+
         public List<ChecklistDTO> GetAllChecklist(int _cardId)
         {
             List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
@@ -58,6 +59,7 @@ namespace DAL
             this.Close();
             return listChecklist;
         }
+
         public List<ChecklistDTO> GetAllCheckedlist(int _cardId)
         {
             List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
@@ -107,6 +109,7 @@ namespace DAL
             this.Close();
             return null;
         }
+
         public ChecklistDTO GetChecklist(string _title)
         {
             ChecklistDTO checklist;
@@ -147,6 +150,7 @@ namespace DAL
             this.Close();
             return true;
         }
+
         public bool UpdateChecklist(ChecklistDTO checklist)
         {
             this.ConnectToDatabase();
@@ -162,6 +166,7 @@ namespace DAL
             this.Close();
             return true;
         }
+
         public bool UpdateChecklist(int cardId, int checklistIndex, string title, byte status)
         {
             this.ConnectToDatabase();
@@ -191,6 +196,35 @@ namespace DAL
 
             this.Close();
             return true;
+        }
+
+        //phuc nguyen---------------------------------
+        public StatusCheckList Getstatus(int cardId)
+        {
+            StatusCheckList status;
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT COUNT(CHECKLIST.CARD_ID),SUM(CHECKLIST.STATUS) "
+                                    +" FROM CHECKLIST WHERE CARD_ID = " + cardId;
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int sum = reader.GetInt32(0);
+                int finished;
+                try
+                {
+                    finished = reader.GetInt32(1);
+                }
+                catch { finished = 0; }
+                status = new StatusCheckList(sum, finished);
+                return status;
+            }
+
+            this.Close();
+            return null;
         }
     }
 }
