@@ -5,23 +5,24 @@ Thong tin nhom:
 3. Nguyen Cao Luyen
 4. Vu Minh Hoang
 
-- Huong dan cai dat:
-+ Cach 1: 
-	Yeu cau may da cai dat visual studio phien ban 2015 tro len.
-	Tai source code bang cach: mo git bash here, go dong lenh sau va nhan enter "git clone https://github.com/UIT-Project/Project-Manager.git".
-	Trong thu muc tai ve co thu muc cha la ProjectManager, tim den thu muc ProjectManager va chay file ProjectManager.sln.
-	Bien dich file va chay truc tiep tren visual hoac mo file exe de chay chuong trinh.
-+ Cach 2:
-	Mo file cai dat -> next -> next -> finish.
-	Vao thanh tim kiem cua window, tim den ProjectManager app va chay app vua cai dat.
-- Huong dan su dung:
-+ De su dung, nguoi dung can co tai khoan dang nhap.
-+ Neu chua co, tai man hinh dang nhap, nhan button register de tien hanh dang ky tai khoan.
-+ sau khi dang nhap. nguoi dung duoc dua den man hinh chinh, o day se chua toan bo cac board (project) ma user da tao hoac dang tham gia.
-+ click vao app infor de xem thong tin app.
-+ Neu chua co board nao hoac muon tao moi 1 board, click vao nut create new board va tien hanh nhap thong tin de tao moi du an.
-+ click vao board muon xem lic trinh chi tiet, man hinh chi tiet cac danh sach viec can lam.
-+ nguoi dung co the them cac list phu hop voi du an.
-+ tren moi list se co cac card tuong ung voi 1 cong viec cu the, nguoi dung theo doi cong viec qua cac card nay. Co the thay doi trang thai, them thanh vien,....
-+ Moi hoat dong cua user deu duoc ghi lai va hien thi tai muc thong bao cua ung dung.
-+ xem hoat dong cua user bang cach click vao button notify.
+# Hưỡng dẫn cài đặt:
++ Cách 1: 
+	<br>Yêu cầu máy có cài đặt Visual Studio phiên bản 2015 trở lên.
+	<br>Tải source code bằng cách: mở git bash here, gõ dòng lệnh sau và nhấn enter "git clone https://github.com/UIT-Project/Project-Manager.git".
+	<br>Trong thư mục tải về có thư mục cha là ProjectManager, Tìm đến thư mục ProjectManager và chạy file ProjectManager.sln.
+	<br>Biên dịch file và chạy trực tiếp trên visual hoặc mở file .exe Để chạy chương trình.
++ Cách 2:
+	<br>Mở file cài đặt -> next -> next -> finish.
+	<br>Vào thanh tìm kiếm của window, tìm đến ProjectManager app và chạy app vừa cài đặt.
+* Database được triển khai online vì thế chỉ cần cài đặt app và sử dung, không cần cài đặt gì thêm.
+# Hưỡng dẫn sử dụng:
++ Để sử dụng app, người dùng cần có tài khoản để đăng nhập.
++ Nếu chưa có tài khoản, tại màn hình đăng nhập, Nhấn vào chữ Register để tiến hành đăng ký tài khoản.
++ Sau khi đăng nhập, người dùng được đưa đến màn hình chính, Ở đây sẽ chứa toàn bộ các board (project) mà user đã taoh hoặc đang tham gia.
++ Click vào biểu tượng chữ i để xem thông tin app.
++ Nếu chưa có board hoặc muốn tạo mới 1 board, click vào nút create new board và tiến hành nhập thông tin để tạo mới dự án.
++ Click vào board muốn xem để biết lịch trình chi tiết, Màn hình chi tiết các công việc cần làm.
++ Người dùng có thể thêm các list phù hợp với dự án.
++ Trên mỗi list sẽ có các card tương ứng với công việc cụ thể mà người dùng cần làm, nCông việc được theo dõi qua các card này. Có thể thay đổi trạng thái, thêm thành viên,....
++ Mọi hoạt động của user đều được ghi lại và hiển thị ở ở mục notify.
++ Xem hoạt động này bằng cách click button notify.
