@@ -21,12 +21,14 @@ namespace GUI
         int _cardId;
 
         CardDTO cardDTO;
-        CardBLL cardBLL;
-        LamViecBLL lamViecBLL;
-        ChecklistBLL checklistBLL;
-        CardUserBLL userBLL;
+        CardInfoDTO cardInfoDTO;
+        //CardBLL cardBLL;
+        //LamViecBLL lamViecBLL;
+        //ChecklistBLL checklistBLL;
+        //CardUserBLL userBLL;
+        CardInfoBLL cardInfoBLL;
 
-        List<CardUserDTO> userDTOs = new List<CardUserDTO>();
+        //List<CardUserDTO> userDTOs = new List<CardUserDTO>();
         List<int> listUserId = new List<int>();
 
         //====================================================
@@ -55,18 +57,19 @@ namespace GUI
             oY = 3 + (index + 3) * this.Height;
             //this.Region = GetRoundedRegion(this.Width, this.Height);
 
-            cardBLL = new CardBLL();
-            lamViecBLL = new LamViecBLL();
-            checklistBLL = new ChecklistBLL();
-            userBLL = new CardUserBLL();
+            //cardBLL = new CardBLL();
+            //lamViecBLL = new LamViecBLL();
+            //checklistBLL = new ChecklistBLL();
+            //userBLL = new CardUserBLL();
+            cardInfoBLL = new CardInfoBLL();
+            cardInfoDTO = cardInfoBLL.CardInfo(_cardId);
 
-            listUserId = lamViecBLL.ListUserId(_cardId);
+            listUserId = cardInfoDTO.ListUserId;
 
-            CardName.Text = cardBLL.GetCardName(cardId);
-            cardDTO = cardBLL.GetCard(cardId);
-            CardName.LostFocus += CardName_LostFocus;
+            CardName.Text = cardInfoDTO.CardName;
+            cardDTO = cardInfoDTO.Card;
             dateCard.Text = cardDTO.DueDate.Day.ToString() + "/" + cardDTO.DueDate.Day.ToString() + "/" + cardDTO.DueDate.Day.ToString();
-            checkBox1.Text = checklistBLL.GetAllCheckedlist(cardId).Count() + "/" + checklistBLL.GetAllChecklist(cardId).Count();
+            checkBox1.Text = cardInfoDTO.ListCheckedlist.Count() + "/" + cardInfoDTO.ListChecklist.Count();
 
             if (cardDTO.Description == null || cardDTO.Description == "")
             {
@@ -76,14 +79,16 @@ namespace GUI
 
             foreach (int userId in listUserId)
             {
-                CardUserDTO userDTO = userBLL.GetUser(userId);
-                userDTOs.Add(userDTO);
-            }
-            foreach (CardUserDTO userDTO in userDTOs)
-            {
+                CardUserDTO userDTO = cardInfoDTO.User;
                 MemIcon member = new MemIcon(userDTO.Name.Substring(0, 1), 25, 25);
                 this.flowLayoutPanel3.Controls.Add(member);
+                //userDTOs.Add(userDTO);
             }
+            //foreach (CardUserDTO userDTO in userDTOs)
+            //{
+            //    MemIcon member = new MemIcon(userDTO.Name.Substring(0, 1), 25, 25);
+            //    this.flowLayoutPanel3.Controls.Add(member);
+            //}
 
             if (cardDTO.Description.Equals(""))
             {
@@ -117,7 +122,7 @@ namespace GUI
                     this.CardLabel.BackColor = Color.Transparent;
                     break;
             }
-            if (checklistBLL.GetAllChecklist(cardId).Count() != 0)
+            if (cardInfoDTO.ListChecklist.Count() != 0)
             {
                 checkBox1.Visible = true;
             }
@@ -126,16 +131,11 @@ namespace GUI
 
         //============================================================
        
-        private void CardName_LostFocus(object sender, EventArgs e)
-        {
-            cardDTO.Title = this.CardName.Text;
-            cardBLL.UpdateCard(cardDTO);
-        }
         private void Card_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = System.Drawing.Color.DarkGray;
             this.CardName.BackColor = System.Drawing.Color.DarkGray;
-            cardDTO.Label = cardBLL.GetCard(_cardId).Label;
+            cardDTO.Label = cardInfoDTO.Card.Label;
             switch (cardDTO.Label)
             {
                 case 1:

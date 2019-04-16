@@ -28,10 +28,11 @@ namespace DAL
                 string title = reader.GetString(3);
                 string description = reader.GetString(4);
                 int label = reader.GetInt32(5);
-                //DateTime dueDate = reader.GetDateTime(6);
+                DateTime dueDate = (reader.IsDBNull(6)) ? DateTime.MinValue : (reader.GetDateTime(6));
                 float status = reader.GetInt64(7);
 
-                CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, status);
+                //CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, status);
+                CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, dueDate, status);
                 listCard.Add(card);
             }
 
@@ -56,10 +57,11 @@ namespace DAL
                 string title = reader.GetString(3);
                 string description = reader.GetString(4);
                 int label = reader.GetInt32(5);
-                //DateTime dueDate = reader.GetDateTime(6);
+                DateTime dueDate = (reader.IsDBNull(6)) ? DateTime.MinValue : (reader.GetDateTime(6));
                 float status = reader.GetInt64(7);
 
-                CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, status);
+                //CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, status);
+                CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, dueDate, status);
                 listCard.Add(card);
             }
 
@@ -69,7 +71,6 @@ namespace DAL
 
         public CardDTO GetCard(int id)
         {
-            CardDTO card;
 
             this.ConnectToDatabase();
 
@@ -85,10 +86,10 @@ namespace DAL
                 string title = reader.GetString(3);
                 string description = reader.GetString(4);
                 int label = reader.GetInt32(5);
-                //DateTime dueDate = reader.GetDateTime(6);
+                DateTime dueDate = (reader.IsDBNull(6)) ? DateTime.MinValue : (reader.GetDateTime(6));
                 float status = reader.GetInt64(7);
 
-                card = new CardDTO(cardId, listId, indexCard, title, description, label, status);
+                CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, dueDate, status);
                 return card;
             }
 
@@ -174,8 +175,7 @@ namespace DAL
             command.Parameters.Add("@dueDate", MySqlDbType.DateTime).Value = card.DueDate;
 
             command.ExecuteNonQuery();
-
-
+            
             this.Close();
             return true;
         }
