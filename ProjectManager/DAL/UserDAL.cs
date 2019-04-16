@@ -14,9 +14,9 @@ namespace DAL
         {
             List<UserDTO> listUser = new List<UserDTO>();
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM USERS ";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -31,7 +31,7 @@ namespace DAL
                 listUser.Add(user);
             }
 
-            this.Close();
+           //  this.Close();
             return listUser;
         }
 
@@ -39,9 +39,9 @@ namespace DAL
         {
             UserDTO user;
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM USERS WHERE USER_ID = "+id;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -56,7 +56,7 @@ namespace DAL
                 return user;
             }
 
-            this.Close();
+           //  this.Close();
             return null;
         }
 
@@ -64,9 +64,9 @@ namespace DAL
         {
             UserDTO user;
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM USERS WHERE USERNAME = '" + userName+"'";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -81,13 +81,13 @@ namespace DAL
                 return user;
             }
 
-            this.Close();
+           //  this.Close();
             return null;
         }
 
         public bool InsertUser(UserDTO user)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "insert into USERS(USERNAME,PASSWORD,NAME) values('" + user.UserName + "','" + user.Password + "','" + user.Name + "');";
 
@@ -97,13 +97,13 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           //  this.Close();
             return true;
         }
 
         public bool UpdateUser(UserDTO user)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "update USER set USER_ID='" + user.UserId + "',USERNAME = '" + user.UserName
                             + "',PASSWORD ='" + user.Password + "',NAME = '" + user.Name ;
@@ -114,7 +114,7 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           //  this.Close();
             return true;
         }
     }

@@ -14,9 +14,9 @@ namespace DAL
         {
             List<CommentDTO> listComment = new List<CommentDTO>();
 
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM COMMENT ";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -32,7 +32,7 @@ namespace DAL
                 listComment.Add(comment);
             }
 
-            this.Close();
+           //  this.Close();
             return listComment;
         }
 
@@ -40,9 +40,9 @@ namespace DAL
         {
             CommentDTO comment;
 
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM COMMENT WHERE COMMENT_ID = "+id;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -58,13 +58,13 @@ namespace DAL
                 return comment;
             }
 
-            this.Close();
+           //  this.Close();
             return null;
         }
 
         public bool InsertComment(CommentDTO comment)
         {
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
             string Query = "insert into ACTIVITY values('" + comment.CardId + "','" + comment.UserId + "','" + comment.Content + "','" + comment.Time + "','" + comment.CmtIndex +"');";
 
@@ -74,13 +74,13 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           //  this.Close();
             return true;
         }
 
         public bool UpdateComment(CommentDTO comment)
         {
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
             string Query = "update ACTIVITY set CARD_ID='" + comment.CardId + "',USER_ID = '" + comment.UserId
                             + "',CONTENT ='" + comment.Content + "',TIME = '" + comment.Time + "',INDEX_CMT = '" + comment.CmtIndex;
@@ -91,7 +91,7 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           //  this.Close();
             return true;
         }
     }

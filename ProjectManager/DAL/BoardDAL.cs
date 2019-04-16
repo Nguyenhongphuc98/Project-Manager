@@ -16,9 +16,9 @@ namespace DAL
         {
             List<Board> listBoard = new List<DTO.Board>();
 
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * from BOARD";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -44,7 +44,7 @@ namespace DAL
                 listBoard.Add(b);
             }
 
-            this.Close();
+           // this.Close();
             return listBoard;
         }
       
@@ -52,9 +52,9 @@ namespace DAL
         public Board GetBoard(int id)
         {
             Board b;
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * from BOARD where BOARD_ID = "+id;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -73,15 +73,15 @@ namespace DAL
                 return b;
             }
 
-            this.Close();
+           // this.Close();
             return null;
         }
 
         public int GetMaxID()
         {          
-            this.ConnectToDatabase();
+            //this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT MAX(BOARD_ID) FROM BOARD";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -93,14 +93,14 @@ namespace DAL
                 return maxID;
             }
 
-            this.Close();
+           // this.Close();
             return -1;
         }
 
         public bool InsertBoard(int groupId, int index, string title ,
                 int mode, int star , String background )
         {
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
             string Query = "insert into BOARD(GROUP_ID,INDEX_BOARD,TITLE,MODE,STAR,BACKGROUND) values('" + groupId + "','" + index + "','" + title + "','" + mode+ "','" + star + "','" + background +"');";
             
@@ -110,14 +110,14 @@ namespace DAL
             command.ExecuteNonQuery();
             
             
-            this.Close();
+            //this.Close();
             return true;
         }
 
         public bool InsertBoard(int index, string title,
                 int mode, int star, String background)
         {
-            this.ConnectToDatabase();
+            //this.connectTodatabase();
 
             string Query = "insert into BOARD(INDEX_BOARD,TITLE,MODE,STAR,BACKGROUND) values('"  + index + "','" + title + "','" + mode + "','" + star + "','" + background + "');";
 
@@ -134,7 +134,7 @@ namespace DAL
         public bool UpdateBoard(int boardId, int groupId, int index, string title,
                 int mode, bool star, String background)
         {
-            this.ConnectToDatabase();
+            //this.connectTodatabase();
 
             string Query = "update BOARD set GROUP_ID='"+groupId + "',INDEX_BOARD = '" + index 
                             + "',TITLE ='" + title + "',MODE = '" + mode + "',STAR = '" + star 
@@ -146,28 +146,28 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           // this.Close();
             return true;
         }
 
         public bool DeleteBoard(int id)
         {
-            this.ConnectToDatabase();
+            //this.connectTodatabase();
 
             string Query = "delete from BOARD where BOARD_ID='" + id + "';";
 
-            MySqlCommand command = new MySqlCommand(Query, this.mySQLConnection);
+            MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
 
             command.ExecuteReader();
            
-            this.Close();
+           // this.Close();
             return true;
         }
 
         //------------------------------------------------
         public bool AddUser(int idUser,int idBoard)
         {
-            this.ConnectToDatabase();
+            //this.connectTodatabase();
 
             string Query = "insert into BOARD_USER values('" + idBoard + "','" + idUser +  "');";
 
@@ -177,7 +177,7 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           // this.Close();
             return true;
         }
 
@@ -185,14 +185,14 @@ namespace DAL
         {
             List<Board> listBoard = new List<DTO.Board>();
 
-            this.ConnectToDatabase();
+            //this.connectTodatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT BOARD.*"
                                   + " from BOARD, BOARD_USER "
                                   + " where BOARD.BOARD_ID = BOARD_USER.BOARD_ID "
                                   + " and BOARD_USER.USER_ID =" + idUser;
-
+            mySQLConnection.Close();
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -216,7 +216,7 @@ namespace DAL
                 listBoard.Add(b);
             }
 
-            this.Close();
+           // this.Close();
             return listBoard;
         }
 

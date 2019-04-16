@@ -14,9 +14,9 @@ namespace DAL
         {
             List<CardUserDTO> listCardUser = new List<CardUserDTO>();
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM USERS ";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -31,7 +31,7 @@ namespace DAL
                 listCardUser.Add(user);
             }
 
-            this.Close();
+           // this.Close();
             return listCardUser;
         }
 
@@ -39,9 +39,9 @@ namespace DAL
         {
             CardUserDTO user;
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM USERS WHERE USER_ID = " + id;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -56,13 +56,13 @@ namespace DAL
                 return user;
             }
 
-            this.Close();
+           // this.Close();
             return null;
         }
 
         public bool InsertUser(CardUserDTO user)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "insert into USERS values('" + user.UserId + "','" + user.UserName + "','" + user.Password + "','" + user.Name + "')";
 
@@ -72,13 +72,13 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           // this.Close();
             return true;
         }
 
         public bool UpdateUser(CardUserDTO user)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "update CARD set USER_ID='" + user.UserId + "',USERNAME = '" + user.UserName + "',PASSWORD = '" + user.Name + "'";
 
@@ -88,7 +88,7 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           // this.Close();
             return true;
         }
     }

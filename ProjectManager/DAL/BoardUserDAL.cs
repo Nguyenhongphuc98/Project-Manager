@@ -14,9 +14,9 @@ namespace DAL
         {
             List<int> listUserId = new List<int>();
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM BOARD_USER WHERE BOARD_ID = '" + boardId + "'";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -27,7 +27,7 @@ namespace DAL
                 listUserId.Add(userId);
             }
 
-            this.Close();
+           // this.Close();
             return listUserId;
         }
         

@@ -19,7 +19,7 @@ namespace DAL
         public string UserName { get => userName; set => userName = value; }
         public string PassWord { get => passWord; set => passWord = value; }
 
-        protected MySqlConnection mySQLConnection = null;
+       static protected MySqlConnection mySQLConnection = null;
 
         public DatabaseAccess()
         {

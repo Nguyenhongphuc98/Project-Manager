@@ -14,9 +14,9 @@ namespace DAL
         {
             List<GroupDTO> listGroup = new List<GroupDTO>();
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM GROUP ";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -30,7 +30,7 @@ namespace DAL
                 listGroup.Add(group);
             }
 
-            this.Close();
+           //  this.Close();
             return listGroup;
         }
 
@@ -38,9 +38,9 @@ namespace DAL
         {
             GroupDTO group;
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM GROUP WHERE GROUP_ID = "+id;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -54,13 +54,13 @@ namespace DAL
                 return group;
             }
 
-            this.Close();
+           //  this.Close();
             return null;
         }
 
         public bool InsertGroup(GroupDTO group)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "insert into GROUP values('" + group.GroupId + "','" + group.Name + "','" + group.Description + "');";
 
@@ -70,13 +70,13 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           //  this.Close();
             return true;
         }
 
         public bool UpdateGroup(GroupDTO group)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "update GROUP set GROUP_ID='" + group.GroupId + "',NAME = '" + group.Name
                             + "',DESCRIPTION ='" + group.Description ;
@@ -87,7 +87,7 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           //  this.Close();
             return true;
         }
     }

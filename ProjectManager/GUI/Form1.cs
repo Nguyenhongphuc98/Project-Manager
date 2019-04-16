@@ -69,6 +69,8 @@ namespace GUI
             }
 
 
+            DbBLL database = new DbBLL();
+            database.ConnectToDatabase();
             UserBLL userBLL = new UserBLL();
             UserDTO user = userBLL.GetUser(tbuserName.Text);
             if (user == null)

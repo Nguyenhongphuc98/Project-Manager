@@ -14,9 +14,9 @@ namespace DAL
         {
             List<CardDTO> listCard = new List<CardDTO>();
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM CARD ";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -35,16 +35,16 @@ namespace DAL
                 listCard.Add(card);
             }
 
-            this.Close();
+            // this.Close();
             return listCard;
         }
         public List<CardDTO> GetAllCard(int _listId)
         {
             List<CardDTO> listCard = new List<CardDTO>();
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM CARD WHERE LIST_ID = " + _listId;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -63,7 +63,7 @@ namespace DAL
                 listCard.Add(card);
             }
 
-            this.Close();
+            // this.Close();
             return listCard;
         }
 
@@ -71,9 +71,9 @@ namespace DAL
         {
             CardDTO card;
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM CARD WHERE CARD_ID = " + id;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -92,7 +92,7 @@ namespace DAL
                 return card;
             }
 
-            this.Close();
+            // this.Close();
             return null;
         }
 
@@ -100,9 +100,9 @@ namespace DAL
         {
             CardDTO card;
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM CARD WHERE CARD_ID = " + id;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -112,13 +112,13 @@ namespace DAL
                 return title;
             }
 
-            this.Close();
+            // this.Close();
             return null;
         }
         
         public bool InsertCard(CardDTO card)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "insert into CARD(LIST_ID,INDEX_CARD,TITLE,DESCRIPTION,LABEL,STATUS) values('"+ card.ListId + "','" + card.IndexCard + "','" + card.Title + "','" + card.Description + "','" + card.Label + "','" + card.Status + "')";
 
@@ -128,13 +128,13 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+            // this.Close();
             return true;
         }
 
         public bool UpdateCard(CardDTO card)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "update CARD set LIST_ID = '" + card.ListId + "',INDEX_CARD ='" + card.IndexCard + "',TITLE = '" + card.Title + "',DESCRIPTION = '" + card.Description
                             + "',LABEL = '" + card.Label + "',STATUS='" + card.Status + "' WHERE CARD_ID ='" + card.CardId + "'";
@@ -145,13 +145,13 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+            // this.Close();
             return true;
         }
 
         public bool InsertDate(CardDTO card)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
             string Query = "insert into CARD(DUEDATE) values('" + card.DueDate + "')";
 
             //This is command class which will handle the query and connection object.  
@@ -159,13 +159,13 @@ namespace DAL
 
             command.ExecuteNonQuery();
 
-            this.Close();
+            // this.Close();
             return true;
         }
 
         public bool UpdateDate(CardDTO card)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "update CARD set DUEDATE = @dueDate WHERE CARD_ID ='" + card.CardId + "'";
 
@@ -176,13 +176,13 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+            // this.Close();
             return true;
         }
 
         public bool DeleteCard(CardDTO card)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "delete from CARD where CARD_ID = '" + card.CardId + "'";
 
@@ -191,7 +191,7 @@ namespace DAL
 
             command.ExecuteNonQuery();
 
-            this.Close();
+            // this.Close();
             return true;
         }
         

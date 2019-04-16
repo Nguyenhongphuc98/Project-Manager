@@ -16,7 +16,7 @@ namespace DAL
 
             this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM ACTIVITY ";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -51,7 +51,7 @@ namespace DAL
 
             this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM ACTIVITY where BOARD_ID = "+board_Id;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -86,7 +86,7 @@ namespace DAL
 
             this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM ACTIVITY WHERE ACTIVITY_ID = "+id;
 
             MySqlDataReader reader = command.ExecuteReader();

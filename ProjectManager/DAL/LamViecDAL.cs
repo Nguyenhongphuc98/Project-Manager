@@ -14,9 +14,9 @@ namespace DAL
         {
             List<int> listUserId = new List<int>();
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM LAMVIEC WHERE CARD_ID = " + cardId;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -27,12 +27,12 @@ namespace DAL
                 listUserId.Add(userId);
             }
 
-            this.Close();
+            //this.Close();
             return listUserId;
         }
         public bool UpdateUser(int userId, int cardId)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "update LAMVIEC set USER_ID ='" + userId + "' where CARD_ID ='" + cardId + "'";
 
@@ -41,13 +41,13 @@ namespace DAL
 
             command.ExecuteNonQuery();
 
-            this.Close();
+            //this.Close();
             return true;
         }
 
         public bool InsertUser(int userId, int cardId)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "insert into LAMVIEC(CARD_ID, USER_ID) values('"+cardId + "','" + userId + "')";
 
@@ -57,7 +57,7 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+            //this.Close();
             return true;
         }
     }

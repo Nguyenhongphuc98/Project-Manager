@@ -331,6 +331,8 @@ namespace GUI
 
         private void WorkSpace_FormClosed(object sender, FormClosedEventArgs e)
         {
+            DbBLL database = new DbBLL();
+            database.Close();
             Application.Exit();
             //this.Parent.Show();
         }

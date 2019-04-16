@@ -14,9 +14,9 @@ namespace DAL
         {
             List<ListDTO> listList = new List<ListDTO>();
 
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM LIST where BOARD_ID = "+ id_board;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -32,7 +32,7 @@ namespace DAL
                 listList.Add(list);
             }
 
-            this.Close();
+           // this.Close();
             return listList;
         }
 
@@ -40,9 +40,9 @@ namespace DAL
         {
             ListDTO listobj;
 
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM LIST WHERE LIST_ID = "+id;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -58,13 +58,13 @@ namespace DAL
                 return listobj;
             }
 
-            this.Close();
+           // this.Close();
             return null;
         }
 
         public bool InsertList(ListDTO list)
         {
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
             string Query = "insert into LIST(BOARD_ID,INDEX_LIST,TITLE,COLOR) values('" + list.BoardId + "','" + list.IndexList + "','" + list.Title + "','" + list.Color +"');";
 
@@ -74,13 +74,13 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           // this.Close();
             return true;
         }
 
         public bool UpdateList(ListDTO list)
         {
-            this.ConnectToDatabase();
+           // this.ConnectToDatabase();
 
             string Query = "update LIST set " + "',BOARD_ID = '" + list.BoardId
                             + "',INDEX_LIST ='" + list.IndexList + "',TITLE = '" + list.Title + "',COLOR = '" + list.Color
@@ -92,7 +92,7 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           // this.Close();
             return true;
         }
     }

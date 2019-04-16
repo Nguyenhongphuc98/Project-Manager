@@ -14,9 +14,9 @@ namespace DAL
         {
             List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM CHECKLIST ";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -31,16 +31,16 @@ namespace DAL
                 listChecklist.Add(checklist);
             }
 
-            this.Close();
+           // this.Close();
             return listChecklist;
         }
         public List<ChecklistDTO> GetAllChecklist(int _cardId)
         {
             List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM CHECKLIST WHERE CARD_ID = '" + _cardId + "'";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -55,16 +55,16 @@ namespace DAL
                 listChecklist.Add(checklist);
             }
 
-            this.Close();
+           // this.Close();
             return listChecklist;
         }
         public List<ChecklistDTO> GetAllCheckedlist(int _cardId)
         {
             List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM CHECKLIST WHERE CARD_ID = '" + _cardId + "' AND STATUS = '" + 1 +"'";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -79,7 +79,7 @@ namespace DAL
                 listChecklist.Add(checklist);
             }
 
-            this.Close();
+           // this.Close();
             return listChecklist;
         }
 
@@ -87,9 +87,9 @@ namespace DAL
         {
             ChecklistDTO checklist;
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM CHECKLIST WHERE CHECKLIST_ID = " + id;
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -104,16 +104,16 @@ namespace DAL
                 return checklist;
             }
 
-            this.Close();
+           // this.Close();
             return null;
         }
         public ChecklistDTO GetChecklist(string _title)
         {
             ChecklistDTO checklist;
 
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
-            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            MySqlCommand command = mySQLConnection.CreateCommand();
             command.CommandText = "SELECT * FROM CHECKLIST WHERE TITLE = '" + _title + "'";
 
             MySqlDataReader reader = command.ExecuteReader();
@@ -128,13 +128,13 @@ namespace DAL
                 return checklist;
             }
 
-            this.Close();
+           // this.Close();
             return null;
         }
 
         public bool InsertChecklist(int cardId, int checklistIndex, string title, byte status)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "insert into CHECKLIST(CARD_ID,INDEX_CHECKLIST,TITLE,STATUS) values('" + cardId + "','" + checklistIndex + "','" + title + "','" + status + "')";
 
@@ -144,12 +144,12 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           // this.Close();
             return true;
         }
         public bool UpdateChecklist(ChecklistDTO checklist)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "update CHECKLIST set INDEX_CHECKLIST = '" + checklist.ChecklistIndex + "',TITLE = '" + checklist.Title + "',STATUS = '" + checklist.Status + "' WHERE CARD_ID =" + checklist.CardId;
 
@@ -159,12 +159,12 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           // this.Close();
             return true;
         }
         public bool UpdateChecklist(int cardId, int checklistIndex, string title, byte status)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "update CHECKLIST set INDEX_CHECKLIST = '" + checklistIndex + "',TITLE = '" + title + "',STATUS = '" + status + "' WHERE CARD_ID =" + cardId;
 
@@ -174,13 +174,13 @@ namespace DAL
             command.ExecuteNonQuery();
 
 
-            this.Close();
+           // this.Close();
             return true;
         }
 
         public bool DeleteChecklist(int cardId)
         {
-            this.ConnectToDatabase();
+            // this.ConnectToDatabase();
 
             string Query = "delete from CHECKLIST where CARD_ID = '" + cardId + "'";
 
@@ -189,7 +189,7 @@ namespace DAL
 
             command.ExecuteNonQuery();
 
-            this.Close();
+           // this.Close();
             return true;
         }
     }
