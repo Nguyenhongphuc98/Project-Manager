@@ -196,12 +196,10 @@
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(11, 66);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(11, 63);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(299, 34);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(299, 43);
             this.flowLayoutPanel3.TabIndex = 25;
             // 
             // CardName
@@ -227,7 +225,7 @@
             this.Controls.Add(this.CardLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Card";
-            this.Size = new System.Drawing.Size(317, 103);
+            this.Size = new System.Drawing.Size(317, 109);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Card_MouseClick);
             this.MouseEnter += new System.EventHandler(this.Card_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Card_MouseLeave);

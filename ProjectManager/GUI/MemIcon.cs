@@ -17,5 +17,13 @@ namespace GUI
             InitializeComponent();
             this.MemberName.Text = memberName;
         }
+        public MemIcon(string memberName, int width, int height)
+        {
+            InitializeComponent();
+            this.MemberName.Text = memberName;
+            this.Size = new Size(width, height);
+            this.pictureBox1.Size = this.Size;
+            this.MemberName.Font = new Font("Microsoft Sans Serif" ,width - 16);
+        }
     }
 }

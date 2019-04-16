@@ -81,8 +81,7 @@ namespace GUI
             }
             foreach (CardUserDTO userDTO in userDTOs)
             {
-                MemIcon member = new MemIcon(userDTO.Name.Substring(0, 1));
-                member.Size = new Size(30, 26);
+                MemIcon member = new MemIcon(userDTO.Name.Substring(0, 1), 25, 25);
                 this.flowLayoutPanel3.Controls.Add(member);
             }
 
