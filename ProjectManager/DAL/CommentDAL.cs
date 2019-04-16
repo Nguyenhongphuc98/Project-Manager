@@ -35,6 +35,30 @@ namespace DAL
             this.Close();
             return listComment;
         }
+        public List<CommentDTO> GetAllComments(int cardId)
+        {
+            List<CommentDTO> listComment = new List<CommentDTO>();
+
+            this.ConnectToDatabase();
+
+            MySqlCommand command = this.mySQLConnection.CreateCommand();
+            command.CommandText = "SELECT * FROM COMMENT WHERE CARD_ID = '" + cardId + "'";
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int userId = reader.GetInt32(1);
+                string content = reader.GetString(2);
+                DateTime time = reader.GetDateTime(3);
+                int cmtIndex = reader.GetInt32(4);
+
+                CommentDTO comment = new CommentDTO(cardId,userId,content,time,cmtIndex);
+                listComment.Add(comment);
+            }
+
+            this.Close();
+            return listComment;
+        }
 
         public CommentDTO GetComment(int id)
         {
@@ -65,8 +89,9 @@ namespace DAL
         public bool InsertComment(CommentDTO comment)
         {
             this.ConnectToDatabase();
-
-            string Query = "insert into ACTIVITY values('" + comment.CardId + "','" + comment.UserId + "','" + comment.Content + "','" + comment.Time + "','" + comment.CmtIndex +"');";
+            string Query = "insert into COMMENT values('" + comment.CardId + "','" + 
+                comment.UserId + "','" + comment.Content + "','" + comment.Time.Date + "','" +
+                comment.CmtIndex +"');";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
@@ -82,7 +107,7 @@ namespace DAL
         {
             this.ConnectToDatabase();
 
-            string Query = "update ACTIVITY set CARD_ID='" + comment.CardId + "',USER_ID = '" + comment.UserId
+            string Query = "update COMMENT set CARD_ID='" + comment.CardId + "',USER_ID = '" + comment.UserId
                             + "',CONTENT ='" + comment.Content + "',TIME = '" + comment.Time + "',INDEX_CMT = '" + comment.CmtIndex;
 
             //This is command class which will handle the query and connection object.  

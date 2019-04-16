@@ -11,22 +11,13 @@ namespace DAL
     public class CardInfoDAL:DatabaseAccess
     {
         CardDTO card;
-        String cardName;
-        List<int> listUserId = new List<int>();
+        CardUserDTO user;
+        
+        List<string> listNameUser = new List<string>();
         List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
         List<ChecklistDTO> listCheckedlist = new List<ChecklistDTO>();
-        CardUserDTO user;
 
-        //public bool ConnectDatabase()
-        //{
-        //    this.ConnectToDatabase();
-        //    return true;
-        //}
-        //public bool ClosetDatabase()
-        //{
-        //    this.Close();
-        //    return true;
-        //}
+        
         public CardInfoDTO CardInfo(int id)
         {
             this.ConnectToDatabase();
@@ -47,16 +38,6 @@ namespace DAL
                 float status = reader.GetInt64(7);
 
                 card = new CardDTO(cardId, listId, indexCard, title, description, label, dueDate, status);
-                cardName = title;
-            }
-
-            command.CommandText = "SELECT * FROM LAMVIEC WHERE CARD_ID = " + id;
-            
-            while (reader.Read())
-            {
-                int userId = reader.GetInt32(1);
-
-                listUserId.Add(userId);
             }
 
             command.CommandText = "SELECT * FROM CHECKLIST WHERE CARD_ID = '" + id + "' AND STATUS = '" + 1 + "'";
@@ -95,9 +76,20 @@ namespace DAL
 
                 user = new CardUserDTO(userId, username, password, name);
             }
+            
+            command.CommandText = "SELECT u.NAME "
+                                  + " FROM USERS u, LAMVIEC l "
+                                  + " WHERE u.USER_ID = l.USER_ID and CARD_ID = " + id;
+            
+            while (reader.Read())
+            {
+                string name = reader.GetString(0);
+                listNameUser.Add(name);
+            }
+
             this.Close();
 
-            CardInfoDTO cardInfoDTO = new CardInfoDTO(this.card, this.cardName, this.listUserId, this.listChecklist, this.listCheckedlist, this.user);
+            CardInfoDTO cardInfoDTO = new CardInfoDTO(this.card, this.listNameUser, this.listChecklist, this.listCheckedlist, this.user);
             return cardInfoDTO;
         }
 

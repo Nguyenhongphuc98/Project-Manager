@@ -22,14 +22,10 @@ namespace GUI
 
         CardDTO cardDTO;
         CardInfoDTO cardInfoDTO;
-        //CardBLL cardBLL;
-        //LamViecBLL lamViecBLL;
-        //ChecklistBLL checklistBLL;
-        //CardUserBLL userBLL;
         CardInfoBLL cardInfoBLL;
-
-        //List<CardUserDTO> userDTOs = new List<CardUserDTO>();
+        
         List<int> listUserId = new List<int>();
+        List<string> listNameUser = new List<string>();
 
         //====================================================
 
@@ -56,17 +52,12 @@ namespace GUI
             oX = X;
             oY = 3 + (index + 3) * this.Height;
             //this.Region = GetRoundedRegion(this.Width, this.Height);
-
-            //cardBLL = new CardBLL();
-            //lamViecBLL = new LamViecBLL();
-            //checklistBLL = new ChecklistBLL();
-            //userBLL = new CardUserBLL();
+            
             cardInfoBLL = new CardInfoBLL();
             cardInfoDTO = cardInfoBLL.CardInfo(_cardId);
 
-            listUserId = cardInfoDTO.ListUserId;
-
-            CardName.Text = cardInfoDTO.CardName;
+            listNameUser = cardInfoDTO.ListNameUser;
+            CardName.Text = cardInfoDTO.Card.Title;
             cardDTO = cardInfoDTO.Card;
             dateCard.Text = cardDTO.DueDate.Day.ToString() + "/" + cardDTO.DueDate.Day.ToString() + "/" + cardDTO.DueDate.Day.ToString();
             checkBox1.Text = cardInfoDTO.ListCheckedlist.Count() + "/" + cardInfoDTO.ListChecklist.Count();
@@ -77,18 +68,11 @@ namespace GUI
             }
             else this.desPicture.Visible = true;
 
-            foreach (int userId in listUserId)
+            foreach (string name in listNameUser)
             {
-                CardUserDTO userDTO = cardInfoDTO.User;
-                MemIcon member = new MemIcon(userDTO.Name.Substring(0, 1), 25, 25);
+                MemIcon member = new MemIcon(name, 25, 25);
                 this.flowLayoutPanel3.Controls.Add(member);
-                //userDTOs.Add(userDTO);
             }
-            //foreach (CardUserDTO userDTO in userDTOs)
-            //{
-            //    MemIcon member = new MemIcon(userDTO.Name.Substring(0, 1), 25, 25);
-            //    this.flowLayoutPanel3.Controls.Add(member);
-            //}
 
             if (cardDTO.Description.Equals(""))
             {

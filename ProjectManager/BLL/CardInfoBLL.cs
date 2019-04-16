@@ -11,7 +11,6 @@ namespace BLL
     public class CardInfoBLL
     {
         CardDTO card;
-        String cardName;
         List<int> listUserId = new List<int>();
         List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
         List<ChecklistDTO> listCheckedlist = new List<ChecklistDTO>();

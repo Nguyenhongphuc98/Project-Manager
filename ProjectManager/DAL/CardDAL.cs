@@ -31,7 +31,6 @@ namespace DAL
                 DateTime dueDate = (reader.IsDBNull(6)) ? DateTime.MinValue : (reader.GetDateTime(6));
                 float status = reader.GetInt64(7);
 
-                //CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, status);
                 CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, dueDate, status);
                 listCard.Add(card);
             }
@@ -60,7 +59,6 @@ namespace DAL
                 DateTime dueDate = (reader.IsDBNull(6)) ? DateTime.MinValue : (reader.GetDateTime(6));
                 float status = reader.GetInt64(7);
 
-                //CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, status);
                 CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, dueDate, status);
                 listCard.Add(card);
             }

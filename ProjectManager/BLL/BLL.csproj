@@ -49,6 +49,7 @@
     <Compile Include="CardUserBLL.cs" />
     <Compile Include="ChecklistBLL.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="CommentBLL.cs" />
     <Compile Include="LamViecBLL.cs" />
     <Compile Include="ListBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

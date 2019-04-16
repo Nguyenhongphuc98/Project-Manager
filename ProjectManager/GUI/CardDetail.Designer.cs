@@ -46,7 +46,7 @@
             this.List = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CardName = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.activityPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.AddMem = new Bunifu.Framework.UI.BunifuThinButton2();
             this.EditLabel = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -62,15 +62,17 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.taskFlpanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cmtPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.memberFlp = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Panel();
             this.moveBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.commentButton = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.followPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -259,12 +261,12 @@
             this.CardName.MouseEnter += new System.EventHandler(this.CardName_MouseEnter);
             this.CardName.MouseLeave += new System.EventHandler(this.CardName_MouseLeave);
             // 
-            // flowLayoutPanel1
+            // activityPanel
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 46);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(535, 27);
-            this.flowLayoutPanel1.TabIndex = 56;
+            this.activityPanel.Location = new System.Drawing.Point(32, 46);
+            this.activityPanel.Name = "activityPanel";
+            this.activityPanel.Size = new System.Drawing.Size(535, 85);
+            this.activityPanel.TabIndex = 56;
             // 
             // label10
             // 
@@ -398,7 +400,7 @@
             this.addTask.IdleFillColor = System.Drawing.Color.White;
             this.addTask.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.addTask.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.addTask.Location = new System.Drawing.Point(32, 197);
+            this.addTask.Location = new System.Drawing.Point(33, 160);
             this.addTask.Margin = new System.Windows.Forms.Padding(32, 41, 32, 41);
             this.addTask.Name = "addTask";
             this.addTask.Size = new System.Drawing.Size(94, 43);
@@ -424,7 +426,7 @@
             this.SaveButton.IdleFillColor = System.Drawing.Color.White;
             this.SaveButton.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.SaveButton.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.SaveButton.Location = new System.Drawing.Point(32, 100);
+            this.SaveButton.Location = new System.Drawing.Point(8, 1009);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(68, 40);
@@ -487,7 +489,7 @@
             this.checklistPn.Controls.Add(this.addTask);
             this.checklistPn.Location = new System.Drawing.Point(3, 356);
             this.checklistPn.Name = "checklistPn";
-            this.checklistPn.Size = new System.Drawing.Size(577, 241);
+            this.checklistPn.Size = new System.Drawing.Size(577, 204);
             this.checklistPn.TabIndex = 68;
             // 
             // deleteBtn
@@ -505,27 +507,36 @@
             this.taskFlpanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.taskFlpanel.Location = new System.Drawing.Point(32, 47);
             this.taskFlpanel.Name = "taskFlpanel";
-            this.taskFlpanel.Size = new System.Drawing.Size(535, 150);
+            this.taskFlpanel.Size = new System.Drawing.Size(535, 106);
             this.taskFlpanel.TabIndex = 63;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.commentButton);
+            this.panel3.Controls.Add(this.cmtPanel);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.commentText);
-            this.panel3.Controls.Add(this.SaveButton);
             this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Location = new System.Drawing.Point(3, 603);
+            this.panel3.Location = new System.Drawing.Point(3, 566);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(577, 144);
+            this.panel3.Size = new System.Drawing.Size(577, 272);
             this.panel3.TabIndex = 69;
+            // 
+            // cmtPanel
+            // 
+            this.cmtPanel.AutoScroll = true;
+            this.cmtPanel.Location = new System.Drawing.Point(32, 146);
+            this.cmtPanel.Name = "cmtPanel";
+            this.cmtPanel.Size = new System.Drawing.Size(535, 123);
+            this.cmtPanel.TabIndex = 57;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.flowLayoutPanel1);
-            this.panel5.Location = new System.Drawing.Point(3, 753);
+            this.panel5.Controls.Add(this.activityPanel);
+            this.panel5.Location = new System.Drawing.Point(3, 844);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(577, 100);
+            this.panel5.Size = new System.Drawing.Size(577, 139);
             this.panel5.TabIndex = 71;
             // 
             // panel4
@@ -561,6 +572,15 @@
             this.memberFlp.Name = "memberFlp";
             this.memberFlp.Size = new System.Drawing.Size(204, 62);
             this.memberFlp.TabIndex = 65;
+            // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.AutoSize = true;
+            this.flowLayoutPanel5.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel5.TabIndex = 69;
             // 
             // panel6
             // 
@@ -615,27 +635,45 @@
             this.flowLayoutPanel2.Controls.Add(this.panel5);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 7);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(599, 854);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(599, 996);
             this.flowLayoutPanel2.TabIndex = 75;
             // 
-            // flowLayoutPanel5
+            // commentButton
             // 
-            this.flowLayoutPanel5.AutoSize = true;
-            this.flowLayoutPanel5.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(0, 0);
-            this.flowLayoutPanel5.TabIndex = 69;
+            this.commentButton.ActiveBorderThickness = 1;
+            this.commentButton.ActiveCornerRadius = 20;
+            this.commentButton.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.commentButton.ActiveForecolor = System.Drawing.Color.White;
+            this.commentButton.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.commentButton.BackColor = System.Drawing.SystemColors.Control;
+            this.commentButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("commentButton.BackgroundImage")));
+            this.commentButton.ButtonText = "Bình luận";
+            this.commentButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.commentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commentButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.commentButton.IdleBorderThickness = 1;
+            this.commentButton.IdleCornerRadius = 20;
+            this.commentButton.IdleFillColor = System.Drawing.Color.White;
+            this.commentButton.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.commentButton.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.commentButton.Location = new System.Drawing.Point(32, 100);
+            this.commentButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.commentButton.Name = "commentButton";
+            this.commentButton.Size = new System.Drawing.Size(83, 40);
+            this.commentButton.TabIndex = 76;
+            this.commentButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.commentButton.Click += new System.EventHandler(this.commentButton_Click);
             // 
             // CardDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(770, 873);
+            this.ClientSize = new System.Drawing.Size(770, 1058);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.moveBtn);
             this.Controls.Add(this.CloseButton);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.EditLabel);
             this.Controls.Add(this.DueDate);
             this.Controls.Add(this.ChecklistBtn);
@@ -689,7 +727,7 @@
         private System.Windows.Forms.Label List;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CardName;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel activityPanel;
         private System.Windows.Forms.Label label10;
         private Bunifu.Framework.UI.BunifuThinButton2 AddMem;
         private Bunifu.Framework.UI.BunifuThinButton2 EditLabel;
@@ -714,5 +752,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.FlowLayoutPanel cmtPanel;
+        private Bunifu.Framework.UI.BunifuThinButton2 commentButton;
     }
 }

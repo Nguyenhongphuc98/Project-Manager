@@ -10,25 +10,23 @@ namespace DTO
     {
         CardDTO card;
         String cardName;
-        List<int> listUserId = new List<int>();
+        List<string> listNameUser = new List<string>();
         List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
         List<ChecklistDTO> listCheckedlist = new List<ChecklistDTO>();
         CardUserDTO user;
 
-        public CardInfoDTO(CardDTO card, String cardName, List<int> listUserId, List<ChecklistDTO> listChecklist,
+        public CardInfoDTO(CardDTO card, List<String> listNameUser, List<ChecklistDTO> listChecklist,
                            List<ChecklistDTO> listCheckedlist, CardUserDTO user)
         {
             this.card = card;
-            this.cardName = cardName;
-            this.listUserId = listUserId;
+            this.listNameUser = listNameUser;
             this.listChecklist = listChecklist;
             this.listCheckedlist = listCheckedlist;
             this.user = user;
         }
 
         public CardDTO Card { get => card; set => card = value; }
-        public String CardName { get => cardName; set => cardName = value; }
-        public List<int> ListUserId { get => listUserId; set => listUserId = value; }
+        public List<string> ListNameUser { get => listNameUser; set => listNameUser = value; }
         public List<ChecklistDTO> ListChecklist { get => listChecklist; set => listChecklist = value; }
         public List<ChecklistDTO> ListCheckedlist { get => listCheckedlist; set => listCheckedlist = value; }
         public CardUserDTO User { get => user; set => user = value; }

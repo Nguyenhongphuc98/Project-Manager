@@ -20,17 +20,21 @@ namespace GUI
         CardDTO cardDTO;
         ListDTO listDTO;
         ChecklistDTO checklistDTO;
+        CommentDTO commentDTO;
 
         CardBLL cardBLL = new CardBLL();
         ListBLL listBLL = new ListBLL();
         ChecklistBLL checklistBLL = new ChecklistBLL();
         LamViecBLL lamViecBLL = new LamViecBLL();
         CardUserBLL userBLL = new CardUserBLL();
+        CommentBLL commentBLL = new CommentBLL();
+        ActivityBLL activityBLL;
 
         List<ChecklistDTO> checklistDTOs;
         List<CheckBox> tasks = new List<CheckBox>();
         List<CardUserDTO> userDTOs = new List<CardUserDTO>();
         List<int> listUsers = new List<int>();
+        List<CommentDTO> commentDTOs;
 
         public CardDetail(int id)
         {
@@ -100,6 +104,13 @@ namespace GUI
             listDTO = listBLL.GetList(cardDTO.ListId);
             this.List.Text = listDTO.Title;
             _boardId = listDTO.BoardId;
+
+            commentDTOs = commentBLL.GetAllComments(_cardId);
+            foreach (CommentDTO comment in commentDTOs)
+            {
+                UserComment userComment = new UserComment(userBLL.GetUser(comment.UserId).Name.Substring(0, 1), comment.Content);
+                cmtPanel.Controls.Add(userComment);
+            }
         }
 
         private void AddMember()
@@ -294,8 +305,29 @@ namespace GUI
             }
             else checklistPn.Visible = false;
 
-            List.Text = listDTO.Title;
             cardBLL.UpdateCard(cardDTO);
+
+            listDTO = listBLL.GetList(cardDTO.ListId);
+            List.Text = listDTO.Title;
+        }
+
+        private void commentButton_Click(object sender, EventArgs e)
+        {
+            if (commentText.Text != null)
+            {
+                activityBLL = new ActivityBLL();
+                //UserComment userComment = new UserComment(Global.user.Name.Substring(0,1), commentText.Text);
+                //this.cmtPanel.Controls.Add(userComment);
+                commentDTO = new CommentDTO(_cardId, Global.user.UserId, commentText.Text, DateTime.Now, 1);
+                commentBLL.InsertComment(commentDTO);
+            }
+            foreach (CommentDTO comment in commentDTOs)
+            {
+                cmtPanel.Controls.Clear();
+                UserComment userComment = new UserComment(userBLL.GetUser(comment.UserId).Name.Substring(0, 1), comment.Content);
+                cmtPanel.Controls.Add(userComment);
+            }
+            activityBLL.InsertActivity(Global.user.UserId, _boardId, Global.user.Name + " Has comment to card " + cardDTO.Title, DateTime.Now);
         }
     }
 }
