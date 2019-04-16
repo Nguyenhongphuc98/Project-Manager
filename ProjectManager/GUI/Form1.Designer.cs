@@ -145,6 +145,7 @@
             this.lbRegister.Size = new System.Drawing.Size(59, 16);
             this.lbRegister.TabIndex = 3;
             this.lbRegister.Text = "Register";
+            this.lbRegister.Click += new System.EventHandler(this.lbRegister_Click);
             // 
             // btnClose
             // 

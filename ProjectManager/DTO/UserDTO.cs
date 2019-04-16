@@ -13,6 +13,13 @@ namespace DTO
         string password;
         string name;
 
+        public UserDTO( string username, string password, string name)
+        {     
+            this.username = username;
+            this.password = password;
+            this.name = name;
+        }
+
         public UserDTO(int userId, string username, string password, string name)
         {
             this.userId = userId;

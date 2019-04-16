@@ -84,9 +84,12 @@ namespace GUI
             // boards = boardBLL.GetAllBoard();
             boards = boardBLL.GetAllBoard(user.UserId);
 
-            foreach (Board bo in boards)
+            //foreach (Board bo in boards)
+            for(int i=0;i<boards.Count;i++)
             {
-                BoardUI b = new BoardUI(bo.BoardId,bo.Index,bo.GroupId,bo.Title,bo.Mode,bo.Star,bo.Background);
+                Board bo = boards[i];
+                //BoardUI b = new BoardUI(bo.BoardId,bo.Index,bo.GroupId,bo.Title,bo.Mode,bo.Star,bo.Background);
+                BoardUI b = new BoardUI(bo.BoardId, i, bo.GroupId, bo.Title, bo.Mode, bo.Star, bo.Background);
                 boardUIs.Add(b);
                
                 this.pnWorkSpace.Controls.Add(b);
@@ -328,7 +331,8 @@ namespace GUI
 
         private void WorkSpace_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Parent.Show();
+            Application.Exit();
+            //this.Parent.Show();
         }
     }
 }

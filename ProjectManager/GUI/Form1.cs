@@ -88,5 +88,13 @@ namespace GUI
             wp.Show();
             ////this.Show();
         }
+
+        private void lbRegister_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            this.Hide();
+            register.ShowDialog();
+            this.Show();
+        }
     }
 }
