@@ -58,7 +58,6 @@
     <Compile Include="BoardUserDAL.cs" />
     <Compile Include="CardInfoDAL.cs" />
     <Compile Include="LamViecDAL.cs" />
-    <Compile Include="ReaderExtensions.cs" />
     <Compile Include="UserDAL.cs" />
     <Compile Include="ListDAL.cs" />
     <Compile Include="GroupUserDAL.cs" />

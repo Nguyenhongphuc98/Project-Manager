@@ -69,7 +69,7 @@ namespace GUI
             }
             this.CardName.Text = cardDTO.Title;
             this.descriptionText.Text = cardDTO.Description;
-            this.checkDueDate.Text = cardDTO.DueDate.ToString();
+            this.checkDueDate.Text = cardDTO.DueDate.Date.ToString();
 
             AddMember();
 

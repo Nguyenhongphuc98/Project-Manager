@@ -90,12 +90,12 @@ namespace DAL
         {
             this.ConnectToDatabase();
             string Query = "insert into COMMENT values('" + comment.CardId + "','" + 
-                comment.UserId + "','" + comment.Content + "','" + comment.Time.Date + "','" +
+                comment.UserId + "','" + comment.Content + "',@time,'" +
                 comment.CmtIndex +"');";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
-
+            command.Parameters.Add("@time", MySqlDbType.DateTime).Value = comment.Time;
             command.ExecuteNonQuery();
 
 

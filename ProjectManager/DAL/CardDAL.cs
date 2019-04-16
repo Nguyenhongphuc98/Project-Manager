@@ -84,7 +84,10 @@ namespace DAL
                 string title = reader.GetString(3);
                 string description = reader.GetString(4);
                 int label = reader.GetInt32(5);
-                DateTime dueDate = (reader.IsDBNull(6)) ? DateTime.MinValue : (reader.GetDateTime(6));
+                //DateTime dueDate = (reader.IsDBNull(6)) ? DateTime.MinValue : (reader.GetDateTime(6));
+                DateTime dueDate;
+                try { dueDate = reader.GetDateTime(6); }
+                catch { dueDate = DateTime.MinValue; }
                 float status = reader.GetInt64(7);
 
                 CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, dueDate, status);
