@@ -124,6 +124,7 @@
             this.tbPassWord.Size = new System.Drawing.Size(278, 44);
             this.tbPassWord.TabIndex = 1;
             this.tbPassWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbPassWord.OnValueChanged += new System.EventHandler(this.tbPassWord_OnValueChanged);
             // 
             // lbResult
             // 

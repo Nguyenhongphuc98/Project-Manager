@@ -73,5 +73,15 @@ namespace GUI
                 lbNotify.Text = "Dang ky that bai!!!";
             }
         }
+
+        private void tbPass1_OnValueChanged(object sender, EventArgs e)
+        {
+            this.tbPass1.isPassword = true;
+        }
+
+        private void tbPass2_OnValueChanged(object sender, EventArgs e)
+        {
+            this.tbPass2.isPassword = true;
+        }
     }
 }
