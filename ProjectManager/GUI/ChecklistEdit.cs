@@ -33,8 +33,8 @@ namespace GUI
         {
             checklistBLL.InsertChecklist(_cardId,checklistDTOs.Count(),ChecklistTitle.Text,0);
             ActivityBLL activityBLL = new ActivityBLL();
-            listBLL = new ListBLL();
-            activityBLL.InsertActivity(Global.user.UserId, listBLL.GetList(cardBLL.GetCard(_cardId).ListId).BoardId, Global.user.Name + " Has create new checklist " + ChecklistTitle.Text, DateTime.Now);
+            //listBLL = new ListBLL();
+            activityBLL.InsertActivity(Global.user.UserId, Global.id_Board, Global.user.Name + " Has create new checklist " + ChecklistTitle.Text, DateTime.Now);
             this.Close();
         }
     }

@@ -80,6 +80,7 @@ namespace GUI
             if (user.Password != tbPassWord.Text)
             {
                 lbResult.Text = "The password is not correct, try again";
+                return;
             }
 
             WorkSpace wp = new WorkSpace(user);
@@ -95,6 +96,11 @@ namespace GUI
             this.Hide();
             register.ShowDialog();
             this.Show();
+        }
+
+        private void tbPassWord_OnValueChanged(object sender, EventArgs e)
+        {
+            this.tbPassWord.isPassword = true;
         }
     }
 }

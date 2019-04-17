@@ -117,6 +117,8 @@ namespace GUI
         {
             this.memberFlp.Controls.Clear();
             listUsers = lamViecBLL.ListUserId(_cardId);
+            userDTOs.Clear();
+
             foreach (int userId in listUsers)
             {
                 CardUserDTO userDTO = userBLL.GetUser(userId);

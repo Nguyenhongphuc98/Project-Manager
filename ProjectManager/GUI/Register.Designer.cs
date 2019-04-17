@@ -111,6 +111,7 @@
             this.tbPass1.Size = new System.Drawing.Size(241, 34);
             this.tbPass1.TabIndex = 2;
             this.tbPass1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbPass1.OnValueChanged += new System.EventHandler(this.tbPass1_OnValueChanged);
             // 
             // tbPass2
             // 
@@ -130,6 +131,7 @@
             this.tbPass2.Size = new System.Drawing.Size(241, 44);
             this.tbPass2.TabIndex = 3;
             this.tbPass2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbPass2.OnValueChanged += new System.EventHandler(this.tbPass2_OnValueChanged);
             // 
             // lbNotify
             // 

@@ -22,7 +22,10 @@ namespace GUI
 
         CardDTO cardDTO;
         CardInfoDTO cardInfoDTO;
+
         CardInfoBLL cardInfoBLL;
+        CommentBLL commentBLL;
+
         
         List<int> listUserId = new List<int>();
         List<string> listNameUser = new List<string>();
@@ -54,12 +57,14 @@ namespace GUI
             //this.Region = GetRoundedRegion(this.Width, this.Height);
             
             cardInfoBLL = new CardInfoBLL();
+            commentBLL = new CommentBLL();
             cardInfoDTO = cardInfoBLL.CardInfo(_cardId);
 
             listNameUser = cardInfoDTO.ListNameUser;
             CardName.Text = cardInfoDTO.Card.Title;
             cardDTO = cardInfoDTO.Card;
-            dateCard.Text = cardDTO.DueDate.Day.ToString() + "/" + cardDTO.DueDate.Day.ToString() + "/" + cardDTO.DueDate.Day.ToString();
+            dateCard.Text = cardDTO.DueDate.ToShortDateString();
+            label3.Text = commentBLL.GetAllComments(_cardId).Count().ToString();
             checkBox1.Text = cardInfoDTO.ListCheckedlist.Count() + "/" + cardInfoDTO.ListChecklist.Count();
 
             if (cardDTO.Description == null || cardDTO.Description == "")
