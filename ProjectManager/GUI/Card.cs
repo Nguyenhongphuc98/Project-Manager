@@ -64,9 +64,14 @@ namespace GUI
             CardName.Text = cardInfoDTO.Card.Title;
             cardDTO = cardInfoDTO.Card;
             dateCard.Text = cardDTO.DueDate.ToShortDateString();
-            label3.Text = commentBLL.GetAllComments(_cardId).Count().ToString();
-            checkBox1.Text = cardInfoDTO.ListCheckedlist.Count() + "/" + cardInfoDTO.ListChecklist.Count();
 
+            if (commentBLL.GetAllComments(_cardId).Count() != 0)
+            {
+                panel2.Visible = true;
+                label3.Text = commentBLL.GetAllComments(_cardId).Count().ToString();
+            }
+            else panel2.Visible = false;
+            checkBox1.Text = cardInfoDTO.ListCheckedlist.Count() + "/" + cardInfoDTO.ListChecklist.Count();
             if (cardDTO.Description == null || cardDTO.Description == "")
             {
                 this.desPicture.Visible = false;
@@ -179,5 +184,7 @@ namespace GUI
             CardDetail cardDetail = new CardDetail(_cardId);
             cardDetail.Show();
         }
+
+
     }
 }

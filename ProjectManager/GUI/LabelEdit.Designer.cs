@@ -110,6 +110,7 @@
             this.Controls.Add(this.RedButton);
             this.Name = "LabelEdit";
             this.Text = "LabelEdit";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LabelEdit_FormClosed);
             this.ResumeLayout(false);
 
         }

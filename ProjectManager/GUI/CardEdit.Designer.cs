@@ -31,32 +31,36 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CardEdit));
             this.cardName = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.Save = new System.Windows.Forms.Button();
             this.ChangeDeadline = new System.Windows.Forms.Button();
             this.ChangeMember = new System.Windows.Forms.Button();
             this.ChangeLabel = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.checkList = new System.Windows.Forms.CheckBox();
+            this.cmtNum = new System.Windows.Forms.Label();
+            this.dateTime = new System.Windows.Forms.Label();
+            this.cmtPic = new System.Windows.Forms.PictureBox();
+            this.desPic = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.CardLabel = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.cmtPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cardName
             // 
             this.cardName.Location = new System.Drawing.Point(5, 42);
             this.cardName.Name = "cardName";
-            this.cardName.Size = new System.Drawing.Size(391, 22);
+            this.cardName.Size = new System.Drawing.Size(326, 22);
             this.cardName.TabIndex = 41;
             // 
             // SaveButton
@@ -69,19 +73,9 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // Save
-            // 
-            this.Save.Location = new System.Drawing.Point(411, 153);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(137, 23);
-            this.Save.TabIndex = 39;
-            this.Save.Text = "Lưu trữ";
-            this.Save.UseVisualStyleBackColor = true;
-            this.Save.Click += new System.EventHandler(this.Save_Click);
-            // 
             // ChangeDeadline
             // 
-            this.ChangeDeadline.Location = new System.Drawing.Point(411, 92);
+            this.ChangeDeadline.Location = new System.Drawing.Point(343, 108);
             this.ChangeDeadline.Name = "ChangeDeadline";
             this.ChangeDeadline.Size = new System.Drawing.Size(137, 55);
             this.ChangeDeadline.TabIndex = 38;
@@ -91,7 +85,7 @@
             // 
             // ChangeMember
             // 
-            this.ChangeMember.Location = new System.Drawing.Point(411, 50);
+            this.ChangeMember.Location = new System.Drawing.Point(343, 58);
             this.ChangeMember.Name = "ChangeMember";
             this.ChangeMember.Size = new System.Drawing.Size(137, 36);
             this.ChangeMember.TabIndex = 37;
@@ -101,7 +95,7 @@
             // 
             // ChangeLabel
             // 
-            this.ChangeLabel.Location = new System.Drawing.Point(411, 14);
+            this.ChangeLabel.Location = new System.Drawing.Point(343, 14);
             this.ChangeLabel.Name = "ChangeLabel";
             this.ChangeLabel.Size = new System.Drawing.Size(137, 30);
             this.ChangeLabel.TabIndex = 36;
@@ -109,63 +103,63 @@
             this.ChangeLabel.UseVisualStyleBackColor = true;
             this.ChangeLabel.Click += new System.EventHandler(this.ChangeLabel_Click);
             // 
-            // checkBox1
+            // checkList
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(279, 89);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 21);
-            this.checkBox1.TabIndex = 35;
-            this.checkBox1.Text = "0/0";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkList.AutoSize = true;
+            this.checkList.Enabled = false;
+            this.checkList.Location = new System.Drawing.Point(266, 3);
+            this.checkList.Name = "checkList";
+            this.checkList.Size = new System.Drawing.Size(50, 21);
+            this.checkList.TabIndex = 35;
+            this.checkList.Text = "0/0";
+            this.checkList.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // cmtNum
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(249, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(16, 17);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "0";
+            this.cmtNum.AutoSize = true;
+            this.cmtNum.Location = new System.Drawing.Point(32, 9);
+            this.cmtNum.Name = "cmtNum";
+            this.cmtNum.Size = new System.Drawing.Size(16, 17);
+            this.cmtNum.TabIndex = 34;
+            this.cmtNum.Text = "0";
             // 
-            // label2
+            // dateTime
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(86, 88);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "datetime";
+            this.dateTime.AutoSize = true;
+            this.dateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTime.Location = new System.Drawing.Point(39, 6);
+            this.dateTime.Name = "dateTime";
+            this.dateTime.Size = new System.Drawing.Size(73, 20);
+            this.dateTime.TabIndex = 33;
+            this.dateTime.Text = "datetime";
             // 
-            // pictureBox4
+            // cmtPic
             // 
-            this.pictureBox4.Enabled = false;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(218, 85);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(29, 26);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 31;
-            this.pictureBox4.TabStop = false;
+            this.cmtPic.Enabled = false;
+            this.cmtPic.Image = ((System.Drawing.Image)(resources.GetObject("cmtPic.Image")));
+            this.cmtPic.Location = new System.Drawing.Point(0, 3);
+            this.cmtPic.Name = "cmtPic";
+            this.cmtPic.Size = new System.Drawing.Size(29, 26);
+            this.cmtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.cmtPic.TabIndex = 31;
+            this.cmtPic.TabStop = false;
             // 
-            // pictureBox3
+            // desPic
             // 
-            this.pictureBox3.Enabled = false;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(173, 85);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(27, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 30;
-            this.pictureBox3.TabStop = false;
+            this.desPic.Enabled = false;
+            this.desPic.Image = ((System.Drawing.Image)(resources.GetObject("desPic.Image")));
+            this.desPic.Location = new System.Drawing.Point(176, 3);
+            this.desPic.Name = "desPic";
+            this.desPic.Size = new System.Drawing.Size(27, 25);
+            this.desPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.desPic.TabIndex = 30;
+            this.desPic.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(54, 85);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 26);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -176,74 +170,97 @@
             // 
             this.pictureBox1.Enabled = false;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(5, 85);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Image = ((System.Drawing.Image)(resources.GetObject("label9.Image")));
-            this.label9.Location = new System.Drawing.Point(362, 95);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(23, 25);
-            this.label9.TabIndex = 57;
-            this.label9.Text = "L";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(352, 85);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(43, 43);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 56;
-            this.pictureBox5.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 13);
+            this.label1.Location = new System.Drawing.Point(4, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 58;
             this.label1.Text = "Tiêu đề";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.desPic);
+            this.flowLayoutPanel1.Controls.Add(this.panel2);
+            this.flowLayoutPanel1.Controls.Add(this.checkList);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 70);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(326, 40);
+            this.flowLayoutPanel1.TabIndex = 59;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.dateTime);
+            this.panel1.Location = new System.Drawing.Point(39, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(131, 34);
+            this.panel1.TabIndex = 29;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.cmtPic);
+            this.panel2.Controls.Add(this.cmtNum);
+            this.panel2.Location = new System.Drawing.Point(209, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(51, 35);
+            this.panel2.TabIndex = 31;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(87, 117);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(244, 46);
+            this.flowLayoutPanel2.TabIndex = 60;
+            // 
+            // CardLabel
+            // 
+            this.CardLabel.Location = new System.Drawing.Point(5, 7);
+            this.CardLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CardLabel.Name = "CardLabel";
+            this.CardLabel.Size = new System.Drawing.Size(151, 10);
+            this.CardLabel.TabIndex = 61;
+            // 
             // CardEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 188);
+            this.ClientSize = new System.Drawing.Size(489, 170);
+            this.Controls.Add(this.CardLabel);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.cardName);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.Save);
             this.Controls.Add(this.ChangeDeadline);
             this.Controls.Add(this.ChangeMember);
             this.Controls.Add(this.ChangeLabel);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "CardEdit";
             this.Text = "CardEdit";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.Activated += new System.EventHandler(this.CardEdit_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CardEdit_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.cmtPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.desPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,19 +270,21 @@
 
         private System.Windows.Forms.TextBox cardName;
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Button ChangeDeadline;
         private System.Windows.Forms.Button ChangeMember;
         private System.Windows.Forms.Button ChangeLabel;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.CheckBox checkList;
+        private System.Windows.Forms.Label cmtNum;
+        private System.Windows.Forms.Label dateTime;
+        private System.Windows.Forms.PictureBox cmtPic;
+        private System.Windows.Forms.PictureBox desPic;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Panel CardLabel;
     }
 }

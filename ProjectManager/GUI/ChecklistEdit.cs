@@ -37,5 +37,10 @@ namespace GUI
             activityBLL.InsertActivity(Global.user.UserId, Global.id_Board, Global.user.Name + " Has create new checklist " + ChecklistTitle.Text, DateTime.Now);
             this.Close();
         }
+
+        private void ChecklistEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

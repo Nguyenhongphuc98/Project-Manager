@@ -131,7 +131,7 @@ namespace DAL
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                string name = reader.GetString(0);
+                string name = reader.GetString(0).Substring(0,1);
 
                 listNameUser.Add(name);
             }

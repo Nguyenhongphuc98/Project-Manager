@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListSpace));
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.cbListUser = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbdash1 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.btnPersonal = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnStar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lbNameProject = new System.Windows.Forms.Label();
-            this.cbListUser = new System.Windows.Forms.ComboBox();
             this.pnMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,34 +56,48 @@
             this.pnMenu.Controls.Add(this.lbNameProject);
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnMenu.Name = "pnMenu";
-            this.pnMenu.Size = new System.Drawing.Size(1122, 40);
+            this.pnMenu.Size = new System.Drawing.Size(1496, 49);
             this.pnMenu.TabIndex = 0;
+            // 
+            // cbListUser
+            // 
+            this.cbListUser.FormattingEnabled = true;
+            this.cbListUser.Location = new System.Drawing.Point(657, 14);
+            this.cbListUser.Margin = new System.Windows.Forms.Padding(4);
+            this.cbListUser.Name = "cbListUser";
+            this.cbListUser.Size = new System.Drawing.Size(204, 24);
+            this.cbListUser.TabIndex = 2;
+            this.cbListUser.SelectedIndexChanged += new System.EventHandler(this.cbListUser_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(407, 13);
+            this.label2.Location = new System.Drawing.Point(543, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(9, 13);
+            this.label2.Size = new System.Drawing.Size(11, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "|";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(323, 13);
+            this.label1.Location = new System.Drawing.Point(431, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(9, 13);
+            this.label1.Size = new System.Drawing.Size(11, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "|";
             // 
             // lbdash1
             // 
             this.lbdash1.AutoSize = true;
-            this.lbdash1.Location = new System.Drawing.Point(238, 12);
+            this.lbdash1.Location = new System.Drawing.Point(317, 15);
+            this.lbdash1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbdash1.Name = "lbdash1";
-            this.lbdash1.Size = new System.Drawing.Size(9, 13);
+            this.lbdash1.Size = new System.Drawing.Size(11, 17);
             this.lbdash1.TabIndex = 1;
             this.lbdash1.Text = "|";
             // 
@@ -108,13 +122,14 @@
             this.btnInvite.IconVisible = false;
             this.btnInvite.IconZoom = 60D;
             this.btnInvite.IsTab = false;
-            this.btnInvite.Location = new System.Drawing.Point(422, 4);
+            this.btnInvite.Location = new System.Drawing.Point(563, 5);
+            this.btnInvite.Margin = new System.Windows.Forms.Padding(5);
             this.btnInvite.Name = "btnInvite";
             this.btnInvite.Normalcolor = System.Drawing.Color.Transparent;
             this.btnInvite.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
             this.btnInvite.OnHoverTextColor = System.Drawing.Color.OrangeRed;
             this.btnInvite.selected = false;
-            this.btnInvite.Size = new System.Drawing.Size(61, 33);
+            this.btnInvite.Size = new System.Drawing.Size(81, 41);
             this.btnInvite.TabIndex = 1;
             this.btnInvite.Text = "Invite";
             this.btnInvite.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,13 +158,14 @@
             this.btnMode.IconVisible = false;
             this.btnMode.IconZoom = 60D;
             this.btnMode.IsTab = false;
-            this.btnMode.Location = new System.Drawing.Point(345, 4);
+            this.btnMode.Location = new System.Drawing.Point(460, 5);
+            this.btnMode.Margin = new System.Windows.Forms.Padding(5);
             this.btnMode.Name = "btnMode";
             this.btnMode.Normalcolor = System.Drawing.Color.Transparent;
             this.btnMode.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
             this.btnMode.OnHoverTextColor = System.Drawing.Color.OrangeRed;
             this.btnMode.selected = false;
-            this.btnMode.Size = new System.Drawing.Size(58, 33);
+            this.btnMode.Size = new System.Drawing.Size(77, 41);
             this.btnMode.TabIndex = 1;
             this.btnMode.Text = "Public";
             this.btnMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -177,13 +193,14 @@
             this.btnPersonal.IconVisible = false;
             this.btnPersonal.IconZoom = 60D;
             this.btnPersonal.IsTab = false;
-            this.btnPersonal.Location = new System.Drawing.Point(248, 3);
+            this.btnPersonal.Location = new System.Drawing.Point(331, 4);
+            this.btnPersonal.Margin = new System.Windows.Forms.Padding(5);
             this.btnPersonal.Name = "btnPersonal";
             this.btnPersonal.Normalcolor = System.Drawing.Color.Transparent;
             this.btnPersonal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
             this.btnPersonal.OnHoverTextColor = System.Drawing.Color.OrangeRed;
             this.btnPersonal.selected = false;
-            this.btnPersonal.Size = new System.Drawing.Size(72, 33);
+            this.btnPersonal.Size = new System.Drawing.Size(96, 41);
             this.btnPersonal.TabIndex = 1;
             this.btnPersonal.Text = "Personal";
             this.btnPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -211,13 +228,14 @@
             this.btnStar.IconVisible = true;
             this.btnStar.IconZoom = 30D;
             this.btnStar.IsTab = false;
-            this.btnStar.Location = new System.Drawing.Point(207, 2);
+            this.btnStar.Location = new System.Drawing.Point(276, 2);
+            this.btnStar.Margin = new System.Windows.Forms.Padding(5);
             this.btnStar.Name = "btnStar";
             this.btnStar.Normalcolor = System.Drawing.Color.Transparent;
             this.btnStar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
             this.btnStar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnStar.selected = false;
-            this.btnStar.Size = new System.Drawing.Size(33, 33);
+            this.btnStar.Size = new System.Drawing.Size(44, 41);
             this.btnStar.TabIndex = 1;
             this.btnStar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStar.Textcolor = System.Drawing.Color.White;
@@ -229,31 +247,25 @@
             this.lbNameProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNameProject.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.lbNameProject.Location = new System.Drawing.Point(0, 0);
+            this.lbNameProject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNameProject.Name = "lbNameProject";
-            this.lbNameProject.Size = new System.Drawing.Size(201, 40);
+            this.lbNameProject.Size = new System.Drawing.Size(268, 49);
             this.lbNameProject.TabIndex = 0;
             this.lbNameProject.Text = "Project name";
             this.lbNameProject.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cbListUser
-            // 
-            this.cbListUser.FormattingEnabled = true;
-            this.cbListUser.Location = new System.Drawing.Point(493, 11);
-            this.cbListUser.Name = "cbListUser";
-            this.cbListUser.Size = new System.Drawing.Size(154, 21);
-            this.cbListUser.TabIndex = 2;
-            this.cbListUser.SelectedIndexChanged += new System.EventHandler(this.cbListUser_SelectedIndexChanged);
-            // 
             // ListSpace
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1122, 520);
+            this.ClientSize = new System.Drawing.Size(1496, 640);
             this.Controls.Add(this.pnMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListSpace";
             this.Text = "ListSpace";
+            this.Activated += new System.EventHandler(this.ListSpace_Activated);
             this.pnMenu.ResumeLayout(false);
             this.pnMenu.PerformLayout();
             this.ResumeLayout(false);

@@ -32,7 +32,6 @@
             this.ChecklistTitle = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.SaveBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ChecklistTitle
@@ -71,7 +70,7 @@
             this.SaveBtn.IdleFillColor = System.Drawing.Color.White;
             this.SaveBtn.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.SaveBtn.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.SaveBtn.Location = new System.Drawing.Point(14, 188);
+            this.SaveBtn.Location = new System.Drawing.Point(14, 90);
             this.SaveBtn.Margin = new System.Windows.Forms.Padding(5);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(257, 41);
@@ -89,27 +88,17 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Title";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Copy from";
-            // 
             // ChecklistEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 246);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(294, 147);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.ChecklistTitle);
             this.Name = "ChecklistEdit";
             this.Text = "ChecklistEdit";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChecklistEdit_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,6 +109,5 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox ChecklistTitle;
         private Bunifu.Framework.UI.BunifuThinButton2 SaveBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }

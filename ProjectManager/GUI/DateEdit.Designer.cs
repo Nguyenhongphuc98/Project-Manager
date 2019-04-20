@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DateEdit));
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.datePicker = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.dueDateHour = new System.Windows.Forms.NumericUpDown();
+            this.dueDateMin = new System.Windows.Forms.NumericUpDown();
             this.SaveBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.CancelBtn = new Bunifu.Framework.UI.BunifuThinButton2();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dueDateHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dueDateMin)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -58,44 +58,44 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Due Time";
             // 
-            // bunifuDatepicker1
+            // datePicker
             // 
-            this.bunifuDatepicker1.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
-            this.bunifuDatepicker1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuDatepicker1.BorderRadius = 0;
-            this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.bunifuDatepicker1.FormatCustom = null;
-            this.bunifuDatepicker1.Location = new System.Drawing.Point(13, 13);
-            this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuDatepicker1.Name = "bunifuDatepicker1";
-            this.bunifuDatepicker1.Size = new System.Drawing.Size(343, 51);
-            this.bunifuDatepicker1.TabIndex = 22;
-            this.bunifuDatepicker1.Value = new System.DateTime(2019, 4, 8, 10, 8, 42, 116);
+            this.datePicker.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
+            this.datePicker.BackColor = System.Drawing.Color.SeaGreen;
+            this.datePicker.BorderRadius = 0;
+            this.datePicker.ForeColor = System.Drawing.Color.White;
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.datePicker.FormatCustom = null;
+            this.datePicker.Location = new System.Drawing.Point(13, 13);
+            this.datePicker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(343, 51);
+            this.datePicker.TabIndex = 22;
+            this.datePicker.Value = new System.DateTime(2019, 4, 8, 10, 8, 42, 116);
             // 
-            // numericUpDown1
+            // dueDateHour
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(135, 144);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.dueDateHour.Location = new System.Drawing.Point(135, 144);
+            this.dueDateHour.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(55, 22);
-            this.numericUpDown1.TabIndex = 23;
+            this.dueDateHour.Name = "dueDateHour";
+            this.dueDateHour.Size = new System.Drawing.Size(55, 22);
+            this.dueDateHour.TabIndex = 23;
             // 
-            // numericUpDown2
+            // dueDateMin
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(216, 144);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.dueDateMin.Location = new System.Drawing.Point(216, 144);
+            this.dueDateMin.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(54, 22);
-            this.numericUpDown2.TabIndex = 24;
+            this.dueDateMin.Name = "dueDateMin";
+            this.dueDateMin.Size = new System.Drawing.Size(54, 22);
+            this.dueDateMin.TabIndex = 24;
             // 
             // SaveBtn
             // 
@@ -157,15 +157,16 @@
             this.ControlBox = false;
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.SaveBtn);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.bunifuDatepicker1);
+            this.Controls.Add(this.dueDateMin);
+            this.Controls.Add(this.dueDateHour);
+            this.Controls.Add(this.datePicker);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "DateEdit";
             this.Text = "DateEdit";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DateEdit_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.dueDateHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dueDateMin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,9 +175,9 @@
         #endregion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private Bunifu.Framework.UI.BunifuDatepicker datePicker;
+        private System.Windows.Forms.NumericUpDown dueDateHour;
+        private System.Windows.Forms.NumericUpDown dueDateMin;
         private Bunifu.Framework.UI.BunifuThinButton2 SaveBtn;
         private Bunifu.Framework.UI.BunifuThinButton2 CancelBtn;
     }

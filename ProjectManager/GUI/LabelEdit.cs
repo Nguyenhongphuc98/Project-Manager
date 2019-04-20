@@ -78,5 +78,10 @@ namespace GUI
             activityBLL.InsertActivity(Global.user.UserId, _boardId, Global.user.Name + " Has change card " + cardDTO.Title + " label to pink", DateTime.Now);
             this.Close();
         }
+
+        private void LabelEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }
