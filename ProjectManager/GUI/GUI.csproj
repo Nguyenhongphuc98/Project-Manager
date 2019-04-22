@@ -206,6 +206,12 @@
     <Compile Include="TeamUI.Designer.cs">
       <DependentUpon>TeamUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserComment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserComment.Designer.cs">
+      <DependentUpon>UserComment.cs</DependentUpon>
+    </Compile>
     <Compile Include="WorkSpace.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeamUI.resx">
       <DependentUpon>TeamUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserComment.resx">
+      <DependentUpon>UserComment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WorkSpace.resx">
       <DependentUpon>WorkSpace.cs</DependentUpon>

@@ -17,10 +17,11 @@ namespace GUI
         int _cardId;
         CardBLL cardBLL = new CardBLL();
         CardDTO cardDTO;
-        List<CardDTO> cardDTOs;
+        //List<CardDTO> cardDTOs;
         ListBLL listBLL = new ListBLL();
         ListDTO listDTO;
         List<ListDTO> listDTOs;
+        
         public MoveForm(int X, int Y, int cardId)
         {
             InitializeComponent();
@@ -32,7 +33,8 @@ namespace GUI
             cardDTO = cardBLL.GetCard(_cardId);
             listDTO = listBLL.GetList(cardDTO.ListId);
             listDTOs = listBLL.GetAllList(listDTO.BoardId);
-            cardDTOs = cardBLL.GetAllCard(cardDTO.ListId);
+            //cardDTOs = cardBLL.GetAllCard(cardDTO.ListId);
+            boardBtn.LabelText = Global.id_Board.ToString();
             listBtn.LabelText = listDTO.Title;
             positionBtn.LabelText = cardDTO.IndexCard.ToString();
         }
@@ -50,21 +52,27 @@ namespace GUI
                 ListComponent listComponent = new ListComponent(list.Title, list.ListId,cardDTO);
                 this.flowLayoutPanel1.Controls.Add(listComponent);
             }
+            this.Close();
         }
 
         private void positionBtn_Click(object sender, EventArgs e)
         {
-            this.Height = 355;
-            cardDTO = cardBLL.GetCard(_cardId);
-            cardDTOs = cardBLL.GetAllCard(cardDTO.ListId);
-            positionBtn.LabelText = cardDTO.IndexCard.ToString();
-            this.flowLayoutPanel1.Controls.Clear();
-            this.flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
-            foreach (CardDTO card in cardDTOs)
-            {
-                posComponent posComponent = new posComponent(card.CardId, _cardId);
-                this.flowLayoutPanel1.Controls.Add(posComponent);
-            }
+            //this.Height = 355;
+            //cardDTO = cardBLL.GetCard(_cardId);
+            //cardDTOs = cardBLL.GetAllCard(cardDTO.ListId);
+            //positionBtn.LabelText = cardDTO.IndexCard.ToString();
+            //this.flowLayoutPanel1.Controls.Clear();
+            //this.flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
+            //foreach (CardDTO card in cardDTOs)
+            //{
+            //    posComponent posComponent = new posComponent(card.CardId, _cardId);
+            //    this.flowLayoutPanel1.Controls.Add(posComponent);
+            //}
+        }
+
+        private void MoveForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
         }
     }
 }

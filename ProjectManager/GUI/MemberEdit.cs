@@ -36,5 +36,10 @@ namespace GUI
                 this.flpMember.Controls.Add(memComponent);
             }
         }
+
+        private void MemberEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

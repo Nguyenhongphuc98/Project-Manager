@@ -46,7 +46,7 @@
             this.List = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CardName = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.activityPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.AddMem = new Bunifu.Framework.UI.BunifuThinButton2();
             this.EditLabel = new Bunifu.Framework.UI.BunifuThinButton2();
@@ -62,15 +62,17 @@
             this.deleteBtn = new System.Windows.Forms.Button();
             this.taskFlpanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.commentButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.cmtPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.memberFlp = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.CloseButton = new System.Windows.Forms.Panel();
             this.moveBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.followPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -89,6 +91,7 @@
             this.followCheck.AutoSize = true;
             this.followCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.followCheck.Location = new System.Drawing.Point(616, 369);
+            this.followCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.followCheck.Name = "followCheck";
             this.followCheck.Size = new System.Drawing.Size(86, 21);
             this.followCheck.TabIndex = 54;
@@ -118,9 +121,10 @@
             // commentText
             // 
             this.commentText.Location = new System.Drawing.Point(32, 49);
+            this.commentText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.commentText.Multiline = true;
             this.commentText.Name = "commentText";
-            this.commentText.Size = new System.Drawing.Size(535, 49);
+            this.commentText.Size = new System.Drawing.Size(535, 50);
             this.commentText.TabIndex = 46;
             this.commentText.Text = "Thêm bình luận...";
             this.commentText.MouseClick += new System.Windows.Forms.MouseEventHandler(this.commentText_MouseClick);
@@ -138,6 +142,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(32, 31);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.progressBar1.Maximum = 10;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(535, 10);
@@ -150,7 +155,8 @@
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Enabled = false;
             this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(7, 3);
+            this.checkBox2.Location = new System.Drawing.Point(7, 2);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(128, 24);
             this.checkBox2.TabIndex = 41;
@@ -160,6 +166,7 @@
             // descriptionText
             // 
             this.descriptionText.Location = new System.Drawing.Point(32, 46);
+            this.descriptionText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.descriptionText.Multiline = true;
             this.descriptionText.Name = "descriptionText";
             this.descriptionText.Size = new System.Drawing.Size(535, 48);
@@ -181,6 +188,7 @@
             // 
             this.cardLabel.BackColor = System.Drawing.Color.Red;
             this.cardLabel.Location = new System.Drawing.Point(284, 110);
+            this.cardLabel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cardLabel.Name = "cardLabel";
             this.cardLabel.Size = new System.Drawing.Size(39, 21);
             this.cardLabel.TabIndex = 37;
@@ -190,6 +198,7 @@
             this.checkDueDate.AutoSize = true;
             this.checkDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkDueDate.Location = new System.Drawing.Point(43, 192);
+            this.checkDueDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkDueDate.Name = "checkDueDate";
             this.checkDueDate.Size = new System.Drawing.Size(100, 21);
             this.checkDueDate.TabIndex = 36;
@@ -240,7 +249,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 45);
+            this.label1.Location = new System.Drawing.Point(29, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 31;
@@ -251,20 +260,22 @@
             this.CardName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CardName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CardName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CardName.Location = new System.Drawing.Point(7, 3);
+            this.CardName.Location = new System.Drawing.Point(7, 2);
+            this.CardName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CardName.Name = "CardName";
-            this.CardName.Size = new System.Drawing.Size(426, 23);
+            this.CardName.Size = new System.Drawing.Size(427, 23);
             this.CardName.TabIndex = 30;
             this.CardName.Text = "Card name";
             this.CardName.MouseEnter += new System.EventHandler(this.CardName_MouseEnter);
             this.CardName.MouseLeave += new System.EventHandler(this.CardName_MouseLeave);
             // 
-            // flowLayoutPanel1
+            // activityPanel
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(32, 46);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(535, 27);
-            this.flowLayoutPanel1.TabIndex = 56;
+            this.activityPanel.Location = new System.Drawing.Point(32, 46);
+            this.activityPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.activityPanel.Name = "activityPanel";
+            this.activityPanel.Size = new System.Drawing.Size(535, 85);
+            this.activityPanel.TabIndex = 56;
             // 
             // label10
             // 
@@ -297,7 +308,7 @@
             this.AddMem.Location = new System.Drawing.Point(616, 66);
             this.AddMem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddMem.Name = "AddMem";
-            this.AddMem.Size = new System.Drawing.Size(136, 42);
+            this.AddMem.Size = new System.Drawing.Size(135, 39);
             this.AddMem.TabIndex = 58;
             this.AddMem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.AddMem.Click += new System.EventHandler(this.AddMem_Click);
@@ -323,7 +334,7 @@
             this.EditLabel.Location = new System.Drawing.Point(616, 103);
             this.EditLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EditLabel.Name = "EditLabel";
-            this.EditLabel.Size = new System.Drawing.Size(136, 38);
+            this.EditLabel.Size = new System.Drawing.Size(135, 39);
             this.EditLabel.TabIndex = 59;
             this.EditLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.EditLabel.Click += new System.EventHandler(this.EditLabel_Click);
@@ -349,7 +360,7 @@
             this.ChecklistBtn.Location = new System.Drawing.Point(616, 136);
             this.ChecklistBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ChecklistBtn.Name = "ChecklistBtn";
-            this.ChecklistBtn.Size = new System.Drawing.Size(136, 38);
+            this.ChecklistBtn.Size = new System.Drawing.Size(135, 39);
             this.ChecklistBtn.TabIndex = 60;
             this.ChecklistBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.ChecklistBtn.Click += new System.EventHandler(this.ChecklistBtn_Click);
@@ -372,10 +383,10 @@
             this.DueDate.IdleFillColor = System.Drawing.Color.White;
             this.DueDate.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.DueDate.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.DueDate.Location = new System.Drawing.Point(616, 169);
+            this.DueDate.Location = new System.Drawing.Point(616, 170);
             this.DueDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DueDate.Name = "DueDate";
-            this.DueDate.Size = new System.Drawing.Size(136, 38);
+            this.DueDate.Size = new System.Drawing.Size(135, 39);
             this.DueDate.TabIndex = 61;
             this.DueDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.DueDate.Click += new System.EventHandler(this.DueDate_Click);
@@ -398,10 +409,10 @@
             this.addTask.IdleFillColor = System.Drawing.Color.White;
             this.addTask.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.addTask.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.addTask.Location = new System.Drawing.Point(32, 197);
+            this.addTask.Location = new System.Drawing.Point(32, 123);
             this.addTask.Margin = new System.Windows.Forms.Padding(32, 41, 32, 41);
             this.addTask.Name = "addTask";
-            this.addTask.Size = new System.Drawing.Size(94, 43);
+            this.addTask.Size = new System.Drawing.Size(93, 43);
             this.addTask.TabIndex = 62;
             this.addTask.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.addTask.Click += new System.EventHandler(this.addTask_Click);
@@ -424,10 +435,10 @@
             this.SaveButton.IdleFillColor = System.Drawing.Color.White;
             this.SaveButton.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.SaveButton.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.SaveButton.Location = new System.Drawing.Point(32, 100);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.SaveButton.Location = new System.Drawing.Point(617, 238);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(68, 40);
+            this.SaveButton.Size = new System.Drawing.Size(135, 39);
             this.SaveButton.TabIndex = 63;
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -439,7 +450,7 @@
             this.followPic.Location = new System.Drawing.Point(46, 2);
             this.followPic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.followPic.Name = "followPic";
-            this.followPic.Size = new System.Drawing.Size(21, 19);
+            this.followPic.Size = new System.Drawing.Size(21, 18);
             this.followPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.followPic.TabIndex = 64;
             this.followPic.TabStop = false;
@@ -473,7 +484,8 @@
             this.DesPanel.Controls.Add(this.label5);
             this.DesPanel.Controls.Add(this.descriptionText);
             this.DesPanel.Controls.Add(this.pictureBox3);
-            this.DesPanel.Location = new System.Drawing.Point(3, 239);
+            this.DesPanel.Location = new System.Drawing.Point(3, 236);
+            this.DesPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DesPanel.Name = "DesPanel";
             this.DesPanel.Size = new System.Drawing.Size(577, 111);
             this.DesPanel.TabIndex = 67;
@@ -485,14 +497,16 @@
             this.checklistPn.Controls.Add(this.checkBox2);
             this.checklistPn.Controls.Add(this.progressBar1);
             this.checklistPn.Controls.Add(this.addTask);
-            this.checklistPn.Location = new System.Drawing.Point(3, 356);
+            this.checklistPn.Location = new System.Drawing.Point(3, 351);
+            this.checklistPn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checklistPn.Name = "checklistPn";
-            this.checklistPn.Size = new System.Drawing.Size(577, 241);
+            this.checklistPn.Size = new System.Drawing.Size(577, 170);
             this.checklistPn.TabIndex = 68;
             // 
             // deleteBtn
             // 
             this.deleteBtn.Location = new System.Drawing.Point(492, 4);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(75, 23);
             this.deleteBtn.TabIndex = 64;
@@ -504,28 +518,67 @@
             // 
             this.taskFlpanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.taskFlpanel.Location = new System.Drawing.Point(32, 47);
+            this.taskFlpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.taskFlpanel.Name = "taskFlpanel";
-            this.taskFlpanel.Size = new System.Drawing.Size(535, 150);
+            this.taskFlpanel.Size = new System.Drawing.Size(535, 70);
             this.taskFlpanel.TabIndex = 63;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.commentButton);
+            this.panel3.Controls.Add(this.cmtPanel);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.commentText);
-            this.panel3.Controls.Add(this.SaveButton);
             this.panel3.Controls.Add(this.pictureBox4);
-            this.panel3.Location = new System.Drawing.Point(3, 603);
+            this.panel3.Location = new System.Drawing.Point(3, 525);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(577, 144);
+            this.panel3.Size = new System.Drawing.Size(577, 234);
             this.panel3.TabIndex = 69;
+            // 
+            // commentButton
+            // 
+            this.commentButton.ActiveBorderThickness = 1;
+            this.commentButton.ActiveCornerRadius = 20;
+            this.commentButton.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.commentButton.ActiveForecolor = System.Drawing.Color.White;
+            this.commentButton.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.commentButton.BackColor = System.Drawing.SystemColors.Control;
+            this.commentButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("commentButton.BackgroundImage")));
+            this.commentButton.ButtonText = "Bình luận";
+            this.commentButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.commentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commentButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.commentButton.IdleBorderThickness = 1;
+            this.commentButton.IdleCornerRadius = 20;
+            this.commentButton.IdleFillColor = System.Drawing.Color.White;
+            this.commentButton.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.commentButton.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.commentButton.Location = new System.Drawing.Point(32, 100);
+            this.commentButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.commentButton.Name = "commentButton";
+            this.commentButton.Size = new System.Drawing.Size(83, 39);
+            this.commentButton.TabIndex = 76;
+            this.commentButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.commentButton.Click += new System.EventHandler(this.commentButton_Click);
+            // 
+            // cmtPanel
+            // 
+            this.cmtPanel.AutoScroll = true;
+            this.cmtPanel.Location = new System.Drawing.Point(32, 146);
+            this.cmtPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmtPanel.Name = "cmtPanel";
+            this.cmtPanel.Size = new System.Drawing.Size(535, 84);
+            this.cmtPanel.TabIndex = 57;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.flowLayoutPanel1);
-            this.panel5.Location = new System.Drawing.Point(3, 753);
+            this.panel5.Controls.Add(this.activityPanel);
+            this.panel5.Location = new System.Drawing.Point(3, 763);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(577, 100);
+            this.panel5.Size = new System.Drawing.Size(577, 139);
             this.panel5.TabIndex = 71;
             // 
             // panel4
@@ -539,7 +592,8 @@
             this.panel4.Controls.Add(this.memberFlp);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.CardName);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Location = new System.Drawing.Point(3, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(577, 230);
             this.panel4.TabIndex = 72;
@@ -548,7 +602,8 @@
             // 
             this.flowLayoutPanel4.Controls.Add(this.List);
             this.flowLayoutPanel4.Controls.Add(this.followPic);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(178, 45);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(179, 46);
+            this.flowLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(172, 20);
             this.flowLayoutPanel4.TabIndex = 66;
@@ -557,15 +612,27 @@
             // 
             this.memberFlp.Controls.Add(this.flowLayoutPanel5);
             this.memberFlp.Controls.Add(this.panel6);
-            this.memberFlp.Location = new System.Drawing.Point(41, 93);
+            this.memberFlp.Location = new System.Drawing.Point(41, 94);
+            this.memberFlp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.memberFlp.Name = "memberFlp";
             this.memberFlp.Size = new System.Drawing.Size(204, 62);
             this.memberFlp.TabIndex = 65;
             // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.AutoSize = true;
+            this.flowLayoutPanel5.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 2);
+            this.flowLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(0, 0);
+            this.flowLayoutPanel5.TabIndex = 69;
+            // 
             // panel6
             // 
             this.panel6.AutoSize = true;
-            this.panel6.Location = new System.Drawing.Point(9, 3);
+            this.panel6.Location = new System.Drawing.Point(9, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(0, 0);
             this.panel6.TabIndex = 68;
@@ -575,8 +642,9 @@
             this.CloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CloseButton.BackgroundImage")));
             this.CloseButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CloseButton.Location = new System.Drawing.Point(733, 12);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(25, 24);
+            this.CloseButton.Size = new System.Drawing.Size(25, 25);
             this.CloseButton.TabIndex = 73;
             this.CloseButton.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CloseButton_MouseClick);
             // 
@@ -598,10 +666,10 @@
             this.moveBtn.IdleFillColor = System.Drawing.Color.White;
             this.moveBtn.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.moveBtn.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.moveBtn.Location = new System.Drawing.Point(616, 202);
+            this.moveBtn.Location = new System.Drawing.Point(616, 204);
             this.moveBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.moveBtn.Name = "moveBtn";
-            this.moveBtn.Size = new System.Drawing.Size(136, 38);
+            this.moveBtn.Size = new System.Drawing.Size(135, 39);
             this.moveBtn.TabIndex = 74;
             this.moveBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.moveBtn.Click += new System.EventHandler(this.moveBtn_Click);
@@ -613,26 +681,19 @@
             this.flowLayoutPanel2.Controls.Add(this.checklistPn);
             this.flowLayoutPanel2.Controls.Add(this.panel3);
             this.flowLayoutPanel2.Controls.Add(this.panel5);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(8, 7);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(9, 14);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(599, 854);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(599, 953);
             this.flowLayoutPanel2.TabIndex = 75;
-            // 
-            // flowLayoutPanel5
-            // 
-            this.flowLayoutPanel5.AutoSize = true;
-            this.flowLayoutPanel5.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(0, 0);
-            this.flowLayoutPanel5.TabIndex = 69;
             // 
             // CardDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(770, 873);
+            this.ClientSize = new System.Drawing.Size(771, 890);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.moveBtn);
             this.Controls.Add(this.CloseButton);
@@ -645,8 +706,11 @@
             this.Controls.Add(this.label7);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CardDetail";
             this.Text = " ";
+            this.Activated += new System.EventHandler(this.CardDetail_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CardDetail_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.followPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -689,7 +753,7 @@
         private System.Windows.Forms.Label List;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CardName;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel activityPanel;
         private System.Windows.Forms.Label label10;
         private Bunifu.Framework.UI.BunifuThinButton2 AddMem;
         private Bunifu.Framework.UI.BunifuThinButton2 EditLabel;
@@ -714,5 +778,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.FlowLayoutPanel cmtPanel;
+        private Bunifu.Framework.UI.BunifuThinButton2 commentButton;
     }
 }

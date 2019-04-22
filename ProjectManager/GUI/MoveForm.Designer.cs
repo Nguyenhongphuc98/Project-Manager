@@ -148,6 +148,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MoveForm";
             this.Text = "MoveForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MoveForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

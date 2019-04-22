@@ -29,41 +29,32 @@
         private void InitializeComponent()
         {
             this.flpMember = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // flpMember
             // 
-            this.flpMember.Location = new System.Drawing.Point(13, 40);
+            this.flpMember.AutoScroll = true;
+            this.flpMember.Location = new System.Drawing.Point(13, 11);
             this.flpMember.Name = "flpMember";
             this.flpMember.Size = new System.Drawing.Size(231, 170);
             this.flpMember.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(232, 22);
-            this.textBox1.TabIndex = 4;
             // 
             // MemberEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 261);
+            this.ClientSize = new System.Drawing.Size(256, 202);
             this.Controls.Add(this.flpMember);
-            this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "MemberEdit";
             this.Text = "MemberEdit";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MemberEdit_FormClosed);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flpMember;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

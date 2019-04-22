@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,18 +16,8 @@ namespace DTO
         int label;
         DateTime dueDate;
         float status;
-        public CardDTO(int cardId, int listId, int indexCard, string title, string description, int label, float status)
-        {
-            this.cardId = cardId;
-            this.listId = listId;
-            this.indexCard = indexCard;
-            this.title = title;
-            this.description = description;
-            this.label = label;
-            this.status = status;
-        }
 
-        public CardDTO(int cardId, int listId, int indexCard, string title, string description, int label, DateTime duedate, float status)
+        public CardDTO(int cardId, int listId, int indexCard, string title, string description, int label, DateTime dueDate, float status)
         {
             this.cardId = cardId;
             this.listId = listId;

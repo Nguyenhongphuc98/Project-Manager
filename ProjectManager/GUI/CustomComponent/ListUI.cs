@@ -127,7 +127,7 @@ namespace GUI.CustomComponent
             else
             {
                 CardBLL cardBLL = new CardBLL();
-                CardDTO cardDTO = new CardDTO(cardBLL.GetAllCard().Count()+1, this.id, cardDTOs.Count()+1, tbTitleNewCard.Text, "", 1, 0);
+                CardDTO cardDTO = new CardDTO(cardBLL.GetAllCard().Count()+1, this.id, cardDTOs.Count()+1, tbTitleNewCard.Text, "", 1, DateTime.MinValue, 0);
                 cardBLL.InsertCard(cardDTO);
             }
             LoadCards();

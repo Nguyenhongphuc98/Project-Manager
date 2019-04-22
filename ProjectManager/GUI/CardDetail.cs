@@ -20,17 +20,19 @@ namespace GUI
         CardDTO cardDTO;
         ListDTO listDTO;
         ChecklistDTO checklistDTO;
+        CommentDTO commentDTO;
 
         CardBLL cardBLL = new CardBLL();
         ListBLL listBLL = new ListBLL();
         ChecklistBLL checklistBLL = new ChecklistBLL();
-        LamViecBLL lamViecBLL = new LamViecBLL();
-        CardUserBLL userBLL = new CardUserBLL();
+        UserBLL userBLL = new UserBLL();
+        CommentBLL commentBLL = new CommentBLL();
+        ActivityBLL activityBLL;
 
         List<ChecklistDTO> checklistDTOs;
         List<CheckBox> tasks = new List<CheckBox>();
-        List<CardUserDTO> userDTOs = new List<CardUserDTO>();
-        List<int> listUsers = new List<int>();
+        List<String> listNameUser = new List<string>();
+        List<CommentDTO> commentDTOs;
 
         public CardDetail(int id)
         {
@@ -65,7 +67,7 @@ namespace GUI
             }
             this.CardName.Text = cardDTO.Title;
             this.descriptionText.Text = cardDTO.Description;
-            this.checkDueDate.Text = cardDTO.DueDate.ToString();
+            this.checkDueDate.Text = cardDTO.DueDate.Date.ToString();
 
             AddMember();
 
@@ -100,20 +102,23 @@ namespace GUI
             listDTO = listBLL.GetList(cardDTO.ListId);
             this.List.Text = listDTO.Title;
             _boardId = listDTO.BoardId;
+
+            commentDTOs = commentBLL.GetAllComments(_cardId);
+            foreach (CommentDTO comment in commentDTOs)
+            {
+                UserComment userComment = new UserComment(userBLL.GetUser(comment.UserId).Name.Substring(0, 1), comment.Content);
+                cmtPanel.Controls.Add(userComment);
+            }
         }
 
         private void AddMember()
         {
             this.memberFlp.Controls.Clear();
-            listUsers = lamViecBLL.ListUserId(_cardId);
-            foreach (int userId in listUsers)
+            listNameUser = userBLL.GetListNameUserWorkingFor(_cardId);
+
+            foreach (String name in listNameUser)
             {
-                CardUserDTO userDTO = userBLL.GetUser(userId);
-                userDTOs.Add(userDTO);
-            }
-            foreach (CardUserDTO userDTO in userDTOs)
-            {
-                MemIcon member = new MemIcon(userDTO.Name.Substring(0, 1));
+                MemIcon member = new MemIcon(name);
                 this.memberFlp.Controls.Add(member);
             }
         }
@@ -123,10 +128,6 @@ namespace GUI
             if (commentText.Text == "")
             {
                 commentText.Text = "Thêm bình luận...";
-            }
-            else
-            {
-
             }
         }
 
@@ -232,9 +233,9 @@ namespace GUI
         
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            cardDTO.Description = descriptionText.Text;
+            cardDTO.Title = this.CardName.Text;
 
-            AddMember();
+            cardDTO.Description = descriptionText.Text;
 
             progressBar1.Value = 0;
             progressBar1.Maximum = checklistDTOs.Count();
@@ -254,8 +255,50 @@ namespace GUI
                     checklistBLL.UpdateChecklist(checklistDTO);
                 }
             }
+            
+            descriptionText.Text = cardDTO.Description;
+            if (followCheck.Checked == true)
+            {
+                followPic.Visible = true;
+            }
+            else followPic.Visible = false;
+            if (checklistDTOs.Count() != 0)
+            {
+                checklistPn.Visible = true;
+                progressBar1.Visible = true;
+            }
+            else checklistPn.Visible = false;
 
-            cardDTO.Title = this.CardName.Text;
+            cardBLL.UpdateCard(cardDTO);
+        }
+
+        private void commentButton_Click(object sender, EventArgs e)
+        {
+            if (commentText.Text != null)
+            {
+                activityBLL = new ActivityBLL();
+                //UserComment userComment = new UserComment(Global.user.Name.Substring(0,1), commentText.Text);
+                //this.cmtPanel.Controls.Add(userComment);
+                commentDTO = new CommentDTO(_cardId, Global.user.UserId, commentText.Text, DateTime.Now, 1);
+                commentBLL.InsertComment(commentDTO);
+            }
+            foreach (CommentDTO comment in commentDTOs)
+            {
+                cmtPanel.Controls.Clear();
+                UserComment userComment = new UserComment(userBLL.GetUser(comment.UserId).Name.Substring(0, 1), comment.Content);
+                cmtPanel.Controls.Add(userComment);
+            }
+            activityBLL.InsertActivity(Global.user.UserId, _boardId, Global.user.Name + " Has comment to card " + cardDTO.Title, DateTime.Now);
+        }
+
+        private void CardDetail_Activated(object sender, EventArgs e)
+        {
+            cardDTO = cardBLL.GetCard(_cardId);
+
+            AddMember();
+
+            checkDueDate.Text = cardDTO.DueDate.ToString();
+
             switch (cardDTO.Label)
             {
                 case 1:
@@ -280,22 +323,14 @@ namespace GUI
                     this.cardLabel.BackColor = Color.Transparent;
                     break;
             }
-            checkDueDate.Text = cardDTO.DueDate.ToString();
-            descriptionText.Text = cardDTO.Description;
-            if (followCheck.Checked == true)
-            {
-                followPic.Visible = true;
-            }
-            else followPic.Visible = false;
-            if (checklistDTOs.Count() != 0)
-            {
-                checklistPn.Visible = true;
-                progressBar1.Visible = true;
-            }
-            else checklistPn.Visible = false;
 
+            listDTO = listBLL.GetList(cardDTO.ListId);
             List.Text = listDTO.Title;
-            cardBLL.UpdateCard(cardDTO);
+        }
+
+        private void CardDetail_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
         }
     }
 }

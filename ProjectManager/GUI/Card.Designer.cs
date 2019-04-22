@@ -84,7 +84,7 @@
             // 
             this.desPicture.Enabled = false;
             this.desPicture.Image = ((System.Drawing.Image)(resources.GetObject("desPicture.Image")));
-            this.desPicture.Location = new System.Drawing.Point(145, 2);
+            this.desPicture.Location = new System.Drawing.Point(127, 2);
             this.desPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.desPicture.Name = "desPicture";
             this.desPicture.Size = new System.Drawing.Size(20, 20);
@@ -131,7 +131,7 @@
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Enabled = false;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(218, 2);
+            this.checkBox1.Location = new System.Drawing.Point(200, 2);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(50, 21);
@@ -143,7 +143,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 3);
+            this.label3.Location = new System.Drawing.Point(21, 2);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(16, 17);
             this.label3.TabIndex = 19;
@@ -152,10 +152,10 @@
             // dateCard
             // 
             this.dateCard.AutoSize = true;
-            this.dateCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateCard.Location = new System.Drawing.Point(29, 0);
             this.dateCard.Name = "dateCard";
-            this.dateCard.Size = new System.Drawing.Size(73, 20);
+            this.dateCard.Size = new System.Drawing.Size(55, 15);
             this.dateCard.TabIndex = 18;
             this.dateCard.Text = "datetime";
             // 
@@ -171,8 +171,9 @@
             this.flowLayoutPanel1.Controls.Add(this.checkBox1);
             this.flowLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(11, 37);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(299, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(298, 58);
             this.flowLayoutPanel1.TabIndex = 24;
             // 
             // flowLayoutPanel2
@@ -180,24 +181,27 @@
             this.flowLayoutPanel2.AutoSize = true;
             this.flowLayoutPanel2.Controls.Add(this.datePicture);
             this.flowLayoutPanel2.Controls.Add(this.dateCard);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(34, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(34, 2);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(105, 24);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(87, 24);
             this.flowLayoutPanel2.TabIndex = 25;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.cmtPicture);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(171, 3);
+            this.panel2.Location = new System.Drawing.Point(153, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(41, 24);
+            this.panel2.Size = new System.Drawing.Size(41, 25);
             this.panel2.TabIndex = 25;
             // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(11, 63);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(299, 43);
             this.flowLayoutPanel3.TabIndex = 25;
@@ -206,7 +210,7 @@
             // 
             this.CardName.AutoSize = true;
             this.CardName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CardName.Location = new System.Drawing.Point(10, 14);
+            this.CardName.Location = new System.Drawing.Point(11, 14);
             this.CardName.Name = "CardName";
             this.CardName.Size = new System.Drawing.Size(53, 20);
             this.CardName.TabIndex = 26;
@@ -225,7 +229,7 @@
             this.Controls.Add(this.CardLabel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Card";
-            this.Size = new System.Drawing.Size(317, 109);
+            this.Size = new System.Drawing.Size(318, 110);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Card_MouseClick);
             this.MouseEnter += new System.EventHandler(this.Card_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.Card_MouseLeave);
