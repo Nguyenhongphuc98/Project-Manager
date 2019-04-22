@@ -39,6 +39,7 @@ namespace DAL
 
                 card = new CardDTO(cardId, listId, indexCard, title, description, label, dueDate, status);
             }
+
             reader.Close();
             command.CommandText = "SELECT * FROM CHECKLIST WHERE CARD_ID = '" + id + "' AND STATUS = '" + 1 + "'";
 
@@ -53,6 +54,7 @@ namespace DAL
                 ChecklistDTO checklist = new ChecklistDTO(checklistId, cardId, checklistIndex, title, status);
                 listCheckedlist.Add(checklist);
             }
+
             reader1.Close();
             command.CommandText = "SELECT * FROM CHECKLIST WHERE CARD_ID = '" + id + "'";
 
@@ -67,6 +69,7 @@ namespace DAL
                 ChecklistDTO checklist = new ChecklistDTO(checklistId, cardId, checklistIndex, title, status);
                 listChecklist.Add(checklist);
             }
+
             reader2.Close();
             command.CommandText = "SELECT * FROM USERS WHERE USER_ID = " + id;
 
@@ -80,6 +83,7 @@ namespace DAL
 
                 user = new CardUserDTO(userId, username, password, name);
             }
+
             reader3.Close();
             command.CommandText = "SELECT u.NAME "
                                   + " FROM USERS u, LAMVIEC l "
@@ -91,6 +95,7 @@ namespace DAL
                 string name = reader4.GetString(0).Substring(0,1);
                 listNameUser.Add(name);
             }
+
             reader4.Close();
             this.Close();
 

@@ -32,6 +32,7 @@ namespace DAL
                 listList.Add(list);
             }
 
+            reader.Close();
             this.Close();
             return listList;
         }
@@ -58,6 +59,7 @@ namespace DAL
                 return listobj;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }

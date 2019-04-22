@@ -31,9 +31,11 @@ namespace DAL
                 listChecklist.Add(checklist);
             }
 
+            reader.Close();
             this.Close();
             return listChecklist;
         }
+
         public List<ChecklistDTO> GetAllChecklist(int _cardId)
         {
             List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
@@ -55,9 +57,11 @@ namespace DAL
                 listChecklist.Add(checklist);
             }
 
+            reader.Close();
             this.Close();
             return listChecklist;
         }
+
         public List<ChecklistDTO> GetAllCheckedlist(int _cardId)
         {
             List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
@@ -79,6 +83,7 @@ namespace DAL
                 listChecklist.Add(checklist);
             }
 
+            reader.Close();
             this.Close();
             return listChecklist;
         }
@@ -104,9 +109,11 @@ namespace DAL
                 return checklist;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }
+
         public ChecklistDTO GetChecklist(string _title)
         {
             ChecklistDTO checklist;
@@ -128,6 +135,7 @@ namespace DAL
                 return checklist;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }
@@ -147,6 +155,7 @@ namespace DAL
             this.Close();
             return true;
         }
+
         public bool UpdateChecklist(ChecklistDTO checklist)
         {
             this.ConnectToDatabase();
@@ -162,6 +171,7 @@ namespace DAL
             this.Close();
             return true;
         }
+
         public bool UpdateChecklist(int cardId, int checklistIndex, string title, byte status)
         {
             this.ConnectToDatabase();

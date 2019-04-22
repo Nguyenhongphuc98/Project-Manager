@@ -35,9 +35,11 @@ namespace DAL
                 listCard.Add(card);
             }
 
+            reader.Close();
             this.Close();
             return listCard;
         }
+
         public List<CardDTO> GetAllCard(int _listId)
         {
             List<CardDTO> listCard = new List<CardDTO>();
@@ -63,6 +65,7 @@ namespace DAL
                 listCard.Add(card);
             }
 
+            reader.Close();
             this.Close();
             return listCard;
         }
@@ -87,21 +90,20 @@ namespace DAL
                 //DateTime dueDate = (reader.IsDBNull(6)) ? DateTime.MinValue : (reader.GetDateTime(6));
                 DateTime dueDate;
                 try { dueDate = reader.GetDateTime(6); }
-                catch { dueDate = DateTime.MinValue; }
+                catch { dueDate = DateTime.Now; }
                 float status = reader.GetInt64(7);
 
                 CardDTO card = new CardDTO(cardId, listId, indexCard, title, description, label, dueDate, status);
                 return card;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }
 
         public String GetCardName(int id)
         {
-            CardDTO card;
-
             this.ConnectToDatabase();
 
             MySqlCommand command = this.mySQLConnection.CreateCommand();
@@ -114,6 +116,7 @@ namespace DAL
                 return title;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }

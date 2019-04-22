@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.boardBtn = new Bunifu.Framework.UI.BunifuTileButton();
-            this.positionBtn = new Bunifu.Framework.UI.BunifuTileButton();
             this.listBtn = new Bunifu.Framework.UI.BunifuTileButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
@@ -50,31 +48,11 @@
             this.boardBtn.ImageZoom = 50;
             this.boardBtn.LabelPosition = 41;
             this.boardBtn.LabelText = "Board";
-            this.boardBtn.Location = new System.Drawing.Point(15, 35);
-            this.boardBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.boardBtn.Location = new System.Drawing.Point(11, 28);
+            this.boardBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.boardBtn.Name = "boardBtn";
-            this.boardBtn.Size = new System.Drawing.Size(336, 79);
+            this.boardBtn.Size = new System.Drawing.Size(263, 64);
             this.boardBtn.TabIndex = 0;
-            // 
-            // positionBtn
-            // 
-            this.positionBtn.BackColor = System.Drawing.Color.SeaGreen;
-            this.positionBtn.color = System.Drawing.Color.SeaGreen;
-            this.positionBtn.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.positionBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.positionBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.positionBtn.ForeColor = System.Drawing.Color.White;
-            this.positionBtn.Image = null;
-            this.positionBtn.ImagePosition = 20;
-            this.positionBtn.ImageZoom = 50;
-            this.positionBtn.LabelPosition = 41;
-            this.positionBtn.LabelText = "Position";
-            this.positionBtn.Location = new System.Drawing.Point(241, 151);
-            this.positionBtn.Margin = new System.Windows.Forms.Padding(6);
-            this.positionBtn.Name = "positionBtn";
-            this.positionBtn.Size = new System.Drawing.Size(110, 79);
-            this.positionBtn.TabIndex = 1;
-            this.positionBtn.Click += new System.EventHandler(this.positionBtn_Click);
             // 
             // listBtn
             // 
@@ -89,10 +67,10 @@
             this.listBtn.ImageZoom = 50;
             this.listBtn.LabelPosition = 41;
             this.listBtn.LabelText = "List";
-            this.listBtn.Location = new System.Drawing.Point(15, 151);
-            this.listBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.listBtn.Location = new System.Drawing.Point(11, 123);
+            this.listBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBtn.Name = "listBtn";
-            this.listBtn.Size = new System.Drawing.Size(214, 79);
+            this.listBtn.Size = new System.Drawing.Size(263, 64);
             this.listBtn.TabIndex = 2;
             this.listBtn.Click += new System.EventHandler(this.listBtn_Click);
             // 
@@ -100,52 +78,45 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(9, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 20);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Board";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(238, 128);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Position";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 128);
+            this.label3.Location = new System.Drawing.Point(9, 104);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 20);
+            this.label3.Size = new System.Drawing.Size(30, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "List";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 253);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 206);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(335, 150);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(251, 109);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // MoveForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 243);
+            this.ClientSize = new System.Drawing.Size(287, 197);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBtn);
-            this.Controls.Add(this.positionBtn);
             this.Controls.Add(this.boardBtn);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MoveForm";
             this.Text = "MoveForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MoveForm_FormClosed);
@@ -157,10 +128,8 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuTileButton boardBtn;
-        private Bunifu.Framework.UI.BunifuTileButton positionBtn;
         private Bunifu.Framework.UI.BunifuTileButton listBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }

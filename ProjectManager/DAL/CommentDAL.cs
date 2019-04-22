@@ -32,9 +32,11 @@ namespace DAL
                 listComment.Add(comment);
             }
 
+            reader.Close();
             this.Close();
             return listComment;
         }
+
         public List<CommentDTO> GetAllComments(int cardId)
         {
             List<CommentDTO> listComment = new List<CommentDTO>();
@@ -56,6 +58,7 @@ namespace DAL
                 listComment.Add(comment);
             }
 
+            reader.Close();
             this.Close();
             return listComment;
         }
@@ -82,6 +85,7 @@ namespace DAL
                 return comment;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }

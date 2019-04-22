@@ -27,9 +27,11 @@ namespace DAL
                 listUserId.Add(userId);
             }
 
+            reader.Close();
             this.Close();
             return listUserId;
         }
+
         public bool UpdateUser(int userId, int cardId)
         {
             this.ConnectToDatabase();

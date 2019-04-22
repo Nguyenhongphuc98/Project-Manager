@@ -44,6 +44,7 @@ namespace DAL
                 listBoard.Add(b);
             }
 
+            reader.Close();
             this.Close();
             return listBoard;
         }
@@ -73,6 +74,7 @@ namespace DAL
                 return b;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }
@@ -93,6 +95,7 @@ namespace DAL
                 return maxID;
             }
 
+            reader.Close();
             this.Close();
             return -1;
         }
@@ -216,6 +219,7 @@ namespace DAL
                 listBoard.Add(b);
             }
 
+            reader.Close();
             this.Close();
             return listBoard;
         }

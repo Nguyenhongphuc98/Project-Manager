@@ -15,12 +15,14 @@ namespace GUI
     public partial class ListComponent : UserControl
     {
         int _id;
-        int _boardId;
+       // int _boardId;
         CardDTO cardDTO;
         CardBLL cardBLL;
         ListBLL listBLL;
 
-        public ListComponent(string name, int id ,CardDTO card)
+        MoveForm moveForm;
+
+        public ListComponent(string name, int id ,CardDTO card,MoveForm move)
         {
             InitializeComponent();
 
@@ -30,6 +32,7 @@ namespace GUI
             this.nameTxt.Text = name;
             _id = id;
             cardDTO = card;
+            this.moveForm = move;
         }
 
         private void ListComponent_MouseEnter(object sender, EventArgs e)
@@ -48,6 +51,8 @@ namespace GUI
             cardDTO.ListId = _id;
             cardBLL.UpdateCard(cardDTO);
             activityBLL.InsertActivity(Global.user.UserId, listBLL.GetList(cardDTO.ListId).BoardId, Global.user.Name + " Has move card to list: " + listBLL.GetList(cardDTO.ListId).Title, DateTime.Now);
+
+            moveForm.Close();
         }
     }
 }

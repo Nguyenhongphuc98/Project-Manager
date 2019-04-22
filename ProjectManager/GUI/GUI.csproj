@@ -105,12 +105,6 @@
     <Compile Include="CustomComponent\Create.Designer.cs">
       <DependentUpon>Create.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomBoardUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomBoardUI.Designer.cs">
-      <DependentUpon>CustomBoardUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomComponent\ListActivity.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -140,9 +134,6 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HarrProgressBar.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="LabelEdit.cs">
       <SubType>Form</SubType>
@@ -200,12 +191,6 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeamUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TeamUI.Designer.cs">
-      <DependentUpon>TeamUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserComment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -247,9 +232,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomComponent\ListUI.resx">
       <DependentUpon>ListUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomBoardUI.resx">
-      <DependentUpon>CustomBoardUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomComponent\ListUIButtonCreate.resx">
       <DependentUpon>ListUIButtonCreate.cs</DependentUpon>
@@ -295,9 +277,6 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TeamUI.resx">
-      <DependentUpon>TeamUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserComment.resx">
       <DependentUpon>UserComment.cs</DependentUpon>

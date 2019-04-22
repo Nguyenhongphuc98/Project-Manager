@@ -31,6 +31,7 @@ namespace DAL
                 listUser.Add(user);
             }
 
+            reader.Close();
             this.Close();
             return listUser;
         }
@@ -56,6 +57,7 @@ namespace DAL
                 return user;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }
@@ -81,6 +83,7 @@ namespace DAL
                 return user;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }
@@ -95,7 +98,6 @@ namespace DAL
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
 
             command.ExecuteNonQuery();
-
 
             this.Close();
             return true;
@@ -113,7 +115,7 @@ namespace DAL
 
             command.ExecuteNonQuery();
 
-
+  
             this.Close();
             return true;
         }
@@ -136,6 +138,7 @@ namespace DAL
                 listNameUser.Add(name);
             }
 
+            reader.Close();
             this.Close();
             return listNameUser;
         }

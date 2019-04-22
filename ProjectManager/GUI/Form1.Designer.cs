@@ -194,6 +194,7 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbPassWord);
             this.Controls.Add(this.tbuserName);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

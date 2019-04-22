@@ -27,6 +27,7 @@ namespace DAL
                 listUserId.Add(userId);
             }
 
+            reader.Close();
             this.Close();
             return listUserId;
         }

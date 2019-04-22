@@ -31,6 +31,7 @@ namespace DAL
                 listCardUser.Add(user);
             }
 
+            reader.Close();
             this.Close();
             return listCardUser;
         }
@@ -56,6 +57,7 @@ namespace DAL
                 return user;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }

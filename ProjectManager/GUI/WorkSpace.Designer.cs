@@ -39,10 +39,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.pnWorkSpace = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
-            this.pnWorkSpace.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBoard
@@ -329,32 +326,11 @@
             // 
             // pnWorkSpace
             // 
-            this.pnWorkSpace.Controls.Add(this.flowLayoutPanel2);
-            this.pnWorkSpace.Controls.Add(this.flowLayoutPanel1);
             this.pnWorkSpace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnWorkSpace.Location = new System.Drawing.Point(0, 44);
             this.pnWorkSpace.Name = "pnWorkSpace";
             this.pnWorkSpace.Size = new System.Drawing.Size(1099, 497);
             this.pnWorkSpace.TabIndex = 1;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.AllowDrop = true;
-            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(300, 41);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(247, 270);
-            this.flowLayoutPanel2.TabIndex = 4;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AllowDrop = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 41);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(247, 363);
-            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // WorkSpace
             // 
@@ -364,12 +340,12 @@
             this.ClientSize = new System.Drawing.Size(1099, 541);
             this.Controls.Add(this.pnWorkSpace);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.Name = "WorkSpace";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Manager";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.WorkSpace_FormClosed);
             this.panel1.ResumeLayout(false);
-            this.pnWorkSpace.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -385,8 +361,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnUser;
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox tbSearch;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         public System.Windows.Forms.Panel pnWorkSpace;
     }
 }

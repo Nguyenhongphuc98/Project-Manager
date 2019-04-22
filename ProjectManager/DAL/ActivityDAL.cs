@@ -41,6 +41,7 @@ namespace DAL
                 listActivity.Add(activity);
             }
 
+            reader.Close();
             this.Close();
             return listActivity;
         }
@@ -76,6 +77,7 @@ namespace DAL
                 listActivity.Add(activity);
             }
 
+            reader.Close();
             this.Close();
             return listActivity;
         }
@@ -104,6 +106,7 @@ namespace DAL
                 return activity;
             }
 
+            reader.Close();
             this.Close();
             return null;
         }
@@ -135,7 +138,6 @@ namespace DAL
             command.Parameters.Add("@time", MySqlDbType.DateTime).Value = dateTime;
 
             command.ExecuteNonQuery();
-
 
             this.Close();
             return true;

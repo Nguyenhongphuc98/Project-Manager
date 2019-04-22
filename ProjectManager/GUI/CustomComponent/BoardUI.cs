@@ -36,8 +36,8 @@ namespace GUI.CustomComponent
             this.index = index;
             this.mode = mode;
 
-            this.Top = 50 + (this.Height + margin) * (index / 3);
-            this.Left = 50 + (this.Width + margin) * (index % 3);
+            this.Top = 50 + (this.Height + margin) * (index / 4);
+            this.Left = 50 + (this.Width + margin) * (index % 4);
 
             this.pbStar.Visible = false;
         }
@@ -53,8 +53,8 @@ namespace GUI.CustomComponent
             this.title = title;
             this.background = background;
 
-            this.Top = 50 + (this.Height + margin) * (index / 3) ;
-            this.Left = 50 + (this.Width + margin )* (index % 3) ;
+            this.Top = 50 + (this.Height + margin) * (index / 4) ;
+            this.Left = 50 + (this.Width + margin )* (index % 4) ;
 
             this.pbStar.Visible = star;
             this.lbNameBoard.Text = title;

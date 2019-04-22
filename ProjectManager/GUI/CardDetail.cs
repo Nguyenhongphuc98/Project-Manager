@@ -274,21 +274,36 @@ namespace GUI
 
         private void commentButton_Click(object sender, EventArgs e)
         {
-            if (commentText.Text != null)
+            if (!String.IsNullOrEmpty(commentText.Text))
             {
                 activityBLL = new ActivityBLL();
                 //UserComment userComment = new UserComment(Global.user.Name.Substring(0,1), commentText.Text);
                 //this.cmtPanel.Controls.Add(userComment);
                 commentDTO = new CommentDTO(_cardId, Global.user.UserId, commentText.Text, DateTime.Now, 1);
-                commentBLL.InsertComment(commentDTO);
-            }
-            foreach (CommentDTO comment in commentDTOs)
-            {
-                cmtPanel.Controls.Clear();
-                UserComment userComment = new UserComment(userBLL.GetUser(comment.UserId).Name.Substring(0, 1), comment.Content);
+
+                try
+                {
+                    commentBLL.InsertComment(commentDTO);
+                }
+                catch { MessageBox.Show("Mỗi user chỉ comment 1 lần", "Waring!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
+                UserComment userComment = new UserComment(userBLL.GetUser(Global.user.UserId).Name.Substring(0, 1), commentText.Text);
                 cmtPanel.Controls.Add(userComment);
+
+                activityBLL.InsertActivity(Global.user.UserId, _boardId, Global.user.Name + " Has comment to card " + cardDTO.Title, DateTime.Now);
             }
-            activityBLL.InsertActivity(Global.user.UserId, _boardId, Global.user.Name + " Has comment to card " + cardDTO.Title, DateTime.Now);
+
+
+            
+            //foreach (CommentDTO comment in commentDTOs)
+            //{
+
+            //    cmtPanel.Controls.Clear();
+            //    UserComment userComment = new UserComment(userBLL.GetUser(comment.UserId).Name.Substring(0, 1), comment.Content);
+            //    cmtPanel.Controls.Add(userComment);
+            //}
+
+           
         }
 
         private void CardDetail_Activated(object sender, EventArgs e)
