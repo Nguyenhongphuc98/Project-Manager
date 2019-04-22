@@ -76,12 +76,12 @@ namespace GUI
 
         private void tbPass1_OnValueChanged(object sender, EventArgs e)
         {
-            tbPass1.isPassword=true;
+            this.tbPass1.isPassword = true;
         }
 
         private void tbPass2_OnValueChanged(object sender, EventArgs e)
         {
-            tbPass2.isPassword = true;
+            this.tbPass2.isPassword = true;
         }
     }
 }
