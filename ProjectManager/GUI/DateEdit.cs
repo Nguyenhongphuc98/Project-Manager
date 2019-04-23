@@ -23,7 +23,7 @@ namespace GUI
             this.Location = new Point(X, Y);
             this.StartPosition = FormStartPosition.Manual;
             cardDTO = cardBLL.GetCard(cardId);
-            this.datePicker.Value = cardDTO.DueDate;
+            this.datePicker.Value = cardDTO.DueDate.Date;
             this.dueDateHour.Value = cardDTO.DueDate.TimeOfDay.Hours;
             this.dueDateMin.Value = cardDTO.DueDate.TimeOfDay.Minutes;
         }
@@ -33,6 +33,7 @@ namespace GUI
             ActivityBLL activityBLL = new ActivityBLL();
             listBLL = new ListBLL();
             TimeSpan time = new TimeSpan(Convert.ToInt32(this.dueDateHour.Value), Convert.ToInt32(this.dueDateMin.Value), 0);
+            cardDTO.DueDate = DateTime.MinValue;
             cardDTO.DueDate = datePicker.Value;
             cardDTO.DueDate = cardDTO.DueDate + time;
             cardBLL.UpdateDate(cardDTO);

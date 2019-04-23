@@ -73,30 +73,30 @@ namespace GUI
 
             AddMember();
 
-            checklistDTOs = checklistBLL.GetAllChecklist(id);
-            if (checklistDTOs.Count() != 0)
-            {
-                this.checklistPn.Visible = true;
-                this.progressBar1.Visible = true;
-                this.progressBar1.Maximum = checklistDTOs.Count();
-                taskFlpanel.Controls.Clear();
-                checklistDTOs = checklistBLL.GetAllChecklist(_cardId);
-                foreach (ChecklistDTO checklist in checklistDTOs)
-                {
-                    CheckBox task = new CheckBox();
-                    task.Font = new Font(task.Font.FontFamily, 10.0f);
-                    task.Text = checklist.Title;
-                    if (checklist.Status == 1)
-                    {
-                        task.Checked = true;
-                        this.progressBar1.Increment(1);
-                    }
-                    else task.Checked = false;
-                    taskFlpanel.Controls.Add(task);
-                    tasks.Add(task);
-                }
-            }
-            else checklistPn.Visible = false;
+            //checklistDTOs = checklistBLL.GetAllChecklist(id);
+            //if (checklistDTOs.Count() != 0)
+            //{
+            //    this.checklistPn.Visible = true;
+            //    this.progressBar1.Visible = true;
+            //    this.progressBar1.Maximum = checklistDTOs.Count();
+            //    taskFlpanel.Controls.Clear();
+            //    checklistDTOs = checklistBLL.GetAllChecklist(_cardId);
+            //    foreach (ChecklistDTO checklist in checklistDTOs)
+            //    {
+            //        CheckBox task = new CheckBox();
+            //        task.Font = new Font(task.Font.FontFamily, 10.0f);
+            //        task.Text = checklist.Title;
+            //        if (checklist.Status == 1)
+            //        {
+            //            task.Checked = true;
+            //            this.progressBar1.Increment(1);
+            //        }
+            //        else task.Checked = false;
+            //        taskFlpanel.Controls.Add(task);
+            //        tasks.Add(task);
+            //    }
+            //}
+            //else checklistPn.Visible = false;
 
             this.descriptionText.LostFocus += DescriptionText_LostFocus;
             this.commentText.LostFocus += CommentText_LostFocus;
@@ -111,6 +111,8 @@ namespace GUI
                 UserComment userComment = new UserComment(userBLL.GetUser(comment.UserId).Name.Substring(0, 1), comment.Content);
                 cmtPanel.Controls.Add(userComment);
             }
+
+            activityPanel.Controls.Clear();
         }
 
         private void AddMember()
@@ -203,21 +205,21 @@ namespace GUI
         {
             checklistPn.Visible = true;
             progressBar1.Visible = true;
-            taskFlpanel.Controls.Clear();
-            checklistDTOs = checklistBLL.GetAllChecklist(_cardId);
-            foreach (ChecklistDTO checklist in checklistDTOs)
-            {
-                CheckBox task = new CheckBox();
-                task.Font = new Font(task.Font.FontFamily, 10.0f);
-                task.Text = checklist.Title;
-                if (checklist.Status == 1)
-                {
-                    task.Checked = true;
-                }
-                else task.Checked = false;
-                taskFlpanel.Controls.Add(task);
-                tasks.Add(task);
-            }
+            //taskFlpanel.Controls.Clear();
+            //checklistDTOs = checklistBLL.GetAllChecklist(_cardId);
+            //foreach (ChecklistDTO checklist in checklistDTOs)
+            //{
+            //    CheckBox task = new CheckBox();
+            //    task.Font = new Font(task.Font.FontFamily, 10.0f);
+            //    task.Text = checklist.Title;
+            //    if (checklist.Status == 1)
+            //    {
+            //        task.Checked = true;
+            //    }
+            //    else task.Checked = false;
+            //    taskFlpanel.Controls.Add(task);
+            //    tasks.Add(task);
+            //}
         }
 
         private void addTask_Click(object sender, EventArgs e)
@@ -236,7 +238,6 @@ namespace GUI
         private void SaveButton_Click(object sender, EventArgs e)
         {
             cardDTO.Title = this.CardName.Text;
-
             cardDTO.Description = descriptionText.Text;
 
             progressBar1.Value = 0;
@@ -250,15 +251,14 @@ namespace GUI
                     checklistDTO.Status = 1;
                     checklistBLL.UpdateChecklist(checklistDTO);
                 }
-                else if (task.Checked == false)
+                else
                 {
                     checklistDTO = checklistBLL.GetChecklist(task.Text);
                     checklistDTO.Status = 0;
                     checklistBLL.UpdateChecklist(checklistDTO);
                 }
             }
-            
-            descriptionText.Text = cardDTO.Description;
+
             if (followCheck.Checked == true)
             {
                 followPic.Visible = true;
@@ -294,8 +294,6 @@ namespace GUI
 
                 activityBLL.InsertActivity(Global.user.UserId, _boardId, Global.user.Name + " Has comment to card " + cardDTO.Title, DateTime.Now);
             }
-
-
             
             //foreach (CommentDTO comment in commentDTOs)
             //{
@@ -304,8 +302,6 @@ namespace GUI
             //    UserComment userComment = new UserComment(userBLL.GetUser(comment.UserId).Name.Substring(0, 1), comment.Content);
             //    cmtPanel.Controls.Add(userComment);
             //}
-
-           
         }
 
         private void CardDetail_Activated(object sender, EventArgs e)
@@ -343,6 +339,65 @@ namespace GUI
 
             listDTO = listBLL.GetList(cardDTO.ListId);
             List.Text = listDTO.Title;
+
+            taskFlpanel.Controls.Clear();
+            tasks.Clear();
+            checklistDTOs = checklistBLL.GetAllChecklist(_cardId);
+            if (checklistDTOs.Count() != 0)
+            {
+                this.checklistPn.Visible = true;
+                this.progressBar1.Visible = true;
+                this.progressBar1.Maximum = checklistDTOs.Count();
+                taskFlpanel.Controls.Clear();
+                checklistDTOs = checklistBLL.GetAllChecklist(_cardId);
+                foreach (ChecklistDTO checklist in checklistDTOs)
+                {
+                    CheckBox task = new CheckBox();
+                    task.Font = new Font(task.Font.FontFamily, 10.0f);
+                    task.Text = checklist.Title;
+                    if (checklist.Status == 1)
+                    {
+                        task.Checked = true;
+                        this.progressBar1.Increment(1);
+                    }
+                    else task.Checked = false;
+                    taskFlpanel.Controls.Add(task);
+                    tasks.Add(task);
+                }
+            }
+            else checklistPn.Visible = false;
+            //checklistDTOs = checklistBLL.GetAllChecklist(_cardId);
+            //foreach (ChecklistDTO checklist in checklistDTOs)
+            //{
+            //    CheckBox task = new CheckBox();
+            //    task.Font = new Font(task.Font.FontFamily, 10.0f);
+            //    task.Text = checklist.Title;
+            //    if (checklist.Status == 1)
+            //    {
+            //        task.Checked = true;
+            //    }
+            //    else task.Checked = false;
+            //    taskFlpanel.Controls.Add(task);
+            //    tasks.Add(task);
+            //}
+            progressBar1.Value = 0;
+            progressBar1.Maximum = checklistDTOs.Count();
+            foreach (CheckBox task in tasks)
+            {
+                if (task.Checked == true)
+                {
+                    progressBar1.Increment(1);
+                    checklistDTO = checklistBLL.GetChecklist(task.Text);
+                    checklistDTO.Status = 1;
+                    checklistBLL.UpdateChecklist(checklistDTO);
+                }
+                else
+                {
+                    checklistDTO = checklistBLL.GetChecklist(task.Text);
+                    checklistDTO.Status = 0;
+                    checklistBLL.UpdateChecklist(checklistDTO);
+                }
+            }
         }
 
         private void CardDetail_FormClosed(object sender, FormClosedEventArgs e)

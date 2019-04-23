@@ -160,7 +160,7 @@ namespace DAL
         {
             this.ConnectToDatabase();
 
-            string Query = "update CHECKLIST set INDEX_CHECKLIST = '" + checklist.ChecklistIndex + "',TITLE = '" + checklist.Title + "',STATUS = '" + checklist.Status + "' WHERE CARD_ID =" + checklist.CardId;
+            string Query = "update CHECKLIST set INDEX_CHECKLIST = '" + checklist.ChecklistIndex + "',TITLE = '" + checklist.Title + "',STATUS = '" + checklist.Status + "' WHERE TITLE = '" + checklist.Title + "'";
 
             //This is command class which will handle the query and connection object.  
             MySqlCommand command = new MySqlCommand(Query, mySQLConnection);
