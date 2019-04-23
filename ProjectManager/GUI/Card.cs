@@ -19,6 +19,7 @@ namespace GUI
         int oX;
         int oY;
         int _cardId;
+        ListSpace _listSpace;
 
         CardDTO cardDTO;
         CardInfoDTO cardInfoDTO;
@@ -48,12 +49,13 @@ namespace GUI
         //    return System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, controlWidth - 2, controlHeight - 2, 10, 10));
         //}
 
-        public Card(int X, int cardId, int index)
+        public Card(int X, int cardId, int index, ListSpace listSpace)
         {
             InitializeComponent();  
             _cardId = cardId;
             oX = X;
             oY = 3 + (index + 3) * this.Height;
+            _listSpace = listSpace;
             //this.Region = GetRoundedRegion(this.Width, this.Height);
             
             cardInfoBLL = new CardInfoBLL();
@@ -181,10 +183,8 @@ namespace GUI
 
         private void Card_MouseClick(object sender, MouseEventArgs e)
         {
-            CardDetail cardDetail = new CardDetail(_cardId);
+            CardDetail cardDetail = new CardDetail(_cardId, _listSpace);
             cardDetail.Show();
         }
-
-
     }
 }

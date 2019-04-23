@@ -127,7 +127,7 @@ namespace GUI
 
             foreach(ListDTO l in listDTOs)
             {
-                ListUI lsUI = new ListUI(l.ListId, l.IndexList, l.Title, l.Color);
+                ListUI lsUI = new ListUI(l.ListId, l.IndexList, l.Title, l.Color, this);
                 listUIs.Add(lsUI);
                 this.Controls.Add(lsUI);
             }
@@ -173,11 +173,6 @@ namespace GUI
             {
                 this.cbListUser.Visible = false;
             }
-        }
-
-        private void ListSpace_Activated(object sender, EventArgs e)
-        {
-            LoadListOfThisBoard();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace GUI
     {
         int _cardId;
         int _boardId;
+        ListSpace _listSpace;
 
         CardDTO cardDTO;
         ListDTO listDTO;
@@ -34,11 +35,12 @@ namespace GUI
         List<String> listNameUser = new List<string>();
         List<CommentDTO> commentDTOs;
 
-        public CardDetail(int id)
+        public CardDetail(int id, ListSpace listSpace)
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             _cardId = id;
+            _listSpace = listSpace;
             cardDTO = cardBLL.GetCard(_cardId);
 
             switch (cardDTO.Label)
@@ -345,6 +347,7 @@ namespace GUI
 
         private void CardDetail_FormClosed(object sender, FormClosedEventArgs e)
         {
+            _listSpace.LoadListOfThisBoard();
             GC.Collect();
         }
     }

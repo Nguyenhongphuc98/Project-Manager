@@ -154,13 +154,13 @@ namespace GUI
             //this.flowLayoutPanel2.Controls.Add(pgb);
         }
 
-        public void LoadCard()
-        {
-            Card c = new Card(600, 100, 1);
+        //public void LoadCard()
+        //{
+        //    Card c = new Card(600, 100, 1);
 
-            this.listSpace.Controls.Add(c);
-            c.Show();
-        }
+        //    this.listSpace.Controls.Add(c);
+        //    c.Show();
+        //}
 
         public void LoadCreate()
         {
