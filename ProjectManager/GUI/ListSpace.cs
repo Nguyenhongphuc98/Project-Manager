@@ -174,5 +174,10 @@ namespace GUI
                 this.cbListUser.Visible = false;
             }
         }
+
+        private void ListSpace_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

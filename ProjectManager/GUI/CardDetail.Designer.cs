@@ -516,6 +516,7 @@
             // 
             // taskFlpanel
             // 
+            this.taskFlpanel.AutoScroll = true;
             this.taskFlpanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.taskFlpanel.Location = new System.Drawing.Point(32, 47);
             this.taskFlpanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

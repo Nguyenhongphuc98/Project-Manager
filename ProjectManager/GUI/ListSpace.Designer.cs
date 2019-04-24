@@ -56,7 +56,7 @@
             this.pnMenu.Controls.Add(this.lbNameProject);
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(1465, 49);
             this.pnMenu.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             this.cbListUser.FormattingEnabled = true;
             this.cbListUser.Location = new System.Drawing.Point(657, 14);
-            this.cbListUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbListUser.Margin = new System.Windows.Forms.Padding(4);
             this.cbListUser.Name = "cbListUser";
             this.cbListUser.Size = new System.Drawing.Size(204, 24);
             this.cbListUser.TabIndex = 2;
@@ -123,7 +123,7 @@
             this.btnInvite.IconZoom = 60D;
             this.btnInvite.IsTab = false;
             this.btnInvite.Location = new System.Drawing.Point(563, 5);
-            this.btnInvite.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnInvite.Margin = new System.Windows.Forms.Padding(5);
             this.btnInvite.Name = "btnInvite";
             this.btnInvite.Normalcolor = System.Drawing.Color.Transparent;
             this.btnInvite.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
@@ -159,7 +159,7 @@
             this.btnMode.IconZoom = 60D;
             this.btnMode.IsTab = false;
             this.btnMode.Location = new System.Drawing.Point(460, 5);
-            this.btnMode.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMode.Margin = new System.Windows.Forms.Padding(5);
             this.btnMode.Name = "btnMode";
             this.btnMode.Normalcolor = System.Drawing.Color.Transparent;
             this.btnMode.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
@@ -194,7 +194,7 @@
             this.btnPersonal.IconZoom = 60D;
             this.btnPersonal.IsTab = false;
             this.btnPersonal.Location = new System.Drawing.Point(331, 4);
-            this.btnPersonal.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnPersonal.Margin = new System.Windows.Forms.Padding(5);
             this.btnPersonal.Name = "btnPersonal";
             this.btnPersonal.Normalcolor = System.Drawing.Color.Transparent;
             this.btnPersonal.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
@@ -229,7 +229,7 @@
             this.btnStar.IconZoom = 30D;
             this.btnStar.IsTab = false;
             this.btnStar.Location = new System.Drawing.Point(276, 2);
-            this.btnStar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnStar.Margin = new System.Windows.Forms.Padding(5);
             this.btnStar.Name = "btnStar";
             this.btnStar.Normalcolor = System.Drawing.Color.Transparent;
             this.btnStar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(157)))), ((int)(((byte)(180)))));
@@ -263,9 +263,10 @@
             this.Controls.Add(this.pnMenu);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListSpace";
             this.Text = "ListSpace";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ListSpace_FormClosed);
             this.pnMenu.ResumeLayout(false);
             this.pnMenu.PerformLayout();
             this.ResumeLayout(false);

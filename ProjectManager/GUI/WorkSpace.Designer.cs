@@ -64,14 +64,14 @@
             this.btnBoard.IconVisible = true;
             this.btnBoard.IconZoom = 60D;
             this.btnBoard.IsTab = false;
-            this.btnBoard.Location = new System.Drawing.Point(55, 4);
-            this.btnBoard.Margin = new System.Windows.Forms.Padding(5);
+            this.btnBoard.Location = new System.Drawing.Point(73, 5);
+            this.btnBoard.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnBoard.Name = "btnBoard";
             this.btnBoard.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(151)))), ((int)(((byte)(194)))));
             this.btnBoard.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnBoard.OnHoverTextColor = System.Drawing.Color.White;
             this.btnBoard.selected = false;
-            this.btnBoard.Size = new System.Drawing.Size(123, 37);
+            this.btnBoard.Size = new System.Drawing.Size(164, 46);
             this.btnBoard.TabIndex = 1;
             this.btnBoard.Text = "Boards";
             this.btnBoard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -99,14 +99,14 @@
             this.btnHome.IconVisible = true;
             this.btnHome.IconZoom = 60D;
             this.btnHome.IsTab = false;
-            this.btnHome.Location = new System.Drawing.Point(7, 4);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnHome.Location = new System.Drawing.Point(9, 5);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnHome.Name = "btnHome";
             this.btnHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(151)))), ((int)(((byte)(194)))));
             this.btnHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnHome.OnHoverTextColor = System.Drawing.Color.White;
             this.btnHome.selected = false;
-            this.btnHome.Size = new System.Drawing.Size(37, 37);
+            this.btnHome.Size = new System.Drawing.Size(49, 46);
             this.btnHome.TabIndex = 1;
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Textcolor = System.Drawing.Color.White;
@@ -134,14 +134,14 @@
             this.btnSearch.IconVisible = true;
             this.btnSearch.IconZoom = 60D;
             this.btnSearch.IsTab = false;
-            this.btnSearch.Location = new System.Drawing.Point(444, 4);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearch.Location = new System.Drawing.Point(592, 5);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(185)))), ((int)(((byte)(70)))));
             this.btnSearch.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSearch.selected = false;
-            this.btnSearch.Size = new System.Drawing.Size(37, 37);
+            this.btnSearch.Size = new System.Drawing.Size(49, 46);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.Textcolor = System.Drawing.Color.White;
@@ -168,14 +168,14 @@
             this.btnPlus.IconVisible = true;
             this.btnPlus.IconZoom = 60D;
             this.btnPlus.IsTab = false;
-            this.btnPlus.Location = new System.Drawing.Point(919, 4);
-            this.btnPlus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPlus.Location = new System.Drawing.Point(1225, 5);
+            this.btnPlus.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(151)))), ((int)(((byte)(194)))));
             this.btnPlus.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnPlus.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPlus.selected = false;
-            this.btnPlus.Size = new System.Drawing.Size(37, 37);
+            this.btnPlus.Size = new System.Drawing.Size(49, 46);
             this.btnPlus.TabIndex = 1;
             this.btnPlus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPlus.Textcolor = System.Drawing.Color.White;
@@ -203,14 +203,14 @@
             this.btnInfor.IconVisible = true;
             this.btnInfor.IconZoom = 60D;
             this.btnInfor.IsTab = false;
-            this.btnInfor.Location = new System.Drawing.Point(965, 4);
-            this.btnInfor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnInfor.Location = new System.Drawing.Point(1287, 5);
+            this.btnInfor.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnInfor.Name = "btnInfor";
             this.btnInfor.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(151)))), ((int)(((byte)(194)))));
             this.btnInfor.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnInfor.OnHoverTextColor = System.Drawing.Color.White;
             this.btnInfor.selected = false;
-            this.btnInfor.Size = new System.Drawing.Size(37, 37);
+            this.btnInfor.Size = new System.Drawing.Size(49, 46);
             this.btnInfor.TabIndex = 1;
             this.btnInfor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInfor.Textcolor = System.Drawing.Color.White;
@@ -238,14 +238,14 @@
             this.btnNotify.IconVisible = true;
             this.btnNotify.IconZoom = 60D;
             this.btnNotify.IsTab = false;
-            this.btnNotify.Location = new System.Drawing.Point(1011, 4);
-            this.btnNotify.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNotify.Location = new System.Drawing.Point(1348, 5);
+            this.btnNotify.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnNotify.Name = "btnNotify";
             this.btnNotify.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(224)))));
             this.btnNotify.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnNotify.OnHoverTextColor = System.Drawing.Color.White;
             this.btnNotify.selected = false;
-            this.btnNotify.Size = new System.Drawing.Size(37, 37);
+            this.btnNotify.Size = new System.Drawing.Size(49, 46);
             this.btnNotify.TabIndex = 1;
             this.btnNotify.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNotify.Textcolor = System.Drawing.Color.White;
@@ -273,14 +273,14 @@
             this.btnUser.IconVisible = true;
             this.btnUser.IconZoom = 60D;
             this.btnUser.IsTab = false;
-            this.btnUser.Location = new System.Drawing.Point(1057, 4);
-            this.btnUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUser.Location = new System.Drawing.Point(1409, 5);
+            this.btnUser.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnUser.Name = "btnUser";
             this.btnUser.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(85)))), ((int)(((byte)(23)))));
             this.btnUser.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnUser.OnHoverTextColor = System.Drawing.Color.White;
             this.btnUser.selected = false;
-            this.btnUser.Size = new System.Drawing.Size(37, 37);
+            this.btnUser.Size = new System.Drawing.Size(49, 46);
             this.btnUser.TabIndex = 1;
             this.btnUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUser.Textcolor = System.Drawing.Color.White;
@@ -299,8 +299,9 @@
             this.panel1.Controls.Add(this.btnBoard);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1099, 44);
+            this.panel1.Size = new System.Drawing.Size(1465, 54);
             this.panel1.TabIndex = 0;
             // 
             // tbSearch
@@ -316,31 +317,34 @@
             this.tbSearch.LineIdleColor = System.Drawing.Color.White;
             this.tbSearch.LineMouseHoverColor = System.Drawing.Color.DodgerBlue;
             this.tbSearch.LineThickness = 3;
-            this.tbSearch.Location = new System.Drawing.Point(185, 2);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbSearch.Location = new System.Drawing.Point(247, 2);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(252, 37);
+            this.tbSearch.Size = new System.Drawing.Size(336, 46);
             this.tbSearch.TabIndex = 1;
             this.tbSearch.Text = "Searching";
             this.tbSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // pnWorkSpace
             // 
+            this.pnWorkSpace.AutoScroll = true;
             this.pnWorkSpace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnWorkSpace.Location = new System.Drawing.Point(0, 44);
+            this.pnWorkSpace.Location = new System.Drawing.Point(0, 54);
+            this.pnWorkSpace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnWorkSpace.Name = "pnWorkSpace";
-            this.pnWorkSpace.Size = new System.Drawing.Size(1099, 497);
+            this.pnWorkSpace.Size = new System.Drawing.Size(1465, 612);
             this.pnWorkSpace.TabIndex = 1;
             // 
             // WorkSpace
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1099, 541);
+            this.ClientSize = new System.Drawing.Size(1465, 666);
             this.Controls.Add(this.pnWorkSpace);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WorkSpace";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Manager";

@@ -16,6 +16,7 @@ namespace GUI
     {
         int _cardId;
 
+        ListSpace _listSpace;
         CardBLL cardBLL = new CardBLL();
         CardDTO cardDTO;
         CardInfoDTO cardInfoDTO;
@@ -24,10 +25,11 @@ namespace GUI
         CommentBLL commentBLL;
 
         List<string> listNameUser = new List<string>();
-        public CardEdit(int X, int Y, int cardId)
+        public CardEdit(int X, int Y, int cardId, ListSpace listSpace)
         {
             InitializeComponent();
             _cardId = cardId;
+            _listSpace = listSpace;
             cardDTO = cardBLL.GetCard(_cardId);
             cardInfoBLL = new CardInfoBLL();
             commentBLL = new CommentBLL();
@@ -172,6 +174,7 @@ namespace GUI
 
         private void CardEdit_FormClosed(object sender, FormClosedEventArgs e)
         {
+            _listSpace.LoadListOfThisBoard();
             GC.Collect();
         }
     }

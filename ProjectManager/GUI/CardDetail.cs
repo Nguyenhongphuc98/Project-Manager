@@ -15,7 +15,6 @@ namespace GUI
     public partial class CardDetail : Form
     {
         int _cardId;
-        int _boardId;
         ListSpace _listSpace;
 
         CardDTO cardDTO;
@@ -72,38 +71,14 @@ namespace GUI
             this.checkDueDate.Text = cardDTO.DueDate.Date.ToString();
 
             AddMember();
-
-            //checklistDTOs = checklistBLL.GetAllChecklist(id);
-            //if (checklistDTOs.Count() != 0)
-            //{
-            //    this.checklistPn.Visible = true;
-            //    this.progressBar1.Visible = true;
-            //    this.progressBar1.Maximum = checklistDTOs.Count();
-            //    taskFlpanel.Controls.Clear();
-            //    checklistDTOs = checklistBLL.GetAllChecklist(_cardId);
-            //    foreach (ChecklistDTO checklist in checklistDTOs)
-            //    {
-            //        CheckBox task = new CheckBox();
-            //        task.Font = new Font(task.Font.FontFamily, 10.0f);
-            //        task.Text = checklist.Title;
-            //        if (checklist.Status == 1)
-            //        {
-            //            task.Checked = true;
-            //            this.progressBar1.Increment(1);
-            //        }
-            //        else task.Checked = false;
-            //        taskFlpanel.Controls.Add(task);
-            //        tasks.Add(task);
-            //    }
-            //}
-            //else checklistPn.Visible = false;
+            
 
             this.descriptionText.LostFocus += DescriptionText_LostFocus;
             this.commentText.LostFocus += CommentText_LostFocus;
 
             listDTO = listBLL.GetList(cardDTO.ListId);
             this.List.Text = listDTO.Title;
-            _boardId = listDTO.BoardId;
+            //_boardId = listDTO.BoardId;
 
             commentDTOs = commentBLL.GetAllComments(_cardId);
             foreach (CommentDTO comment in commentDTOs)
@@ -146,7 +121,7 @@ namespace GUI
 
         private void AddMem_Click(object sender, EventArgs e)
         {
-            MemberEdit editMember = new MemberEdit(this.Location.X + this.Width, this.Location.Y, _cardId, _boardId);
+            MemberEdit editMember = new MemberEdit(this.Location.X + this.Width, this.Location.Y, _cardId, Global.id_Board);
             editMember.Show();
         }
 
@@ -279,8 +254,6 @@ namespace GUI
             if (!String.IsNullOrEmpty(commentText.Text))
             {
                 activityBLL = new ActivityBLL();
-                //UserComment userComment = new UserComment(Global.user.Name.Substring(0,1), commentText.Text);
-                //this.cmtPanel.Controls.Add(userComment);
                 commentDTO = new CommentDTO(_cardId, Global.user.UserId, commentText.Text, DateTime.Now, 1);
 
                 try
@@ -292,16 +265,8 @@ namespace GUI
                 UserComment userComment = new UserComment(userBLL.GetUser(Global.user.UserId).Name.Substring(0, 1), commentText.Text);
                 cmtPanel.Controls.Add(userComment);
 
-                activityBLL.InsertActivity(Global.user.UserId, _boardId, Global.user.Name + " Has comment to card " + cardDTO.Title, DateTime.Now);
+                activityBLL.InsertActivity(Global.user.UserId, Global.id_Board, Global.user.Name + " Has comment to card " + cardDTO.Title, DateTime.Now);
             }
-            
-            //foreach (CommentDTO comment in commentDTOs)
-            //{
-
-            //    cmtPanel.Controls.Clear();
-            //    UserComment userComment = new UserComment(userBLL.GetUser(comment.UserId).Name.Substring(0, 1), comment.Content);
-            //    cmtPanel.Controls.Add(userComment);
-            //}
         }
 
         private void CardDetail_Activated(object sender, EventArgs e)
@@ -366,20 +331,6 @@ namespace GUI
                 }
             }
             else checklistPn.Visible = false;
-            //checklistDTOs = checklistBLL.GetAllChecklist(_cardId);
-            //foreach (ChecklistDTO checklist in checklistDTOs)
-            //{
-            //    CheckBox task = new CheckBox();
-            //    task.Font = new Font(task.Font.FontFamily, 10.0f);
-            //    task.Text = checklist.Title;
-            //    if (checklist.Status == 1)
-            //    {
-            //        task.Checked = true;
-            //    }
-            //    else task.Checked = false;
-            //    taskFlpanel.Controls.Add(task);
-            //    tasks.Add(task);
-            //}
             progressBar1.Value = 0;
             progressBar1.Maximum = checklistDTOs.Count();
             foreach (CheckBox task in tasks)

@@ -25,8 +25,6 @@ namespace GUI
         CardInfoDTO cardInfoDTO;
 
         CardInfoBLL cardInfoBLL;
-        CommentBLL commentBLL;
-
         
         List<int> listUserId = new List<int>();
         List<string> listNameUser = new List<string>();
@@ -59,21 +57,19 @@ namespace GUI
             //this.Region = GetRoundedRegion(this.Width, this.Height);
             
             cardInfoBLL = new CardInfoBLL();
-            commentBLL = new CommentBLL();
             cardInfoDTO = cardInfoBLL.CardInfo(_cardId);
+            cardDTO = cardInfoDTO.Card;
 
             listNameUser = cardInfoDTO.ListNameUser;
-            CardName.Text = cardInfoDTO.Card.Title;
-            cardDTO = cardInfoDTO.Card;
+            CardName.Text = cardDTO.Title;
             dateCard.Text = cardDTO.DueDate.ToShortDateString();
 
-            if (commentBLL.GetAllComments(_cardId).Count() != 0)
+            if (cardInfoDTO.CommentDTOs.Count() != 0)
             {
                 panel2.Visible = true;
-                label3.Text = commentBLL.GetAllComments(_cardId).Count().ToString();
+                label3.Text = cardInfoDTO.CommentDTOs.Count().ToString();
             }
             else panel2.Visible = false;
-            checkBox1.Text = cardInfoDTO.ListCheckedlist.Count() + "/" + cardInfoDTO.ListChecklist.Count();
             if (cardDTO.Description == null || cardDTO.Description == "")
             {
                 this.desPicture.Visible = false;
@@ -121,6 +117,7 @@ namespace GUI
             if (cardInfoDTO.ListChecklist.Count() != 0)
             {
                 checkBox1.Visible = true;
+                checkBox1.Text = cardInfoDTO.ListCheckedlist.Count() + "/" + cardInfoDTO.ListChecklist.Count();
             }
             else checkBox1.Visible = false;
         }
@@ -131,31 +128,31 @@ namespace GUI
         {
             this.BackColor = System.Drawing.Color.DarkGray;
             this.CardName.BackColor = System.Drawing.Color.DarkGray;
-            cardDTO.Label = cardInfoDTO.Card.Label;
-            switch (cardDTO.Label)
-            {
-                case 1:
-                    this.CardLabel.BackColor = Color.Red;
-                    break;
-                case 2:
-                    this.CardLabel.BackColor = Color.Yellow;
-                    break;
-                case 3:
-                    this.CardLabel.BackColor = Color.Green;
-                    break;
-                case 4:
-                    this.CardLabel.BackColor = Color.Orange;
-                    break;
-                case 5:
-                    this.CardLabel.BackColor = Color.Blue;
-                    break;
-                case 6:
-                    this.CardLabel.BackColor = Color.Fuchsia;
-                    break;
-                default:
-                    this.CardLabel.BackColor = Color.Transparent;
-                    break;
-            }
+            //cardDTO.Label = cardInfoDTO.Card.Label;
+            //switch (cardDTO.Label)
+            //{
+            //    case 1:
+            //        this.CardLabel.BackColor = Color.Red;
+            //        break;
+            //    case 2:
+            //        this.CardLabel.BackColor = Color.Yellow;
+            //        break;
+            //    case 3:
+            //        this.CardLabel.BackColor = Color.Green;
+            //        break;
+            //    case 4:
+            //        this.CardLabel.BackColor = Color.Orange;
+            //        break;
+            //    case 5:
+            //        this.CardLabel.BackColor = Color.Blue;
+            //        break;
+            //    case 6:
+            //        this.CardLabel.BackColor = Color.Fuchsia;
+            //        break;
+            //    default:
+            //        this.CardLabel.BackColor = Color.Transparent;
+            //        break;
+            //}
             editButton.Visible = true;
         }
 
@@ -167,7 +164,7 @@ namespace GUI
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            CardEdit cardEdit = new CardEdit(this.oX, this.oY + this.Location.Y, this._cardId);
+            CardEdit cardEdit = new CardEdit(this.oX, this.oY + this.Location.Y, this._cardId, _listSpace);
             cardEdit.Show();
         }
 
