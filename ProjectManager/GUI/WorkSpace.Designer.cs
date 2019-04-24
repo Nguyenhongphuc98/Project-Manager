@@ -74,7 +74,7 @@
             this.btnBoard.Size = new System.Drawing.Size(164, 46);
             this.btnBoard.TabIndex = 1;
             this.btnBoard.Text = "Boards";
-            this.btnBoard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBoard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBoard.Textcolor = System.Drawing.Color.White;
             this.btnBoard.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -299,7 +299,7 @@
             this.panel1.Controls.Add(this.btnBoard);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1465, 54);
             this.panel1.TabIndex = 0;
@@ -330,7 +330,7 @@
             this.pnWorkSpace.AutoScroll = true;
             this.pnWorkSpace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnWorkSpace.Location = new System.Drawing.Point(0, 54);
-            this.pnWorkSpace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnWorkSpace.Margin = new System.Windows.Forms.Padding(4);
             this.pnWorkSpace.Name = "pnWorkSpace";
             this.pnWorkSpace.Size = new System.Drawing.Size(1465, 612);
             this.pnWorkSpace.TabIndex = 1;
@@ -344,7 +344,7 @@
             this.Controls.Add(this.pnWorkSpace);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WorkSpace";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Manager";

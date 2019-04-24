@@ -9,29 +9,28 @@ namespace DTO
     public class CardInfoDTO
     {
         CardDTO card;
-        String cardName;
         List<string> listNameUser = new List<string>();
-        List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
-        List<ChecklistDTO> listCheckedlist = new List<ChecklistDTO>();
-        List<CommentDTO> commentDTOs = new List<CommentDTO>();
+        int countChecklist;
+        int countCheckedlist;
+        int countCmt;
         CardUserDTO user;
 
-        public CardInfoDTO(CardDTO card, List<String> listNameUser, List<ChecklistDTO> listChecklist,
-                           List<ChecklistDTO> listCheckedlist, CardUserDTO user, List<CommentDTO> commentDTOs)
+        public CardInfoDTO(CardDTO card, List<String> listNameUser, int countChecklist,
+                           int countCheckedlist, CardUserDTO user, int countCmt)
         {
             this.card = card;
             this.listNameUser = listNameUser;
-            this.listChecklist = listChecklist;
-            this.listCheckedlist = listCheckedlist;
+            this.countChecklist = countChecklist;
+            this.countCheckedlist = countCheckedlist;
             this.user = user;
-            this.commentDTOs = commentDTOs;
+            this.countCmt = countCmt;
         }
 
         public CardDTO Card { get => card; set => card = value; }
         public List<string> ListNameUser { get => listNameUser; set => listNameUser = value; }
-        public List<ChecklistDTO> ListChecklist { get => listChecklist; set => listChecklist = value; }
-        public List<ChecklistDTO> ListCheckedlist { get => listCheckedlist; set => listCheckedlist = value; }
+        public int CountChecklist { get => countChecklist; set => countChecklist = value; }
+        public int CountCheckedlist { get => countCheckedlist; set => countCheckedlist = value; }
         public CardUserDTO User { get => user; set => user = value; }
-        public List<CommentDTO> CommentDTOs { get => commentDTOs; set => commentDTOs = value; }
+        public int CountCmt { get => countCmt; set => countCmt = value; }
     }
 }

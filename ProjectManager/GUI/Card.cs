@@ -64,10 +64,10 @@ namespace GUI
             CardName.Text = cardDTO.Title;
             dateCard.Text = cardDTO.DueDate.ToShortDateString();
 
-            if (cardInfoDTO.CommentDTOs.Count() != 0)
+            if (cardInfoDTO.CountCmt != 0)
             {
                 panel2.Visible = true;
-                label3.Text = cardInfoDTO.CommentDTOs.Count().ToString();
+                label3.Text = cardInfoDTO.CountCmt.ToString();
             }
             else panel2.Visible = false;
             if (cardDTO.Description == null || cardDTO.Description == "")
@@ -114,10 +114,10 @@ namespace GUI
                     this.CardLabel.BackColor = Color.Transparent;
                     break;
             }
-            if (cardInfoDTO.ListChecklist.Count() != 0)
+            if (cardInfoDTO.CountChecklist != 0)
             {
                 checkBox1.Visible = true;
-                checkBox1.Text = cardInfoDTO.ListCheckedlist.Count() + "/" + cardInfoDTO.ListChecklist.Count();
+                checkBox1.Text = cardInfoDTO.CountCheckedlist+ "/" + cardInfoDTO.CountChecklist;
             }
             else checkBox1.Visible = false;
         }

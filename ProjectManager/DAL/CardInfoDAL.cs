@@ -15,6 +15,9 @@ namespace DAL
         
         List<string> listNameUser = new List<string>();
         List<ChecklistDTO> listChecklist = new List<ChecklistDTO>();
+        int countChecklist;
+        int countCheckedlist;
+        int countCmt;
         List<ChecklistDTO> listCheckedlist = new List<ChecklistDTO>();
         List<CommentDTO> listComment = new List<CommentDTO>();
 
@@ -55,7 +58,7 @@ namespace DAL
                 ChecklistDTO checklist = new ChecklistDTO(checklistId, cardId, checklistIndex, title, status);
                 listCheckedlist.Add(checklist);
             }
-
+            countCheckedlist = listCheckedlist.Count();
             reader1.Close();
             command.CommandText = "SELECT * FROM CHECKLIST WHERE CARD_ID = '" + id + "'";
 
@@ -70,7 +73,7 @@ namespace DAL
                 ChecklistDTO checklist = new ChecklistDTO(checklistId, cardId, checklistIndex, title, status);
                 listChecklist.Add(checklist);
             }
-
+            countChecklist = listChecklist.Count();
             reader2.Close();
             command.CommandText = "SELECT * FROM USERS WHERE USER_ID = " + id;
 
@@ -112,14 +115,13 @@ namespace DAL
                 CommentDTO comment = new CommentDTO(id, userId, content, time, cmtIndex);
                 listComment.Add(comment);
             }
-
+            countCmt = listComment.Count();
             reader5.Close();
             this.Close();
 
-            CardInfoDTO cardInfoDTO = new CardInfoDTO(this.card, this.listNameUser, this.listChecklist, this.listCheckedlist, this.user, this.listComment);
+            CardInfoDTO cardInfoDTO = new CardInfoDTO(this.card, this.listNameUser, countChecklist, countCheckedlist, this.user, countCmt);
             return cardInfoDTO;
+            GC.Collect();
         }
-
-        
     }
 }

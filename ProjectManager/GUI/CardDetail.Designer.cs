@@ -357,7 +357,7 @@
             this.ChecklistBtn.IdleFillColor = System.Drawing.Color.White;
             this.ChecklistBtn.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.ChecklistBtn.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.ChecklistBtn.Location = new System.Drawing.Point(616, 135);
+            this.ChecklistBtn.Location = new System.Drawing.Point(616, 136);
             this.ChecklistBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ChecklistBtn.Name = "ChecklistBtn";
             this.ChecklistBtn.Size = new System.Drawing.Size(135, 39);
@@ -693,7 +693,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(771, 925);
+            this.ClientSize = new System.Drawing.Size(771, 790);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.moveBtn);

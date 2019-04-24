@@ -75,10 +75,10 @@ namespace GUI
                 cmtNum.Text = commentBLL.GetAllComments(_cardId).Count().ToString();
             }
             else panel2.Visible = false;
-            if (cardInfoDTO.ListChecklist.Count() != 0)
+            if (cardInfoDTO.CountChecklist != 0)
             {
                 this.checkList.Visible = true;
-                this.checkList.Text = cardInfoDTO.ListCheckedlist.Count() + "/" + cardInfoDTO.ListChecklist.Count();
+                this.checkList.Text = cardInfoDTO.CountCheckedlist + "/" + cardInfoDTO.CountChecklist;
             }
             else this.checkList.Visible = false;
             foreach (string name in listNameUser)
@@ -158,10 +158,10 @@ namespace GUI
                 cmtNum.Text = commentBLL.GetAllComments(_cardId).Count().ToString();
             }
             else panel2.Visible = false;
-            if (cardInfoDTO.ListChecklist.Count() != 0)
+            if (cardInfoDTO.CountChecklist != 0)
             {
                 this.checkList.Visible = true;
-                this.checkList.Text = cardInfoDTO.ListCheckedlist.Count() + "/" + cardInfoDTO.ListChecklist.Count();
+                this.checkList.Text = cardInfoDTO.CountCheckedlist + "/" + cardInfoDTO.CountChecklist;
             }
             else this.checkList.Visible = false;
             this.flowLayoutPanel2.Controls.Clear();
